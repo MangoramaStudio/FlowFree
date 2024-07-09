@@ -1,7 +1,5 @@
 using MangoramaStudio.Scripts.Managers;
 using MatchinghamGames.GameUtilities.Managers;
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
