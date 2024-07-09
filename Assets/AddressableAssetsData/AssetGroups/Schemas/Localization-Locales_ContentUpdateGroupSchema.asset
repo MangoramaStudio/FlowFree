@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48d2b331a5e34828afe2cb0c7cbf75f8, type: 3}
-  m_Name: CharlieConfig
+  m_Script: {fileID: 11500000, guid: 5834b5087d578d24c926ce20cd31e6d6, type: 3}
+  m_Name: Localization-Locales_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
-  AutoInitialize: 0
-  <Enabled>k__BackingField: 1
-  timeRangeStart: 7
-  timeRangeEnd: 22
+  m_Group: {fileID: 11400000, guid: 1f03f520da1ba4d98b55130ea8430f1d, type: 2}
+  m_StaticContent: 0

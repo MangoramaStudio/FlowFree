@@ -1,3 +1,5 @@
+using MangoramaStudio.Scripts.Data;
+using MatchinghamGames.VibrationModule;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -6,11 +8,11 @@ namespace MangoramaStudio.Scripts.Managers.Buttons
 {
     public class BaseButton : UIBehaviour
     {
-        
+
+        [SerializeField] private VibrationType vibrationType = VibrationType.Medium;
         protected Button Button => _button ? _button : (_button = GetComponent<Button>());
         private Button _button;
-
-
+        
         protected override void OnEnable()
         {
             base.OnEnable();
@@ -28,8 +30,19 @@ namespace MangoramaStudio.Scripts.Managers.Buttons
             base.OnDestroy();
             ToggleEvents(false);
         }
-        
-        public virtual void Click() { }
+
+        protected virtual void Click()
+        {
+            TryVibrate();
+        }
+
+        private void TryVibrate()
+        {
+            if (PlayerData.IsHapticsEnabled == 1)
+            {
+                Vibrator.Vibrate(vibrationType);     
+            }
+        }
 
         protected virtual void ToggleEvents(bool isToggled)
         {

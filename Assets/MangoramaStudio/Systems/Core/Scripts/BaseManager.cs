@@ -1,12 +1,11 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 namespace MangoramaStudio.Scripts.Managers
 {
 
     public class BaseManager : MonoBehaviour
     {
+    
         public GameManager GameManager => GameManager.Instance;
 
         public virtual void Initialize()
@@ -14,7 +13,7 @@ namespace MangoramaStudio.Scripts.Managers
             ToggleEvents(true);
         }
 
-        public void OnDestroy()
+        public virtual void OnDestroy()
         {
             ToggleEvents(false);
         }

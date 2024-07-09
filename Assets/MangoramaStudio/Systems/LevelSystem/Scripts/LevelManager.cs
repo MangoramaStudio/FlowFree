@@ -6,13 +6,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace MangoramaStudio.Scripts.Managers
 {
     public class LevelManager : BaseManager
     {
-        [SerializeField] private int _totalLevelCount;
+        [FormerlySerializedAs("_totalLevelCount")] [SerializeField] private int totalLevelCount;
         private LevelBehaviour _currentLevel;
+        private LevelBehaviour _desiredLoadedLevelPrefab;
 
         #region Initialize
 
@@ -27,10 +29,9 @@ namespace MangoramaStudio.Scripts.Managers
 
         }
 
-        private void OnDestroy()
+        public override void OnDestroy()
         {
             GameManager.EventManager.OnStartGame -= StartGame;
-
             SROptions.OnLevelInvoked -= RetryCurrentLevel;
         }
 
@@ -49,13 +50,13 @@ namespace MangoramaStudio.Scripts.Managers
             _currentLevel.Initialize();
 
             GameManager.AddressableManager.SetPreLoadedLevelBehaviour();
-            if (PlayerData.CurrentLevelId < _totalLevelCount)
+            if (PlayerData.CurrentLevelId < totalLevelCount)
             {
                 GameManager.AddressableManager.LoadLevelAsync($"Level_{PlayerData.CurrentLevelId + 1}");
             }
         }
 
-        private LevelBehaviour _desiredLoadedLevelPrefab;
+       
 
         private void ClearLevel()
         {

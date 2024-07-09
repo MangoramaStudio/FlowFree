@@ -1,4 +1,5 @@
 ﻿using MangoramaStudio.Scripts.Controllers;
+using MangoramaStudio.Systems.ReviewSystem.Scripts;
 
 namespace MangoramaStudio.Scripts.Managers
 {
@@ -8,6 +9,7 @@ namespace MangoramaStudio.Scripts.Managers
         public EventManager EventManager;
         public LevelManager LevelManager;
         public AnalyticsManager AnalyticsManager;
+        public ReviewManager ReviewManager;
         public InputController Inputs;
         public AddressableManager AddressableManager { get; private set; }
 
@@ -23,6 +25,7 @@ namespace MangoramaStudio.Scripts.Managers
             LevelManager.Initialize();
             AnalyticsManager.Initialize();
             Inputs.Initialize();
+            ReviewManager.Initialize();
         }
         
 

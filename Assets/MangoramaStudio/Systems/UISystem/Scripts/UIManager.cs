@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using MangoramaStudio.Systems.UISystem.Scripts.Menus;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 
@@ -62,5 +63,12 @@ namespace MangoramaStudio.Scripts.Managers
             _menus.Add(gameplayMenu);
             _menus.Add(winMenu);
         }
+
+        [Button]
+        private void Test(MenuType type)
+        {
+            ChangeMenu(type);
+        }
     }
+    
 }

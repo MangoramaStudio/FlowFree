@@ -12,21 +12,6 @@ namespace MangoramaStudio.Scripts.Managers
         public event Action<bool> OnLevelFinished;
         public event Action OnLevelStarted;
 
-        #region Initialize
-
-        public override void Initialize()
-        {
-            base.Initialize();
-        }
-
-        private void OnDestroy()
-        {
-
-        }
-
-        #endregion
-
-        /****************************************************************************************/
 
         public void StartGame()
         {

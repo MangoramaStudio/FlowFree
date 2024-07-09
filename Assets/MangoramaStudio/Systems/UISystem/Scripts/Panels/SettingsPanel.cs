@@ -4,25 +4,22 @@ using System.Collections.Generic;
 using MangoramaStudio.Scripts.Data;
 using MangoramaStudio.Scripts.Managers;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace MangoramaStudio.Scripts.UI
 {
     public class SettingsPanel : UIPanel
     {
-        [SerializeField] private SettingsContainer _musicSettingsContainer;
-        [SerializeField] private SettingsContainer _sfxSettingsContainer;
-        [SerializeField] private SettingsContainer _vibrateSettingsContainer;
+        [FormerlySerializedAs("_musicSettingsContainer")] [SerializeField] private SettingsContainer musicSettingsContainer;
+        [FormerlySerializedAs("_sfxSettingsContainer")] [SerializeField] private SettingsContainer sfxSettingsContainer;
+        [FormerlySerializedAs("_vibrateSettingsContainer")] [SerializeField] private SettingsContainer vibrateSettingsContainer;
 
-        public override void Initialize(UIManager uiManager)
-        {
-            base.Initialize(uiManager);
-        }
 
         public void InitializeContainers()
         {
-            _musicSettingsContainer.Initialize(PlayerData.IsMusicEnabled == 1);
-            _sfxSettingsContainer.Initialize(PlayerData.IsSfxEnabled == 1);
-            _vibrateSettingsContainer.Initialize(PlayerData.IsHapticsEnabled == 1);
+            musicSettingsContainer.Initialize(PlayerData.IsMusicEnabled == 1);
+            sfxSettingsContainer.Initialize(PlayerData.IsSfxEnabled == 1);
+            vibrateSettingsContainer.Initialize(PlayerData.IsHapticsEnabled == 1);
         }
 
         public void ToggleMusic()
