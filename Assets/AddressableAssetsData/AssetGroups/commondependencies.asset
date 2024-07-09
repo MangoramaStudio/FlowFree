@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: commondependencies
+  m_EditorClassIdentifier: 
+  m_GroupName: commondependencies
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 4b6e6c8d9735c463d938a37edd7122ca
+  m_SerializeEntries:
+  - m_GUID: a36b7719ff0465b42ab1407d67672c5f
+    m_Address: Assets/MatchinghamGames/Shaders/Plugins/AllIn1SpriteShader/Resources/AllIn1SpriteShader.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 279657edc397ece4b8029c727adf6ddc
+    m_Address: Assets/MatchinghamGames/Shaders/Plugins/AllIn1SpriteShader/Textures/GradientTextures/palette-downwell.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 74087f6d03f233e4a8a142fa01f9e5cf
+    m_Address: Assets/MatchinghamGames/Shaders/Plugins/AllIn1SpriteShader/Textures/rainbow.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 00126cf836466ef4488c12830e04fac3, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 540007c28b6884dd6a07eddf849d2895, type: 2}
+    - {fileID: 11400000, guid: c416c6264d639429b9a6df17c5a70b54, type: 2}

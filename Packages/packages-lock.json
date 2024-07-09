@@ -117,15 +117,15 @@
       "url": "https://upm.matchingham.net"
     },
     "com.matchinghamgames.court": {
-      "version": "3.0.0",
+      "version": "3.1.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.matchinghamgames.handyman": "5.0.0",
+        "com.matchinghamgames.handyman": "5.5.0",
         "com.google.play.common": "1.5.0",
         "com.google.play.core": "1.5.0",
         "com.google.play.review": "1.5.0",
-        "com.matchinghamgames.logger": "2.0.0"
+        "com.matchinghamgames.logger": "2.1.0"
       },
       "url": "https://upm.matchingham.net"
     },
@@ -153,16 +153,16 @@
       "url": "https://upm.matchingham.net"
     },
     "com.matchinghamgames.handyman": {
-      "version": "5.0.0",
+      "version": "5.5.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.matchinghamgames.logger": "2.0.0"
+        "com.matchinghamgames.logger": "2.1.0"
       },
       "url": "https://upm.matchingham.net"
     },
     "com.matchinghamgames.logger": {
-      "version": "2.0.0",
+      "version": "2.1.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {},

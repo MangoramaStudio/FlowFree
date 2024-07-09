@@ -8,7 +8,6 @@ namespace MangoramaStudio.Scripts.Managers
         public EventManager EventManager;
         public LevelManager LevelManager;
         public AnalyticsManager AnalyticsManager;
-        public AppReviewManager AppReviewManager;
         public InputController Inputs;
         public AddressableManager AddressableManager { get; private set; }
 
@@ -23,8 +22,12 @@ namespace MangoramaStudio.Scripts.Managers
             UIManager.Initialize(this);
             LevelManager.Initialize(this);
             AnalyticsManager.Initialize(this);
-            AppReviewManager.Initialize();
             Inputs.Initialize(this);
+        }
+
+        private void OnDismiss()
+        {
+            
         }
 
         private void Start()

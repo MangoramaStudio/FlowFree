@@ -11,4 +11,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MangoramaStudio/Scenes/Game.unity
     guid: 3cad3be1909ad427183a72193a4303ed
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 06b6dd08ff28638498c2ff9674d179cc, type: 2}

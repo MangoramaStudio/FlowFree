@@ -16,15 +16,15 @@ namespace MangoramaStudio.Scripts.UI
         {
             base.Initialize(uiManager);
 
-            UIManager.GameManager.EventManager.OnLevelFinished += SetWinLosePanel;
-            UIManager.GameManager.EventManager.OnLevelStarted += RefreshPanels;
+           // UIManager.GameManager.EventManager.OnLevelFinished += SetWinLosePanel;
+           // UIManager.GameManager.EventManager.OnLevelStarted += RefreshPanels;
         }
 
 
         private void OnDestroy()
         {
-            UIManager.GameManager.EventManager.OnLevelFinished -= SetWinLosePanel;
-            UIManager.GameManager.EventManager.OnLevelStarted -= RefreshPanels;
+            //UIManager.GameManager.EventManager.OnLevelFinished -= SetWinLosePanel;
+            //UIManager.GameManager.EventManager.OnLevelStarted -= RefreshPanels;
         }
 
         /****************************************************************************************/
