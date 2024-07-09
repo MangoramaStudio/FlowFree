@@ -20,9 +20,9 @@ namespace MangoramaStudio.Scripts.Controllers
 
         #region Initialize
 
-        public override void Initialize(GameManager gameManager)
+        public override void Initialize()
         {
-            base.Initialize(gameManager);
+            base.Initialize();
         }
 
         private void OnDestroy()

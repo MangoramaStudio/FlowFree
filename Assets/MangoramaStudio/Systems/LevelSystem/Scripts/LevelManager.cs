@@ -16,9 +16,9 @@ namespace MangoramaStudio.Scripts.Managers
 
         #region Initialize
 
-        public override void Initialize(GameManager gameManager)
+        public override void Initialize()
         {
-            base.Initialize(gameManager);
+            base.Initialize();
 
             _desiredLoadedLevelPrefab = GameManager.AddressableManager.LoadedLevelBehaviour;
             GameManager.EventManager.OnStartGame += StartGame;
@@ -46,7 +46,7 @@ namespace MangoramaStudio.Scripts.Managers
 
             _currentLevel = Instantiate(_desiredLoadedLevelPrefab);
 
-            _currentLevel.Initialize(GameManager);
+            _currentLevel.Initialize();
 
             GameManager.AddressableManager.SetPreLoadedLevelBehaviour();
             if (PlayerData.CurrentLevelId < _totalLevelCount)

@@ -18,17 +18,13 @@ namespace MangoramaStudio.Scripts.Managers
             Instance = this;
 
             AddressableManager = FindObjectOfType<AddressableManager>();
-            EventManager.Initialize(this);
-            UIManager.Initialize(this);
-            LevelManager.Initialize(this);
-            AnalyticsManager.Initialize(this);
-            Inputs.Initialize(this);
+            EventManager.Initialize();
+            UIManager.Initialize();
+            LevelManager.Initialize();
+            AnalyticsManager.Initialize();
+            Inputs.Initialize();
         }
-
-        private void OnDismiss()
-        {
-            
-        }
+        
 
         private void Start()
         {

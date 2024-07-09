@@ -13,9 +13,9 @@ namespace MangoramaStudio.Scripts.Managers
 {
     public class AnalyticsManager : BaseManager
     {
-        public override void Initialize(GameManager gameManager)
+        public override void Initialize()
         {
-            base.Initialize(gameManager);
+            base.Initialize();
 
             FB_Initialize();
             GameAnalytics.Initialize();

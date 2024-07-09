@@ -19,9 +19,9 @@ namespace MangoramaStudio.Scripts.Behaviours
 
         private bool _isLevelEnded;
 
-        public void Initialize(GameManager gameManager, bool isRestart = false)
+        public void Initialize( bool isRestart = false)
         {
-            _gameManager = gameManager;
+            _gameManager = GameManager.Instance;
 
             if (!isRestart)
             {

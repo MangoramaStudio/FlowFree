@@ -1,27 +1,66 @@
-﻿using MangoramaStudio.Scripts.UI;
+﻿using System;
 using System.Collections.Generic;
+using MangoramaStudio.Systems.UISystem.Scripts.Menus;
+using UnityEngine;
 
 
 namespace MangoramaStudio.Scripts.Managers
 {
     public class UIManager : BaseManager
     {
-        public InGamePanel _inGamePanel;
-        public FinishPanel _finishPanel;
+        [SerializeField] private MainMenu mainMenu;
+        [SerializeField] private GameplayMenu gameplayMenu;
+        [SerializeField] private WinMenu winMenu;
 
-        private List<UIPanel> UIPanels;
+        public Action<MenuType> onChangeMenu;
 
-        public override void Initialize(GameManager gameManager)
+        private List<BaseMenu> _menus = new();
+        
+        
+        public override void Initialize()
         {
-            base.Initialize(gameManager);
-            UIPanels = new List<UIPanel> { _finishPanel, _inGamePanel };
+            base.Initialize();
+            AddMenusToList();
+            ToggleEvents(true);
+            ChangeMenu(MenuType.Main);
+        }
 
-            UIPanels.ForEach(x =>
+        protected override void ToggleEvents(bool isToggled)
+        {
+            base.ToggleEvents(isToggled);
+            if (isToggled)
             {
-                x.Initialize(this);
-                x.gameObject.SetActive(false);
-            });
-            _inGamePanel.ShowPanel();
+                onChangeMenu += ChangeMenu;
+            }
+            else
+            {
+                onChangeMenu -= ChangeMenu;
+            }
+        }
+
+        private void ChangeMenu(MenuType menuType)
+        {
+            _menus.ForEach(x=>x.gameObject.SetActive(false));
+            
+            switch (menuType)
+            {
+                case MenuType.Main:
+                    mainMenu.gameObject.SetActive(true);
+                    break;
+                case MenuType.Gameplay:
+                    gameplayMenu.gameObject.SetActive(true);
+                    break;
+                case MenuType.Win:
+                    winMenu.gameObject.SetActive(true);
+                    break;
+            }
+        }
+
+        private void AddMenusToList()
+        {
+            _menus.Add(mainMenu);
+            _menus.Add(gameplayMenu);
+            _menus.Add(winMenu);
         }
     }
 }
