@@ -44,7 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54326bb55d09b7e43bf30c4fbd18cf45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _delayForLoadingScreen: 2
-  _addressableManager: {fileID: 0}
-  _gameInitializeManagerPrefab: {fileID: 9201427599143951683, guid: 352b77630b64beb41979e49a917aa527, type: 3}
-  _loadingScreen: {fileID: 0}
+  delayForLoadingScreen: 2
+  addressableManager: {fileID: 0}
+  gameInitializeManagerPrefab: {fileID: 9201427599143951683, guid: 352b77630b64beb41979e49a917aa527, type: 3}
