@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b4959c58c2c884b864ddd689aa7704, type: 3}
+  m_Name: VibratorConfig
+  m_EditorClassIdentifier: 
+  AutoInitialize: 0
+  <Enabled>k__BackingField: 1
+  AndroidVibrationPresetFallbacks:
+    m_keys: 020000000000000001000000
+    m_values:
+    - data:
+      - VibrationType: 2
+        Delay: 0
+      - VibrationType: 5
+        Delay: 0.15
+    - data:
+      - VibrationType: 5
+        Delay: 0
+      - VibrationType: 2
+        Delay: 0.15
+    - data:
+      - VibrationType: 5
+        Delay: 0
+      - VibrationType: 5
+        Delay: 0.15
+      - VibrationType: 5
+        Delay: 0.15
+  AndroidVibrationEffectFallbacks:
+    m_keys: 000000000100000002000000030000000400000005000000
+    m_values: 020000000200000002000000000000000500000005000000
+  AndroidHapticFeedbackFallbacks:
+    m_keys: 02000000010000000000000005000000
+    m_values: 00000000010000000100000001000000
+  DefaultVibrationDuration: 150
