@@ -14,13 +14,6 @@
       "dependencies": {},
       "url": "https://upm.matchingham.net"
     },
-    "com.dbrizov.naughtyattributes": {
-      "version": "2.1.0",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://upm.matchingham.net"
-    },
     "com.gameanalytics.sdk": {
       "version": "https://github.com/GameAnalytics/GA-SDK-UNITY.git",
       "depth": 0,
@@ -44,9 +37,18 @@
       "dependencies": {},
       "hash": "a7a78c9705bd806aad95f036d9ca8295baf50782"
     },
+    "com.google.firebase.analytics": {
+      "version": "11.8.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.google.firebase.app": "11.8.0"
+      },
+      "url": "https://upm.matchingham.net"
+    },
     "com.google.firebase.app": {
-      "version": "11.6.0",
-      "depth": 0,
+      "version": "11.8.1",
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.google.external-dependency-manager": "1.2.177"
@@ -54,20 +56,20 @@
       "url": "https://upm.matchingham.net"
     },
     "com.google.firebase.crashlytics": {
-      "version": "11.6.0",
+      "version": "11.8.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.google.firebase.app": "11.6.0"
+        "com.google.firebase.app": "11.8.1"
       },
       "url": "https://upm.matchingham.net"
     },
     "com.google.firebase.remote-config": {
-      "version": "11.6.0",
+      "version": "11.8.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.google.firebase.app": "11.6.0"
+        "com.google.firebase.app": "11.8.1"
       },
       "url": "https://upm.matchingham.net"
     },
@@ -100,11 +102,10 @@
       "url": "https://upm.matchingham.net"
     },
     "com.jimmycushnie.fancyrendering": {
-      "version": "1.0.1000",
-      "depth": 0,
+      "version": "1.1.1",
+      "depth": 3,
       "source": "registry",
       "dependencies": {
-        "com.dbrizov.naughtyattributes": "2.1.0",
         "com.jimmycushnie.jimmysunityutilities": "1.0.0"
       },
       "url": "https://upm.matchingham.net"
@@ -129,26 +130,42 @@
       },
       "url": "https://upm.matchingham.net"
     },
+    "com.matchinghamgames.datausageconsent": {
+      "version": "11.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.matchinghamgames.handyman": "5.3.1",
+        "com.matchinghamgames.logger": "2.1.0",
+        "com.matchinghamgames.worldwide": "4.1.0",
+        "com.unity.ads.ios-support": "1.2.0",
+        "com.matchinghamgames.privacypolicy": "5.0.0",
+        "com.matchinghamgames.stash": "1.4.0"
+      },
+      "url": "https://upm.matchingham.net"
+    },
     "com.matchinghamgames.firebaseapp": {
-      "version": "4.0.0",
+      "version": "4.2.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.matchinghamgames.handyman": "5.0.0",
-        "com.google.external-dependency-manager": "1.2.177",
-        "com.google.firebase.app": "8.1.0",
-        "com.matchinghamgames.logger": "2.0.0"
+        "com.matchinghamgames.handyman": "5.3.1",
+        "com.google.external-dependency-manager": "1.2.179",
+        "com.google.firebase.app": "11.8.0",
+        "com.matchinghamgames.logger": "2.1.0",
+        "com.matchinghamgames.datausageconsent": "11.0.0"
       },
       "url": "https://upm.matchingham.net"
     },
     "com.matchinghamgames.gameutilities": {
-      "version": "5.0.0",
+      "version": "6.0.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.matchinghamgames.handyman": "5.0.0",
-        "com.matchinghamgames.logger": "2.0.0",
-        "com.matchinghamgames.stash": "1.4.0"
+        "com.matchinghamgames.handyman": "5.5.0",
+        "com.matchinghamgames.logger": "2.1.0",
+        "com.matchinghamgames.stash": "1.4.0",
+        "com.matchinghamgames.watcher": "2.0.0"
       },
       "url": "https://upm.matchingham.net"
     },
@@ -168,14 +185,41 @@
       "dependencies": {},
       "url": "https://upm.matchingham.net"
     },
+    "com.matchinghamgames.privacypolicy": {
+      "version": "5.0.0",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.matchinghamgames.handyman": "5.3.1",
+        "com.jimmycushnie.fancyrendering": "1.1.1",
+        "com.matchinghamgames.logger": "2.1.0"
+      },
+      "url": "https://upm.matchingham.net"
+    },
     "com.matchinghamgames.sherlock": {
-      "version": "10.0.0",
+      "version": "11.3.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.matchinghamgames.logger": "2.0.0",
-        "com.matchinghamgames.handyman": "5.0.0",
+        "com.matchinghamgames.logger": "2.1.0",
+        "com.matchinghamgames.handyman": "5.5.0",
         "com.azixmcaze.unityserializabledictionary": "1.2.1000"
+      },
+      "url": "https://upm.matchingham.net"
+    },
+    "com.matchinghamgames.sherlockfirebaseservice": {
+      "version": "5.3.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.matchinghamgames.logger": "2.1.0",
+        "com.matchinghamgames.handyman": "5.3.1",
+        "com.matchinghamgames.firebaseapp": "4.2.1",
+        "com.matchinghamgames.sherlock": "11.2.0-prev.1",
+        "com.google.external-dependency-manager": "1.2.179",
+        "com.google.firebase.app": "11.8.0",
+        "com.google.firebase.analytics": "11.8.0",
+        "com.matchinghamgames.datausageconsent": "11.0.0"
       },
       "url": "https://upm.matchingham.net"
     },
@@ -191,6 +235,27 @@
       "depth": 0,
       "source": "registry",
       "dependencies": {},
+      "url": "https://upm.matchingham.net"
+    },
+    "com.matchinghamgames.watcher": {
+      "version": "2.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.matchinghamgames.handyman": "5.5.0",
+        "com.matchinghamgames.logger": "2.1.0"
+      },
+      "url": "https://upm.matchingham.net"
+    },
+    "com.matchinghamgames.worldwide": {
+      "version": "4.1.0",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.matchinghamgames.handyman": "5.0.0",
+        "com.matchinghamgames.logger": "2.0.0",
+        "com.unity.localization": "1.4.5"
+      },
       "url": "https://upm.matchingham.net"
     },
     "com.unity.2d.sprite": {
@@ -229,6 +294,13 @@
       "dependencies": {
         "com.unity.ugui": "1.0.0"
       },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.ads.ios-support": {
+      "version": "1.2.0",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.ai.navigation": {
@@ -296,6 +368,16 @@
       "depth": 0,
       "source": "registry",
       "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.localization": {
+      "version": "1.4.5",
+      "depth": 3,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.addressables": "1.21.8",
+        "com.unity.nuget.newtonsoft-json": "3.0.2"
+      },
       "url": "https://packages.unity.com"
     },
     "com.unity.mobile.android-logcat": {

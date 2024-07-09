@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3989288c42094afca2701e7d2829ceaf, type: 3}
+  m_Name: LanguageConfig
+  m_EditorClassIdentifier: 
+  locales:
+  - {fileID: 11400000, guid: f8ec7f4ca21c268408ad443893c13fc9, type: 2}
+  - {fileID: 11400000, guid: 0ba12192039d759408f3d292ffbb2995, type: 2}
+  - {fileID: 11400000, guid: 6f5529d7d8619224ea126cd9382a964b, type: 2}
+  - {fileID: 11400000, guid: 4cd5341cb25821141b71ec3e4813d0cd, type: 2}
+  - {fileID: 11400000, guid: c3db29b8c4945ee4cac30fb4595697d2, type: 2}
+  - {fileID: 11400000, guid: 21d850646e9f9f344bcbf3b712d2539b, type: 2}
+  - {fileID: 11400000, guid: 4e6597afb6a676545ac1a153ae59f31c, type: 2}
+  - {fileID: 11400000, guid: c479c721df656894694e4c7ea782fab0, type: 2}
+  - {fileID: 11400000, guid: 8d18a8659a5a57449b5bb0d13b1373bd, type: 2}
+  - {fileID: 11400000, guid: 994d1c9c3fe871844a585574d37399a0, type: 2}
+  - {fileID: 11400000, guid: 90d87e813795b8a489972428842eb098, type: 2}
+  - {fileID: 11400000, guid: 9d652bf1bbfd46443a8fc17934b6c715, type: 2}
+  - {fileID: 11400000, guid: 2a4b1fe7cd8644442b596ed80c151951, type: 2}
+  - {fileID: 11400000, guid: 870a5070f0473624d863005e04521271, type: 2}
+  - {fileID: 11400000, guid: a2573867810346943b730547c7e86c69, type: 2}
+  - {fileID: 11400000, guid: fb01ed7ebbc7a804188428cc402bef3a, type: 2}
+  - {fileID: 11400000, guid: a00110e5713ad3d4cb6853fb1187fe70, type: 2}
+  - {fileID: 11400000, guid: 0748b094ff86e03489939bb94cebe9c5, type: 2}
+  - {fileID: 11400000, guid: 2ec354fd44bc6ab4f8d7049bd0490dbb, type: 2}
+  - {fileID: 11400000, guid: f472d10aebfd1624c9869d1f0856ad83, type: 2}
+  - {fileID: 11400000, guid: 2ac03088f4ae78248828a7034a0ae703, type: 2}
+  - {fileID: 11400000, guid: 20f866e58e1f2c548a749254e2d8f5f4, type: 2}
+  - {fileID: 11400000, guid: 6be37a508d7ec3649bda754ce0e7e577, type: 2}
+  - {fileID: 11400000, guid: df461e9d18823e94aab689492c7ca38f, type: 2}
+  - {fileID: 11400000, guid: b59f01fd4ce90404fb95d22107899ff4, type: 2}
+  - {fileID: 11400000, guid: 7dac981173452764f9d90a4cb9ed2e82, type: 2}
+  - {fileID: 11400000, guid: 48ab8c12605ad93488dffadb46b6a1af, type: 2}
+  - {fileID: 11400000, guid: 3e93bc157a4d6d940a36c6f7692bcd66, type: 2}
+  - {fileID: 11400000, guid: 7f0a77a1749073a40b7897e13caa1627, type: 2}
+  - {fileID: 11400000, guid: ae88ee15ae4c0004cbb7942d2e860079, type: 2}
+  - {fileID: 11400000, guid: 25a00b396bf0b924dbdb2278ce65f4e7, type: 2}
+  - {fileID: 11400000, guid: 0366657193efdfc4fa7f6ff3e71dce0b, type: 2}
+  - {fileID: 11400000, guid: 4b83f5434b0492d47a235133ea69d3c9, type: 2}
+  ActiveLocaleSettings:
+    m_keys:
+    - Arabic
+    - Chinese (Simplified)
+    - Chinese (Traditional, Hong Kong SAR China)
+    - Croatian
+    - Danish
+    - Dutch
+    - English
+    - Filipino
+    - Finnish
+    - French
+    - German
+    - Greek
+    - Hebrew
+    - Hindi
+    - Hungarian
+    - Indonesian
+    - Italian
+    - Japanese
+    - Korean
+    - Malay
+    - Norwegian
+    - Polish
+    - Portuguese
+    - Romanian
+    - Russian
+    - Serbian
+    - Spanish
+    - Swedish
+    - Thai
+    - Turkish
+    - Ukrainian
+    - Urdu
+    - Vietnamese
+    m_values: 000000000000010000000000000000000000000000000000000000000000000000
+  SpecialFonts:
+    m_keys: []
+    m_values: []
+  Md5Hashes:
+    m_keys: []
+    m_values: []
+  DefaultFont: {fileID: 0}
+  DefaultLanguage: English
+  DefaultLanguageCode: en

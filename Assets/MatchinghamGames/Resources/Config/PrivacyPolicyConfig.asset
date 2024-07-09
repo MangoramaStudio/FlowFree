@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac79307811249c583c5dd328448c4a3, type: 3}
+  m_Name: PrivacyPolicyConfig
+  m_EditorClassIdentifier: 
+  AutoInitialize: 0
+  <Enabled>k__BackingField: 1
+  fetchTextFromURL: 0
+  fetchRequestTimeout: 2.5
+  portraitPrefab: {fileID: 7591357472023161797, guid: 9145a949b84f84db3beb05d14e1a5589, type: 3}
+  wideScreenPrefab: {fileID: 8482309249959865515, guid: 66ca6484ee4ee485eb31345430102485, type: 3}
+  privacyPolicyTextFetchURL: 
+  termsAndConditionsTextFetchURL: 
+  privacyPolicyText: 
+  termsAndConditionsText: 
+  privacyPolicyURL: 
+  termsAndConditionsURL: 
