@@ -226,45 +226,69 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &897500118
-GameObject:
+--- !u!1001 &951490781
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 897500119}
-  - component: {fileID: 897500120}
-  m_Layer: 0
-  m_Name: AddressableManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &897500119
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 897500118}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &897500120
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2364641967137588348, guid: 2f73e1f902f4c4db08b078b97725a6f7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2364641967137588348, guid: 2f73e1f902f4c4db08b078b97725a6f7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2364641967137588348, guid: 2f73e1f902f4c4db08b078b97725a6f7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2364641967137588348, guid: 2f73e1f902f4c4db08b078b97725a6f7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2364641967137588348, guid: 2f73e1f902f4c4db08b078b97725a6f7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2364641967137588348, guid: 2f73e1f902f4c4db08b078b97725a6f7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2364641967137588348, guid: 2f73e1f902f4c4db08b078b97725a6f7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2364641967137588348, guid: 2f73e1f902f4c4db08b078b97725a6f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2364641967137588348, guid: 2f73e1f902f4c4db08b078b97725a6f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2364641967137588348, guid: 2f73e1f902f4c4db08b078b97725a6f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8494282304274015617, guid: 2f73e1f902f4c4db08b078b97725a6f7, type: 3}
+      propertyPath: m_Name
+      value: AddressableManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2f73e1f902f4c4db08b078b97725a6f7, type: 3}
+--- !u!114 &951490782 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1686610446373471258, guid: 2f73e1f902f4c4db08b078b97725a6f7, type: 3}
+  m_PrefabInstance: {fileID: 951490781}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 897500118}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e15968f335168345b644aa5e6ed2724, type: 3}
@@ -498,7 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _delayForLoadingScreen: 2
-  _addressableManager: {fileID: 897500120}
+  _addressableManager: {fileID: 951490782}
   _gameInitializeManagerPrefab: {fileID: 9201427599143951683, guid: 352b77630b64beb41979e49a917aa527, type: 3}
   _loadingScreen: {fileID: 8532651069592776062}
 --- !u!4 &1873171315
@@ -956,5 +980,5 @@ SceneRoots:
   - {fileID: 1461092958}
   - {fileID: 771445504}
   - {fileID: 2037174439}
-  - {fileID: 897500119}
   - {fileID: 1873171315}
+  - {fileID: 951490781}
