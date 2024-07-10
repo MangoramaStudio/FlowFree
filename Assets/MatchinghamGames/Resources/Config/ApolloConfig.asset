@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e543ae1c3734749b6fa744b519ea04, type: 3}
+  m_Name: ApolloConfig
+  m_EditorClassIdentifier: 
+  AutoInitialize: 0
+  <Enabled>k__BackingField: 1
+  DefaultAudioSourcePrefab: {fileID: 3715232883024187449, guid: 6cdbc11242e904ca6ac204c627a02091, type: 3}
+  AudioPoolInitSize: 10
+  AudioPoolMaxSize: 10000
+  AudioSourcePresets:
+    m_keys: []
+    m_values: []
+  AudioMixerGroupVolumePresets: []
+  AudioMixerSnapshots: []

@@ -1,6 +1,9 @@
+using System;
+using Behaviours;
 using UnityEngine;
 using MangoramaStudio.Scripts.Managers;
 using MangoramaStudio.Scripts.Controllers;
+using Mechanics.Scripts;
 using Sirenix.OdinInspector;
 
 namespace MangoramaStudio.Scripts.Behaviours
@@ -9,12 +12,8 @@ namespace MangoramaStudio.Scripts.Behaviours
 
     public class LevelBehaviour : MonoBehaviour
     {
-        public float WinPanelDelayTime => _winPanelDelayTime;
-        public float LosePanelDelayTime => _losePanelDelayTime;
 
-        [SerializeField] private float _winPanelDelayTime;
-        [SerializeField] private float _losePanelDelayTime;
-
+        [SerializeField] private PlayableMechanicContainer container;
         private GameManager _gameManager;
 
         private bool _isLevelEnded;
@@ -27,25 +26,18 @@ namespace MangoramaStudio.Scripts.Behaviours
             {
                 _gameManager.EventManager.StartLevel();
             }
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown("c"))
-            {
-                LevelCompleted();
-            }
-
-            if (Input.GetKeyDown("f"))
-            {
-                LevelFailed();
-            }
+            
+           container.Playable.Enable();
+           container.Playable.Initialize();
+           container.Playable.Prepare();
         }
 
         private void OnDestroy()
         {
-
+            container.Playable.Disable();
+            container.Playable.Dispose();
         }
+
 
         [Button]
         private void LevelCompleted()
