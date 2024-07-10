@@ -27,15 +27,13 @@ namespace MangoramaStudio.Scripts.Behaviours
                 _gameManager.EventManager.StartLevel();
             }
             
-           container.Playable.Enable();
-           container.Playable.Initialize();
-           container.Playable.Prepare();
+            
+            container.Initialize();
         }
 
         private void OnDestroy()
         {
-            container.Playable.Disable();
-            container.Playable.Dispose();
+            container.DeInitialize();
         }
 
 
@@ -47,16 +45,9 @@ namespace MangoramaStudio.Scripts.Behaviours
             _gameManager.EventManager.LevelCompleted();
             InputController.IsInputDeactivated = true;
             _isLevelEnded = true;
+            container.DeInitialize();
         }
-
-        private void LevelFailed()
-        {
-            if (_isLevelEnded) return;
-
-            _gameManager.EventManager.LevelFailed();
-            InputController.IsInputDeactivated = true;
-            _isLevelEnded = true;
-        }
+        
     }
 
 }

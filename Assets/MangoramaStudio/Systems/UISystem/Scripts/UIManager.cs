@@ -32,11 +32,25 @@ namespace MangoramaStudio.Scripts.Managers
             if (isToggled)
             {
                 onChangeMenu += ChangeMenu;
+                GameManager.EventManager.OnLevelStarted += StartLevel;
+                GameManager.EventManager.OnLevelFinished += CompleteLevel;
             }
             else
             {
                 onChangeMenu -= ChangeMenu;
+                GameManager.EventManager.OnLevelStarted -= StartLevel;
+                GameManager.EventManager.OnLevelFinished -= CompleteLevel;
             }
+        }
+
+        private void StartLevel()
+        {
+            ChangeMenu(MenuType.Main);
+        }
+
+        private void CompleteLevel(bool isSuccess)
+        {
+            ChangeMenu(MenuType.Win);
         }
 
         private void ChangeMenu(MenuType menuType)

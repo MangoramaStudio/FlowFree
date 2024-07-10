@@ -74,6 +74,7 @@ namespace Mechanics.Scripts
         protected void RaiseSuccess()
         {
             Success?.Invoke();
+            Debug.LogError("Completed");
         }
 
         protected void RaiseFailure()

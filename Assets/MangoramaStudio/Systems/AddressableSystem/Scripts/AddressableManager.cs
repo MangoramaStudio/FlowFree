@@ -25,7 +25,7 @@ namespace MangoramaStudio.Scripts.Managers
         {
             DontDestroyOnLoad(this.gameObject);
             var prefix = "Level";
-            LoadLevelAsync($"{prefix}_{PlayerData.CurrentLevelId}", () =>
+            LoadLevelAsync($"{prefix} {PlayerData.CurrentLevelId}", () =>
             {
                 FirstLevelLoaded?.Invoke();
             });
