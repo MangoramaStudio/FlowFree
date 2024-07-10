@@ -25,16 +25,26 @@ namespace MangoramaStudio.Scripts.Managers
             _desiredLoadedLevelPrefab = GameManager.AddressableManager.LoadedLevelBehaviour;
             GameManager.EventManager.OnStartGame += StartGame;
             SROptions.OnLevelInvoked += RetryCurrentLevel;
+            SROptions.OnRequiredLevelInvoked += Test2;
 
+        }
+
+        private void Test2(int x)
+        {
+            GameManager.EventManager.StartLevel();
+            _desiredLoadedLevelPrefab = GameManager.AddressableManager.PreLoadedLevelBehaviour;
+            StartGameForSr(x);
         }
 
         public override void OnDestroy()
         {
             GameManager.EventManager.OnStartGame -= StartGame;
             SROptions.OnLevelInvoked -= RetryCurrentLevel;
+            SROptions.OnRequiredLevelInvoked -= Test2;
         }
 
         #endregion
+
         
         private void StartGame()
         {
@@ -49,6 +59,21 @@ namespace MangoramaStudio.Scripts.Managers
                 GameManager.AddressableManager.LoadLevelAsync($"Level {PlayerData.CurrentLevelId + 1}");
             }
         }
+        
+        private void StartGameForSr(int x)
+        {
+            ClearLevel();
+            Resources.UnloadUnusedAssets();
+            InputController.IsInputDeactivated = false;
+            _currentLevel = Instantiate(_desiredLoadedLevelPrefab);
+            _currentLevel.Initialize();
+            GameManager.AddressableManager.SetPreLoadedLevelBehaviour();
+            if (PlayerData.CurrentLevelId < totalLevelCount)
+            {
+                GameManager.AddressableManager.LoadLevelAsync($"Level {x}");
+            }
+        }
+
         
         private void ClearLevel()
         {

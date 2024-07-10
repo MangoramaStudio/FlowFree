@@ -18,6 +18,8 @@ public partial class SROptions
     private int _levelId;
     public static event Action OnLevelInvoked;
 
+    public static event Action<int> OnRequiredLevelInvoked;
+
     // Uncomment the #define at the top of file to enable test options
     [Category("Level")]
     public int LevelId
@@ -28,6 +30,8 @@ public partial class SROptions
             _levelId = value;
         }
     }
+    
+    
 
     [Category("Level")]
     public void InvokeLevel()
@@ -35,6 +39,14 @@ public partial class SROptions
         PlayerData.CurrentLevelId = LevelId;
         OnLevelInvoked?.Invoke();
     }
+    
+    [Category("Level")]
+    public void RequiredInvokeLevel()
+    {
+        OnRequiredLevelInvoked?.Invoke(LevelId);
+    }
+
+    
 
     [Category("Level")]
     public void NextLevel()
