@@ -7,6 +7,7 @@ namespace MangoramaStudio.Scripts.Managers.Buttons
         protected override void Click()
         {
             base.Click();
+            // TODO Add rewarded here
             GameManager.Instance.EventManager.RaiseHint();
         }
     }

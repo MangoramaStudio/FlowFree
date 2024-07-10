@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using MangoramaStudio.Game.Scripts.Behaviours;
 using Newtonsoft.Json;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities;
@@ -281,7 +282,7 @@ namespace Mechanics.RoboticFlows
 
         private void SetCameraOrthoSizeFromGrid(Vector3 gridSize)
         {
-            var mainCamera = Camera.main;
+            var mainCamera = MainCamera.Instance.Camera;
             var orthographicSize = gridSize.x / (2 * mainCamera.aspect);
 
             orthographicSize = Mathf.Max(minOrthoSize, orthographicSize);
