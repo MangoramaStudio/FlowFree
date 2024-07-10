@@ -1,5 +1,6 @@
 using System;
 using MangoramaStudio.Scripts.Managers;
+using Mechanics.RoboticFlows;
 using Mechanics.Scripts;
 using UnityEngine;
 
@@ -28,12 +29,19 @@ namespace Behaviours
 
                 Playable.Success += GameManager.Instance.EventManager.LevelCompleted;
                 Playable.Warn += GameManager.Instance.EventManager.RaiseWarning;
+                GameManager.Instance.EventManager.OnRaiseHint += ShowHint;
             }
             else
             {
                 Playable.Success -= GameManager.Instance.EventManager.LevelCompleted;
                 Playable.Warn -= GameManager.Instance.EventManager.RaiseWarning;
+                GameManager.Instance.EventManager.OnRaiseHint -= ShowHint;
             }
+        }
+
+        private void ShowHint()
+        {
+            Playable.GetComponent<RoboticFlowDrawer>().ShowHint();
         }
 
         public void Initialize()

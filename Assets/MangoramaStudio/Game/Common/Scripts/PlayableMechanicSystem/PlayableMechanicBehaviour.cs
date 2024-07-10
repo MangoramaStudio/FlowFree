@@ -10,6 +10,7 @@ namespace Mechanics.Scripts
         public event Action Failure;
         public event Action Attempt;
         public event Action Warn;
+        
 
         private bool _raiseSuccessOnEnable;
         private bool _raiseFailureOnEnable;
@@ -75,7 +76,6 @@ namespace Mechanics.Scripts
         protected void RaiseSuccess()
         {
             Success?.Invoke();
-            Debug.LogError("Completed");
         }
 
         protected void RaiseWarning()
