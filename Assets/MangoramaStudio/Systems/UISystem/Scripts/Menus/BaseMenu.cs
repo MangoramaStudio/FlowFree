@@ -15,5 +15,35 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
         [SerializeField] private MenuType menuType;
 
         public MenuType MenuType => menuType;
+
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            ToggleEvents(true);
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+            ToggleEvents(false);
+        }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+            ToggleEvents(false);
+        }
+
+        protected virtual void ToggleEvents(bool isToggled)
+        {
+            if (isToggled)
+            {
+                
+            }
+            else
+            {
+                
+            }
+        }
     }
 }

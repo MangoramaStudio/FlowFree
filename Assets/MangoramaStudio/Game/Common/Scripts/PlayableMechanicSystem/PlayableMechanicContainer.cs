@@ -27,10 +27,12 @@ namespace Behaviours
             {
 
                 Playable.Success += GameManager.Instance.EventManager.LevelCompleted;
+                Playable.Warn += GameManager.Instance.EventManager.RaiseWarning;
             }
             else
             {
                 Playable.Success -= GameManager.Instance.EventManager.LevelCompleted;
+                Playable.Warn -= GameManager.Instance.EventManager.RaiseWarning;
             }
         }
 

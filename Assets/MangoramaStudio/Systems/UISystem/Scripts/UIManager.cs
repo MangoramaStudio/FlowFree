@@ -9,6 +9,7 @@ namespace MangoramaStudio.Scripts.Managers
 {
     public class UIManager : BaseManager
     {
+        
         [SerializeField] private MainMenu mainMenu;
         [SerializeField] private GameplayMenu gameplayMenu;
         [SerializeField] private WinMenu winMenu;
@@ -45,7 +46,7 @@ namespace MangoramaStudio.Scripts.Managers
 
         private void StartLevel()
         {
-            ChangeMenu(MenuType.Main);
+            ChangeMenu(MenuType.Gameplay);
         }
 
         private void CompleteLevel(bool isSuccess)
