@@ -125,18 +125,15 @@ namespace Mechanics.RoboticFlows
                 {
                     if (_selectedDrawer.DrawnCells.Count == 0)
                     {
-                        Debug.LogError("a");
                         _selectedDrawer.Clear();
                         _selectedDrawer.DrawCell(cell);
                     }
                     else if (_selectedDrawer.DrawnCells.Peek() == cell)
                     {
-                        Debug.LogError("b");
                         _selectedDrawer.DrawCell(cell);
                     }
                     else
                     {
-                        Debug.LogError("c");
                         _selectedDrawer.Clear();
                         _selectedDrawer = null;
                     }
