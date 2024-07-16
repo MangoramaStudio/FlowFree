@@ -4,7 +4,9 @@ using MatchinghamGames.GameUtilities.Managers;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using MangoramaStudio.Systems.LevelSystem.Scripts;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -17,21 +19,30 @@ namespace MangoramaStudio.Scripts.Managers
         public event Action FirstLevelLoaded;
         public LevelBehaviour LoadedLevelBehaviour => _loadedLevelBehaviour;
         private LevelBehaviour _loadedLevelBehaviour;
-        public LevelBehaviour PreLoadedLevelBehaviour => _preLoadedLevelBehaviour;
-        private LevelBehaviour _preLoadedLevelBehaviour;
-
-
-        void Awake()
+       
+        private LevelOrderHandler LevelOrderHandler =>
+            _levelOrderHandler ? _levelOrderHandler : (_levelOrderHandler = GetComponent<LevelOrderHandler>());
+        private LevelOrderHandler _levelOrderHandler;
+        
+        private const string Prefix = "Level";
+        
+        private void Awake()
         {
             DontDestroyOnLoad(this.gameObject);
-            var prefix = "Level";
-            LoadLevelAsync($"{prefix} {PlayerData.CurrentLevelId}", () =>
+            LevelOrderHandler.Initialize();
+            
+            LoadLevelAsync(GetCurrentLevel(), () =>
             {
                 FirstLevelLoaded?.Invoke();
             });
         }
+        
+        public void LoadCurrentLevelAsync(Action onComplete = null)
+        {
+            LoadLevelAsync(GetCurrentLevel(),onComplete);
+        }
 
-        public void LoadLevelAsync(string levelName, Action onComplete = null)
+        private void LoadLevelAsync(string levelName, Action onComplete = null)
         {
             var target = Addressables.LoadAssetAsync<GameObject>(levelName);
 
@@ -45,22 +56,23 @@ namespace MangoramaStudio.Scripts.Managers
                 {
                     Debug.LogError(asyncOperationHandle.Status);
                 }
-                AfterFirstLevelLoad(onComplete);
+                OnLoadComplete(onComplete);
             };
         }
 
-        private async void AfterFirstLevelLoad(Action action)
+   
+        private void OnLoadComplete(Action action)
         {
-            await Task.Delay(5000);
             action?.Invoke();
         }
-
-        public void SetPreLoadedLevelBehaviour()
+        
+        private string GetCurrentLevel()
         {
-            _preLoadedLevelBehaviour = _loadedLevelBehaviour;
+            var list = LevelOrderHandler.GetCurrentLevelOrder();
+            var element = list.ElementAt(PlayerData.CurrentLevelId);
+            return $"{Prefix} {element}";
         }
-
-
+        
     }
 
 }

@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9516b7ff49f427fb10f41cb87a55ab4, type: 3}
+  m_Name: AdmostAdaptersConfig
+  m_EditorClassIdentifier: 
+  _amrIosAdapter:
+    InstalledAdapter:
+      _details:
+        network: 
+        displayName: 
+        SDKVersion: 
+        adapterVersion: 
+        podVersion: 
+        initParameterCount: 0
+        skadnetworkIDS: []
+        supportedAdTypes: []
+        infoPlistKey: 
+        adapterName: 
+        iosSupport: 0
+        unitySupport: 0
+        status: 0
+        minTargetSdk: 
+      _xmlPath: 
+    LatestAdapter:
+      _details:
+        network: 
+        displayName: 
+        SDKVersion: 
+        adapterVersion: 
+        podVersion: 
+        initParameterCount: 0
+        skadnetworkIDS: []
+        supportedAdTypes: []
+        infoPlistKey: 
+        adapterName: 
+        iosSupport: 0
+        unitySupport: 0
+        status: 0
+        minTargetSdk: 
+      _xmlPath: 
+    Installed: 0
+  _amrAndroidAdapter:
+    InstalledAdapter:
+      _details:
+        name: 
+        status: 0
+        adapter_version: 
+        unity_support: 0
+        app_gradle:
+          dependencies: []
+          dependencies_unity: []
+        project_gradle:
+          dependencies: []
+        android_manifest:
+          application: []
+      _xmlPath: 
+    LatestAdapter:
+      _details:
+        name: 
+        status: 0
+        adapter_version: 
+        unity_support: 0
+        app_gradle:
+          dependencies: []
+          dependencies_unity: []
+        project_gradle:
+          dependencies: []
+        android_manifest:
+          application: []
+      _xmlPath: 
+    Installed: 0
+  LastChecked: 
