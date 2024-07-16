@@ -7,6 +7,13 @@
       "dependencies": {},
       "url": "https://upm.matchingham.net"
     },
+    "com.admost.unitysdk": {
+      "version": "1.7.8",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://upm.matchingham.net"
+    },
     "com.azixmcaze.unityserializabledictionary": {
       "version": "1.2.1000",
       "depth": 0,
@@ -117,6 +124,18 @@
       "dependencies": {},
       "url": "https://upm.matchingham.net"
     },
+    "com.matchinghamgames.admostmgsdkbridge": {
+      "version": "6.1.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.admost.unitysdk": "1.7.8",
+        "com.matchinghamgames.logger": "2.1.0",
+        "com.matchinghamgames.handyman": "5.3.1",
+        "com.unity.editorcoroutines": "1.0.0"
+      },
+      "url": "https://upm.matchingham.net"
+    },
     "com.matchinghamgames.apolloaudio": {
       "version": "4.1.0",
       "depth": 0,
@@ -144,7 +163,7 @@
       "url": "https://upm.matchingham.net"
     },
     "com.matchinghamgames.datausageconsent": {
-      "version": "11.0.0",
+      "version": "11.1.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -152,8 +171,21 @@
         "com.matchinghamgames.logger": "2.1.0",
         "com.matchinghamgames.worldwide": "4.1.0",
         "com.unity.ads.ios-support": "1.2.0",
-        "com.matchinghamgames.privacypolicy": "5.0.0",
+        "com.matchinghamgames.privacypolicy": "5.1.1",
         "com.matchinghamgames.stash": "1.4.0"
+      },
+      "url": "https://upm.matchingham.net"
+    },
+    "com.matchinghamgames.datausageconsentservice.usercentrics": {
+      "version": "1.1.2",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.matchinghamgames.handyman": "5.3.1",
+        "com.matchinghamgames.logger": "2.1.0",
+        "com.matchinghamgames.datausageconsent": "11.1.0",
+        "com.usercentrics.sdk": "2.13.2",
+        "com.unity.nuget.newtonsoft-json": "3.2.1"
       },
       "url": "https://upm.matchingham.net"
     },
@@ -199,6 +231,31 @@
       "dependencies": {},
       "url": "https://upm.matchingham.net"
     },
+    "com.matchinghamgames.meteor": {
+      "version": "5.1.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.matchinghamgames.handyman": "5.3.1",
+        "com.matchinghamgames.stash": "1.4.0",
+        "com.azixmcaze.unityserializabledictionary": "1.2.1000",
+        "com.matchinghamgames.logger": "2.1.0",
+        "com.unity.nuget.newtonsoft-json": "3.2.1"
+      },
+      "url": "https://upm.matchingham.net"
+    },
+    "com.matchinghamgames.meteoradmost": {
+      "version": "6.1.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.matchinghamgames.admostmgsdkbridge": "6.0.0",
+        "com.matchinghamgames.logger": "2.1.0",
+        "com.matchinghamgames.handyman": "5.1.0",
+        "com.matchinghamgames.meteor": "5.1.0"
+      },
+      "url": "https://upm.matchingham.net"
+    },
     "com.matchinghamgames.pooling": {
       "version": "2.0.0",
       "depth": 1,
@@ -207,7 +264,7 @@
       "url": "https://upm.matchingham.net"
     },
     "com.matchinghamgames.privacypolicy": {
-      "version": "5.0.0",
+      "version": "5.1.1",
       "depth": 2,
       "source": "registry",
       "dependencies": {
@@ -225,6 +282,18 @@
         "com.matchinghamgames.logger": "2.1.0",
         "com.matchinghamgames.handyman": "5.5.0",
         "com.azixmcaze.unityserializabledictionary": "1.2.1000"
+      },
+      "url": "https://upm.matchingham.net"
+    },
+    "com.matchinghamgames.sherlockadmostservice": {
+      "version": "7.0.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.matchinghamgames.logger": "2.0.0",
+        "com.matchinghamgames.handyman": "5.0.0",
+        "com.matchinghamgames.sherlock": "11.0.0-prev.0",
+        "com.matchinghamgames.admostmgsdkbridge": "5.0.0"
       },
       "url": "https://upm.matchingham.net"
     },
@@ -380,6 +449,13 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.editorcoroutines": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
       "depth": 1,
@@ -438,7 +514,7 @@
     },
     "com.unity.nuget.newtonsoft-json": {
       "version": "3.2.1",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -608,6 +684,13 @@
         "com.unity.modules.xr": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "com.usercentrics.sdk": {
+      "version": "2.13.2",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://upm.matchingham.net"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

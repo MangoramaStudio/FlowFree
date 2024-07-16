@@ -1,10 +1,10 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using MangoramaStudio.Scripts.Behaviours;
 using MangoramaStudio.Scripts.Controllers;
 using MangoramaStudio.Scripts.Data;
-using Sirenix.OdinInspector;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using MangoramaStudio.Systems.LevelSystem.Scripts;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -13,67 +13,42 @@ namespace MangoramaStudio.Scripts.Managers
     public class LevelManager : BaseManager
     {
         [FormerlySerializedAs("_totalLevelCount")] [SerializeField] private int totalLevelCount;
+        
         private LevelBehaviour _currentLevel;
         private LevelBehaviour _desiredLoadedLevelPrefab;
 
-        #region Initialize
-
+  
         public override void Initialize()
         {
             base.Initialize();
-
             _desiredLoadedLevelPrefab = GameManager.AddressableManager.LoadedLevelBehaviour;
             GameManager.EventManager.OnStartGame += StartGame;
             SROptions.OnLevelInvoked += RetryCurrentLevel;
-            SROptions.OnRequiredLevelInvoked += Test2;
-
-        }
-
-        private void Test2(int x)
-        {
-            GameManager.EventManager.StartLevel();
-            _desiredLoadedLevelPrefab = GameManager.AddressableManager.PreLoadedLevelBehaviour;
-            StartGameForSr(x);
         }
 
         public override void OnDestroy()
         {
             GameManager.EventManager.OnStartGame -= StartGame;
             SROptions.OnLevelInvoked -= RetryCurrentLevel;
-            SROptions.OnRequiredLevelInvoked -= Test2;
         }
 
-        #endregion
-
-        
         private void StartGame()
         {
             ClearLevel();
             Resources.UnloadUnusedAssets();
             InputController.IsInputDeactivated = false;
-            _currentLevel = Instantiate(_desiredLoadedLevelPrefab);
-            _currentLevel.Initialize();
-            GameManager.AddressableManager.SetPreLoadedLevelBehaviour();
             if (PlayerData.CurrentLevelId < totalLevelCount)
             {
-                GameManager.AddressableManager.LoadLevelAsync($"Level {PlayerData.CurrentLevelId + 1}");
+                GameManager.AddressableManager.LoadCurrentLevelAsync(OnLevelLoaded);
             }
         }
         
-        private void StartGameForSr(int x)
+        private void OnLevelLoaded()
         {
-            ClearLevel();
-            Resources.UnloadUnusedAssets();
-            InputController.IsInputDeactivated = false;
+            _desiredLoadedLevelPrefab = GameManager.AddressableManager.LoadedLevelBehaviour;
             _currentLevel = Instantiate(_desiredLoadedLevelPrefab);
-            _currentLevel.Initialize();
-            GameManager.AddressableManager.SetPreLoadedLevelBehaviour();
-            if (PlayerData.CurrentLevelId < totalLevelCount)
-            {
-                GameManager.AddressableManager.LoadLevelAsync($"Level {x}");
-            }
+            _currentLevel.Initialize();        
         }
-
         
         private void ClearLevel()
         {
@@ -83,20 +58,23 @@ namespace MangoramaStudio.Scripts.Managers
             }
         }
 
-        public void ContinueToNextLevel() 
+        public async void ContinueToNextLevel() 
         {
+            IncrementLevel();
+            await Task.Yield();
             GameManager.EventManager.StartLevel();
-            PlayerData.CurrentLevelId += 1;
-            _desiredLoadedLevelPrefab = GameManager.AddressableManager.LoadedLevelBehaviour;
-            StartGame();
-        }
-        
-        public void RetryCurrentLevel()
-        {
-            GameManager.EventManager.StartLevel();
-            _desiredLoadedLevelPrefab = GameManager.AddressableManager.PreLoadedLevelBehaviour;
             StartGame();
         }
 
+        private void RetryCurrentLevel()
+        {
+            GameManager.EventManager.StartLevel();
+            StartGame();
+        }
+
+        private void IncrementLevel()
+        {
+            PlayerData.CurrentLevelId += 1;   
+        }
     }
 }

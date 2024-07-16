@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ca5c498822d4612b020e30752666215, type: 3}
+  m_Name: MeteorConfig
+  m_EditorClassIdentifier: 
+  AutoInitialize: 0
+  <Enabled>k__BackingField: 1
+  defaultProvider: FirebaseRemoteConfigService
+  settingProviderMap:
+    m_keys:
+    - gameSceneId
+    - gameTestDeviceIds
+    - IsInternetRequiredForCharlie
+    - IsVegasInitializationEssential
+    - levelOrder
+    - openDebugMenuOnTestDevices
+    m_values:
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - AdmostRemoteConfigService
+    - FirebaseRemoteConfigService
+  ConfigLists:
+  - {fileID: 11400000, guid: cf14a92c33402a040816f54cc307621b, type: 2}
+  - {fileID: 11400000, guid: 2e97931ff07344d67b20f9455c9d4bcf, type: 2}
