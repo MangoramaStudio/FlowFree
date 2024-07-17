@@ -18,6 +18,11 @@ namespace Mechanics.RoboticFlows.Obstacles
             SetOppositeDirection();
         }
 
+        public void SetDirectionType(DirectionType directionType)
+        {
+            this.directionType = directionType;
+        }
+
         private void SetOppositeDirection()
         {
             OppositeDirectionType = DirectionType switch
