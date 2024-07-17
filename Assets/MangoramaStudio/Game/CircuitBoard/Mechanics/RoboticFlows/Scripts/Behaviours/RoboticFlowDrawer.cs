@@ -145,6 +145,40 @@ namespace Mechanics.RoboticFlows
             }
         }
 
+        /// <summary>
+        /// Check the next movement can be blocked by obstacles or not 
+        /// </summary>
+        /// <param name="cell"></param>
+        /// <returns></returns>
+        private bool ReachObstacles(Cell cell)
+        {
+            var direction =_selectedDrawer.CurrentCell.DirectionAccordingToTargetCell(cell);
+                
+            if(_selectedDrawer.CurrentCell.HasObstacles)
+            {
+                var requiredObstacle = _selectedDrawer.CurrentCell.Obstacles.Find(x => x.OppositeDirectionType == direction);
+                if (requiredObstacle!=null)
+                {
+                    requiredObstacle.Block();
+                    return true;
+                }
+            }
+            else
+            {
+                if (cell.HasObstacles)
+                {
+                    var requiredObstacle = cell.Obstacles.Find(x => x.DirectionType == direction);
+                    if (requiredObstacle != null)
+                    {
+                        requiredObstacle.Block();
+                        return true;
+                    }
+                }      
+            }
+
+            return false;
+        }
+
         public void SurfaceDragged(Vector2 screenPosition)
         {
             if (CellRaycast(screenPosition, out var cell))
@@ -152,34 +186,10 @@ namespace Mechanics.RoboticFlows
                 if (!_selectedDrawer || (_selectedDrawer.DrawnCells.Count != 0 && !_selectedDrawer.DrawnCells.Peek().IsNeighbor(cell)))
                     return;
                 
-                Debug.LogError(_selectedDrawer.CurrentCell,_selectedDrawer.CurrentCell.transform);
-                Debug.LogError(cell,cell.transform);
-                
-                var direction =_selectedDrawer.CurrentCell.DirectionAccordingToTargetCell(cell);
-                
-                if(_selectedDrawer.CurrentCell.HasObstacles)
+                if (ReachObstacles(cell))
                 {
-                    Debug.LogError("has obstacles");
-                    var requiredObstacle = _selectedDrawer.CurrentCell.Obstacles.Find(x => x.OppositeDirectionType == direction);
-                    if (requiredObstacle!=null)
-                    {
-                        Debug.LogError("block");
-                        return;
-                    }
+                    return;
                 }
-                else
-                {
-                    if (cell.HasObstacles)
-                    {
-                        var requiredObstacle = cell.Obstacles.Find(x => x.DirectionType == direction);
-                        if (requiredObstacle != null)
-                        {
-                            Debug.LogError("block");
-                            return;
-                        }
-                    }      
-                }
-              
                 
                 if (_selectedDrawer.DrawnCells.Contains(cell))
                 {

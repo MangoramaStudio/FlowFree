@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Mechanics.RoboticFlows.Obstacles
 {
-    public class Obstacle : MonoBehaviour
+    public class Obstacle : MonoBehaviour,IObstacle
     {
         [SerializeField] private DirectionType directionType;
         public DirectionType DirectionType => directionType;
@@ -28,6 +28,11 @@ namespace Mechanics.RoboticFlows.Obstacles
                 DirectionType.Right => DirectionType.Left,
                 _ => OppositeDirectionType
             };
+        }
+
+        public void Block()
+        {
+            Debug.LogError("Blocked");
         }
     }
 }

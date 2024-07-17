@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using Mechanics.RoboticFlows.Obstacles;
 using UnityEngine;
@@ -18,15 +19,24 @@ namespace Mechanics.RoboticFlows
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private GameObject fill;
 
-        [SerializeField] private List<Obstacle> obstacles = new();
-        
         private Sequence _blinkSequence;
         public Color Color => color;
         public Color OccupiedColor => occupiedColor;
         public bool IsBlinking => _blinkSequence?.IsPlaying() ?? false;
         public bool IsOccupied { get; private set; }
-        public bool HasObstacles => obstacles.Count > 0;
-        public List<Obstacle> Obstacles => obstacles;
+        public bool HasObstacles => Obstacles.Count > 0;
+        public List<Obstacle> Obstacles { get; private set; } = new();
+
+        private void Awake()
+        {
+            TryAddObstacles();
+        }
+
+        private void TryAddObstacles()
+        {
+            Obstacles.Clear();
+            Obstacles = GetComponentsInChildren<Obstacle>().ToList(); 
+        }
 
         public void SetOccupiedColor(Color c)
         {
@@ -46,8 +56,6 @@ namespace Mechanics.RoboticFlows
         {
             IsOccupied = occupiedState;
             spriteRenderer.color = occupiedState ? occupiedColor : color;
-
-            
         }
 
         public void ShowFillHint(bool state)
@@ -124,22 +132,18 @@ namespace Mechanics.RoboticFlows
             if (x < cell.x && y <= cell.y )
             {
                 directionType = DirectionType.Left;
-                Debug.LogError("left");
             }
             else if (x > cell.x && y <= cell.y )
             {
                 directionType = DirectionType.Right;
-                Debug.LogError("right");
             }
             else if (x == cell.x && y < cell.y)
             {
                 directionType = DirectionType.Down;
-                Debug.LogError("down");
             }
             else if (x == cell.x && y > cell.y)
             {
                 directionType = DirectionType.Up;
-                Debug.LogError("up");
             }
 
             return directionType;
