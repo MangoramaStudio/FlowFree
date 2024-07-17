@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5906913670309214991, guid: 1161943da2c9a4b448bbc09a6d1b3086, type: 3}
       propertyPath: m_Name
-      value: AddressableManager
+      value: AddressableSystem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -59,9 +59,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5906913670309214991, guid: 1161943da2c9a4b448bbc09a6d1b3086, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1686610446373471258}
-    - targetCorrespondingSourceObject: {fileID: 5906913670309214991, guid: 1161943da2c9a4b448bbc09a6d1b3086, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 321882721281683053}
   m_SourcePrefab: {fileID: 100100000, guid: 1161943da2c9a4b448bbc09a6d1b3086, type: 3}
 --- !u!1 &8494282304274015617 stripped
 GameObject:
@@ -80,16 +77,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e15968f335168345b644aa5e6ed2724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &321882721281683053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8494282304274015617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 374494ca0f2044599234577b2134accc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelOrderConfig: {fileID: 11400000, guid: 2e97931ff07344d67b20f9455c9d4bcf, type: 2}
