@@ -109,6 +109,41 @@ namespace Mechanics.RoboticFlows
             spriteRenderer.color = color;
         }
 
+        /// <summary>
+        /// Find direction to target cell in order to handle obstacles and other features
+        /// </summary>
+        /// <param name="cell"></param>
+        /// Target cell that will be the next target
+        /// <returns></returns>
+        public DirectionType DirectionAccordingToTargetCell(Cell cell)
+        {
+            var directionType = DirectionType.Left;
+            
+            if (x < cell.x && y <= cell.y )
+            {
+                directionType = DirectionType.Left;
+                Debug.LogError("left");
+            }
+            else if (x > cell.x && y <= cell.y )
+            {
+                directionType = DirectionType.Right;
+                Debug.LogError("right");
+            }
+            else if (x == cell.x && y < cell.y)
+            {
+                directionType = DirectionType.Down;
+                Debug.LogError("down");
+            }
+            else if (x == cell.x && y > cell.y)
+            {
+                directionType = DirectionType.Up;
+                Debug.LogError("up");
+            }
+
+            return directionType;
+
+        }
+
         private void FillHintAnimation()
         {
             fill.transform.DOKill();

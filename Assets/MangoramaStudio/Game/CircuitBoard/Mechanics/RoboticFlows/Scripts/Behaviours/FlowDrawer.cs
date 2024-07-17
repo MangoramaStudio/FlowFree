@@ -22,6 +22,8 @@ namespace Mechanics.RoboticFlows
 
         public Stack<Cell> DrawnCells => _drawnCells;
 
+        public Cell CurrentCell => DrawnCells?.Peek();
+
         public Polyline Polyline => polyline;
 
         public void Initialize()

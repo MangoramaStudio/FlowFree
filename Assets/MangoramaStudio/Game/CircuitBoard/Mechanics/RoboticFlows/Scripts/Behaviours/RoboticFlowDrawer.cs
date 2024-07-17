@@ -151,7 +151,12 @@ namespace Mechanics.RoboticFlows
             {
                 if (!_selectedDrawer || (_selectedDrawer.DrawnCells.Count != 0 && !_selectedDrawer.DrawnCells.Peek().IsNeighbor(cell)))
                     return;
-
+                
+                Debug.LogError(_selectedDrawer.CurrentCell,_selectedDrawer.CurrentCell.transform);
+                Debug.LogError(cell,cell.transform);
+                
+                _selectedDrawer.CurrentCell.DirectionAccordingToTargetCell(cell);
+                
                 if (_selectedDrawer.DrawnCells.Contains(cell))
                 {
                     _selectedDrawer.ClearToCell(cell);
