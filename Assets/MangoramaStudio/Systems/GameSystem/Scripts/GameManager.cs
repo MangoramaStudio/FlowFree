@@ -1,37 +1,52 @@
-﻿using MangoramaStudio.Scripts.Controllers;
+﻿using System.Collections.Generic;
+using System.Linq;
+using MangoramaStudio.Scripts.Controllers;
+using MangoramaStudio.Systems.PopupSystem.Scripts;
 using MangoramaStudio.Systems.ReviewSystem.Scripts;
+using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace MangoramaStudio.Scripts.Managers
 {
     public class GameManager : BaseManager
     {
-        public UIManager UIManager;
-        public EventManager EventManager;
-        public LevelManager LevelManager;
-        public AnalyticsManager AnalyticsManager;
-        public ReviewManager ReviewManager;
-        public InputController Inputs;
+        [SerializeField] private UIManager uiManager;
+        [SerializeField] private EventManager eventManager;
+        [SerializeField] private LevelManager levelManager;
+        [SerializeField] private AnalyticsManager analyticsManager;
+        [SerializeField] private ReviewManager reviewManager;
+        [SerializeField] private InputController inputController;
+        [SerializeField] private PopupManager popupManager;
+        public EventManager EventManager => eventManager;
+        public LevelManager LevelManager => levelManager;
         public AddressableManager AddressableManager { get; private set; }
 
         public static GameManager Instance;
+
+        private List<BaseManager> _managers = new();
 
         public void Awake()
         {
             Instance = this;
 
             AddressableManager = FindObjectOfType<AddressableManager>();
-            EventManager.Initialize();
-            UIManager.Initialize();
-            LevelManager.Initialize();
-            AnalyticsManager.Initialize();
-            Inputs.Initialize();
-            ReviewManager.Initialize();
+            GatherManagers();
+            InitializeManagers();
         }
         
-
         private void Start()
         {
             EventManager.StartGame();
+        }
+
+        private void GatherManagers()
+        {
+            _managers = GetComponentsInChildren<BaseManager>().ToList();
+        }
+
+        private void InitializeManagers()
+        {
+            _managers.ForEach(x=>x.Initialize());   
         }
     }
 }
