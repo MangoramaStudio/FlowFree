@@ -155,7 +155,31 @@ namespace Mechanics.RoboticFlows
                 Debug.LogError(_selectedDrawer.CurrentCell,_selectedDrawer.CurrentCell.transform);
                 Debug.LogError(cell,cell.transform);
                 
-                _selectedDrawer.CurrentCell.DirectionAccordingToTargetCell(cell);
+                var direction =_selectedDrawer.CurrentCell.DirectionAccordingToTargetCell(cell);
+                
+                if(_selectedDrawer.CurrentCell.HasObstacles)
+                {
+                    Debug.LogError("has obstacles");
+                    var requiredObstacle = _selectedDrawer.CurrentCell.Obstacles.Find(x => x.OppositeDirectionType == direction);
+                    if (requiredObstacle!=null)
+                    {
+                        Debug.LogError("block");
+                        return;
+                    }
+                }
+                else
+                {
+                    if (cell.HasObstacles)
+                    {
+                        var requiredObstacle = cell.Obstacles.Find(x => x.DirectionType == direction);
+                        if (requiredObstacle != null)
+                        {
+                            Debug.LogError("block");
+                            return;
+                        }
+                    }      
+                }
+              
                 
                 if (_selectedDrawer.DrawnCells.Contains(cell))
                 {

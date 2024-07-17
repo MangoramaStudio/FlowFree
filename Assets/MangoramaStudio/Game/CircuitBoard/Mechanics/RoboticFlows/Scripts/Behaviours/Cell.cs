@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using DG.Tweening;
+using Mechanics.RoboticFlows.Obstacles;
 using UnityEngine;
 
 namespace Mechanics.RoboticFlows
@@ -16,15 +18,15 @@ namespace Mechanics.RoboticFlows
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private GameObject fill;
 
+        [SerializeField] private List<Obstacle> obstacles = new();
+        
         private Sequence _blinkSequence;
-        
         public Color Color => color;
-        
         public Color OccupiedColor => occupiedColor;
-
         public bool IsBlinking => _blinkSequence?.IsPlaying() ?? false;
-        
         public bool IsOccupied { get; private set; }
+        public bool HasObstacles => obstacles.Count > 0;
+        public List<Obstacle> Obstacles => obstacles;
 
         public void SetOccupiedColor(Color c)
         {
