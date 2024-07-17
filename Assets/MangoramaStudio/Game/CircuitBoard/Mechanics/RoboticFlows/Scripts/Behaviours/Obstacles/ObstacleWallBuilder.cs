@@ -16,7 +16,7 @@ namespace MangoramaStudio.Game.CircuitBoard.Mechanics.RoboticFlows.Scripts.Behav
 
         [SerializeField] private Obstacle obstaclePrefab;
 
-        [SerializeField] private float xzBorderValue = 0.3f;
+        [ReadOnly][SerializeField] private float xzBorderValue = 0.3f;
 
         [SerializeField] private DirectionType directionType;
         
