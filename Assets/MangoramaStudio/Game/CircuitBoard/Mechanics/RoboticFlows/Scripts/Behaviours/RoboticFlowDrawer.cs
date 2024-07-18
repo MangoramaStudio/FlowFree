@@ -153,6 +153,7 @@ namespace Mechanics.RoboticFlows
         private bool ReachObstacles(Cell cell)
         {
             var direction =_selectedDrawer.CurrentCell.DirectionAccordingToTargetCell(cell);
+            Debug.LogError(direction);
                 
             if(_selectedDrawer.CurrentCell.HasObstacles)
             {
@@ -160,6 +161,13 @@ namespace Mechanics.RoboticFlows
                 if (requiredObstacle!=null)
                 {
                     requiredObstacle.Block();
+                    return true;
+                }
+
+                var targetCellObstacle = cell.Obstacles.Find(x => x.DirectionType == direction);
+                if (targetCellObstacle!=null)
+                {
+                    targetCellObstacle.Block();
                     return true;
                 }
             }
@@ -173,9 +181,16 @@ namespace Mechanics.RoboticFlows
                         requiredObstacle.Block();
                         return true;
                     }
+                    
+                    var oppositeObstacle = cell.Obstacles.Find(x=>x.OppositeDirectionType == direction);
+                    if (oppositeObstacle != null)
+                    {
+                        oppositeObstacle.Block();
+                        return true;
+                    }
                 }      
             }
-
+            
             return false;
         }
 

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using MatchinghamGames.VibrationModule;
 using Shapes;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Mechanics.RoboticFlows
@@ -22,7 +23,7 @@ namespace Mechanics.RoboticFlows
 
         public Stack<Cell> DrawnCells => _drawnCells;
 
-        public Cell CurrentCell => DrawnCells?.Peek();
+        [ShowInInspector]public Cell CurrentCell => DrawnCells?.Peek();
 
         public Polyline Polyline => polyline;
 

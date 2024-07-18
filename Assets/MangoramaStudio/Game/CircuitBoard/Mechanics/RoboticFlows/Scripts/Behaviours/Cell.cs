@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
 using Mechanics.RoboticFlows.Obstacles;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Mechanics.RoboticFlows
@@ -24,7 +25,7 @@ namespace Mechanics.RoboticFlows
         public Color OccupiedColor => occupiedColor;
         public bool IsBlinking => _blinkSequence?.IsPlaying() ?? false;
         public bool IsOccupied { get; private set; }
-        public bool HasObstacles => Obstacles.Count > 0;
+        [ShowInInspector]public bool HasObstacles => Obstacles.Count > 0;
         public List<Obstacle> Obstacles { get; private set; } = new();
 
         private void Awake()
