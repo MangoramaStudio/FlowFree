@@ -10,16 +10,21 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
         Win
     }
     
-    public class BaseMenu : UIBehaviour
+    public  class BaseMenu : UIBehaviour
     {
         [SerializeField] private MenuType menuType;
 
         public MenuType MenuType => menuType;
 
+        public virtual void Initialize()
+        {
+            ToggleEvents(true);
+        }
+
         protected override void OnEnable()
         {
             base.OnEnable();
-            ToggleEvents(true);
+        
         }
 
         protected override void OnDisable()

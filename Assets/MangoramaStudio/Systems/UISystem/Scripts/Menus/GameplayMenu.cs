@@ -12,10 +12,13 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
 
         private PipeCompleteCounter _pipeCompleteCounter;
 
-        protected override void OnEnable()
+        public override void Initialize()
         {
-            base.OnEnable();
+            base.Initialize();
             SetPipeCompleteCounter();
+            GatherPipeCompleteData(false);
+            UpdatePipeCompleteTMP(0);
+            GatherPipeCompleteData(true);
         }
 
         protected override void ToggleEvents(bool isToggled)
@@ -30,8 +33,6 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
             {
                 GameManager.Instance.EventManager.OnRaiseWarning-=RaiseWarning;
             }
-            
-            GatherPipeCompleteData(isToggled);
         }
 
         private void RaiseWarning()
@@ -64,16 +65,21 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
             
             if (isToggled)
             {
-                _pipeCompleteCounter.onCompletePipe += UpdatePipCompleteTMP;
+                _pipeCompleteCounter.onCompletePipe += UpdatePipeCompleteTMP;
             }
             else
             {
-                _pipeCompleteCounter.onCompletePipe -= UpdatePipCompleteTMP;
+                _pipeCompleteCounter.onCompletePipe -= UpdatePipeCompleteTMP;
             }
         }
 
-        private void UpdatePipCompleteTMP(int amount)
+        private void UpdatePipeCompleteTMP(int amount)
         {
+            if (pipeCounterTMP == null)
+            {
+                Debug.LogError("PipeCounterTMP is null");
+                return;
+            }
             pipeCounterTMP.SetText($"%{amount}");
         }
     }

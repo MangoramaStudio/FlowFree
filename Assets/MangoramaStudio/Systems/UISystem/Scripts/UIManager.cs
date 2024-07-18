@@ -62,12 +62,15 @@ namespace MangoramaStudio.Scripts.Managers
             {
                 case MenuType.Main:
                     mainMenu.gameObject.SetActive(true);
+                    mainMenu.Initialize();
                     break;
                 case MenuType.Gameplay:
                     gameplayMenu.gameObject.SetActive(true);
+                    gameplayMenu.Initialize();
                     break;
                 case MenuType.Win:
                     winMenu.gameObject.SetActive(true);
+                    winMenu.Initialize();
                     break;
             }
         }
