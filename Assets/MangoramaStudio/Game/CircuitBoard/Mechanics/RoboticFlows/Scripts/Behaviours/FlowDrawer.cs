@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using MatchinghamGames.VibrationModule;
@@ -16,7 +17,7 @@ namespace Mechanics.RoboticFlows
         [SerializeField] private SpriteRenderer tip;
 
         private Stack<Cell> _drawnCells;
-
+        
         public int Id => id;
 
         public bool FlowComplete => _drawnCells.Count(c => c.node) == 2;
@@ -26,7 +27,7 @@ namespace Mechanics.RoboticFlows
         [ShowInInspector]public Cell CurrentCell => DrawnCells?.Peek();
 
         public Polyline Polyline => polyline;
-
+        
         public void Initialize()
         {
             _drawnCells = new Stack<Cell>();
@@ -100,6 +101,7 @@ namespace Mechanics.RoboticFlows
                 tip.enabled = true;
                 polyline.enabled = true;
             }
+            
         }
 
         public void ClearToCell(Cell cell)

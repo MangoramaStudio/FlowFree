@@ -18,7 +18,7 @@ namespace Behaviours
             {
                 var targetWidth = targetCamera.pixelHeight * ratio;
                 var viewportWidthRatio = targetWidth / targetCamera.pixelWidth;
-                targetCamera.rect = new Rect((1 - viewportWidthRatio) * 0.5f, 0, viewportWidthRatio, 1);
+                targetCamera.rect = new Rect((1 - viewportWidthRatio) * 0.5f, 0, viewportWidthRatio, 1f);
             }
         }
     }
