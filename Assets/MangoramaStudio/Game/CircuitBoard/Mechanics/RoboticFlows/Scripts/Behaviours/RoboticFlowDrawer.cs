@@ -4,6 +4,7 @@ using MangoramaStudio.Game.Scripts.Behaviours;
 using MangoramaStudio.Scripts.Managers;
 using MatchinghamGames.ApolloModule;
 using MatchinghamGames.VibrationModule;
+using Mechanics.RoboticFlows.Obstacles;
 using Mechanics.Scripts;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -145,6 +146,7 @@ namespace Mechanics.RoboticFlows
             }
         }
 
+        
         /// <summary>
         /// Check the next movement can be blocked by obstacles or not 
         /// </summary>
@@ -157,40 +159,53 @@ namespace Mechanics.RoboticFlows
                 
             if(_selectedDrawer.CurrentCell.HasObstacles)
             {
+             
+                // check if current cell has obstacles and my direction matches with it
                 var requiredObstacle = _selectedDrawer.CurrentCell.Obstacles.Find(x => x.OppositeDirectionType == direction);
                 if (requiredObstacle!=null)
                 {
+                    // yes
                     requiredObstacle.Block();
                     return true;
                 }
 
+                // no but also next cell i go to has obstacle and my direction matches with it
                 var targetCellObstacle = cell.Obstacles.Find(x => x.DirectionType == direction);
                 if (targetCellObstacle!=null)
                 {
+                    // yes
                     targetCellObstacle.Block();
                     return true;
                 }
             }
             else
             {
+                // checked my current cell has no obstacle and ı will check next cell according to my direction
                 if (cell.HasObstacles)
                 {
                     var requiredObstacle = cell.Obstacles.Find(x => x.DirectionType == direction);
                     if (requiredObstacle != null)
                     {
+                        // yes
                         requiredObstacle.Block();
                         return true;
                     }
                     
+                    /*
+                    // also check opposite way 
                     var oppositeObstacle = cell.Obstacles.Find(x=>x.OppositeDirectionType == direction);
                     if (oppositeObstacle != null)
                     {
+                        Debug.LogError("11");
+                        //yes
                         oppositeObstacle.Block();
                         return true;
                     }
+                    */
                 }      
             }
             
+            // all clear there is no obstacles in my path
             return false;
         }
 

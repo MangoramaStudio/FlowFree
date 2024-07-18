@@ -21,14 +21,12 @@ MonoBehaviour:
     - gameTestDeviceIds
     - IsInternetRequiredForCharlie
     - IsVegasInitializationEssential
-    - levelOrder
     - openDebugMenuOnTestDevices
     m_values:
     - FirebaseRemoteConfigService
     - FirebaseRemoteConfigService
     - FirebaseRemoteConfigService
     - FirebaseRemoteConfigService
-    - AdmostRemoteConfigService
     - FirebaseRemoteConfigService
   ConfigLists:
   - {fileID: 11400000, guid: cf14a92c33402a040816f54cc307621b, type: 2}

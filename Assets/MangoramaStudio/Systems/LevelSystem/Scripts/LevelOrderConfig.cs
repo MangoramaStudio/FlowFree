@@ -17,7 +17,7 @@ namespace MangoramaStudio.Systems.LevelSystem.Scripts
         
         [SerializeField] private List<string> levelOrderList = new();
         
-        [RemoteSetting("levelOrder")]
+        //[RemoteSetting("levelOrder")]
         [SerializeField] private string levelOrder;
         
 
