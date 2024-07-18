@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using MangoramaStudio.Game.Scripts.Behaviours;
@@ -13,6 +14,7 @@ namespace Mechanics.RoboticFlows
 {
     public class RoboticFlowDrawer : PlayableMechanicBehaviour, IShowHint
     {
+        [SerializeField] private PipeCompleteCounter pipeCompleteCounter;
         [SerializeField] private FlowGrid grid;
         [SerializeField] private RoboticFlowHint hint;
         [SerializeField] private RoboticFlowInputSurface surface;
@@ -21,13 +23,21 @@ namespace Mechanics.RoboticFlows
        // [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string singleMatchSfx;
        // [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string fullMatchSfx;
 
+       public PipeCompleteCounter PipeCompleteCounter => pipeCompleteCounter;
+       
         private Camera _mainCamera;
         
         private Node _selectedNode;
         private FlowDrawer _selectedDrawer;
 
+        public Action onRelease;
+        public Action onClear;
+        public Action onDraw;
+
         public IReadOnlyList<FlowDrawer> Drawers => drawers;
 
+        public FlowDrawer GetSelectedFlowDrawer() => _selectedDrawer;
+        
         [Button]
         public override void Initialize()
         {
@@ -224,6 +234,7 @@ namespace Mechanics.RoboticFlows
                 if (_selectedDrawer.DrawnCells.Contains(cell))
                 {
                     _selectedDrawer.ClearToCell(cell);
+                    onClear?.Invoke();
                 }
                 else if (!_selectedDrawer.FlowComplete)
                 {
@@ -246,7 +257,10 @@ namespace Mechanics.RoboticFlows
                     }
                     
                     CheckAndComplete();
+                  
                 }
+                
+                onDraw?.Invoke();
             }
         }
 
@@ -270,6 +284,8 @@ namespace Mechanics.RoboticFlows
                     _selectedNode = null;
                 }
             }
+            
+            onRelease?.Invoke();
         }
 
         public void SetDrawers(IEnumerable<FlowDrawer> list)

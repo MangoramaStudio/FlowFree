@@ -3,6 +3,7 @@ using Behaviours;
 using UnityEngine;
 using MangoramaStudio.Scripts.Managers;
 using MangoramaStudio.Scripts.Controllers;
+using Mechanics.RoboticFlows;
 using Mechanics.Scripts;
 using Sirenix.OdinInspector;
 
@@ -14,6 +15,11 @@ namespace MangoramaStudio.Scripts.Behaviours
     {
 
         [SerializeField] private PlayableMechanicContainer container;
+
+        [SerializeField] private PipeCompleteCounter pipeCompleteCounter;
+        public PlayableMechanicContainer Container => container;
+        public PipeCompleteCounter PipeCompleteCounter => pipeCompleteCounter;
+        
         private GameManager _gameManager;
 
         private bool _isLevelEnded;

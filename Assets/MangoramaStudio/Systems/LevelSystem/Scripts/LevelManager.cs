@@ -13,11 +13,12 @@ namespace MangoramaStudio.Scripts.Managers
     public class LevelManager : BaseManager
     {
         [FormerlySerializedAs("_totalLevelCount")] [SerializeField] private int totalLevelCount;
-        
-        private LevelBehaviour _currentLevel;
+
         private LevelBehaviour _desiredLoadedLevelPrefab;
 
-  
+
+        public LevelBehaviour CurrentLevel { get; private set; }
+
         public override void Initialize()
         {
             base.Initialize();
@@ -46,15 +47,15 @@ namespace MangoramaStudio.Scripts.Managers
         private void OnLevelLoaded()
         {
             _desiredLoadedLevelPrefab = GameManager.AddressableManager.LoadedLevelBehaviour;
-            _currentLevel = Instantiate(_desiredLoadedLevelPrefab);
-            _currentLevel.Initialize();        
+            CurrentLevel = Instantiate(_desiredLoadedLevelPrefab);
+            CurrentLevel.Initialize();        
         }
         
         private void ClearLevel()
         {
-            if (_currentLevel != null)
+            if (CurrentLevel != null)
             {
-                Destroy(_currentLevel.gameObject);
+                Destroy(CurrentLevel.gameObject);
             }
         }
 
@@ -76,5 +77,7 @@ namespace MangoramaStudio.Scripts.Managers
         {
             PlayerData.CurrentLevelId += 1;   
         }
+        
+        
     }
 }
