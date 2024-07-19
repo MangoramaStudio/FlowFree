@@ -1,7 +1,0 @@
-unityStreamingAssets=.unity3d**STREAMING_ASSETS**
-org.gradle.jvmargs=-Xmx4096M
-org.gradle.parallel=true
-android.useAndroidX=true
-android.enableJetifier=true
-android.bundle.enableUncompressedNativeLibs=false
-android.enableR8=**MINIFY_WITH_R_EIGHT**
