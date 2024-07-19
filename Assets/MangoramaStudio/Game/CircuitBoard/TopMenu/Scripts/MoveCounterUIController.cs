@@ -62,7 +62,7 @@ namespace Mechanics.RoboticFlows
                 Debug.LogError("MoveCounterTMP is null");
                 return;
             }
-            moveCounterTMP.SetText($"Move : {amount}");
+            moveCounterTMP.SetText($"{amount}");
         }
     }
     

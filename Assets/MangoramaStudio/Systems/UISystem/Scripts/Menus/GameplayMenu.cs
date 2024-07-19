@@ -10,13 +10,14 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
         [SerializeField] private GameObject warningObject;
         [SerializeField] private PipeCompleteCounterUIController pipeCompleteCounterUIController;
         [SerializeField] private MoveCounterUIController moveCounterUIController;
-      
+        [SerializeField] private LevelCounterUIController levelCounterUIController;
 
         public override void Initialize()
         {
             base.Initialize();
             pipeCompleteCounterUIController.Initialize();
             moveCounterUIController.Initialize();
+            levelCounterUIController.Initialize();
             
         }
 
