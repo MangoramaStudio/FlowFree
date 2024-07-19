@@ -8,10 +8,11 @@ using UnityEngine.Serialization;
 
 namespace MangoramaStudio.Game.CircuitBoard.Mechanics.RoboticFlows.Scripts.Behaviours.Obstacles
 {
+#if UNITY_EDITOR
     [ExecuteInEditMode]
     public class ObstacleWallBuilder : MonoBehaviour
     {
-#if UNITY_EDITOR
+
         
 
         [SerializeField] private Obstacle obstaclePrefab;
