@@ -38,6 +38,7 @@ namespace Mechanics.RoboticFlows
                 flowDrawer.onDraw += CalculateCompletedPipe;   
                 flowDrawer.onClear += CalculateCompletedPipe;
                 flowDrawer.onRelease += CalculateCompletedPipe;
+                flowDrawer.onClearDisconnected += CalculateCompletedPipe;
 
             }
             else
@@ -45,8 +46,7 @@ namespace Mechanics.RoboticFlows
                 flowDrawer.onDraw -= CalculateCompletedPipe;
                 flowDrawer.onClear -= CalculateCompletedPipe;
                 flowDrawer.onRelease -= CalculateCompletedPipe;
-
-
+                flowDrawer.onClearDisconnected -= CalculateCompletedPipe;
             }
         }
 

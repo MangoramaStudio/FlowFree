@@ -14,7 +14,6 @@ namespace Mechanics.RoboticFlows
 {
     public class RoboticFlowDrawer : PlayableMechanicBehaviour, IShowHint
     {
-        [SerializeField] private PipeCompleteCounter pipeCompleteCounter;
         [SerializeField] private FlowGrid grid;
         [SerializeField] private RoboticFlowHint hint;
         [SerializeField] private RoboticFlowInputSurface surface;
@@ -23,7 +22,6 @@ namespace Mechanics.RoboticFlows
        // [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string singleMatchSfx;
        // [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string fullMatchSfx;
 
-       public PipeCompleteCounter PipeCompleteCounter => pipeCompleteCounter;
        
         private Camera _mainCamera;
         
@@ -33,6 +31,9 @@ namespace Mechanics.RoboticFlows
         public Action onRelease;
         public Action onClear;
         public Action onDraw;
+        public Action onConnectNode;
+        public Action onClearDisconnected;
+       
 
         public IReadOnlyList<FlowDrawer> Drawers => drawers;
 
@@ -149,6 +150,7 @@ namespace Mechanics.RoboticFlows
                     {
                         _selectedDrawer.Clear();
                         _selectedDrawer = null;
+                        onClearDisconnected?.Invoke();
                     }
                 }
                 
@@ -254,6 +256,7 @@ namespace Mechanics.RoboticFlows
                        // Apollo.PlaySingleAudio(singleMatchSfx);
                         _selectedDrawer = null;
                         _selectedNode = null;
+                        onConnectNode?.Invoke();
                     }
                     
                     CheckAndComplete();

@@ -15,10 +15,11 @@ namespace MangoramaStudio.Scripts.Behaviours
     {
 
         [SerializeField] private PlayableMechanicContainer container;
-
         [SerializeField] private PipeCompleteCounter pipeCompleteCounter;
+        [SerializeField] private MoveCounter moveCounter;
         public PlayableMechanicContainer Container => container;
         public PipeCompleteCounter PipeCompleteCounter => pipeCompleteCounter;
+        public MoveCounter MoveCounter => moveCounter;
         
         private GameManager _gameManager;
 
