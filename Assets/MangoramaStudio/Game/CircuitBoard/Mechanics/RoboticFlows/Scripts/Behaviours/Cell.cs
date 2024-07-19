@@ -20,11 +20,11 @@ namespace Mechanics.RoboticFlows
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private GameObject fill;
         [SerializeField] private Sprite tileSprite;
-
         public Sprite TileSprite => tileSprite;
         
         private Sequence _blinkSequence;
         public Color Color => color;
+
         public Color OccupiedColor => occupiedColor;
         public bool IsBlinking => _blinkSequence?.IsPlaying() ?? false;
         public bool IsOccupied { get; private set; }
@@ -35,7 +35,7 @@ namespace Mechanics.RoboticFlows
         {
             tileSprite = sprite;
         }
-
+        
         public void SetSpriteRenderer()
         {
             spriteRenderer.sprite = TileSprite;
@@ -122,15 +122,14 @@ namespace Mechanics.RoboticFlows
                 .OnComplete(() => onComplete?.Invoke());
         }
 
-        public void Blink()
+        public void Blink(Color color)
         {
             if (IsOccupied)
                 return;
             
             _blinkSequence?.Kill();
             _blinkSequence = DOTween.Sequence();
-            _blinkSequence.Append(spriteRenderer.DOColor(occupiedColor, 0.5f).SetEase(Ease.Linear));
-            _blinkSequence.Append(spriteRenderer.DOColor(color, 0.5f).SetEase(Ease.Linear));
+            _blinkSequence.Append(spriteRenderer.DOColor(color, 1f).SetEase(Ease.Linear));
             _blinkSequence.SetLoops(-1, LoopType.Restart);
         }
 
@@ -138,7 +137,7 @@ namespace Mechanics.RoboticFlows
         {
             _blinkSequence?.Kill();
             spriteRenderer.DOKill();
-            spriteRenderer.color = color;
+            spriteRenderer.color = Color.white;
         }
 
         /// <summary>

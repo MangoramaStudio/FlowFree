@@ -37,7 +37,7 @@ namespace Mechanics.RoboticFlows
                 if (!cell.IsBlinking)
                 {
                     cell.SetOccupiedColor(hint.color);
-                    cell.Blink();
+                    cell.Blink(hint.color);
                 }
             }
         }
