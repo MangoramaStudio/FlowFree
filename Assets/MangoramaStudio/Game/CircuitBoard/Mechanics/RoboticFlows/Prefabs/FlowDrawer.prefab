@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 547069923270696914}
   - component: {fileID: 2410661782590556133}
   - component: {fileID: 3152790562545409077}
+  - component: {fileID: 5087667483568567200}
   m_Layer: 0
   m_Name: FlowDrawer
   m_TagString: Untagged
@@ -142,6 +143,20 @@ MonoBehaviour:
   occupiedAlpha: 0.2
   polyline: {fileID: 247459457251774820}
   tip: {fileID: 2189382620523528711}
+  tileSprite: {fileID: 0}
+--- !u!114 &5087667483568567200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8170540064066333227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b59f94602a8641a1bde28612f42bf9e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  config: {fileID: 11400000, guid: dcbd423480a18456d94b1341aabab6e5, type: 2}
 --- !u!1 &8334661329889925112
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,8 +230,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b,
-    type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

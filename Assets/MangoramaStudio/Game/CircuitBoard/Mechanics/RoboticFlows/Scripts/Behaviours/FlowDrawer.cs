@@ -16,9 +16,13 @@ namespace Mechanics.RoboticFlows
         [SerializeField] private Polyline polyline;
         [SerializeField] private SpriteRenderer tip;
 
+        [SerializeField] private Sprite tileSprite;
+        
         private Stack<Cell> _drawnCells;
         
         public int Id => id;
+
+        public Sprite TileSprite => tileSprite;
 
         public bool FlowComplete => _drawnCells.Count(c => c.node) == 2;
 
@@ -27,6 +31,8 @@ namespace Mechanics.RoboticFlows
         [ShowInInspector]public Cell CurrentCell => DrawnCells?.Peek();
 
         public Polyline Polyline => polyline;
+
+        public Color GetColor() => color;
         
         public void Initialize()
         {
@@ -134,6 +140,11 @@ namespace Mechanics.RoboticFlows
                     Vibrator.Vibrate(VibrationType.Light);
                 }
             }
+        }
+
+        public void SetTileSprite(Sprite sprite)
+        {
+            tileSprite = sprite;
         }
 
         private Color GetOccupiedColor()

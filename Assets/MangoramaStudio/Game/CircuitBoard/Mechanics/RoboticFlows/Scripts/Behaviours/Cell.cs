@@ -19,7 +19,10 @@ namespace Mechanics.RoboticFlows
         [SerializeField] private Color occupiedColor;
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private GameObject fill;
+        [SerializeField] private Sprite tileSprite;
 
+        public Sprite TileSprite => tileSprite;
+        
         private Sequence _blinkSequence;
         public Color Color => color;
         public Color OccupiedColor => occupiedColor;
@@ -28,6 +31,20 @@ namespace Mechanics.RoboticFlows
         [ShowInInspector]public bool HasObstacles => Obstacles.Count > 0;
         public List<Obstacle> Obstacles { get; private set; } = new();
 
+        public void SetTileSprite(Sprite sprite)
+        {
+            tileSprite = sprite;
+        }
+
+        public void SetSpriteRenderer()
+        {
+            spriteRenderer.sprite = TileSprite;
+            spriteRenderer.color = Color.white;
+            spriteRenderer.DOFade(1f,0f);
+            spriteRenderer.transform.localScale = Vector3.one * 0.3f;
+        }
+        
+        
         private void Awake()
         {
             TryAddObstacles();
@@ -50,13 +67,17 @@ namespace Mechanics.RoboticFlows
         {
             color = c;
             if (!IsOccupied)
-                spriteRenderer.color = c;
+            {
+                //spriteRenderer.color = c;
+                spriteRenderer.color = Color.white;
+            }
+               
         }
 
         public void SetOccupied(bool occupiedState)
         {
             IsOccupied = occupiedState;
-            spriteRenderer.color = occupiedState ? occupiedColor : color;
+            spriteRenderer.color = occupiedState ? occupiedColor : Color.white;
         }
 
         public void ShowFillHint(bool state)

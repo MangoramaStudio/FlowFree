@@ -1016,6 +1016,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameplayMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 4162364373863012506, guid: 59334ca27077f43b7af201e1c8d6fc9b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 544a53d49b2d1410ba0727503de3addc, type: 3}
+    - target: {fileID: 4162364373863012506, guid: 59334ca27077f43b7af201e1c8d6fc9b, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4496345021098389971, guid: 59334ca27077f43b7af201e1c8d6fc9b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

@@ -9,10 +9,19 @@ namespace Mechanics.RoboticFlows
         [SerializeField] private int id;
         [SerializeField] private float surfaceSize;
         [SerializeField] private SpriteRenderer spriteRenderer;
-
+        [SerializeField] private Sprite ballSprite;
         public int Id => id;
 
+        public Sprite BallSprite => ballSprite;
         public Color Color => spriteRenderer.color;
+
+        public void SetBallSprite(Sprite sprite)
+        {
+            ballSprite = sprite;
+            spriteRenderer.color = Color.white;
+            spriteRenderer.sprite = BallSprite;
+            spriteRenderer.transform.localScale = Vector3.one * .25f;
+        }
         
         public void SetId(int i)
         {
