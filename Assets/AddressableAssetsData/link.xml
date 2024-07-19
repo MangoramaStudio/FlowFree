@@ -1,0 +1,80 @@
+<linker>
+  <assembly fullname="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Behaviours.CameraFocus" preserve="all" />
+    <type fullname="Behaviours.CanvasCameraCapture" preserve="all" />
+    <type fullname="Behaviours.PlayableMechanicContainer" preserve="all" />
+    <type fullname="MangoramaStudio.Game.CircuitBoard.Mechanics.RoboticFlows.Scripts.Behaviours.Obstacles.ObstacleWallBuilder" preserve="all" />
+    <type fullname="MangoramaStudio.Scripts.Behaviours.LevelBehaviour" preserve="all" />
+    <type fullname="Mechanics.RoboticFlows.Cell" preserve="all" />
+    <type fullname="Mechanics.RoboticFlows.CellGridColorToSpriteConverter" preserve="all" />
+    <type fullname="Mechanics.RoboticFlows.FlowDrawer" preserve="all" />
+    <type fullname="Mechanics.RoboticFlows.FlowDrawerColorToSpriteConverter" preserve="all" />
+    <type fullname="Mechanics.RoboticFlows.FlowDrawerConverter" preserve="all" />
+    <type fullname="Mechanics.RoboticFlows.FlowGrid" preserve="all" />
+    <type fullname="Mechanics.RoboticFlows.MoveCounter" preserve="all" />
+    <type fullname="Mechanics.RoboticFlows.Node" preserve="all" />
+    <type fullname="Mechanics.RoboticFlows.Obstacles.Obstacle" preserve="all" />
+    <type fullname="Mechanics.RoboticFlows.PipeCompleteCounter" preserve="all" />
+    <type fullname="Mechanics.RoboticFlows.RoboticFlowBuilder" preserve="all" />
+    <type fullname="Mechanics.RoboticFlows.RoboticFlowConfig" preserve="all" />
+    <type fullname="Mechanics.RoboticFlows.RoboticFlowDrawer" preserve="all" />
+    <type fullname="Mechanics.RoboticFlows.RoboticFlowHint" preserve="all" />
+    <type fullname="Mechanics.RoboticFlows.RoboticFlowInputSurface" preserve="all" />
+    <type fullname="Mechanics.RoboticFlows.FlowTileDefaultDefinition" preserve="nothing" serialized="true" />
+    <type fullname="Mechanics.RoboticFlows.FlowTileDefinition" preserve="nothing" serialized="true" />
+    <type fullname="Mechanics.RoboticFlows.RoboticFlowHint/Hint" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="ShapesRuntime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Shapes.Polyline" preserve="all" />
+    <type fullname="Shapes.PolylinePoint" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
+    <type fullname="UnityEngine.AddressableAssets.Addressables" preserve="all" />
+  </assembly>
+  <assembly fullname="Unity.Localization, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Localization.Locale" preserve="all" />
+    <type fullname="UnityEngine.Localization.LocaleIdentifier" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Localization.Metadata.MetadataCollection" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.InstanceProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.LegacyResourcesProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.SceneProvider" preserve="all" />
+  </assembly>
+  <assembly fullname="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="TMPro.TextMeshPro" preserve="all" />
+    <type fullname="TMPro.VertexGradient" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.GameObject" preserve="all" />
+    <type fullname="UnityEngine.Material" preserve="all" />
+    <type fullname="UnityEngine.MeshFilter" preserve="all" />
+    <type fullname="UnityEngine.MeshRenderer" preserve="all" />
+    <type fullname="UnityEngine.Object" preserve="all" />
+    <type fullname="UnityEngine.RectTransform" preserve="all" />
+    <type fullname="UnityEngine.Shader" preserve="all" />
+    <type fullname="UnityEngine.Sprite" preserve="all" />
+    <type fullname="UnityEngine.SpriteRenderer" preserve="all" />
+    <type fullname="UnityEngine.Texture2D" preserve="all" />
+    <type fullname="UnityEngine.Transform" preserve="all" />
+    <type fullname="UnityEngine.Events.PersistentCallGroup" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.GridModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Grid" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.BoxCollider" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.UI.CanvasScaler" preserve="all" />
+    <type fullname="UnityEngine.UI.GraphicRaycaster" preserve="all" />
+    <type fullname="UnityEngine.UI.Image" preserve="all" />
+    <type fullname="UnityEngine.UI.MaskableGraphic/CullStateChangedEvent" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Canvas" preserve="all" />
+    <type fullname="UnityEngine.CanvasRenderer" preserve="all" />
+  </assembly>
+</linker>
