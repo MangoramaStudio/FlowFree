@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using MangoramaStudio.Scripts.Behaviours;
 using Sirenix.OdinInspector;
 using UnityEditor;
@@ -16,13 +17,14 @@ namespace Mechanics.RoboticFlows
         [Button]
         public void SetTileAccordingToColors()
         {
-            levelBehaviours.ForEach(x=>x.GetComponent<FlowDrawerConverter>().Convert());
-
             for (int i = 0; i < levelBehaviours.Count; i++)
             {
                 levelBehaviours[i].GetComponent<FlowDrawerConverter>().Convert();
                 EditorUtility.SetDirty(levelBehaviours[i].gameObject);
+                PrefabUtility.SavePrefabAsset(levelBehaviours[i].gameObject);
             }
+            
+            Debug.Log("All done");
         }
 
 
