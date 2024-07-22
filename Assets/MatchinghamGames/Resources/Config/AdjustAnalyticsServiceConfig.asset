@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa38fa49408e41758f9cb1c41c5143f2, type: 3}
+  m_Name: AdjustAnalyticsServiceConfig
+  m_EditorClassIdentifier: 
+  androidAppToken: mu2zj8cps4cg
+  iosAppToken: 
+  deeplink: 0
+  iapPriceRevenueFactor: 0.85
+  AdjustLogLevel: 7
+  Environment: 1
+  eventBuffering: 0
+  sendInBackground: 0
+  launchDeferredDeeplink: 1
+  needsCost: 0
+  coppaCompliant: 0
+  linkMe: 0
+  defaultTracker: 
+  urlStrategy: 0
+  startDelay: 0
+  secretId: 0
+  info1: 0
+  info2: 0
+  info3: 0
+  info4: 0
+  preinstallTracking: 0
+  preinstallFilePath: 
+  playStoreKidsApp: 0
+  adServicesInfoReading: 1
+  idfaInfoReading: 1
+  skAdNetworkHandling: 1
+  partnerSharingDictonary:
+    m_keys:
+    - apple_ads
+    - facebook
+    - adwords
+    - google_marketing_platform
+    - snapchat
+    - tencent
+    - tiktok_san
+    - twitter
+    - yahoo_gemini
+    - yahoo_japan_search
+    m_values:
+    - weoN4Lb_MjWLuu
+    - ocv9HNX_g
+    - S1_9Vsuj-Q
+    - t-TPeXsRi
+    - QcD9GVNXZ
+    - tMLzMavbHZoxW0
+    - 6-qobRfu
+    - Skj79NodobQ
+    - HJSPc4ids-Q
+    - gUbemZYaQwqxss
