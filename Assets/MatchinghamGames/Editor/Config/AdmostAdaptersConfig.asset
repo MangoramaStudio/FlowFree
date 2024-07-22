@@ -32,50 +32,78 @@ MonoBehaviour:
       _xmlPath: 
     LatestAdapter:
       _details:
-        network: 
-        displayName: 
-        SDKVersion: 
-        adapterVersion: 
-        podVersion: 
-        initParameterCount: 0
+        network: AMR
+        displayName: AMR
+        SDKVersion: 1.5.42
+        adapterVersion: 1.5.42
+        podVersion: 1.5
+        initParameterCount: 1
         skadnetworkIDS: []
         supportedAdTypes: []
         infoPlistKey: 
-        adapterName: 
-        iosSupport: 0
-        unitySupport: 0
-        status: 0
-        minTargetSdk: 
+        adapterName: AMRSDK
+        iosSupport: 1
+        unitySupport: 1
+        status: 1
+        minTargetSdk: 8.0
       _xmlPath: 
     Installed: 0
   _amrAndroidAdapter:
     InstalledAdapter:
       _details:
-        name: 
-        status: 0
-        adapter_version: 
-        unity_support: 0
+        name: AMR
+        status: 1
+        adapter_version: 3.0.5
+        unity_support: 1
         app_gradle:
-          dependencies: []
-          dependencies_unity: []
+          dependencies:
+          - package: com.admost.sdk:amr:3.0.5
+            maven: 
+            google: 
+          - package: com.google.android.gms:play-services-base:17.1.0
+            maven: 
+            google: 
+          dependencies_unity:
+          - package: androidx.arch.core:core-common:2.1.0
+          - package: androidx.arch.core:core-runtime:2.1.0
+          - package: androidx.lifecycle:lifecycle-common:2.1.0
+          - package: com.admost.sdk:unity-plugin:2.0.3
+          - package: com.google.android.gms:play-services-ads-identifier:17.0.0
         project_gradle:
-          dependencies: []
+          dependencies:
+          - package: 
+            maven: https://mvn-repo.admost.com/artifactory/amr-2
+            google: 
         android_manifest:
           application: []
-      _xmlPath: 
+      _xmlPath: Assets/AMR/Editor/AMR_Android_Dependencies.xml
     LatestAdapter:
       _details:
-        name: 
-        status: 0
-        adapter_version: 
-        unity_support: 0
+        name: AMR
+        status: 1
+        adapter_version: 3.0.5
+        unity_support: 1
         app_gradle:
-          dependencies: []
-          dependencies_unity: []
+          dependencies:
+          - package: com.admost.sdk:amr:3.0.5
+            maven: 
+            google: 
+          - package: com.google.android.gms:play-services-base:17.1.0
+            maven: 
+            google: 
+          dependencies_unity:
+          - package: androidx.arch.core:core-common:2.1.0
+          - package: androidx.arch.core:core-runtime:2.1.0
+          - package: androidx.lifecycle:lifecycle-common:2.1.0
+          - package: com.admost.sdk:unity-plugin:2.0.3
+          - package: com.google.android.gms:play-services-ads-identifier:17.0.0
         project_gradle:
-          dependencies: []
+          dependencies:
+          - package: 
+            maven: https://mvn-repo.admost.com/artifactory/amr-2
+            google: 
         android_manifest:
           application: []
-      _xmlPath: 
-    Installed: 0
-  LastChecked: 
+      _xmlPath: Assets/AMR/Editor/AMR_Android_Dependencies.xml
+    Installed: 1
+  LastChecked: 07/22/2024 12:28:36

@@ -19,6 +19,9 @@ dependencyResolutionManagement {
 // Android Resolver Repos Start
         def unityProjectPath = $/file:///**DIR_UNITYPROJECT**/$.replace("\\", "/")
         maven {
+            url "https://mvn-repo.admost.com/artifactory/amr-2" // Assets/AMR/Editor/AMR_Android_Dependencies.xml:12
+        }
+        maven {
             url (unityProjectPath + "/Assets/GeneratedLocalRepo/Firebase/m2repository") // Packages/com.google.firebase.app/Firebase/Editor/AppDependencies.xml:22, Packages/com.google.firebase.crashlytics/Firebase/Editor/CrashlyticsDependencies.xml:20, Packages/com.google.firebase.remote-config/Firebase/Editor/RemoteConfigDependencies.xml:20
         }
         mavenLocal()
