@@ -305,6 +305,31 @@
       "dependencies": {},
       "url": "https://upm.matchingham.net"
     },
+    "com.matchinghamgames.vegas": {
+      "version": "14.1.5",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.matchinghamgames.handyman": "5.5.0",
+        "com.matchinghamgames.logger": "2.1.0",
+        "com.matchinghamgames.stash": "1.4.0",
+        "com.azixmcaze.unityserializabledictionary": "1.2.1000",
+        "com.unity.nuget.newtonsoft-json": "3.2.1"
+      },
+      "url": "https://upm.matchingham.net"
+    },
+    "com.matchinghamgames.vegasapplovinservice": {
+      "version": "11.1.2",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.matchinghamgames.logger": "2.1.0",
+        "com.matchinghamgames.handyman": "5.5.0",
+        "com.matchinghamgames.vegas": "14.1.2",
+        "com.unity.nuget.newtonsoft-json": "3.2.1"
+      },
+      "url": "https://upm.matchingham.net"
+    },
     "com.matchinghamgames.vibrator": {
       "version": "5.0.0",
       "depth": 0,

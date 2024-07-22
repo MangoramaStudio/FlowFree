@@ -17,12 +17,104 @@ MonoBehaviour:
   defaultProvider: FirebaseRemoteConfigService
   settingProviderMap:
     m_keys:
+    - adaptiveBannerEnabled
+    - adsEnabled
+    - adsTestDevices
+    - androidBannerPlacement
+    - androidBannerVerticalOffset
+    - androidFastBannerTimeout
+    - androidFirstInterstitialTimeout
+    - androidFirstRewardedVideoTimeout
+    - androidInterstitialForceSwitchInterval
+    - androidRewardedVideoForceSwitchInterval
+    - appOpenShowCap
+    - autoLoadAppOpenAfterClose
+    - autoLoadAppOpenAfterInit
+    - autoLoadBannerAfterInit
+    - autoLoadInterstitialAfterClose
+    - autoLoadInterstitialAfterInit
+    - autoLoadMrecAfterInit
+    - autoLoadRewardedVideoAfterClose
+    - autoLoadRewardedVideoAfterInit
+    - autoShowBannerAfterLoad
+    - bannerForceSwitchInterval
+    - bannerInitialPollDelay
+    - bannerRevenuePollInterval
+    - enableAndroidExtraBannerFeatures
+    - enableAndroidExtraInterstitialFeatures
+    - enableAndroidExtraRewardedVideoFeatures
+    - enableIosExtraBannerFeatures
+    - enableIosExtraInterstitialFeatures
+    - enableIosExtraRewardedVideoFeatures
+    - firstAppOpenShowCap
+    - firstInterstitialShowCap
+    - fullscreenAdWrapperEnabled
+    - fullscreenAdWrapperIntersBeforeForcedRewarded
     - gameSceneId
     - gameTestDeviceIds
+    - interstitialShowCap
+    - iosBannerPlacement
+    - iosBannerVerticalOffset
+    - iosFastBannerTimeout
+    - iosFirstInterstitialTimeout
+    - iosFirstRewardedVideoTimeout
+    - iosInterstitialForceSwitchInterval
+    - iosRewardedVideoForceSwitchInterval
     - IsInternetRequiredForCharlie
     - IsVegasInitializationEssential
     - openDebugMenuOnTestDevices
+    - openMediationDebuggerOnTestDevices
+    - rewardedVideoInterstitialCap
+    - sendAdRevenueEventsToAdjust
+    - sendCumulativeRevenueEventsToAdjust
+    - sendEcpmEventsToAdjust
     m_values:
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
+    - FirebaseRemoteConfigService
     - FirebaseRemoteConfigService
     - FirebaseRemoteConfigService
     - FirebaseRemoteConfigService
@@ -31,3 +123,5 @@ MonoBehaviour:
   ConfigLists:
   - {fileID: 11400000, guid: cf14a92c33402a040816f54cc307621b, type: 2}
   - {fileID: 11400000, guid: 2e97931ff07344d67b20f9455c9d4bcf, type: 2}
+  - {fileID: 11400000, guid: 8ea05f5baea294b58b579deddb74983c, type: 2}
+  - {fileID: 11400000, guid: 35a43f77d0bda4dc7a66fe9d174b4b32, type: 2}

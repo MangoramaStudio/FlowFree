@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52cf4cc70210b44f59fcfdcf1b4330db, type: 3}
+  m_Name: DummyMediationServiceConfig
+  m_EditorClassIdentifier: 
+  InitializeSuccessfully: 1
+  LoadBannerSuccessfully: 1
+  LoadInterstitialSuccessfully: 1
+  LoadRewardedVideoSuccessfully: 1
+  LoadAppOpenSuccessfully: 1
+  LoadMrecSuccessfully: 1
+  ShowBannerSuccessfully: 1
+  ShowInterstitialSuccessfully: 1
+  ShowRewardedVideoSuccessfully: 1
+  ShowAppOpenSuccessfully: 1
+  ShowMrecSuccessfully: 1
+  GiveRewardAfterRewardedVideo: 1
+  LoadBannerDelay: 3
+  LoadInterstitialDelay: 3
+  LoadRewardedVideoDelay: 3
+  LoadAppOpenDelay: 3
+  LoadMrecDelay: 3

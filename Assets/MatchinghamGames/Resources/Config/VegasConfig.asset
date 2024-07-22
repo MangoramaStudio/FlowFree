@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c02d2b58d63fc46978acb75928d97bd4, type: 3}
+  m_Name: VegasConfig
+  m_EditorClassIdentifier: 
+  AutoInitialize: 0
+  <Enabled>k__BackingField: 1
+  AutoLoadBannerAfterInit: 1
+  AutoShowBannerAfterLoad: 1
+  BannerEcpmEventThresholds: 64000000f4010000e8030000
+  BannerCumulativeRevenueEventThresholds: 3200000064000000c8000000
+  AutoLoadInterstitialAfterInit: 1
+  AutoLoadInterstitialAfterClose: 1
+  FirstInterstitialShowCap: 0
+  RewardedVideoInterstitialCap: 0
+  InterstitialShowCap: 0
+  InterstitialEcpmEventThresholds: 64000000f4010000e8030000
+  InterstitialCumulativeRevenueEventThresholds: 3200000064000000c8000000
+  AutoLoadRewardedVideoAfterInit: 1
+  AutoLoadRewardedVideoAfterClose: 1
+  RewardedVideoEcpmEventThresholds: 64000000f4010000e8030000
+  RewardedVideoCumulativeRevenueEventThresholds: 3200000064000000c8000000
+  AutoLoadAppOpenAfterInit: 0
+  AutoLoadAppOpenAfterClose: 1
+  FirstAppOpenShowCap: 0
+  AppOpenShowCap: 0
+  AppOpenEcpmEventThresholds: 64000000f4010000e8030000
+  AppOpenCumulativeRevenueEventThresholds: 3200000064000000c8000000
+  AutoLoadMrecAfterInit: 1
+  MrecEcpmEventThresholds: 64000000f4010000e8030000
+  MrecCumulativeRevenueEventThresholds: 3200000064000000c8000000
+  FullscreenAdWrapperEnabled: 1
+  FullscreenAdWrapperIntersBeforeForcedRewarded: 2
+  CumulativeEcpmEvents: 1
+  MaxEcpmThreshold: 2500
+  SendEcpmEventsToAdjust: 1
+  SendAdRevenueEventsToAdjust: 1
+  SendCumulativeRevenueEventsToAdjust: 1
+  OpenMediationDebuggerOnTestDevices: 0
+  TestDeviceIds: []
+  AdImpressionCountEventThresholds: 1e00000032000000

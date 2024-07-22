@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a47ff493e449a682b8b06e46b5e5f0, type: 3}
+  m_Name: ApplovinMediationServiceConfig
+  m_EditorClassIdentifier: 
+  _maxSdkKey: UtG15GUS7BFKcCT0Sl2lhrohtiTLzmLGThnQ_SWzysD2abTol_o7CCxuEddGaXI-2WXMsxvQ6g8sTslIp-D4Sv
+  _androidBannerAdUnitID: 
+  androidFastBannerAdUnitId: 
+  androidFastBannerTimeout: 5
+  androidBannerPlacement: 7
+  androidBannerVerticalOffset: 0
+  _androidInterstitialAdUnitID: 
+  _androidFastInterstitialAdUnitId: 
+  _androidFirstInterstitialTimeout: 10
+  _androidInterstitialForceSwitchInterval: 60
+  _androidRewardedVideoAdUnitID: 
+  _androidFastRewardedVideoAdUnitId: 
+  _androidFirstRewardedVideoTimeout: 10
+  _androidRewardedVideoForceSwitchInterval: 120
+  _androidAppOpenAdUnitID: 
+  _androidMrecAdUnitID: 
+  _iosBannerAdUnitID: 
+  iosFastBannerAdUnitId: 
+  iosFastBannerTimeout: 5
+  iosBannerPlacement: 7
+  iosBannerVerticalOffset: 0
+  _iosInterstitialAdUnitID: 
+  _iosFastInterstitialAdUnitId: 
+  _iosFirstInterstitialTimeout: 10
+  _iosInterstitialForceSwitchInterval: 60
+  _iosRewardedVideoAdUnitID: 
+  _iosFastRewardedVideoAdUnitId: 
+  _iosFirstRewardedVideoTimeout: 10
+  _iosRewardedVideoForceSwitchInterval: 120
+  _iosAppOpenAdUnitID: 
+  _iosMrecAdUnitID: 
+  bannerInitialPollDelay: 5
+  bannerRevenuePollInterval: 10
+  bannerForceSwitchInterval: 20
+  _isForChildren: 0
+  MuteAudio: 1
+  VerboseLogging: 0
+  AdaptiveBanner: 1
+  BannerBackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  SetAdjustIdAsUserId: 1
