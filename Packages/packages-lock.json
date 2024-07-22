@@ -181,6 +181,19 @@
       },
       "url": "https://upm.matchingham.net"
     },
+    "com.matchinghamgames.firebaseapp": {
+      "version": "4.3.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.matchinghamgames.handyman": "5.5.0",
+        "com.google.external-dependency-manager": "1.2.179",
+        "com.google.firebase.app": "11.8.0",
+        "com.matchinghamgames.logger": "2.1.0",
+        "com.matchinghamgames.datausageconsent": "11.0.0"
+      },
+      "url": "https://upm.matchingham.net"
+    },
     "com.matchinghamgames.gameutilities": {
       "version": "6.0.1",
       "depth": 0,
@@ -232,6 +245,23 @@
         "com.matchinghamgames.logger": "2.1.0",
         "com.matchinghamgames.handyman": "5.1.0",
         "com.matchinghamgames.meteor": "5.1.0"
+      },
+      "url": "https://upm.matchingham.net"
+    },
+    "com.matchinghamgames.meteorfirebase": {
+      "version": "5.1.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.matchinghamgames.logger": "2.1.0",
+        "com.matchinghamgames.handyman": "5.3.1",
+        "com.matchinghamgames.firebaseapp": "4.1.0",
+        "com.matchinghamgames.meteor": "5.1.0",
+        "com.google.external-dependency-manager": "1.2.177",
+        "com.google.firebase.app": "8.1.0",
+        "com.google.firebase.remote-config": "8.1.0",
+        "com.unity.nuget.newtonsoft-json": "3.2.1",
+        "com.azixmcaze.unityserializabledictionary": "1.2.1000"
       },
       "url": "https://upm.matchingham.net"
     },
