@@ -44,6 +44,15 @@
       "dependencies": {},
       "hash": "a7a78c9705bd806aad95f036d9ca8295baf50782"
     },
+    "com.google.firebase.analytics": {
+      "version": "11.8.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.google.firebase.app": "11.8.0"
+      },
+      "url": "https://upm.matchingham.net"
+    },
     "com.google.firebase.app": {
       "version": "11.8.1",
       "depth": 1,
@@ -318,6 +327,22 @@
         "com.matchinghamgames.handyman": "5.0.0",
         "com.matchinghamgames.sherlock": "11.0.0-prev.0",
         "com.matchinghamgames.admostmgsdkbridge": "5.0.0"
+      },
+      "url": "https://upm.matchingham.net"
+    },
+    "com.matchinghamgames.sherlockfirebaseservice": {
+      "version": "5.3.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.matchinghamgames.logger": "2.1.0",
+        "com.matchinghamgames.handyman": "5.3.1",
+        "com.matchinghamgames.firebaseapp": "4.2.1",
+        "com.matchinghamgames.sherlock": "11.2.0-prev.1",
+        "com.google.external-dependency-manager": "1.2.179",
+        "com.google.firebase.app": "11.8.0",
+        "com.google.firebase.analytics": "11.8.0",
+        "com.matchinghamgames.datausageconsent": "11.0.0"
       },
       "url": "https://upm.matchingham.net"
     },

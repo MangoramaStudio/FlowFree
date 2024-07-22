@@ -66,59 +66,65 @@ MonoBehaviour:
     - openMediationDebuggerOnTestDevices
     - rewardedVideoInterstitialCap
     - sendAdRevenueEventsToAdjust
+    - sendAdRevenueEventsToFirebase
     - sendCumulativeRevenueEventsToAdjust
+    - sendCumulativeRevenueEventsToFirebase
     - sendEcpmEventsToAdjust
+    - sendEcpmEventsToFirebase
     m_values:
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
     - FirebaseRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
     - FirebaseRemoteConfigService
+    - AdmostRemoteConfigService
     - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
-    - FirebaseRemoteConfigService
+    - AdmostRemoteConfigService
     - FirebaseRemoteConfigService
   ConfigLists:
   - {fileID: 11400000, guid: cf14a92c33402a040816f54cc307621b, type: 2}

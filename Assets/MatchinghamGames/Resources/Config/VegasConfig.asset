@@ -20,9 +20,9 @@ MonoBehaviour:
   BannerCumulativeRevenueEventThresholds: 3200000064000000c8000000
   AutoLoadInterstitialAfterInit: 1
   AutoLoadInterstitialAfterClose: 1
-  FirstInterstitialShowCap: 0
+  FirstInterstitialShowCap: 60
   RewardedVideoInterstitialCap: 0
-  InterstitialShowCap: 0
+  InterstitialShowCap: 60
   InterstitialEcpmEventThresholds: 64000000f4010000e8030000
   InterstitialCumulativeRevenueEventThresholds: 3200000064000000c8000000
   AutoLoadRewardedVideoAfterInit: 1
