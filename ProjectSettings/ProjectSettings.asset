@@ -751,9 +751,9 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Android: FACEBOOK;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;SHAPES_URP;CMP_USERCENTRICS
+    Android: FACEBOOK;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;SHAPES_URP;CMP_USERCENTRICS;gameanalytics_max_enabled
     Standalone: ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;FACEBOOK
-    iPhone: FACEBOOK;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1
+    iPhone: FACEBOOK;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;gameanalytics_max_enabled
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

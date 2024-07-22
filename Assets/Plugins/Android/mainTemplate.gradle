@@ -5,8 +5,52 @@ apply plugin: 'com.android.library'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+// Android Resolver Dependencies Start
+    // implementation 'com.android.installreferrer:installreferrer:2.1' // Assets/AppsFlyer/Editor/AppsFlyerDependencies.xml:10
+    implementation 'com.android.installreferrer:installreferrer:2.2' // Packages/com.adjust.unitysdk/Editor/AdjustDependencies.xml:3
+    implementation 'com.android.support:appcompat-v7:25.3.1' // Facebook.Unity.Editor.AndroidSupportLibraryResolver.addSupportLibraryDependency
+    implementation 'com.android.support:cardview-v7:25.3.1' // Facebook.Unity.Editor.AndroidSupportLibraryResolver.addSupportLibraryDependency
+    implementation 'com.android.support:customtabs:25.3.1' // Facebook.Unity.Editor.AndroidSupportLibraryResolver.addSupportLibraryDependency
+    implementation 'com.android.support:support-v4:25.3.1' // Facebook.Unity.Editor.AndroidSupportLibraryResolver.addSupportLibraryDependency
+    implementation 'com.applovin:applovin-sdk:12.5.0' // Assets/MaxSdk/AppLovin/Editor/Dependencies.xml:4
+    implementation 'com.appsflyer:af-android-sdk:6.8.2' // Assets/AppsFlyer/Editor/AppsFlyerDependencies.xml:6
+    implementation 'com.appsflyer:unity-wrapper:6.8.2' // Assets/AppsFlyer/Editor/AppsFlyerDependencies.xml:8
+    implementation 'com.facebook.android:facebook-applinks:[11.0, 12)' // Assets/FacebookSDK/Plugins/Editor/Dependencies.xml:6
+    implementation 'com.facebook.android:facebook-core:[11.0, 12)' // Assets/FacebookSDK/Plugins/Editor/Dependencies.xml:5
+    implementation 'com.facebook.android:facebook-gamingservices:[11.0, 12)' // Assets/FacebookSDK/Plugins/Editor/Dependencies.xml:9
+    implementation 'com.facebook.android:facebook-login:[11.0, 12)' // Assets/FacebookSDK/Plugins/Editor/Dependencies.xml:7
+    implementation 'com.facebook.android:facebook-share:[11.0, 12)' // Assets/FacebookSDK/Plugins/Editor/Dependencies.xml:8
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1' // Packages/com.adjust.unitysdk/Editor/AdjustDependencies.xml:4
+    implementation 'com.google.android.gms:play-services-appset:16.0.2' // Packages/com.gameanalytics.sdk/Editor/Android/Dependencies.xml:4
+    implementation 'com.google.android.gms:play-services-base:18.3.0' // Packages/com.google.firebase.app/Firebase/Editor/AppDependencies.xml:17
+    implementation 'com.google.android.instantapps:instantapps:1.1.0' // Packages/com.gameanalytics.sdk/Editor/Android/Dependencies.xml:3
+    implementation 'com.google.android.play:core-common:2.0.4' // Packages/com.google.play.core/Editor/Dependencies.xml:3
+    implementation 'com.google.android.play:review:2.0.0' // Packages/com.google.play.review/Editor/Dependencies.xml:3
+    implementation 'com.google.firebase:firebase-analytics:21.5.1' // Packages/com.google.firebase.remote-config/Firebase/Editor/RemoteConfigDependencies.xml:15
+    implementation 'com.google.firebase:firebase-app-unity:11.8.1' // Packages/com.google.firebase.app/Firebase/Editor/AppDependencies.xml:22
+    implementation 'com.google.firebase:firebase-common:20.4.2' // Packages/com.google.firebase.app/Firebase/Editor/AppDependencies.xml:13
+    implementation 'com.google.firebase:firebase-config:21.6.3' // Packages/com.google.firebase.remote-config/Firebase/Editor/RemoteConfigDependencies.xml:13
+    implementation 'com.google.firebase:firebase-config-unity:11.8.1' // Packages/com.google.firebase.remote-config/Firebase/Editor/RemoteConfigDependencies.xml:20
+    implementation 'com.google.firebase:firebase-crashlytics-ndk:18.6.2' // Packages/com.google.firebase.crashlytics/Firebase/Editor/CrashlyticsDependencies.xml:13
+    implementation 'com.google.firebase:firebase-crashlytics-unity:11.8.1' // Packages/com.google.firebase.crashlytics/Firebase/Editor/CrashlyticsDependencies.xml:20
+    implementation 'com.parse.bolts:bolts-android:1.4.0' // Assets/FacebookSDK/Plugins/Editor/Dependencies.xml:4
+    implementation 'com.usercentrics.sdk:usercentrics-ui-unity:[2.13.2-unity]' // Packages/com.usercentrics.sdk/Editor/UsercentricsDependencies.xml:4
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:[1.8.0]' // Packages/com.usercentrics.sdk/Editor/UsercentricsDependencies.xml:3
+// Android Resolver Dependencies End
 **DEPS**}
 
+// Android Resolver Exclusions Start
+android {
+  packagingOptions {
+      exclude ('/lib/arm64-v8a/*' + '*')
+      exclude ('/lib/armeabi/*' + '*')
+      exclude ('/lib/mips/*' + '*')
+      exclude ('/lib/mips64/*' + '*')
+      exclude ('/lib/x86/*' + '*')
+      exclude ('/lib/x86_64/*' + '*')
+  }
+}
+// Android Resolver Exclusions End
 android {
     compileSdkVersion **APIVERSION**
     buildToolsVersion '**BUILDTOOLS**'
