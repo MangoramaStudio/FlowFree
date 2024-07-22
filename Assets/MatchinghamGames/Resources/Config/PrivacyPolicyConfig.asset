@@ -14,13 +14,462 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AutoInitialize: 0
   <Enabled>k__BackingField: 1
-  fetchTextFromURL: 0
+  mode: 1
   fetchRequestTimeout: 2.5
   portraitPrefab: {fileID: 7591357472023161797, guid: 9145a949b84f84db3beb05d14e1a5589, type: 3}
   wideScreenPrefab: {fileID: 8482309249959865515, guid: 66ca6484ee4ee485eb31345430102485, type: 3}
-  privacyPolicyTextFetchURL: 
+  privacyPolicyTextFetchURL: https://lukatagames.blogspot.com/p/privacy-policy-i.html
   termsAndConditionsTextFetchURL: 
-  privacyPolicyText: 
-  termsAndConditionsText: 
-  privacyPolicyURL: 
-  termsAndConditionsURL: 
+  privacyPolicyURL: https://lukatagames.blogspot.com/p/privacy-policy-i.html
+  termsAndConditionsURL: https://lukatagames.blogspot.com/p/terms-of-condition.html
+  privacyPolicyText: "This Privacy policy (\u201CPrivacy policy\u201D) explains our
+    data protection policy and describes the types of information we may process
+    when you use one or more of our mobile applications (the \u201CApp\u201D, \u201Cour
+    App\u201D) and explains how we and some of the companies we cooperate processing
+    that information. When we refer to personal data (or personal information) we
+    mean any information of any kind relating to an identified or identifiable natural
+    person. It is a natural person who can be identified directly or indirectly,
+    in particular by reference to an identification number or to one or more factors
+    specific to his or her physical, physiological, mental, economic, cultural or
+    social status. Our Privacy policy applies to all users, and others who access
+    the App (\u201CUsers\u201D). For the purposes of the GDPR, we are the data controller.
+    PLEASE READ THE FOLLOWING PRIVACY POLICY, FOR INFORMATION REGARDING THE WAYS
+    YOUR PERSONAL INFORMATION MAY BE PROCESSED, CAREFULLY. WHEN YOU USE THE APP YOU
+    ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THESE TERMS.
+    BY ACCESSING OR USING THE APP, YOU AGREE TO PROCESSING OF YOUR PERSONAL DATA
+    WHICH IS PROVIDED TO US IN LINE WITH THE TERMS OF THIS PRIVACY POLICY.\n\n##
+    II. INFORMATION WE PROCESS\n\nThere are two general categories of information
+    we can process.\n\n### 2.1 Information that you submit\n\nWe ask for and collect
+    the following personal information about you when you use the App. This information
+    is necessary for the adequate performance of the contract between you and us.
+    Without such information it is impossible to provide complete functionality of
+    the App all perform the requested services. Authorization and/or Account Information.
+    When you sign up for an account, we require certain information such as your
+    email address or Facebook ID or Google ID \u2013 depending on the App settings.
+    Content Information, i.e. photos, pictures, video and audio files, documents
+    and other data that you upload using the App. Personal Information which you
+    may fill in by yourself when the App is designed for tracking your info, storing
+    your records and/or managing them for your convenience and upon your explicit
+    request.\n\n### 2.2 Information That Is Processed Automatically\n\nWhen you use
+    the App, some information about your device and your user behaviour may be processed
+    automatically. This information is generally non-personal, and we may access
+    it only in aggregated form. We process this information on the ground of our
+    legitimate interest in improving our App and giving our users the best experience.
+    Otherwise we may not be able to provide you with all the requested services and
+    features of the App. We use third-party automatic data processing technologies
+    (such as Google and Facebook) to analyse certain information sent by your device
+    or our App. Automatic data processing technologies (advertising or analytics
+    tools) provide us with the data described below. We do not control, supervise
+    or respond for how the third parties providing your information process your
+    personal data, and any information request regarding the disclosure of your personal
+    information to us should be directed to such third parties. What data may be
+    processed: Advertisers / Advertising ID, device make and model, mobile web browser
+    type and version, IP address, MAC address and IMEI, account information (email
+    etc), the device\u2019s operating system\u2019s make and version, locale information,
+    MCC (Mobile Country Code) information, location and related data, cookies and
+    similar technologies. Processing information through automatic data processing
+    technologies we use starts automatically when you start using the App. The App
+    may use automated processing of your personal data, including profiling which
+    means any form of automated processing of personal data consisting of the use
+    of personal data to evaluate certain personal aspects relating to you, in particular
+    to analyse or predict aspects concerning your personal preferences, interests,
+    behaviour, location or movements.\n\n## III. THE PURPOSES OF PROCESSING YOUR
+    PERSONAL DATA\n\nOur mission is to constantly improve our App and provide you
+    with new experiences. As part of this mission, we use your information for the
+    following purposes, In general our mission; (\n\na) To make our service available.
+    We use information that you submit and information that is processed automatically
+    to provide you with all requested services.\n\n(b) To improve, test and monitor
+    the effectiveness of our App. We use information that is processed automatically
+    to better understand user behaviour and trends, detect potential outages and
+    technical issues, to operate, protect, improve, and optimize our App.\n\n(c)
+    To provide you with interest-based (behavioural) advertising or other targeted
+    content. We may use information that is processed automatically for marketing
+    purposes (to show ads that may be of interest to you based on your preferences).
+    We provide personalized content and information to you, which can include online
+    ads or other forms of marketing.\n\n(d) To communicate with you. We use the information
+    we have to communicate with you through newsletters, i.e. to send you marketing
+    notifications, receive your feedback about our App experience, and let you know
+    about our policies and terms. We also use your information to respond to you
+    when you contact us.\n\n(e) To prevent fraud and spam, to enforce of law. We
+    really want our App to be free of spam and fraudulent content so that you feel
+    safe and free. We may use your information to prevent, detect, and investigate
+    fraud, security breaches, potentially prohibited or illegal activities, protect
+    our trademarks and enforce our Terms of Use.\n\nIf any new purposes for processing
+    your personal data arise, we will let you know we start to process information
+    on that other purpose by introducing the corresponding changes to this Privacy
+    policy.\n\n## IV. SHARING OF YOUR INFORMATION\n\nWe will share your information
+    with third parties only in the ways that are described in this Privacy Policy.
+    We collect the following categories of your personal information and may share
+    it to third parties: identifiers, commercial information, internet or other electronic
+    network activity information, geolocation data, and inferences drawn from these
+    categories. We will not rent or sell your personal data to third parties, but
+    we may share your information from tools like cookies, log files, and device
+    identifiers and location data, with third-party organizations that provide automatic
+    data processing technologies for the App. We do not control or influence these
+    third parties\u2019 tracking technologies or how they may be used. We may also
+    share certain information such as cookie data with third-party advertising partners.
+    This information allows third-party ad networks, inter alia, to deliver targeted
+    advertisements that they believe will be of most interest to you. We may use
+    one or more of the following third-party advertising services and analytics tools:
+    Adjust; AdMob; Apple SearchAds; AppsFlyer; Facebook; Firebase; Flurry; Unity:
+    Fabric; Google AdWords; ironSource; Mopub; Appcalibre ; OneSignal ; Kochava ;
+    Applovin; Inmobi; Ogury, Startapp. In case you want to learn more about the services
+    and privacy options please consult their websites and privacy policies. Our App
+    may use certain third-party service providers like Amazon Web Services (AWS)
+    to enhance user experience. Use of third-party services may require us to submit
+    your personal information to their servers that provide automatic data processing
+    technologies for the App. Our App may contain links to third-party websites/services
+    or you may access the App from a third-party site. We are not responsible for
+    the privacy practices or the content of these third-party sites or services linked
+    to or from our App, including the information or content contained within them.
+    We may disclose your personal information if it needed for objective reasons,
+    due to public interest or in other unforeseen circumstances: \u2013 as required
+    by law; \u2013 when we believe in good faith that disclosure is necessary to
+    protect our rights, protect your safety or the safety of others, investigate
+    fraud, or respond to a government request; \u2013 if we are involved in a merger,
+    acquisition, or sale of all or a portion of its assets, you will be notified
+    via email and/or a prominent notice in our App of any change in ownership or
+    uses of your personal information, as well as any choices you may have regarding
+    your personal information.\n\n## V. INTERNATIONAL DATA TRANSFERS\n\nWe work in
+    the international space and provide our App to our Users around the world. We
+    and third-party organizations that provide automatic data processing technologies
+    for the App or our third-party advertising partners may transfer the automatically
+    processed information across borders and from your country or jurisdiction to
+    other countries or jurisdictions around the world. If you are located in the
+    European Union, US or other regions with laws governing data processing that
+    may differ from England & Wales law, please note that we may transfer information,
+    including personal information, to a country and jurisdiction that does not have
+    the same data protection laws as in your jurisdiction. This means that your personal
+    information can be transferred to a third country, a territory or one or more
+    specified sectors within that third country, or to the international organization
+    where data protection and confidentiality regulations may not provide the same
+    level of protection of a personal data as your country does. We try to make sure
+    that the recipient of any personal data provides a proper protection of the personal
+    data received, in accordance with the current legislation on the protection of
+    such information. By using the App, you agree that we may transfer your personal
+    data to any third country, a territory or one or more specified sectors within
+    that third country, or to the international organization. For the purposes of
+    data storage, we recourse to the services of the hosting organizations. We take
+    your privacy seriously and, therefore, encrypt your personal data before sending
+    it to the hosting organizations for the purposes of its storage. Please note
+    that we cooperate only with those hosting organizations that have passed our
+    security and reliability check. ## VI. HOW LONG WE USE YOUR PERSONAL DATA We
+    generally retain your personal information for as long as is necessary for the
+    performance of the contract between you and us and to comply with our legal obligations.
+    If you no longer want us to use your information that we physically access and
+    store, you can request that we erase your personal information and close your
+    account. However, some data may still be stored for a certain time period if
+    information is necessary to comply with legal obligation (taxation, accounting,
+    audit) or in order to maintain safety and data backup settings, prevent fraud
+    or other malicious acts.\n\n## VII. EXERCISING YOUR RIGHTS\n\nFor the data we
+    store and access you are entitled to address us regarding the following issues:
+    Data Access and Portability. You can request copies of your personal information
+    held by us. Change or Correct Data. Where you cannot update data by yourself
+    through your account, you have the right to ask us to correct change, update
+    or rectify your data. Data Retention and Deletion. We generally retain data for
+    as long as your account is in existence or as needed to provide the App. However,
+    specific retention times can vary based on context of the processing we perform
+    and on our legal obligations. You have the right to ask us to delete all or some
+    of the personal data we hold about you. If you have an account, you can also
+    delete your account at any time. We may need to retain some of your personal
+    data even after you have closed your account if reasonably necessary to comply
+    with our legal obligations, or where we have a legitimate interest in doing so
+    (e.g. to prevent fraud and abuse and maintain and enhance security). Restriction
+    of Processing. Under certain circumstances, you may have the right to limit the
+    ways in which we use your personal information. Please bear in mind that we ensure
+    the above mentioned rights only with respect to the information that you submit.
+    When your personal information that is processed automatically you may object
+    to such processing in some circumstances. Where your personal information is
+    processed for direct marketing purposes, you may ask to cease processing your
+    data for these direct marketing purposes. In order to exercise your right please
+    contact the third party services listed in the Section IV of this Privacy Policy
+    to learn how you can object to processing your data. Most of them have clear
+    instructions on their privacy pages, functional API or other options. Please
+    note that you can opt-out of marketing tracking by emailing the developer account.\n\n##
+    VIII. SECURITY\n\nThe security of your personal information is important to us.
+    We follow generally accepted industry standards to protect the personal information
+    submitted to us, both during transmission and once we receive it. We take reasonable
+    and appropriate measures to protect personal information from loss, misuse and
+    unauthorized access, disclosure, alteration and destruction, taking into account
+    the risks involved in the processing and the nature of the personal information.
+    We implement appropriate technical and organizational measures, which are designed
+    to implement data-protection principles, such as data minimization, in an effective
+    manner and to integrate the necessary safeguards into the processing. We seek
+    your personal data to be encrypted with proper and strong encryption algorithms,
+    including hashing where possible. Unfortunately, no method of transmission over
+    the Internet, or method of electronic storage, is 100% secure. We do our best
+    to protect your personal data, nevertheless, we cannot guarantee its absolute
+    security. In the event that your personal information is compromised as a breach
+    of security, we will promptly notify you in compliance with applicable law. ##
+    IX. CHILDREN\u2019S PRIVACY Our App is not intended for children under the age
+    of 18. Therefore, we do not knowingly collect or solicit any personal information
+    from children under 18. No one under age 18 may provide any personal information
+    to the App. If you are under 18, do not use or provide any information on this
+    App or through any of its features. Do not provide any information about yourself,
+    including your email address. If we learn that we have collected personal information
+    from a child under age 18 without verification of parental consent, we will erase
+    that information as quickly as possible. If you believe that we might have any
+    information from or about a child under 18, please contact us. ## X. CHANGES
+    TO THE PRIVACY POLICY This Privacy policy may change from time to time. Whenever
+    we change this Privacy policy, we will post those changes to this Privacy policy
+    and other places that we consider appropriate. Additional forms of notice of
+    modifications or updates as appropriate under the circumstances may be provided
+    to you. XI. HOW TO CONTACT US If you have any questions about this Privacy Policy,
+    please feel free to contact us at this email: lukatagames@gmail.com"
+  termsAndConditionsText: "1.1 These are the terms and conditions (the \u2018T&Cs\u2019)
+    (\u2018we\u2019, \u2018us\u2019, \u2018our\u2019, \u2018) use to govern our game
+    which you have installed and includes the link you used to reach this page (the
+    \u201CGame\u201D). If you don\u2019t want to or cannot agree to these T&Cs, then
+    you must not buy (where applicable), download, use or play the Game. By buying
+    (where applicable), downloading, installing, updating, using or playing the Game,
+    or by clicking \u2018accept\u2019, \u2018start\u2019 or similar (where applicable),
+    you agree to these T&Cs.\n1.2 You must be at least 13 years old in order to use
+    the Game. In addition, if you are under the age of 18, you must have your parent
+    or legal guardian\u2019s consent to your use the Game and your parent or legal
+    guardian must agree to these T&Cs.\n1.3 We may offer the Game through various
+    games and/or application stores including, without limitation Apple App Store
+    and Google Play Store (each a \u2018Store\u2019). That means you may need a Store
+    account to play the Game, and your use of each Store is subject to the terms
+    of use applicable to that Store (as may change from time to time).\n1.4 Where
+    applicable, the Stores may allow you to get a refund in respect of or in connection
+    with the Game. You should contact the Store through which you made a purchase,
+    where applicable, in the event that you desire a refund.\nPlease read and implement
+    the Health and Safety Notice at section 7 below before you play our Game.\nSUMMARY\n3.1
+    These T&Cs are a legal agreement between us and you, so please read them carefully.
+    These T&Cs describe how you are permitted to use the Game. If you break these
+    terms and conditions, we may stop you using the Game, contact you regarding your
+    use of it or exercise other remedies that we have available to us at law or in
+    equity.\n3.2 The Game is provided on an \u2018AS IS\u2019 basis, and we make
+    no (and hereby disclaim any and all) representations and warranties with respect
+    to it, to the extent permitted by applicable law.\n3.3 These T&Cs may change
+    from time to time. Please check back with us periodically to make sure that you\u2019re
+    aware of the latest version. These terms are subject to the Content Usage Guidelines
+    which cover the use of our games which will be provided to you and updated to
+    you from time to time (\u201CUsage Guidelines\u201D).\nPRIVACY\n4.1 Under data
+    protection legislation, we are required to provide you with certain information
+    about who we are, how we process your personal data and for what purposes and
+    your rights in relation to your personal data and how to exercise them. This
+    information is provided in our Privacy Policy and it is important that you read
+    that information.\n4.2 Please take care when disclosing any information about
+    yourself on or through Game. A known risk of the public internet is people not
+    necessarily being who they say they are, or behaving in an unreliable, misleading
+    or illegal way. We cannot control information you choose to provide to other
+    users, where our Game include facilities for you to interact with others. We
+    strongly recommend that you exercise caution, act sensibly and not disclose any
+    information which you do not wish to have disseminated into the wider public
+    internet. Any disclosures of your information by you to other users are made
+    by you at your own risk. Once information is disclosed by you in this way, it
+    may not be possible for us to prevent its dissemination over the public internet.\nWHAT
+    YOU ARE ALLOWED TO DO\n5.1 As long as you follow the rest of the terms and conditions
+    in these T&Cs and the Usage Guidelines, you can use the Game in the following
+    ways:\n5.1.1 To play the Game. We grant you a non-exclusive, revocable, non-transferable,
+    non-sublicensable, limited right and license to use one copy of the Game for
+    your personal, non-commercial use for gameplay in accordance with these T&Cs.
+    We do not grant you ownership of the Game itself.\n5.1.2 To share screenshots
+    and videos of your gameplay on your social media.\n5.1.3 To use upgrades, updates
+    and additional Game-related content which we may make available from time to
+    time (although we are not obliged to provide that or any updates, upgrades or
+    support).\nWHAT YOU ARE PROHIBITED TO DO\n6.1 We use commercially reasonable
+    endeavours to protect our Game and our users, and it is important that the Game
+    is not used in a way which is unfair or which might harm our rights or the rights
+    of others. Accordingly, we reserve the right to take any and all action available
+    to us with respect to any conduct that violates the terms or spirit of these
+    T&Cs.\n6.2 The following sets out some of the things that you cannot do with
+    any Game:\n6.2.1 do not cheat, rig, fix, circumvent rules or processes, use multiple
+    accounts, exploit \u2018loopholes\u2019 or bugs, or use our Game in a way which
+    is not within the spirit intended by our T&Cs or in a way which may harm the
+    experience of other users of the Game;\n6.2.2 do not share, rent, resell, or
+    make available copies of the Game (or any \u2018hacked\u2019 versions) or otherwise
+    use the Game commercially in any way except as expressly permitted by law (such
+    as under \u2018fair dealing or \u2018fair use\u2019 laws);\n6.2.3 do not modify
+    or adapt the Game or hack, merge, translate, creative derivatives from the Game,
+    mimic, disable the Game or tamper with them;\n6.2.4 where applicable, do not
+    share any password or security information you use to access the Game with any
+    other person;\n6.2.5 do not make public or commercial use, by any means, of any
+    Game, products or services without our prior written consent;\n6.2.6 do not delete,
+    obscure, remove or otherwise prevent the proper display of intellectual property
+    (including without limitation copyright and trade mark notices or other legal
+    lines or credits) notices in our Game;\n6.2.7 do not reverse engineer, decompile,
+    disassemble, decipher or otherwise attempt to derive the source code for any
+    underlying software or other intellectual property used to provide the Game;\n6.2.8
+    do not do anything (or attempt to do anything) which might disrupt use of the
+    Game by us or other users, or which could threaten, harass or upset other users
+    of the Game or website community; and\n6.2.9 do not make anything available on
+    or through the Game that violates the rights of third parties (including without
+    limitation their intellectual property or privacy rights).\n6.3 We may make codes
+    of conduct and usage rules and guidance available to you, which may provide additional
+    rules and guidance about your use of our Game. We require that you comply with
+    these rules so that we can properly operate our Game and to ensure that our users
+    have a safe and fair experience. To the extent of ambiguity or conflict between
+    a code of conduct and these T&Cs, these T&Cs prevail.\n6.4 Please make sure you
+    read these T&Cs carefully and understand them. If we are threatened with or face
+    legal action because you break any of the terms and conditions in these T&Cs,
+    we may hold you responsible. That means you may need to compensate us, and pay
+    us back for any damage we suffer as a result, and for our legal and other expenses.\n6.5
+    If you breach these T&Cs, we have the right to suspend, terminate or otherwise
+    take under review your licenses granted hereunder.\nHEALTH AND SAFETY PRECAUTIONS\n7.1
+    The Game may contain flashing lights, realistic images and simulations.\nTHIRD
+    PARTY CONTENT IN OUR GAME\n8.1 The Game may include third party materials such
+    as posts, comments, videos, images and other content such as other user-generated
+    content. We are not responsible for this content. We may moderate or otherwise
+    check such content in some instances, but we are not required to do so. Depending
+    upon the particular Game or website and the content involved, we may be solely
+    a mere conduit for the transmission, storage and retrieval of the relevant content.
+    In other words, we may not review content for its legality, tastefulness or its
+    compliance with these T&Cs.\n8.2 We may rely upon a reporting system whereby
+    players and users can report third party or user-generated content to us, such
+    as because it is illegal content or as it is content which breaches these T&Cs.
+    A reporting mechanism may be made available for these purposes in the relevant
+    website or Game, and you can also let us know by contacting us through the communication
+    channels described under Contact Us section.\n8.3 Where we provide the functionality
+    for you to upload any content, including any user generated content, to our Games
+    and/or websites such as, without limitation, posts, photos, videos, images, voice
+    communications, text and other communications, comments or other content or files,
+    you agree and undertake that the content:\n8.3.1 is lawful and will not give
+    rise to any actual or possible civil or criminal liability for you or for us
+    and does not promote any unlawful or illegal activity (including without limitation
+    in respect of the territory and local laws applicable where you may upload such
+    content);\n8.3.2 does not infringe the rights of any third party, including without
+    limitation their intellectual property or privacy rights;\n8.3.3 does not include
+    any virus, worm, logic bomb, bug or any other form of malicious or technically
+    harmful data, code, link or information;\n8.3.4 is not violent, threatening,
+    abusive, pornographic, defamatory, discriminatory, obscene or otherwise morally
+    objectionable (in our reasonable opinion);\n8.3.5 does not harass or defame any
+    person or organisation;\n8.3.6 does not commercially market or promote any third
+    party, product or organisation;\n8.3.7 does not seek to or attempt to make any
+    arrangement to meet a child under the age of eighteen (18);\n8.3.8 does not contain
+    any restricted or security related content such as the passwords, medical information
+    or confidential information of any person; and\n8.3.9 does not solicit, encourage,
+    invite, advocate, request or provoke directly or indirectly any of the foregoing
+    or any illegal activity or breach of these T&Cs.\nINTELLECTUAL PROPERTY\n9.1
+    All intellectual property rights in the Game throughout the world belong to us
+    or our licensors, and the rights in the Game is granted to you by way of a limited
+    license (and are not sold) to you. You have no intellectual property rights in,
+    or to, the Game other than the right to use the Game in accordance with these
+    T&Cs on the applicable platform / Store and device. Except as otherwise expressly
+    provided in these T&Cs, all rights are reserved by us and our licensors.\nOUR
+    LIABILITY\n10.1 Nothing in these T&Cs will limit any of your rights which may
+    not be excluded under law. This means that, notwithstanding any other terms in
+    these T&Cs:\n10.1.1 our liability to you for personal injury or death caused
+    by our negligence is not excluded or limited, nor is our liability to you for
+    any fraudulent representation we make; and\n10.1.2 if a paid-for Game does not
+    work when we deliver it to you, we will try to repair or replace it.\n10.2 Other
+    than as mentioned above, our overall liability to you is limited to the price
+    you paid to use the Game.\n10.3 The Game, along with any updates, upgrades and
+    any additional content, is provided \u2018AS IS\u2019. That means we don\u2019t
+    make any promises to you about the Game other than that they will be of satisfactory
+    quality, as described, and fit for purpose. We don\u2019t make any other promises
+    about the Game.\n10.4 We\u2019ll use reasonable skill and care to provide the
+    Game, but can\u2019t guarantee there won\u2019t be any errors, bugs or interruptions
+    to them, or that our Game will not cause any problems with your device.\n10.5
+    If we release a version of the Game which is not yet complete, because we want
+    to give you early access, then you\u2019ll need to bear in mind that it may have
+    some errors, bugs or interruptions.\n10.6 Please do let us know straight away
+    if you discover any problems with the Game, so we are aware and can decide whether
+    it is something we need to address in a future release or update (if there is
+    a future release or update). You can contact us to let us know about any problems
+    with the Game the following email address given under Contact Us section.\n10.7
+    Any views expressed in the Game are the views of the authors and not of us, unless
+    we expressly specify otherwise.\n10.8 Any similarities to real world people,
+    events and products or to any copyright works is purely coincidental or is intended
+    purely as satire or parody.\nSTORE TERMS\n11.1 The ways in which you can use
+    the Game may be controlled by the relevant Store\u2019s terms and conditions
+    and policies as made available to you by the Store. To the extent that there
+    is a conflict between the terms of these T&Cs and the relevant Store\u2019s terms
+    from which you purchased (where applicable) or installed the Game, the Store\u2019s
+    terms shall prevail to the extent of the conflict.\n11.2 The Game may provide
+    for certain additional content and features available through in-app purchase(s)
+    (\u201CVirtual Items\u201D). The terms of this T&C and specifically this clause
+    12 shall govern all such Virtual Items.\n11.3 This clause applies insofar as
+    the Game permits you to earn, obtain or use Virtual Items. You may use Virtual
+    Items in connection with permitted use of the Game and, where applicable, in
+    any third party applications in which such Virtual Items may also be used. You
+    do not own the Virtual Items. You only have a non-exclusive, non-transferable,
+    revocable licence to use them, for their permitted uses, as may be amended and
+    notified to you from time to time, in connection with the Game and subject to
+    your compliance with the terms of this T&C. Where you purchase Virtual Items
+    from us, the purchase will be subject to our then applicable terms of sale, including
+    any additional fees that are applicable for Virtual Items that can be used in
+    third party applications. These will be made available to you at the time of
+    each purchase.\n11.4 We or third parties may offer access to paid-for Content
+    on, or in connection with, the Game (including access to paid virtual events).
+    Such access will be subject to the then applicable terms of sale and use. These
+    will be made available to you at the time of each purchase.\n11.5 You understand
+    and agree that Virtual Items have no cash or redemption value and your licence
+    to use them will be suspended and/or terminated if you are denied access to your
+    account or your account is shut down, frozen or terminated for any reason in
+    accordance with this T&C. We shall have no obligation to make any refund or otherwise
+    compensate you in any amount, unless expressly indicated otherwise and subject
+    to your mandatory consumer rights.\n11.6 You are not permitted to trade, exchange,
+    sell, rent or otherwise transfer or deal in the Virtual Items or your account,
+    without our prior written permission. You shall not access or use any account
+    or Virtual Items which have been traded, exchanged, sold, rented or otherwise
+    transferred or dealt in.\n11.7 If the Game offers a subscription-based premium
+    feature package, it enables users to use the app without advertisements and with
+    extra features. It will include an auto-renewable subscription, with a weekly
+    subscription period. In this case, payment will be charged to your Store account
+    upon confirmation of the subscription and the subscription period will be weekly.
+    In this case subscription will be renewed unless turned off 24 hours before the
+    end of the period, and the account will be automatically charged for renewal
+    as well. If you subscribe, your account will be charged for renewal within 24
+    hours prior to the end of the current period. You can manage and cancel your
+    subscriptions by going to your account settings in the Store. If a free trial
+    period is offered and if you purchase a subscription, any unused portion of the
+    free trial period will be forfeited.\nOPERATING SYSTEM AND DEVICE REQUIREMNENTS\n12.1
+    The Game is provided by us in English and the other languages described on the
+    Stores.\n12.2 An internet connection is required to use certain aspects of the
+    Game. Other operating and system requirements apply (such as in respect of operating
+    system and installation memory \u2013 depending upon the relevant Game); information
+    about these requirements will be made available to you, either by Store descriptions,
+    packaging information or through our website.\nTERMINATION AND SERVICE OUTAGE\n13.1
+    We may temporarily discontinue the Game and any and all services and content
+    available through them at any time for the purposes of upgrades, maintenance
+    or other service administration reasons. We will use our reasonable endeavours
+    to limit the length of time this occurs for.\n13.2 We may end your rights to
+    use the Game at any time in the event that you breach these T&Cs. If what you
+    have done can be put right, we may, in our sole discretion, give you a reasonable
+    opportunity to do so. Where you have paid for the Game, content or services in
+    connection with the Game and your rights have been terminated in accordance with
+    this clause because of your breach of these T&Cs, we will not refund you.\n13.3
+    We may terminate our agreement with you (in whole or in part) for any reason
+    at our discretion upon reasonable notice to you. This may happen, without limitation,
+    because we choose to end the availability of the Game. If your use of the Game
+    was provided to you free of charge, you will not be entitled to compensation
+    in this event. If you paid for the Game, content or services in connection with
+    the Game, you will not be entitled to a refund where you have substantially had
+    the enjoyment of what you had paid for. Where you have not had a reasonable period
+    of opportunity to enjoy the paid-for Game, we may offer you a partial or full
+    refund.\n13.4 Upon your deletion/uninstallation of the Game, any in-Game rankings
+    or scores, including virtual currency balances (whether earned or purchased),
+    or scores or information in connection with the Game services will not be retained
+    or accessible. These may not be recoverable by us once they are deleted or made
+    inaccessible.\nGENERAL\n14.1 These T&Cs do not affect any legal rights you may
+    have under the law which cannot be excluded or limited.\n14.2 We may change or
+    update these T&Cs from time to time, but changes only affect you to the extent
+    they can legally apply. For example, if we release an update with a new set of
+    T&Cs, and you don\u2019t use the update, then the old set of T&Cs applies, but
+    if you do use the updates or if you use parts of the Game(s) that rely on our
+    ongoing online services then the new T&Cs will apply. Please check back at our
+    website from time to time in case of updates to the T&Cs.\n14.3 We may transfer
+    our rights and obligations under these T&Cs to another organisation. We will
+    let you know if that happens and we will ensure that your rights under these
+    T&Cs are unaffected. You may not transfer your rights or obligations under these
+    T&Cs unless we expressly agree to the transfer in writing.\n14.4 Even if we delay
+    in enforcing these T&Cs and/or our rights, we can still enforce these T&Cs and/or
+    our rights later. If we do not insist immediately that you do anything you are
+    required to do under these T&Cs, or if we delay in taking steps against you in
+    respect of your breaking of any term of these T&Cs, that will not mean that you
+    do not have to do those things and it will not prevent us taking steps against
+    you at a later date.\n14.5 If a dispute arises between you and us, we strongly
+    encourage you to first contact us directly to seek a resolution thorugh the communication
+    channels under Contact Us section. These T&Cs are governed by Turkish law and
+    you can bring proceedings in respect of the Game or these T&Cs in courts of Republic
+    of Turkey.\nCOMPLAINTS AND ALTERNATIVE DISPUTE RESOLUTION\n15.1 Should you have
+    any queries or complaints, please get in touch via the contact information set
+    out in clause 17 below.\n15.2 Alternative dispute resolution is a process where
+    an independent body considers the facts of a dispute and seeks to resolve it,
+    without you having to go to court. If you are not happy with how we have handled
+    any complaint, you may want to consider an alternative dispute resolution provider.\nCOMPANY
+    AND CONTACT INFORMATION\nIn these T&Cs, \u2018we\u2019, \u2018us\u2019 and \u2018our\u2019
+    refers to: Lukata Games, a company registered in Republic of Turkey \nEmail:
+    lukatagames@gmail.com"
