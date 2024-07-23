@@ -8,24 +8,23 @@ using Utilities;
 
 namespace MangoramaStudio.Systems.SoundSystem.Scripts
 {
+    
     public class SoundManager : BaseManager
     {
         
         [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string singleMatchSfx;
         [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string fullMatchSfx;
+        [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string drawSfx;
         
         
         public IList<ValueDropdownItem<string>> GetSfxKeys()
         {
             return SfxUtility.GetSfxKeys();
         }
-
-        public void TryPlaySound(string id)
+        
+        public void PlayDrawLine()
         {
-            if (PlayerData.IsSfxEnabled == 1)
-            {
-                Apollo.PlaySingleAudio(id);          
-            }
+            TryPlaySound(drawSfx);
         }
 
         public void PlayCompleteLine()
@@ -38,5 +37,12 @@ namespace MangoramaStudio.Systems.SoundSystem.Scripts
             TryPlaySound(fullMatchSfx);
         }
         
+        private void TryPlaySound(string id)
+        {
+            if (PlayerData.IsSfxEnabled == 1)
+            {
+                Apollo.PlaySingleAudio(id);          
+            }
+        }
     }
 }

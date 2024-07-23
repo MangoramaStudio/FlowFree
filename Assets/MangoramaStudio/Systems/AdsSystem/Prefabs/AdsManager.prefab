@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &880987303906405029
+--- !u!1001 &4493343147417763900
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5906913670309214991, guid: 1161943da2c9a4b448bbc09a6d1b3086, type: 3}
       propertyPath: m_Name
-      value: SoundManager
+      value: AdsManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -58,25 +58,22 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5906913670309214991, guid: 1161943da2c9a4b448bbc09a6d1b3086, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2635897357914107238}
+      addedObject: {fileID: 8678686373399512593}
   m_SourcePrefab: {fileID: 100100000, guid: 1161943da2c9a4b448bbc09a6d1b3086, type: 3}
---- !u!1 &6755531274428191146 stripped
+--- !u!1 &8044024212495039283 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5906913670309214991, guid: 1161943da2c9a4b448bbc09a6d1b3086, type: 3}
-  m_PrefabInstance: {fileID: 880987303906405029}
+  m_PrefabInstance: {fileID: 4493343147417763900}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2635897357914107238
+--- !u!114 &8678686373399512593
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6755531274428191146}
+  m_GameObject: {fileID: 8044024212495039283}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c086e1801554f37a3510036737b05aa, type: 3}
+  m_Script: {fileID: 11500000, guid: bfa2a4406403435ab1d6a6a80b3ea13a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  singleMatchSfx: singleMatch
-  fullMatchSfx: fullMatch
-  drawSfx: softClick

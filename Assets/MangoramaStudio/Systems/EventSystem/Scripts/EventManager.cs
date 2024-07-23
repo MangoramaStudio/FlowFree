@@ -34,6 +34,8 @@ namespace MangoramaStudio.Scripts.Managers
             OnRaiseHint?.Invoke();
         }
 
+     
+
         public void LevelFailed()
         {
             OnLevelFinished?.Invoke(false);

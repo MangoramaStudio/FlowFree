@@ -7,14 +7,6 @@ namespace MangoramaStudio.Systems.VibrationSystem
     public class VibrationManager : BaseManager
     {
 
-        public void TryVibrate(VibrationType preset = VibrationType.Light)
-        {
-            if (PlayerData.IsHapticsEnabled == 1)
-            {
-                Vibrator.Vibrate(preset);     
-            }
-        }
-
         public void VibrateDrawLine()
         {
             TryVibrate();
@@ -29,5 +21,19 @@ namespace MangoramaStudio.Systems.VibrationSystem
         {
             TryVibrate(VibrationType.Heavy);
         }
+
+        public void VibrateButton(VibrationType type = VibrationType.Light)
+        {
+            TryVibrate(type);
+        }
+        
+        private void TryVibrate(VibrationType preset = VibrationType.Light)
+        {
+            if (PlayerData.IsHapticsEnabled == 1)
+            {
+                Vibrator.Vibrate(preset);     
+            }
+        }
+
     }
 }

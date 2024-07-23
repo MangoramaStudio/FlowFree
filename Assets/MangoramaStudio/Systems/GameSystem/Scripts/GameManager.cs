@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using MangoramaStudio.Scripts.Controllers;
+using MangoramaStudio.Systems.AdsSystem.Scripts;
 using MangoramaStudio.Systems.PopupSystem.Scripts;
 using MangoramaStudio.Systems.ReviewSystem.Scripts;
 using MangoramaStudio.Systems.SoundSystem.Scripts;
@@ -22,12 +23,15 @@ namespace MangoramaStudio.Scripts.Managers
         [SerializeField] private PopupManager popupManager;
         [SerializeField] private VibrationManager vibrationManager;
         [SerializeField] private SoundManager soundManager;
+        [SerializeField] private AdsManager adsManager;
         public EventManager EventManager => eventManager;
         public LevelManager LevelManager => levelManager;
         public AddressableManager AddressableManager { get; private set; }
 
         public VibrationManager VibrationManager => vibrationManager;
         public SoundManager SoundManager => soundManager;
+
+        public AdsManager AdsManager => adsManager;
         
         public static GameManager Instance;
 

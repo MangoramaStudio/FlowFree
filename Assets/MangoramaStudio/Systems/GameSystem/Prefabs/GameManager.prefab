@@ -657,6 +657,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 871378993de44104fa2af9f3a048eb74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &7854457195513779046
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8577286547065269194}
+    m_Modifications:
+    - target: {fileID: 4220779885770857166, guid: cc580076247144536b61a0b8ca9079ea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220779885770857166, guid: cc580076247144536b61a0b8ca9079ea, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220779885770857166, guid: cc580076247144536b61a0b8ca9079ea, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220779885770857166, guid: cc580076247144536b61a0b8ca9079ea, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220779885770857166, guid: cc580076247144536b61a0b8ca9079ea, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220779885770857166, guid: cc580076247144536b61a0b8ca9079ea, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220779885770857166, guid: cc580076247144536b61a0b8ca9079ea, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220779885770857166, guid: cc580076247144536b61a0b8ca9079ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220779885770857166, guid: cc580076247144536b61a0b8ca9079ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220779885770857166, guid: cc580076247144536b61a0b8ca9079ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8044024212495039283, guid: cc580076247144536b61a0b8ca9079ea, type: 3}
+      propertyPath: m_Name
+      value: AdsManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cc580076247144536b61a0b8ca9079ea, type: 3}
+--- !u!114 &1544805530585552247 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8678686373399512593, guid: cc580076247144536b61a0b8ca9079ea, type: 3}
+  m_PrefabInstance: {fileID: 7854457195513779046}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa2a4406403435ab1d6a6a80b3ea13a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &6310558777118575016 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4220779885770857166, guid: cc580076247144536b61a0b8ca9079ea, type: 3}
+  m_PrefabInstance: {fileID: 7854457195513779046}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7916897405211613482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -804,6 +877,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 344726825554533106, guid: 1161943da2c9a4b448bbc09a6d1b3086, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1614444363732726722}
+    - targetCorrespondingSourceObject: {fileID: 344726825554533106, guid: 1161943da2c9a4b448bbc09a6d1b3086, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6310558777118575016}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5906913670309214991, guid: 1161943da2c9a4b448bbc09a6d1b3086, type: 3}
       insertIndex: -1
@@ -835,6 +911,7 @@ MonoBehaviour:
   popupManager: {fileID: 622487914125029863}
   vibrationManager: {fileID: 2333496022121014410}
   soundManager: {fileID: 4180022458540519155}
+  adsManager: {fileID: 1544805530585552247}
 --- !u!4 &8577286547065269194 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 344726825554533106, guid: 1161943da2c9a4b448bbc09a6d1b3086, type: 3}

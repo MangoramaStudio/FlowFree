@@ -225,6 +225,8 @@ namespace Mechanics.RoboticFlows
                     return;
                 }
                 
+             
+                
                 if (_selectedDrawer.DrawnCells.Contains(cell))
                 {
                     _selectedDrawer.ClearToCell(cell);
@@ -242,6 +244,7 @@ namespace Mechanics.RoboticFlows
                     
                     _selectedDrawer.DrawCell(cell);
                     _vibrationManager.VibrateDrawLine();
+                    _soundManager.PlayDrawLine();
 
                     if (_selectedDrawer.FlowComplete)
                     {

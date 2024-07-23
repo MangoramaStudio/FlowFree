@@ -38,10 +38,7 @@ namespace MangoramaStudio.Scripts.Managers.Buttons
 
         private void TryVibrate()
         {
-            if (PlayerData.IsHapticsEnabled == 1)
-            {
-                Vibrator.Vibrate(vibrationType);     
-            }
+            GameManager.Instance.VibrationManager.VibrateButton(vibrationType);
         }
 
         protected virtual void ToggleEvents(bool isToggled)
