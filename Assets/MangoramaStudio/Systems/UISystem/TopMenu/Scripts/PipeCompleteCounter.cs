@@ -1,6 +1,7 @@
 
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 using MangoramaStudio.Scripts.Managers;
 using MangoramaStudio.Scripts.Managers.Buttons;
 using UnityEngine;
@@ -53,6 +54,19 @@ namespace Mechanics.RoboticFlows
             }
         }
 
+        public async void Undo()
+        {
+            try
+            {
+                await Task.Yield();
+                CalculateCompletedPipe();
+            }
+            catch (Exception e)
+            {
+                 Debug.LogError(e);
+            }
+        }
+
         public void Restart()
         {
             CompletedPipeProportion = 0;
@@ -63,7 +77,6 @@ namespace Mechanics.RoboticFlows
             var currentOccupiedCellsCount = flowGrid.Cells.Count(x => x.IsOccupied);
             CompletedPipeProportion = ((float)currentOccupiedCellsCount / (float)_totalPipeCount) *100f;
             var pipeComplete = Mathf.CeilToInt(CompletedPipeProportion);
-            //Debug.LogError(Mathf.CeilToInt(CompletedPipeProportion));
             onCompletePipe?.Invoke(pipeComplete);
         }
     }

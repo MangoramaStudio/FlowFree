@@ -11,7 +11,6 @@ namespace Mechanics.Scripts
         public event Action Attempt;
         public event Action Warn;
         
-
         private bool _raiseSuccessOnEnable;
         private bool _raiseFailureOnEnable;
         private Coroutine _successRoutine;
@@ -28,6 +27,8 @@ namespace Mechanics.Scripts
             {
                 RaiseFailure();
             }
+            
+            
         }
 
         private void OnDisable()
@@ -89,6 +90,13 @@ namespace Mechanics.Scripts
             Failure?.Invoke();
         }
         
+        public virtual void RaiseRestart()
+        {
+            Clear();
+            Prepare();
+        }
+
+        protected virtual void RaiseUndo() { }
 
         protected void RaiseSuccess(float delay)
         {

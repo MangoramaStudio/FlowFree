@@ -63,11 +63,10 @@ namespace Behaviours
             Playable.Dispose();
         }
 
-        [Button]
-        public void Restart()
-        {
-            Playable.Clear();
-            Playable.Prepare();
+
+        private void Restart()
+        { 
+            Playable.RaiseRestart();
         }
         
     }

@@ -1,4 +1,5 @@
 using MangoramaStudio.Scripts.Managers;
+using MangoramaStudio.Scripts.Managers.Buttons;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,9 +11,11 @@ namespace Mechanics.RoboticFlows
         [SerializeField] private TextMeshProUGUI pipeCounterTMP;
 
         private PipeCompleteCounter _pipeCompleteCounter;
+        private EventManager _eventManager;
 
         public void Initialize()
         {
+            _eventManager = GameManager.Instance.EventManager;
            SetPipeCompleteCounter();
            UpdatePipeCompleteTMP(0);
            GatherPipeCompleteData(false);
@@ -47,15 +50,23 @@ namespace Mechanics.RoboticFlows
             if (isToggled)
             {
                 _pipeCompleteCounter.onCompletePipe += UpdatePipeCompleteTMP;
-                GameManager.Instance.EventManager.OnRestartLevel += Restart;
+                _eventManager.OnRestartLevel += Restart;
+                _eventManager.OnUndo += Undo;
             }
             else
             {
                 _pipeCompleteCounter.onCompletePipe -= UpdatePipeCompleteTMP;
-                GameManager.Instance.EventManager.OnRestartLevel -= Restart;
+                _eventManager.OnRestartLevel -= Restart;
+                _eventManager.OnUndo -= Undo;
             }
         }
-        
+
+        private void Undo()
+        {
+            _pipeCompleteCounter.Undo();
+            
+        }
+
         private void UpdatePipeCompleteTMP(int amount)
         {
             if (pipeCounterTMP == null)

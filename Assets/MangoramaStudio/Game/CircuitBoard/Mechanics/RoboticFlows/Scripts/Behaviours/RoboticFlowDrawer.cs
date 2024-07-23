@@ -3,13 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using MangoramaStudio.Game.Scripts.Behaviours;
 using MangoramaStudio.Scripts.Managers;
-using MangoramaStudio.Systems.SoundSystem.Scripts;
-using MangoramaStudio.Systems.VibrationSystem;
-using MatchinghamGames.ApolloModule;
 using Mechanics.Scripts;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using Utilities;
 
 namespace Mechanics.RoboticFlows
 {
@@ -19,8 +15,7 @@ namespace Mechanics.RoboticFlows
         [SerializeField] private RoboticFlowHint hint;
         [SerializeField] private RoboticFlowInputSurface surface;
         [SerializeField] private List<FlowDrawer> drawers;
-
-
+        
         public List<FlowDrawer> completedDrawers = new();
         
         private Camera _mainCamera;
@@ -72,7 +67,7 @@ namespace Mechanics.RoboticFlows
             surface.Pressed += SurfacePressed;
             surface.Dragged += SurfaceDragged;
             surface.Released += SurfaceReleased;
-            GameManager.Instance.EventManager.OnUndo += Undo;
+            GameManager.Instance.EventManager.OnUndo += RaiseUndo;
         }
 
         [Button]
@@ -82,7 +77,7 @@ namespace Mechanics.RoboticFlows
             surface.Pressed -= SurfacePressed;
             surface.Dragged -= SurfaceDragged;
             surface.Released -= SurfaceReleased;
-            GameManager.Instance.EventManager.OnUndo -= Undo;
+            GameManager.Instance.EventManager.OnUndo -= RaiseUndo;
         }
 
         [Button]
@@ -350,9 +345,7 @@ namespace Mechanics.RoboticFlows
                 RaiseWarning();
             }
         }
-
-  
-
+        
         private bool CellRaycast(Vector2 screenPosition, out Cell cell)
         {
             var position = new Vector3(screenPosition.x, screenPosition.y, 50);
@@ -368,9 +361,16 @@ namespace Mechanics.RoboticFlows
             return false;
         }
 
-        [Button]
-        public void Undo()
+        public override void RaiseRestart()
         {
+            base.RaiseRestart();
+            completedDrawers.Clear();
+        }
+
+        [Button]
+        protected override void RaiseUndo()
+        {
+            base.RaiseUndo();
             if (completedDrawers.Count<=0)
             {
                 Debug.LogError("no completed drawers");

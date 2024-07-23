@@ -1,5 +1,6 @@
 using MangoramaStudio.Scripts.Managers;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,9 +10,12 @@ namespace Mechanics.RoboticFlows
     {
         [SerializeField] private TextMeshProUGUI moveCounterTMP;
         private MoveCounter _moveCounter;
+
+        private EventManager _eventManager;
         
         public void Initialize()
         {
+            _eventManager = GameManager.Instance.EventManager;
             SetMoveCounter();
             UpdateMoveCounterTMP(0);
             GatherMoveCounterData(false);
@@ -47,13 +51,20 @@ namespace Mechanics.RoboticFlows
             if (isToggled)
             {
                 _moveCounter.onMoveCountUpdate += UpdateMoveCounterTMP;
-                GameManager.Instance.EventManager.OnRestartLevel += Restart;
+                _eventManager.OnRestartLevel += Restart;
+                _eventManager.OnUndo += Undo;
             }
             else
             {
                 _moveCounter.onMoveCountUpdate -= UpdateMoveCounterTMP;
-                GameManager.Instance.EventManager.OnRestartLevel -= Restart;
+                _eventManager.OnRestartLevel -= Restart;
+                _eventManager.OnUndo -= Undo;
             }
+        }
+
+        private void Undo()
+        {
+            _moveCounter.Undo();
         }
 
         private void Restart()

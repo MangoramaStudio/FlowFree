@@ -28,7 +28,7 @@ namespace Mechanics.RoboticFlows
 
         public Stack<Cell> DrawnCells => _drawnCells;
 
-        [ShowInInspector]public Cell CurrentCell => DrawnCells?.Peek();
+        public Cell CurrentCell => DrawnCells.Count <=0 ? null : DrawnCells?.Peek();
 
         public Polyline Polyline => polyline;
 
