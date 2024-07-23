@@ -18,7 +18,146 @@ MonoBehaviour:
   AudioPoolInitSize: 10
   AudioPoolMaxSize: 10000
   AudioSourcePresets:
-    m_keys: []
-    m_values: []
-  AudioMixerGroupVolumePresets: []
+    m_keys:
+    - softClick
+    - singleMatch
+    - fullMatch
+    m_values:
+    - <AudioMixerGroup>k__BackingField: {fileID: 24300002, guid: f90c0dadfd5290040b503b1a3b75a21b, type: 2}
+      <AudioClips>k__BackingField:
+      - {fileID: 8300000, guid: c18519c53b26f4147b4c5c9e061edb12, type: 3}
+      bypassEffects: 0
+      bypassListenerEffects: 0
+      bypassReverbZones: 0
+      priority: 128
+      volume: 1
+      pitch: 1
+      stereoPan: 0
+      customSpatialBlendCurve: 0
+      spatialBlend: 0
+      spatialBlendCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      customReverbZoneMixCurve: 0
+      reverbZoneMix: 1
+      reverbZoneMixCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      dopplerLevel: 1
+      customSpreadCurve: 0
+      spread: 0
+      spreadCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      volumeRolloff: 0
+      minDistance: 1
+      maxDistance: 500
+      volumeCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - <AudioMixerGroup>k__BackingField: {fileID: 0}
+      <AudioClips>k__BackingField:
+      - {fileID: 8300000, guid: b74713c97f9d74999876b8952578b02f, type: 3}
+      bypassEffects: 0
+      bypassListenerEffects: 0
+      bypassReverbZones: 0
+      priority: 128
+      volume: 1
+      pitch: 1
+      stereoPan: 0
+      customSpatialBlendCurve: 0
+      spatialBlend: 0
+      spatialBlendCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      customReverbZoneMixCurve: 0
+      reverbZoneMix: 1
+      reverbZoneMixCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      dopplerLevel: 1
+      customSpreadCurve: 0
+      spread: 0
+      spreadCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      volumeRolloff: 0
+      minDistance: 1
+      maxDistance: 500
+      volumeCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - <AudioMixerGroup>k__BackingField: {fileID: 24300002, guid: f90c0dadfd5290040b503b1a3b75a21b, type: 2}
+      <AudioClips>k__BackingField:
+      - {fileID: 8300000, guid: d0e75819af81a4075acc938a2a1816b8, type: 3}
+      bypassEffects: 0
+      bypassListenerEffects: 0
+      bypassReverbZones: 0
+      priority: 128
+      volume: 1
+      pitch: 1
+      stereoPan: 0
+      customSpatialBlendCurve: 0
+      spatialBlend: 0
+      spatialBlendCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      customReverbZoneMixCurve: 0
+      reverbZoneMix: 1
+      reverbZoneMixCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      dopplerLevel: 1
+      customSpreadCurve: 0
+      spread: 0
+      spreadCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      volumeRolloff: 0
+      minDistance: 1
+      maxDistance: 500
+      volumeCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+  AudioMixerGroupVolumePresets:
+  - <AudioMixerGroup>k__BackingField: {fileID: 24300002, guid: f90c0dadfd5290040b503b1a3b75a21b, type: 2}
+    _exposedParameter: SFXVolume
+    <MaxVolume>k__BackingField: 0
+    _dontSetVolumeFromStashOnInit: 0
   AudioMixerSnapshots: []

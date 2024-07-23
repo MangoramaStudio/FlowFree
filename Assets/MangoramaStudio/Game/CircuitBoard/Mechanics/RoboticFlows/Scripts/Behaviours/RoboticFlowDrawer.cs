@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using MangoramaStudio.Game.Scripts.Behaviours;
 using MangoramaStudio.Scripts.Managers;
+using MangoramaStudio.Systems.SoundSystem.Scripts;
 using MangoramaStudio.Systems.VibrationSystem;
 using MatchinghamGames.ApolloModule;
-using MatchinghamGames.VibrationModule;
-using Mechanics.RoboticFlows.Obstacles;
 using Mechanics.Scripts;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Utilities;
 
 namespace Mechanics.RoboticFlows
 {
@@ -20,10 +20,9 @@ namespace Mechanics.RoboticFlows
         [SerializeField] private RoboticFlowInputSurface surface;
         [SerializeField] private List<FlowDrawer> drawers;
 
-       // [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string singleMatchSfx;
-       // [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string fullMatchSfx;
-
+   
        private VibrationManager _vibrationManager;
+       private SoundManager _soundManager;
         private Camera _mainCamera;
         
         private Node _selectedNode;
@@ -51,6 +50,7 @@ namespace Mechanics.RoboticFlows
             }
 
             _vibrationManager = GameManager.Instance.VibrationManager;
+            _soundManager = GameManager.Instance.SoundManager;
         }
 
         [Button]
@@ -247,7 +247,7 @@ namespace Mechanics.RoboticFlows
                     {
                         BounceFlow(cell.node.Id);
                         _vibrationManager.VibrateLineComplete();
-                       // Apollo.PlaySingleAudio(singleMatchSfx);
+                        _soundManager.PlayCompleteLine();
                         _selectedDrawer = null;
                         _selectedNode = null;
                         onConnectNode?.Invoke();
@@ -324,7 +324,7 @@ namespace Mechanics.RoboticFlows
                 }
                 
                 _vibrationManager.VibrateLevelComplete();
-                //Apollo.PlaySingleAudio(fullMatchSfx);
+                _soundManager.PlayCompleteLevel();
                 RaiseSuccess();
             }
             else if (drawers.All(d => d.FlowComplete))
@@ -350,11 +350,11 @@ namespace Mechanics.RoboticFlows
         }
 
 
-        /*
+        
         private IList<ValueDropdownItem<string>> GetSfxKeys()
         {
             return SfxUtility.GetSfxKeys();
         }
-        */
+        
     }
 }

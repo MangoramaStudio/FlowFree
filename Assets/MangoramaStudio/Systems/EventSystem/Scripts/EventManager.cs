@@ -12,10 +12,8 @@ namespace MangoramaStudio.Scripts.Managers
         public event Action<bool> OnLevelFinished;
         public event Action OnLevelStarted;
         public event Action OnRaiseWarning;
-
         public event Action OnRaiseHint;
-
-
+        
         public void StartGame()
         {
             OnStartGame?.Invoke();

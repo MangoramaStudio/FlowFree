@@ -1,7 +1,6 @@
 using MangoramaStudio.Scripts.Data;
 using MangoramaStudio.Scripts.Managers;
 using MatchinghamGames.VibrationModule;
-using UnityEngine;
 
 namespace MangoramaStudio.Systems.VibrationSystem
 {

@@ -171,6 +171,8 @@ MonoBehaviour:
   hint: {fileID: 5282669667682687860}
   surface: {fileID: 6776556542675649516}
   drawers: []
+  singleMatchSfx: singleMatch
+  fullMatchSfx: fullMatch
 --- !u!114 &5282669667682687860
 MonoBehaviour:
   m_ObjectHideFlags: 0
