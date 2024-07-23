@@ -15,24 +15,42 @@ namespace MangoramaStudio.Systems.SoundSystem.Scripts
         [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string singleMatchSfx;
         [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string fullMatchSfx;
         [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string drawSfx;
-        
-        
+
+        protected override void ToggleEvents(bool isToggled)
+        {
+            base.ToggleEvents(isToggled);
+            if (isToggled)
+            {
+                GameManager.Instance.EventManager.OnDrawCell += PlayDrawLine;
+                GameManager.Instance.EventManager.OnCompleteFlow += PlayCompleteLine;
+                GameManager.Instance.EventManager.OnCompleteAllFlows += PlayCompleteLevel;
+
+            }
+            else
+            {
+                GameManager.Instance.EventManager.OnDrawCell -= PlayDrawLine;
+                GameManager.Instance.EventManager.OnCompleteFlow -= PlayCompleteLine;
+                GameManager.Instance.EventManager.OnCompleteAllFlows -= PlayCompleteLevel;
+            }
+        }
+
+
         public IList<ValueDropdownItem<string>> GetSfxKeys()
         {
             return SfxUtility.GetSfxKeys();
         }
-        
-        public void PlayDrawLine()
+
+        private void PlayDrawLine()
         {
             TryPlaySound(drawSfx);
         }
 
-        public void PlayCompleteLine()
+        private void PlayCompleteLine()
         {
             TryPlaySound(singleMatchSfx);
         }
 
-        public void PlayCompleteLevel()
+        private void PlayCompleteLevel()
         {
             TryPlaySound(fullMatchSfx);
         }

@@ -6,18 +6,34 @@ namespace MangoramaStudio.Systems.VibrationSystem
 {
     public class VibrationManager : BaseManager
     {
+        protected override void ToggleEvents(bool isToggled)
+        {
+            base.ToggleEvents(isToggled);
+            if (isToggled)
+            {
+                GameManager.Instance.EventManager.OnDrawCell += VibrateDrawLine;
+                GameManager.Instance.EventManager.OnCompleteFlow += VibrateLineComplete;
+                GameManager.Instance.EventManager.OnCompleteAllFlows += VibrateLevelComplete;
+            }
+            else
+            {
+                GameManager.Instance.EventManager.OnDrawCell -= VibrateDrawLine;
+                GameManager.Instance.EventManager.OnCompleteFlow -= VibrateLineComplete;
+                GameManager.Instance.EventManager.OnCompleteAllFlows -= VibrateLevelComplete;
+            }
+        }
 
-        public void VibrateDrawLine()
+        private void VibrateDrawLine()
         {
             TryVibrate();
         }
 
-        public void VibrateLineComplete()
+        private void VibrateLineComplete()
         {
             TryVibrate(VibrationType.Medium);
         }
 
-        public void VibrateLevelComplete()
+        private void VibrateLevelComplete()
         {
             TryVibrate(VibrationType.Heavy);
         }

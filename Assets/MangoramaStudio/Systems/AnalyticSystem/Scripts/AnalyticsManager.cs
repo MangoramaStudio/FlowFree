@@ -17,22 +17,22 @@ namespace MangoramaStudio.Scripts.Managers
         {
             base.Initialize();
 
-            FB_Initialize();
+            InitializeFacebook();
             GameAnalytics.Initialize();
 
-            GameManager.EventManager.OnLevelStarted += LevelStartedNotif;
-            GameManager.EventManager.OnLevelFinished += LevelFinishedNotif;
+            GameManager.EventManager.OnLevelStarted += LevelStartedNotification;
+            GameManager.EventManager.OnLevelFinished += LevelFinishedNotification;
         }
 
         private void OnDestroy()
         {
-            GameManager.EventManager.OnLevelStarted -= LevelStartedNotif;
-            GameManager.EventManager.OnLevelFinished -= LevelFinishedNotif;
+            GameManager.EventManager.OnLevelStarted -= LevelStartedNotification;
+            GameManager.EventManager.OnLevelFinished -= LevelFinishedNotification;
         }
 
         #region FB_Initialize
 
-        private void FB_Initialize()
+        private void InitializeFacebook()
         {
             if (FB.IsInitialized)
             {
@@ -40,8 +40,7 @@ namespace MangoramaStudio.Scripts.Managers
             }
             else
             {
-                //Handle FB.Init
-                FB.Init(() => { FB.ActivateApp(); });
+                FB.Init(FB.ActivateApp);
             }
         }
         #endregion
@@ -95,13 +94,13 @@ namespace MangoramaStudio.Scripts.Managers
         }
         #endregion
 
-        private void LevelStartedNotif()
+        private void LevelStartedNotification()
         {
             TrackEventFirebase($"Level_{PlayerData.CurrentLevelId}_Started");
 
         }
 
-        private void LevelFinishedNotif(bool isSuccess)
+        private void LevelFinishedNotification(bool isSuccess)
         {
             if (isSuccess)
                 TrackEventFirebase($"Level_{PlayerData.CurrentLevelId}_Completed");

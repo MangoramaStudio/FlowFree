@@ -21,8 +21,7 @@ namespace Mechanics.RoboticFlows
         [SerializeField] private List<FlowDrawer> drawers;
 
    
-       private VibrationManager _vibrationManager;
-       private SoundManager _soundManager;
+      
         private Camera _mainCamera;
         
         private Node _selectedNode;
@@ -48,9 +47,7 @@ namespace Mechanics.RoboticFlows
             {
                 drawer.Initialize();
             }
-
-            _vibrationManager = GameManager.Instance.VibrationManager;
-            _soundManager = GameManager.Instance.SoundManager;
+            
         }
 
         [Button]
@@ -242,18 +239,16 @@ namespace Mechanics.RoboticFlows
                         drawer.Clear();
                     }
                     
+                    GameManager.Instance.EventManager.DrawCell();
                     _selectedDrawer.DrawCell(cell);
-                    _vibrationManager.VibrateDrawLine();
-                    _soundManager.PlayDrawLine();
 
                     if (_selectedDrawer.FlowComplete)
                     {
                         BounceFlow(cell.node.Id);
-                        _vibrationManager.VibrateLineComplete();
-                        _soundManager.PlayCompleteLine();
                         _selectedDrawer = null;
                         _selectedNode = null;
                         onConnectNode?.Invoke();
+                        GameManager.Instance.EventManager.CompleteFlow();
                     }
                     
                     CheckAndComplete();
@@ -325,9 +320,7 @@ namespace Mechanics.RoboticFlows
                     if (cell.node)
                         cell.node.Bounce();
                 }
-                
-                _vibrationManager.VibrateLevelComplete();
-                _soundManager.PlayCompleteLevel();
+                GameManager.Instance.EventManager.CompleteAllFlows();
                 RaiseSuccess();
             }
             else if (drawers.All(d => d.FlowComplete))
@@ -350,13 +343,6 @@ namespace Mechanics.RoboticFlows
 
             cell = default;
             return false;
-        }
-
-
-        
-        private IList<ValueDropdownItem<string>> GetSfxKeys()
-        {
-            return SfxUtility.GetSfxKeys();
         }
         
     }

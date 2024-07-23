@@ -8,11 +8,10 @@ namespace MangoramaStudio.Scripts.Managers
 
     public class EventManager : BaseManager
     {
+        #region Common Events
         public event Action OnStartGame;
         public event Action<bool> OnLevelFinished;
         public event Action OnLevelStarted;
-        public event Action OnRaiseWarning;
-        public event Action OnRaiseHint;
         
         public void StartGame()
         {
@@ -24,6 +23,27 @@ namespace MangoramaStudio.Scripts.Managers
             OnLevelStarted?.Invoke();
         }
 
+        
+        public void LevelFailed()
+        {
+            OnLevelFinished?.Invoke(false);
+        }
+
+        public void LevelCompleted()
+        {
+            OnLevelFinished?.Invoke(true);
+        }
+        
+        #endregion
+
+        #region Flow Drawer Events
+
+        public event Action OnRaiseWarning;
+        public event Action OnRaiseHint;
+        public event Action OnDrawCell;
+        public event Action OnCompleteFlow;
+        public event Action OnCompleteAllFlows;  
+        
         public void RaiseWarning()
         {
             OnRaiseWarning?.Invoke();
@@ -34,16 +54,25 @@ namespace MangoramaStudio.Scripts.Managers
             OnRaiseHint?.Invoke();
         }
 
-     
-
-        public void LevelFailed()
+        public void DrawCell()
         {
-            OnLevelFinished?.Invoke(false);
+            OnDrawCell?.Invoke();
         }
 
-        public void LevelCompleted()
+        public void CompleteFlow()
         {
-            OnLevelFinished?.Invoke(true);
+            OnCompleteFlow?.Invoke();
         }
+
+        public void CompleteAllFlows()
+        {
+            OnCompleteAllFlows?.Invoke();
+        }
+
+
+
+        #endregion
+      
+        
     }
 }
