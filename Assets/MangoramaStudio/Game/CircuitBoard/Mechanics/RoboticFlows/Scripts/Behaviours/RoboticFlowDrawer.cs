@@ -284,7 +284,6 @@ namespace Mechanics.RoboticFlows
                     Remove(_selectedDrawer);
                     _selectedDrawer = null;
                     _selectedNode = null;
-                    // here undo
                 }
             }
             
@@ -361,13 +360,19 @@ namespace Mechanics.RoboticFlows
             return false;
         }
 
+        #region Restart
+
         public override void RaiseRestart()
         {
             base.RaiseRestart();
             completedDrawers.Clear();
         }
 
-        [Button]
+
+        #endregion
+
+        #region Undo
+        
         protected override void RaiseUndo()
         {
             base.RaiseUndo();
@@ -395,8 +400,9 @@ namespace Mechanics.RoboticFlows
             {
                 completedDrawers.Remove(drawer);       
             }
-
         }
+        #endregion
+        
         
     }
 }

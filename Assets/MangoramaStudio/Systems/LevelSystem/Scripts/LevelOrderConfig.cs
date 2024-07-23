@@ -28,6 +28,7 @@ namespace MangoramaStudio.Systems.LevelSystem.Scripts
         [Button(ButtonSizes.Large),GUIColor(0,1,1)]
         private void ConvertLevelDataToJson()
         {
+            levelOrderList.Clear();
             levelOrder = JsonConvert.SerializeObject(levelOrderList);
         }
         
@@ -35,6 +36,7 @@ namespace MangoramaStudio.Systems.LevelSystem.Scripts
         [Button(ButtonSizes.Large)]
         public void ParseJsonToLevelData(string data)
         {
+            levelOrderList.Clear();
             levelOrderList = JsonConvert.DeserializeObject<List<string>>(data);
         }
         
