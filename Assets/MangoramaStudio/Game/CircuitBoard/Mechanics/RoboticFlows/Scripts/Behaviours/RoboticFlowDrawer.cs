@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using MangoramaStudio.Game.Scripts.Behaviours;
 using MangoramaStudio.Scripts.Managers;
+using MangoramaStudio.Systems.VibrationSystem;
 using MatchinghamGames.ApolloModule;
 using MatchinghamGames.VibrationModule;
 using Mechanics.RoboticFlows.Obstacles;
@@ -22,7 +23,7 @@ namespace Mechanics.RoboticFlows
        // [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string singleMatchSfx;
        // [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string fullMatchSfx;
 
-       
+       private VibrationManager _vibrationManager;
         private Camera _mainCamera;
         
         private Node _selectedNode;
@@ -48,6 +49,8 @@ namespace Mechanics.RoboticFlows
             {
                 drawer.Initialize();
             }
+
+            _vibrationManager = GameManager.Instance.VibrationManager;
         }
 
         [Button]
@@ -202,18 +205,7 @@ namespace Mechanics.RoboticFlows
                         requiredObstacle.Block();
                         return true;
                     }
-                    
-                    /*
-                    // also check opposite way 
-                    var oppositeObstacle = cell.Obstacles.Find(x=>x.OppositeDirectionType == direction);
-                    if (oppositeObstacle != null)
-                    {
-                        Debug.LogError("11");
-                        //yes
-                        oppositeObstacle.Block();
-                        return true;
-                    }
-                    */
+     
                 }      
             }
             
@@ -249,10 +241,12 @@ namespace Mechanics.RoboticFlows
                     }
                     
                     _selectedDrawer.DrawCell(cell);
+                    _vibrationManager.VibrateDrawLine();
 
                     if (_selectedDrawer.FlowComplete)
                     {
                         BounceFlow(cell.node.Id);
+                        _vibrationManager.VibrateLineComplete();
                        // Apollo.PlaySingleAudio(singleMatchSfx);
                         _selectedDrawer = null;
                         _selectedNode = null;
@@ -329,7 +323,7 @@ namespace Mechanics.RoboticFlows
                         cell.node.Bounce();
                 }
                 
-                Vibrator.VibratePreset(VibrationPreset.Success);
+                _vibrationManager.VibrateLevelComplete();
                 //Apollo.PlaySingleAudio(fullMatchSfx);
                 RaiseSuccess();
             }
@@ -337,7 +331,6 @@ namespace Mechanics.RoboticFlows
             {
               
                 RaiseWarning();
-                //OverlaySystem.Instance.Push(nameof(CircuitBoardWarningOverlay));
             }
         }
 

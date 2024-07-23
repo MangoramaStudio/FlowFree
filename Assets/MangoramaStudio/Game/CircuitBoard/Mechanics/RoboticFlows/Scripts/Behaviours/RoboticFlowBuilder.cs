@@ -26,6 +26,8 @@ namespace Mechanics.RoboticFlows
         [OnValueChanged(nameof(OnSizeChanged))]
         #endif
         [SerializeField] private Vector2Int size;
+
+        public Vector2Int GetSize() => size;
         
         #if UNITY_EDITOR
         [OnValueChanged(nameof(OnMapValueChanged))]

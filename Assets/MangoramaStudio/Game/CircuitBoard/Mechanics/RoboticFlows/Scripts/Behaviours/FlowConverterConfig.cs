@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,8 +14,10 @@ namespace Mechanics.RoboticFlows
     {
         public List<LevelBehaviour> levelBehaviours = new();
 
+        public List<LevelSizeCategoryDefinition> levelSizeCategoryDefinitions = new();
+
 #if UNITY_EDITOR
-        [Button]
+        [Button(ButtonSizes.Medium)]
         public void SetTileAccordingToColors()
         {
             for (int i = 0; i < levelBehaviours.Count; i++)
@@ -28,7 +31,7 @@ namespace Mechanics.RoboticFlows
         }
 
 
-        [Button]
+        [Button(ButtonSizes.Medium)]
         public void SearchAnyUnset()
         {
             for (int i = 0; i < levelBehaviours.Count; i++)
@@ -41,8 +44,48 @@ namespace Mechanics.RoboticFlows
                 }
             }   
         }
+
+        [Button(ButtonSizes.Large)]
+        public void CategorizeLevelsAccordingToSizes()
+        {
+            
+            for (int i = 0; i < levelBehaviours.Count; i++)
+            {
+                var level = levelBehaviours[i];
+                var builder = level.GetComponentInChildren<RoboticFlowBuilder>();
+                var size = builder.GetSize();
+                var requiredDefinition = levelSizeCategoryDefinitions.Find(x => x.size == size);
+                if (requiredDefinition!=null)
+                {
+                    requiredDefinition.levels.Add(level);
+                }
+            }
+        }
         
 #endif
        
+    }
+
+    [Serializable]
+    public class LevelSizeCategoryDefinition
+    {
+        [BoxGroup]public float cameraOrthoSize;
+        public Vector2Int size;
+        public List<LevelBehaviour> levels = new();
+#if UNITY_EDITOR
+        [Button(ButtonSizes.Medium),GUIColor(0,1,0)]
+        public void SetCameraOrthoSize()
+        {
+            for (int i = 0; i < levels.Count; i++)
+            {
+                var level = levels[i];
+                var flowGrid = level.GetComponentInChildren<FlowGrid>();
+                flowGrid.SetOrthoSize(cameraOrthoSize);
+                EditorUtility.SetDirty(level.gameObject);
+                PrefabUtility.SavePrefabAsset(level.gameObject);
+                Debug.LogError(flowGrid.gameObject);
+            }
+        }
+#endif
     }
 }

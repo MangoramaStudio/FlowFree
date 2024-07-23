@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using MangoramaStudio.Scripts.Controllers;
 using MangoramaStudio.Systems.PopupSystem.Scripts;
 using MangoramaStudio.Systems.ReviewSystem.Scripts;
+using MangoramaStudio.Systems.VibrationSystem;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -17,9 +19,12 @@ namespace MangoramaStudio.Scripts.Managers
         [SerializeField] private ReviewManager reviewManager;
         [SerializeField] private InputController inputController;
         [SerializeField] private PopupManager popupManager;
+        [SerializeField] private VibrationManager vibrationManager;
         public EventManager EventManager => eventManager;
         public LevelManager LevelManager => levelManager;
         public AddressableManager AddressableManager { get; private set; }
+
+        public VibrationManager VibrationManager => vibrationManager;
 
         public static GameManager Instance;
 
@@ -38,7 +43,9 @@ namespace MangoramaStudio.Scripts.Managers
         {
             EventManager.StartGame();
         }
-
+        
+       
+        
         private void GatherManagers()
         {
             _managers = GetComponentsInChildren<BaseManager>().ToList();

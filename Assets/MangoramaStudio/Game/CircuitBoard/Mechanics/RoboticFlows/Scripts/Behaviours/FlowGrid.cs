@@ -8,6 +8,11 @@ namespace Mechanics.RoboticFlows
     public class FlowGrid : MonoBehaviour
     {
         [SerializeField] private float orthoSize;
+
+        public void SetOrthoSize(float size)
+        {
+            orthoSize = size;
+        }
         
         private Cell[] _cells;
 
