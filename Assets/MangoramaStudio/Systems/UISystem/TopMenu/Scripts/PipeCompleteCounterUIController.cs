@@ -47,10 +47,12 @@ namespace Mechanics.RoboticFlows
             if (isToggled)
             {
                 _pipeCompleteCounter.onCompletePipe += UpdatePipeCompleteTMP;
+                GameManager.Instance.EventManager.OnRestartLevel += Restart;
             }
             else
             {
                 _pipeCompleteCounter.onCompletePipe -= UpdatePipeCompleteTMP;
+                GameManager.Instance.EventManager.OnRestartLevel -= Restart;
             }
         }
         
@@ -62,6 +64,12 @@ namespace Mechanics.RoboticFlows
                 return;
             }
             pipeCounterTMP.SetText($"%{amount}");
+        }
+
+        private void Restart()
+        {
+            _pipeCompleteCounter.Restart();
+            UpdatePipeCompleteTMP(0);   
         }
         
     }

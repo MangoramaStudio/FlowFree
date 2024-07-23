@@ -42,7 +42,10 @@ namespace MangoramaStudio.Scripts.Managers
         public event Action OnRaiseHint;
         public event Action OnDrawCell;
         public event Action OnCompleteFlow;
-        public event Action OnCompleteAllFlows;  
+        public event Action OnCompleteAllFlows;
+        public event Action OnRestartLevel;
+
+        public event Action OnUndo;
         
         public void RaiseWarning()
         {
@@ -67,6 +70,16 @@ namespace MangoramaStudio.Scripts.Managers
         public void CompleteAllFlows()
         {
             OnCompleteAllFlows?.Invoke();
+        }
+
+        public void RestartLevel()
+        {
+            OnRestartLevel?.Invoke();
+        }
+
+        public void Undo()
+        {
+            OnUndo?.Invoke();
         }
 
 

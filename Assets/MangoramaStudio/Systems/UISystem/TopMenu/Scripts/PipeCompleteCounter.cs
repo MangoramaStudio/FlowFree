@@ -1,6 +1,8 @@
 
 using System;
 using System.Linq;
+using MangoramaStudio.Scripts.Managers;
+using MangoramaStudio.Scripts.Managers.Buttons;
 using UnityEngine;
 
 namespace Mechanics.RoboticFlows
@@ -47,7 +49,13 @@ namespace Mechanics.RoboticFlows
                 flowDrawer.onClear -= CalculateCompletedPipe;
                 flowDrawer.onRelease -= CalculateCompletedPipe;
                 flowDrawer.onClearDisconnected -= CalculateCompletedPipe;
+
             }
+        }
+
+        public void Restart()
+        {
+            CompletedPipeProportion = 0;
         }
 
         private void CalculateCompletedPipe()

@@ -2,6 +2,7 @@ using System;
 using MangoramaStudio.Scripts.Managers;
 using Mechanics.RoboticFlows;
 using Mechanics.Scripts;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Behaviours
@@ -11,6 +12,9 @@ namespace Behaviours
         [SerializeField] private PlayableMechanicBehaviour playable;
 
         public PlayableMechanicBehaviour Playable => playable;
+
+        private EventManager EventManager => GameManager.Instance.EventManager;
+    
 
         private void OnEnable()
         {
@@ -29,13 +33,15 @@ namespace Behaviours
 
                 Playable.Success += GameManager.Instance.EventManager.LevelCompleted;
                 Playable.Warn += GameManager.Instance.EventManager.RaiseWarning;
-                GameManager.Instance.EventManager.OnRaiseHint += ShowHint;
+                EventManager.OnRaiseHint += ShowHint;
+                EventManager.OnRestartLevel += Restart;
             }
             else
             {
                 Playable.Success -= GameManager.Instance.EventManager.LevelCompleted;
                 Playable.Warn -= GameManager.Instance.EventManager.RaiseWarning;
-                GameManager.Instance.EventManager.OnRaiseHint -= ShowHint;
+                EventManager.OnRaiseHint -= ShowHint; 
+                EventManager.OnRestartLevel -= Restart;
             }
         }
 
@@ -56,7 +62,13 @@ namespace Behaviours
             Playable.Disable();
             Playable.Dispose();
         }
-        
+
+        [Button]
+        public void Restart()
+        {
+            Playable.Clear();
+            Playable.Prepare();
+        }
         
     }
 }

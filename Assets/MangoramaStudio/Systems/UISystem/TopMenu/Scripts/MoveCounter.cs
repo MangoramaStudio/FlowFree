@@ -1,4 +1,5 @@
 using System;
+using MangoramaStudio.Scripts.Managers;
 using UnityEngine;
 
 namespace Mechanics.RoboticFlows
@@ -29,12 +30,19 @@ namespace Mechanics.RoboticFlows
         {
             if (isToggled)
             {
-                flowDrawer.onConnectNode += ConnectNode;   
+                flowDrawer.onConnectNode += ConnectNode;  
+
             }
             else
             {
                 flowDrawer.onDraw -= ConnectNode;
+
             }
+        }
+
+        public void Restart()
+        {
+            _moveCount = 0;
         }
 
         private void ConnectNode()

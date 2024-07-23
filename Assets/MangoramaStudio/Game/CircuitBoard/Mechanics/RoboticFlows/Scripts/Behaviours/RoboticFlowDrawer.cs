@@ -20,8 +20,9 @@ namespace Mechanics.RoboticFlows
         [SerializeField] private RoboticFlowInputSurface surface;
         [SerializeField] private List<FlowDrawer> drawers;
 
-   
-      
+
+        public List<FlowDrawer> completedDrawers = new();
+        
         private Camera _mainCamera;
         
         private Node _selectedNode;
@@ -37,6 +38,8 @@ namespace Mechanics.RoboticFlows
         public IReadOnlyList<FlowDrawer> Drawers => drawers;
 
         public FlowDrawer GetSelectedFlowDrawer() => _selectedDrawer;
+
+ 
         
         [Button]
         public override void Initialize()
@@ -69,6 +72,7 @@ namespace Mechanics.RoboticFlows
             surface.Pressed += SurfacePressed;
             surface.Dragged += SurfaceDragged;
             surface.Released += SurfaceReleased;
+            GameManager.Instance.EventManager.OnUndo += Undo;
         }
 
         [Button]
@@ -78,6 +82,7 @@ namespace Mechanics.RoboticFlows
             surface.Pressed -= SurfacePressed;
             surface.Dragged -= SurfaceDragged;
             surface.Released -= SurfaceReleased;
+            GameManager.Instance.EventManager.OnUndo -= Undo;
         }
 
         [Button]
@@ -140,6 +145,7 @@ namespace Mechanics.RoboticFlows
                     if (_selectedDrawer.DrawnCells.Count == 0)
                     {
                         _selectedDrawer.Clear();
+                        Remove(_selectedDrawer);
                         _selectedDrawer.DrawCell(cell);
                     }
                     else if (_selectedDrawer.DrawnCells.Peek() == cell)
@@ -149,6 +155,7 @@ namespace Mechanics.RoboticFlows
                     else
                     {
                         _selectedDrawer.Clear();
+                        Remove(_selectedDrawer);
                         _selectedDrawer = null;
                         onClearDisconnected?.Invoke();
                     }
@@ -222,11 +229,10 @@ namespace Mechanics.RoboticFlows
                     return;
                 }
                 
-             
-                
                 if (_selectedDrawer.DrawnCells.Contains(cell))
                 {
                     _selectedDrawer.ClearToCell(cell);
+                   
                     onClear?.Invoke();
                 }
                 else if (!_selectedDrawer.FlowComplete)
@@ -237,6 +243,7 @@ namespace Mechanics.RoboticFlows
                         if (cell.node)
                             return;
                         drawer.Clear();
+                        Remove(drawer);
                     }
                     
                     GameManager.Instance.EventManager.DrawCell();
@@ -245,10 +252,13 @@ namespace Mechanics.RoboticFlows
                     if (_selectedDrawer.FlowComplete)
                     {
                         BounceFlow(cell.node.Id);
+                        Add();
                         _selectedDrawer = null;
                         _selectedNode = null;
                         onConnectNode?.Invoke();
+                      
                         GameManager.Instance.EventManager.CompleteFlow();
+                       
                     }
                     
                     CheckAndComplete();
@@ -267,6 +277,7 @@ namespace Mechanics.RoboticFlows
             if (_selectedDrawer.DrawnCells.Count <= 1)
             {
                 _selectedDrawer.Clear();
+                Remove(_selectedDrawer);
                 _selectedDrawer = null;
                 _selectedNode = null;
             }
@@ -275,8 +286,10 @@ namespace Mechanics.RoboticFlows
                 if (CellRaycast(screenPosition, out var cell) && cell.node && cell.node.Id == lastNode.Id)
                 {
                     _selectedDrawer.Clear();
+                    Remove(_selectedDrawer);
                     _selectedDrawer = null;
                     _selectedNode = null;
+                    // here undo
                 }
             }
             
@@ -291,14 +304,22 @@ namespace Mechanics.RoboticFlows
         private void SelectNode(Node node)
         {
             var newDrawer = drawers.First(d => d.Id == node.Id);
-            
+
             if (_selectedDrawer && _selectedDrawer != newDrawer)
+            {
                 _selectedDrawer.Clear();
+                Remove(_selectedDrawer);
+            }
+              
             
             _selectedDrawer = newDrawer;
-            
+
             if (_selectedNode && _selectedNode != node)
+            {
                 _selectedDrawer.Clear();
+                Remove(_selectedDrawer);
+            }
+             
             
             _selectedNode = node;
         }
@@ -330,6 +351,8 @@ namespace Mechanics.RoboticFlows
             }
         }
 
+  
+
         private bool CellRaycast(Vector2 screenPosition, out Cell cell)
         {
             var position = new Vector3(screenPosition.x, screenPosition.y, 50);
@@ -343,6 +366,36 @@ namespace Mechanics.RoboticFlows
 
             cell = default;
             return false;
+        }
+
+        [Button]
+        public void Undo()
+        {
+            if (completedDrawers.Count<=0)
+            {
+                Debug.LogError("no completed drawers");
+                return;
+            }
+            var last = completedDrawers.Last();
+            last.Clear();
+            Remove(last);
+        }
+        
+        private void Add()
+        {
+            if (!completedDrawers.Contains(_selectedDrawer))
+            {
+                completedDrawers.Add(_selectedDrawer);       
+            }
+        }
+
+        private void Remove(FlowDrawer drawer)
+        {
+            if (completedDrawers.Contains(drawer))
+            {
+                completedDrawers.Remove(drawer);       
+            }
+
         }
         
     }

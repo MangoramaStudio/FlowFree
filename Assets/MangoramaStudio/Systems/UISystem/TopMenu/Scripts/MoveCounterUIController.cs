@@ -47,14 +47,22 @@ namespace Mechanics.RoboticFlows
             if (isToggled)
             {
                 _moveCounter.onMoveCountUpdate += UpdateMoveCounterTMP;
+                GameManager.Instance.EventManager.OnRestartLevel += Restart;
             }
             else
             {
                 _moveCounter.onMoveCountUpdate -= UpdateMoveCounterTMP;
+                GameManager.Instance.EventManager.OnRestartLevel -= Restart;
             }
         }
 
-  
+        private void Restart()
+        {
+            _moveCounter.Restart();
+            UpdateMoveCounterTMP(0);
+        }
+
+
         private void UpdateMoveCounterTMP(int amount)
         {
             if (moveCounterTMP == null)
