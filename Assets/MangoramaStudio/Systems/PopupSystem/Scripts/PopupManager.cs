@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using MangoramaStudio.Scripts.Data;
 using MangoramaStudio.Scripts.Managers;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -19,8 +20,24 @@ namespace MangoramaStudio.Systems.PopupSystem.Scripts
         {
             base.Initialize();
             _popupCanvas = Instantiate(PopupConfig.popupCanvas);
+            CheckTutorialPopupOpen();
         }
 
+        protected override void ToggleEvents(bool isToggled)
+        {
+            base.ToggleEvents(isToggled);
+            var eventManager = GameManager.EventManager;
+            if (isToggled)
+            {
+                eventManager.OnOpenPopup += Show;
+            }
+            else
+            {
+                eventManager.OnOpenPopup -= Show;
+            }
+        }
+        
+     
         [Button]
         public void Show(PopupType popupType)
         {
@@ -47,6 +64,14 @@ namespace MangoramaStudio.Systems.PopupSystem.Scripts
         {
             var popup = PopupConfig.popups.FirstOrDefault(x => x.Key == popupType).Value;
             return popup ==null ? null : popup;
+        }
+
+        private void CheckTutorialPopupOpen()
+        {
+            if (PlayerData.CurrentLevelId == 0)
+            {
+                GameManager.EventManager.OpenPopup(PopupType.Tutorial);
+            }
         }
     }
     

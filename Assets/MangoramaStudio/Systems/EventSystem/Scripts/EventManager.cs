@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using MangoramaStudio.Systems.PopupSystem.Scripts;
 using UnityEngine;
 
 namespace MangoramaStudio.Scripts.Managers
@@ -104,6 +105,17 @@ namespace MangoramaStudio.Scripts.Managers
         public void ShowRewarded(Action onRewardedSuccess, Action onRewardedFailure, string adTag)
         {
             OnShowRewarded?.Invoke(onRewardedSuccess, onRewardedFailure, adTag);
+        }
+
+        #endregion
+
+        #region Popup Events
+
+        public event Action<PopupType> OnOpenPopup;
+
+        public void OpenPopup(PopupType popupType)
+        {
+            OnOpenPopup?.Invoke(popupType);
         }
 
         #endregion

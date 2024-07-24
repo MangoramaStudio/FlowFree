@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1994448792356176820, guid: e3557629fad9d421a865d08081a73b95, type: 3}
       propertyPath: m_Name
-      value: UndoButton
+      value: CloseTutorialPopupButton
       objectReference: {fileID: 0}
     - target: {fileID: 7891103836683121554, guid: e3557629fad9d421a865d08081a73b95, type: 3}
       propertyPath: m_Pivot.x
@@ -93,6 +93,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8580157453374712053, guid: e3557629fad9d421a865d08081a73b95, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8580157453374712053, guid: e3557629fad9d421a865d08081a73b95, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 43e0e39418e5b456f8d7166028afd297, type: 3}
@@ -102,14 +106,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1994448792356176820, guid: e3557629fad9d421a865d08081a73b95, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9054409722874763615}
+      addedObject: {fileID: 9075732308354624681}
   m_SourcePrefab: {fileID: 100100000, guid: e3557629fad9d421a865d08081a73b95, type: 3}
 --- !u!1 &3285386644817778052 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1994448792356176820, guid: e3557629fad9d421a865d08081a73b95, type: 3}
   m_PrefabInstance: {fileID: 3906236210459563568}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9054409722874763615
+--- !u!114 &9075732308354624681
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,7 +122,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3285386644817778052}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc29461cb4c54d089462046512f3f1fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 32d4d38502234c59a1ecd014ad4bb272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   vibrationType: 3
+  popupBase: {fileID: 0}
