@@ -98,6 +98,11 @@ namespace Mechanics.Scripts
 
         protected virtual void RaiseUndo() { }
 
+        protected virtual void AutoComplete()
+        {
+            
+        }
+
         protected void RaiseSuccess(float delay)
         {
             _successRoutine = StartCoroutine(DelayedCall(delay, () => Success?.Invoke()));
