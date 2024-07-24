@@ -7,7 +7,6 @@ namespace MangoramaStudio.Scripts.Managers.Buttons
     public class ContinueNextLevelButton : BaseButton
     {
         
-        
      
         protected override async void Click()
         {
@@ -29,7 +28,6 @@ namespace MangoramaStudio.Scripts.Managers.Buttons
             base.ToggleEvents(isToggled);
             if (isToggled)
             {
-                
             }
             else
             {

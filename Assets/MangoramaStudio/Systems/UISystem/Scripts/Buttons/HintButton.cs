@@ -15,7 +15,6 @@ namespace MangoramaStudio.Scripts.Managers.Buttons
             IsClicked = true;
             GameManager.Instance.EventManager.ShowRewarded(OnRewardedSuccess,OnRewardedFail,"HintButton");
             Debug.Log($"Hint rewarded show sent");
-
         }
         
         private void OnRewardedSuccess()
