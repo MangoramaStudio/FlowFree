@@ -49,6 +49,7 @@ namespace Mechanics.RoboticFlows
         [Button(ButtonSizes.Large)]
         public void CategorizeLevelsAccordingToSizes()
         {
+            levelSizeCategoryDefinitions.ForEach(x=>x.levels.Clear());
             
             for (int i = 0; i < levelBehaviours.Count; i++)
             {
