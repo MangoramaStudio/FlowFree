@@ -15,6 +15,7 @@ namespace Mechanics.RoboticFlows
         public List<LevelBehaviour> levelBehaviours = new();
 
         public List<LevelSizeCategoryDefinition> levelSizeCategoryDefinitions = new();
+        
 
 #if UNITY_EDITOR
         [Button(ButtonSizes.Medium)]
