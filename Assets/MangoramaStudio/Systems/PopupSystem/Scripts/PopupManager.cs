@@ -15,11 +15,13 @@ namespace MangoramaStudio.Systems.PopupSystem.Scripts
         private readonly Dictionary<PopupType, PopupBase> _currentPopups = new();
 
         private Canvas _popupCanvas;
+        private TutorialData _tutorialData;
 
         public override void Initialize()
         {
             base.Initialize();
             _popupCanvas = Instantiate(PopupConfig.popupCanvas);
+            _tutorialData = GameManager.Instance.DataManager.GetData<TutorialData>();
             CheckTutorialPopupOpen();
         }
 
@@ -68,7 +70,7 @@ namespace MangoramaStudio.Systems.PopupSystem.Scripts
 
         private void CheckTutorialPopupOpen()
         {
-            if (PlayerData.CurrentLevelId == 0)
+            if (levelData.currentLevelIndex == 0 && !_tutorialData.firstLevelShown)
             {
                 GameManager.EventManager.OpenPopup(PopupType.Tutorial);
             }

@@ -119,5 +119,17 @@ namespace MangoramaStudio.Scripts.Managers
         }
 
         #endregion
+
+        #region Data Events
+
+        public event Action OnSaveData;
+
+        public void SaveData()
+        {
+            OnSaveData?.Invoke();
+        }
+
+
+        #endregion
     }
 }

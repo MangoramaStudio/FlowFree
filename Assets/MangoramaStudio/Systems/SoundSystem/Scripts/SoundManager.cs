@@ -11,10 +11,18 @@ namespace MangoramaStudio.Systems.SoundSystem.Scripts
     
     public class SoundManager : BaseManager
     {
+        private SettingsData _settingsData;
+
         
         [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string singleMatchSfx;
         [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string fullMatchSfx;
         [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string drawSfx;
+
+        public override void Initialize()
+        {
+            base.Initialize();
+            _settingsData = GameManager.Instance.DataManager.GetData<SettingsData>();
+        }
 
         protected override void ToggleEvents(bool isToggled)
         {
@@ -57,7 +65,7 @@ namespace MangoramaStudio.Systems.SoundSystem.Scripts
         
         private void TryPlaySound(string id)
         {
-            if (PlayerData.IsSfxEnabled == 1)
+            if (_settingsData.isSfxEnabled == 1)
             {
                 Apollo.PlaySingleAudio(id);          
             }

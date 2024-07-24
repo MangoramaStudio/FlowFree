@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using MangoramaStudio.Scripts.Controllers;
+using MangoramaStudio.Scripts.Data;
 using MangoramaStudio.Systems.AdsSystem.Scripts;
 using MangoramaStudio.Systems.PopupSystem.Scripts;
 using MangoramaStudio.Systems.ReviewSystem.Scripts;
@@ -14,6 +15,7 @@ namespace MangoramaStudio.Scripts.Managers
 {
     public class GameManager : BaseManager
     {
+        [SerializeField] private DataManager dataManager;
         [SerializeField] private UIManager uiManager;
         [SerializeField] private EventManager eventManager;
         [SerializeField] private LevelManager levelManager;
@@ -24,6 +26,8 @@ namespace MangoramaStudio.Scripts.Managers
         [SerializeField] private VibrationManager vibrationManager;
         [SerializeField] private SoundManager soundManager;
         [SerializeField] private AdsManager adsManager;
+
+        public DataManager DataManager => dataManager;
         public EventManager EventManager => eventManager;
         public LevelManager LevelManager => levelManager;
         public AddressableManager AddressableManager { get; private set; }

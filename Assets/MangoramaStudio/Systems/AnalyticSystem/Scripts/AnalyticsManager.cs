@@ -41,13 +41,13 @@ namespace MangoramaStudio.Scripts.Managers
 
         private void SkipLevelTrackEvent()
         {
-            var eventName = $"level{PlayerData.CurrentLevelId}_skip";
+            var eventName = $"level{levelData.currentLevelIndex}_skip";
             TrackEventFirebase(eventName);
         }
 
         private void HintUseTrackEvent()
         {
-            var eventName = $"level{PlayerData.CurrentLevelId}_hint";
+            var eventName = $"level{levelData.currentLevelIndex}_hint";
             TrackEventFirebase(eventName);
             TrackEventAdjust(eventName);
         }
@@ -86,7 +86,7 @@ namespace MangoramaStudio.Scripts.Managers
             {
                 Sherlock.Service<IGameAnalyticsService>().SendCustom(eventName, new Dictionary<string, object>
             {
-                {"Level", PlayerData.CurrentLevelId }
+                {"Level", levelData.currentLevelIndex }
             });
             }
             else
@@ -103,7 +103,7 @@ namespace MangoramaStudio.Scripts.Managers
             {
                 Sherlock.Service<IFirebaseAnalyticsService>().SendCustom(eventName, new Dictionary<string, object>
             {
-                {"Level", PlayerData.CurrentLevelId }
+                {"Level", levelData.currentLevelIndex }
             });
             }
             else
@@ -118,7 +118,7 @@ namespace MangoramaStudio.Scripts.Managers
 
         private void LevelStartedNotification()
         {
-            var eventName = $"level{PlayerData.CurrentLevelId}_start";
+            var eventName = $"level{levelData.currentLevelIndex}_start";
             TrackEventFirebase(eventName);
             TrackEventAdjust(eventName);
 
@@ -126,7 +126,7 @@ namespace MangoramaStudio.Scripts.Managers
 
         private void LevelFinishedNotification(bool isSuccess)
         {
-            var successEventName = $"level{PlayerData.CurrentLevelId}_complete";
+            var successEventName = $"level{levelData.currentLevelIndex}_complete";
             if (isSuccess)
             {
                 TrackEventFirebase(successEventName);

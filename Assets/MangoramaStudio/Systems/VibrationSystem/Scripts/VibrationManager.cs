@@ -6,6 +6,14 @@ namespace MangoramaStudio.Systems.VibrationSystem
 {
     public class VibrationManager : BaseManager
     {
+        private SettingsData _settingsData;
+
+        public override void Initialize()
+        {
+            base.Initialize();
+            _settingsData = GameManager.Instance.DataManager.GetData<SettingsData>();
+        }
+
         protected override void ToggleEvents(bool isToggled)
         {
             base.ToggleEvents(isToggled);
@@ -45,7 +53,7 @@ namespace MangoramaStudio.Systems.VibrationSystem
         
         private void TryVibrate(VibrationType preset = VibrationType.Light)
         {
-            if (PlayerData.IsHapticsEnabled == 1)
+            if (_settingsData.isHapticEnabled == 1)
             {
                 Vibrator.Vibrate(preset);     
             }

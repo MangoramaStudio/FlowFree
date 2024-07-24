@@ -146,6 +146,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c086e1801554f37a3510036737b05aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &2469018835970355529
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8577286547065269194}
+    m_Modifications:
+    - target: {fileID: 3231988359625342020, guid: 225c241bf78c5489194ade5fd490a3f4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231988359625342020, guid: 225c241bf78c5489194ade5fd490a3f4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231988359625342020, guid: 225c241bf78c5489194ade5fd490a3f4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231988359625342020, guid: 225c241bf78c5489194ade5fd490a3f4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231988359625342020, guid: 225c241bf78c5489194ade5fd490a3f4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231988359625342020, guid: 225c241bf78c5489194ade5fd490a3f4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231988359625342020, guid: 225c241bf78c5489194ade5fd490a3f4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231988359625342020, guid: 225c241bf78c5489194ade5fd490a3f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231988359625342020, guid: 225c241bf78c5489194ade5fd490a3f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231988359625342020, guid: 225c241bf78c5489194ade5fd490a3f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8785240694227623353, guid: 225c241bf78c5489194ade5fd490a3f4, type: 3}
+      propertyPath: m_Name
+      value: DataManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 225c241bf78c5489194ade5fd490a3f4, type: 3}
+--- !u!4 &1052122430873046285 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3231988359625342020, guid: 225c241bf78c5489194ade5fd490a3f4, type: 3}
+  m_PrefabInstance: {fileID: 2469018835970355529}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6001735361627483043 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8145258071647984362, guid: 225c241bf78c5489194ade5fd490a3f4, type: 3}
+  m_PrefabInstance: {fileID: 2469018835970355529}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f54fd2de0c574f75b8e8e7ced5f688d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4087640499076934021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -849,6 +922,9 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 344726825554533106, guid: 1161943da2c9a4b448bbc09a6d1b3086, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1052122430873046285}
+    - targetCorrespondingSourceObject: {fileID: 344726825554533106, guid: 1161943da2c9a4b448bbc09a6d1b3086, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 364797688494524237}
     - targetCorrespondingSourceObject: {fileID: 344726825554533106, guid: 1161943da2c9a4b448bbc09a6d1b3086, type: 3}
       insertIndex: -1
@@ -902,6 +978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca7ef85cfe60f4eff85f341e8cc2a89f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataManager: {fileID: 6001735361627483043}
   uiManager: {fileID: 7529989504000157590}
   eventManager: {fileID: 6560014650378323261}
   levelManager: {fileID: 746984863735867933}

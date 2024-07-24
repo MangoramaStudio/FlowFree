@@ -24,13 +24,13 @@ namespace MangoramaStudio.Scripts.Managers
             base.Initialize();
             _desiredLoadedLevelPrefab = GameManager.AddressableManager.LoadedLevelBehaviour;
             GameManager.EventManager.OnStartGame += StartGame;
-            SROptions.OnLevelInvoked += RetryCurrentLevel;
+         
         }
 
         public override void OnDestroy()
         {
             GameManager.EventManager.OnStartGame -= StartGame;
-            SROptions.OnLevelInvoked -= RetryCurrentLevel;
+           
         }
 
         private void StartGame()
@@ -38,9 +38,9 @@ namespace MangoramaStudio.Scripts.Managers
             ClearLevel();
             Resources.UnloadUnusedAssets();
             InputController.IsInputDeactivated = false;
-            if (PlayerData.CurrentLevelId < totalLevelCount)
+            if (levelData.currentLevelIndex < totalLevelCount)
             {
-                GameManager.AddressableManager.LoadCurrentLevelAsync(OnLevelLoaded);
+                GameManager.AddressableManager.LoadCurrentLevelAsync(levelData.currentLevelIndex,OnLevelLoaded);
             }
         }
         
@@ -75,7 +75,8 @@ namespace MangoramaStudio.Scripts.Managers
 
         private void IncrementLevel()
         {
-            PlayerData.CurrentLevelId += 1;   
+            levelData.currentLevelIndex += 1;   
+            GameManager.EventManager.SaveData();
         }
         
         

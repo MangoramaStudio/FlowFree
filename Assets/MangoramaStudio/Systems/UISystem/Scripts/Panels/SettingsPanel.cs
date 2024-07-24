@@ -14,23 +14,34 @@ namespace MangoramaStudio.Scripts.UI
         [FormerlySerializedAs("_sfxSettingsContainer")] [SerializeField] private SettingsContainer sfxSettingsContainer;
         [FormerlySerializedAs("_vibrateSettingsContainer")] [SerializeField] private SettingsContainer vibrateSettingsContainer;
 
+        
+        private SettingsData _settingsData;
+
+        public override void Initialize(UIManager uiManager)
+        {
+            base.Initialize(uiManager);
+            _settingsData = GameManager.Instance.DataManager.GetData<SettingsData>();
+        }
 
         public void InitializeContainers()
         {
-            musicSettingsContainer.Initialize(PlayerData.IsMusicEnabled == 1);
-            sfxSettingsContainer.Initialize(PlayerData.IsSfxEnabled == 1);
-            vibrateSettingsContainer.Initialize(PlayerData.IsHapticsEnabled == 1);
+           
+            musicSettingsContainer.Initialize(_settingsData.isMusicEnabled == 1);
+            sfxSettingsContainer.Initialize(_settingsData.isSfxEnabled == 1);
+            vibrateSettingsContainer.Initialize(_settingsData.isHapticEnabled == 1);
+            
+            GameManager.Instance.EventManager.SaveData();
         }
 
         public void ToggleMusic()
         {
-            if (PlayerData.IsMusicEnabled == 1)
+            if (_settingsData.isMusicEnabled == 1)
             {
-                PlayerData.IsMusicEnabled = 0;
+                _settingsData.isMusicEnabled = 0;
             }
             else
             {
-                PlayerData.IsMusicEnabled = 1;
+                _settingsData.isMusicEnabled = 1;
             }
 
             InitializeContainers();
@@ -38,13 +49,13 @@ namespace MangoramaStudio.Scripts.UI
 
         public void ToggleSfx()
         {
-            if (PlayerData.IsSfxEnabled == 1)
+            if (_settingsData.isSfxEnabled == 1)
             {
-                PlayerData.IsSfxEnabled = 0;
+                _settingsData.isSfxEnabled = 0;
             }
             else
             {
-                PlayerData.IsSfxEnabled = 1;
+                _settingsData.isSfxEnabled = 1;
             }
 
             InitializeContainers();
@@ -52,13 +63,13 @@ namespace MangoramaStudio.Scripts.UI
 
         public void ToggleHaptic()
         {
-            if (PlayerData.IsHapticsEnabled == 1)
+            if (_settingsData.isHapticEnabled == 1)
             {
-                PlayerData.IsHapticsEnabled = 0;
+                _settingsData.isHapticEnabled = 0;
             }
             else
             {
-                PlayerData.IsHapticsEnabled = 1;
+                _settingsData.isHapticEnabled = 1;
             }
 
             InitializeContainers();

@@ -15,53 +15,8 @@ using Random = UnityEngine.Random;
 
 public partial class SROptions
 {
-    private int _levelId;
-    public static event Action OnLevelInvoked;
-
-    public static event Action<int> OnRequiredLevelInvoked;
-
-    // Uncomment the #define at the top of file to enable test options
-    [Category("Level")]
-    public int LevelId
-    {
-        get { return _levelId; }
-        set
-        {
-            _levelId = value;
-        }
-    }
-    
-    
-
-    [Category("Level")]
-    public void InvokeLevel()
-    {
-        PlayerData.CurrentLevelId = LevelId;
-        OnLevelInvoked?.Invoke();
-    }
-    
-    [Category("Level")]
-    public void RequiredInvokeLevel()
-    {
-        OnRequiredLevelInvoked?.Invoke(LevelId);
-    }
 
     
-
-    [Category("Level")]
-    public void NextLevel()
-    {
-        PlayerData.CurrentLevelId++;
-        OnLevelInvoked?.Invoke();
-    }
-
-    [Category("Level")]
-    public void PreviousLevel()
-    {
-        PlayerData.CurrentLevelId--;
-        OnLevelInvoked?.Invoke();
-    }
-
 #if ENABLE_TEST_SROPTIONS
 
 

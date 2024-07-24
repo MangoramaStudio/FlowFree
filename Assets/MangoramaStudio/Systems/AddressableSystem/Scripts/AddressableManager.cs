@@ -30,16 +30,12 @@ namespace MangoramaStudio.Scripts.Managers
         {
             DontDestroyOnLoad(this.gameObject);
             LevelOrderHandler.Initialize();
-            
-            LoadLevelAsync(GetCurrentLevel(), () =>
-            {
-                FirstLevelLoaded?.Invoke();
-            });
+      
         }
         
-        public void LoadCurrentLevelAsync(Action onComplete = null)
+        public void LoadCurrentLevelAsync(int index,Action onComplete = null)
         {
-            LoadLevelAsync(GetCurrentLevel(),onComplete);
+            LoadLevelAsync(GetCurrentLevel(index),onComplete);
         }
 
         private void LoadLevelAsync(string levelName, Action onComplete = null)
@@ -66,10 +62,10 @@ namespace MangoramaStudio.Scripts.Managers
             action?.Invoke();
         }
         
-        private string GetCurrentLevel()
+        private string GetCurrentLevel(int index)
         {
             var list = LevelOrderHandler.GetCurrentLevelOrder();
-            var element = list.ElementAt(PlayerData.CurrentLevelId);
+            var element = list.ElementAt(index);
             return $"{Prefix} {element}";
         }
         
