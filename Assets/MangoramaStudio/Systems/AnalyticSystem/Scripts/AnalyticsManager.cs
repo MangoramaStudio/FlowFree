@@ -41,14 +41,13 @@ namespace MangoramaStudio.Scripts.Managers
 
         private void SkipLevelTrackEvent()
         {
-            var eventName = $"Level_{PlayerData.CurrentLevelId}_SkipLevel_Used";
+            var eventName = $"level{PlayerData.CurrentLevelId}_skip";
             TrackEventFirebase(eventName);
-            TrackEventAdjust(eventName);
         }
 
         private void HintUseTrackEvent()
         {
-            var eventName = $"Level_{PlayerData.CurrentLevelId}_Hint_Used";
+            var eventName = $"level{PlayerData.CurrentLevelId}_hint";
             TrackEventFirebase(eventName);
             TrackEventAdjust(eventName);
         }
@@ -119,7 +118,7 @@ namespace MangoramaStudio.Scripts.Managers
 
         private void LevelStartedNotification()
         {
-            var eventName = $"Level_{PlayerData.CurrentLevelId}_Started";
+            var eventName = $"level{PlayerData.CurrentLevelId}_start";
             TrackEventFirebase(eventName);
             TrackEventAdjust(eventName);
 
@@ -127,18 +126,11 @@ namespace MangoramaStudio.Scripts.Managers
 
         private void LevelFinishedNotification(bool isSuccess)
         {
-            var successEventName = $"Level_{PlayerData.CurrentLevelId}_Completed";
-            var failedEventName = $"Level_{PlayerData.CurrentLevelId}_Failed";
+            var successEventName = $"level{PlayerData.CurrentLevelId}_complete";
             if (isSuccess)
             {
                 TrackEventFirebase(successEventName);
                 TrackEventAdjust(successEventName);
-            }
-             
-            else
-            {
-                TrackEventFirebase(failedEventName); 
-                TrackEventAdjust(failedEventName);
             }
         }
     }
