@@ -86,8 +86,7 @@ namespace MangoramaStudio.Scripts.Managers
         {
             OnAutoComplete?.Invoke();   
         }
-
-
+        
 
         #endregion
 

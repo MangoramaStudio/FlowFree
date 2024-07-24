@@ -16,18 +16,41 @@ namespace MangoramaStudio.Scripts.Managers
         public override void Initialize()
         {
             base.Initialize();
-
             InitializeFacebook();
             GameAnalytics.Initialize();
-
-            GameManager.EventManager.OnLevelStarted += LevelStartedNotification;
-            GameManager.EventManager.OnLevelFinished += LevelFinishedNotification;
+        }
+        
+        protected override void ToggleEvents(bool isToggled)
+        {
+            var eventManager = GameManager.EventManager;
+            if (isToggled)
+            {
+                eventManager.OnLevelStarted += LevelStartedNotification;
+                eventManager.OnLevelFinished += LevelFinishedNotification;
+                eventManager.OnRaiseHint += HintUseTrackEvent;
+                eventManager.OnAutoComplete += SkipLevelTrackEvent;
+            }
+            else
+            {
+                eventManager.OnLevelStarted -= LevelStartedNotification;
+                eventManager.OnLevelFinished -= LevelFinishedNotification;
+                eventManager.OnRaiseHint -= HintUseTrackEvent;
+                eventManager.OnAutoComplete -= SkipLevelTrackEvent;
+            }
         }
 
-        private void OnDestroy()
+        private void SkipLevelTrackEvent()
         {
-            GameManager.EventManager.OnLevelStarted -= LevelStartedNotification;
-            GameManager.EventManager.OnLevelFinished -= LevelFinishedNotification;
+            var eventName = $"Level_{PlayerData.CurrentLevelId}_SkipLevel_Used";
+            TrackEventFirebase(eventName);
+            TrackEventAdjust(eventName);
+        }
+
+        private void HintUseTrackEvent()
+        {
+            var eventName = $"Level_{PlayerData.CurrentLevelId}_Hint_Used";
+            TrackEventFirebase(eventName);
+            TrackEventAdjust(eventName);
         }
 
         #region FB_Initialize
@@ -96,19 +119,27 @@ namespace MangoramaStudio.Scripts.Managers
 
         private void LevelStartedNotification()
         {
-            TrackEventFirebase($"Level_{PlayerData.CurrentLevelId}_Started");
+            var eventName = $"Level_{PlayerData.CurrentLevelId}_Started";
+            TrackEventFirebase(eventName);
+            TrackEventAdjust(eventName);
 
         }
 
         private void LevelFinishedNotification(bool isSuccess)
         {
+            var successEventName = $"Level_{PlayerData.CurrentLevelId}_Completed";
+            var failedEventName = $"Level_{PlayerData.CurrentLevelId}_Failed";
             if (isSuccess)
-                TrackEventFirebase($"Level_{PlayerData.CurrentLevelId}_Completed");
+            {
+                TrackEventFirebase(successEventName);
+                TrackEventAdjust(successEventName);
+            }
+             
             else
-                TrackEventFirebase($"Level_{PlayerData.CurrentLevelId}_Failed");
+            {
+                TrackEventFirebase(failedEventName); 
+                TrackEventAdjust(failedEventName);
+            }
         }
-
-
-
     }
 }
