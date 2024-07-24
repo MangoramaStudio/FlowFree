@@ -242,7 +242,7 @@ namespace Mechanics.RoboticFlows
             {
                 for (int j = 0; j < size.y; j++)
                 {
-                    var value = map[j, i];
+                    var value = map[i, j];
 
                     if (value < 0) 
                         continue;
@@ -260,8 +260,8 @@ namespace Mechanics.RoboticFlows
                         hints.Add(value, hint);
                     }
                     
-                    var xCoord = j;
-                    var yCoord = size.y - i - 1;
+                    var xCoord = i;
+                    var yCoord = size.y - j - 1;
                     
                     hint.cells.Add(cells.First(c => c.x == xCoord && c.y == yCoord));
                 }
