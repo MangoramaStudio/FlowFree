@@ -61,6 +61,18 @@ namespace Mechanics.RoboticFlows
                 }
             }
         }
+
+        [Button(ButtonSizes.Medium)]
+        public void AddCorrectCellsOrder(Vector2Int size)
+        {
+            for (int i = 0; i < levelBehaviours.Count; i++)
+            {
+                var level = levelBehaviours[i];
+                level.GetComponent<FlowDrawerConverter>().AddCorrectOrderCells(size,level);
+                EditorUtility.SetDirty(levelBehaviours[i].gameObject);
+                PrefabUtility.SavePrefabAsset(levelBehaviours[i].gameObject);
+            }
+        }
         
 #endif
        
@@ -84,6 +96,17 @@ namespace Mechanics.RoboticFlows
                 EditorUtility.SetDirty(level.gameObject);
                 PrefabUtility.SavePrefabAsset(level.gameObject);
                 Debug.LogError(flowGrid.gameObject);
+            }
+        }
+        
+        [Button(ButtonSizes.Medium),GUIColor(0.6f,1,0.6f)]
+        public void AddCorrectCellsOrder()
+        {
+            for (int i = 0; i < levels.Count; i++)
+            {
+                levels[i].GetComponent<FlowDrawerConverter>().AddCorrectOrderCells(size,levels[i]);
+                EditorUtility.SetDirty(levels[i].gameObject);
+                PrefabUtility.SavePrefabAsset(levels[i].gameObject);
             }
         }
 #endif

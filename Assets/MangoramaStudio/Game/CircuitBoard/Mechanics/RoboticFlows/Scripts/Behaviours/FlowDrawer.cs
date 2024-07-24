@@ -1,10 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using MangoramaStudio.Scripts.Behaviours;
 using MatchinghamGames.VibrationModule;
 using Shapes;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Mechanics.RoboticFlows
 {
@@ -17,7 +20,6 @@ namespace Mechanics.RoboticFlows
         [SerializeField] private SpriteRenderer tip;
 
         [SerializeField] private Sprite tileSprite;
-        
         private Stack<Cell> _drawnCells;
         
         public int Id => id;
@@ -33,9 +35,12 @@ namespace Mechanics.RoboticFlows
         public Polyline Polyline => polyline;
 
         public Color GetColor() => color;
+
+        private RoboticFlowDrawer _roboticFlowDrawer;
         
-        public void Initialize()
+        public void Initialize(RoboticFlowDrawer roboticFlowDrawer)
         {
+            _roboticFlowDrawer = roboticFlowDrawer;
             _drawnCells = new Stack<Cell>();
             polyline.enabled = false;
             tip.enabled = false;
@@ -109,6 +114,115 @@ namespace Mechanics.RoboticFlows
             }
             
         }
+
+
+        [Button]
+        public void AutoComplete()
+        {
+            polyline.points.Clear();
+            for (int i = 0; i < correctOrderedCells.Count; i++)
+            {
+                DrawCell(correctOrderedCells[i]);
+            }
+        }
+        
+         [SerializeField] private List<Cell> correctOrderedCells = new();
+
+        [Button]
+        public void AddCorrectOrderCells(RoboticFlowHint hint,Vector2Int gridSize,LevelBehaviour levelBehaviour)
+        {
+            correctOrderedCells.Clear();
+            var cells = hint.GetHints(id);
+            var nodes = cells.FindAll(x => x.node != null).ToList();
+            
+            List<Vector2Int> path = FindPath(new Vector2Int(nodes[0].x,nodes[0].y), new Vector2Int(nodes[1].x,nodes[1].y),cells,gridSize);
+            
+            for (int i = 0; i < path.Count; i++)
+            {
+                var p = path[i];
+               var req = cells.Find(x => x.x == p.x && x.y == p.y);
+               if (req!=null)
+               {
+                   correctOrderedCells.Add(req);
+               }
+            }
+            
+            Debug.Log($"Level : {levelBehaviour.name} has done");
+            
+            
+        }
+        
+        List<Vector2Int> FindPath(Vector2Int start, Vector2Int end,List<Cell> cellList,Vector2Int gridSize)
+        {
+            Queue<Vector2Int> queue = new Queue<Vector2Int>();
+            queue.Enqueue(start);
+
+            Dictionary<Vector2Int, Vector2Int> cameFrom = new Dictionary<Vector2Int, Vector2Int>();
+            cameFrom[start] = start;
+
+            while (queue.Count > 0)
+            {
+                Vector2Int current = queue.Dequeue();
+
+                if (current == end)
+                {
+                    return ReconstructPath(cameFrom, current);
+                }
+
+                foreach (Vector2Int next in GetNeighbors(current,gridSize))
+                {
+                    if (!cameFrom.ContainsKey(next))
+                    {
+                        var any = cellList.Any(x => x.x == next.x && x.y == next.y);
+                        if (any)
+                        {
+                            queue.Enqueue(next);
+                            cameFrom[next] = current;      
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        List<Vector2Int> GetNeighbors(Vector2Int node,Vector2Int gridSize)
+        {
+            List<Vector2Int> neighbors = new List<Vector2Int>();
+
+            Vector2Int[] directions = new Vector2Int[]
+            {
+                new Vector2Int(0, 1), 
+                new Vector2Int(1, 0),
+                new Vector2Int(0, -1),
+                new Vector2Int(-1, 0)
+            };
+
+            foreach (Vector2Int direction in directions)
+            {
+                Vector2Int neighbor = node + direction;
+                if (neighbor.x >= 0 && neighbor.x <gridSize.x && neighbor.y >= 0 && neighbor.y < gridSize.y)
+                {
+                    neighbors.Add(neighbor);
+                }
+            }
+
+            return neighbors;
+        }
+
+        List<Vector2Int> ReconstructPath(Dictionary<Vector2Int, Vector2Int> cameFrom, Vector2Int current)
+        {
+            List<Vector2Int> path = new List<Vector2Int>();
+            while (current != cameFrom[current])
+            {
+                path.Add(current);
+                current = cameFrom[current];
+            }
+            path.Add(current);
+            path.Reverse();
+            return path;
+        }
+        
 
         public void ClearToCell(Cell cell)
         {

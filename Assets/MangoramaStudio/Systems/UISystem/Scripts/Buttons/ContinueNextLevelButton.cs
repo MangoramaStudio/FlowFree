@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using MatchinghamGames.VegasModule;
 using UnityEngine;
@@ -17,9 +18,19 @@ namespace MangoramaStudio.Scripts.Managers.Buttons
             }
             
             IsClicked = true;
-            GameManager.Instance.EventManager.ShowInterstitial("LevelComplete");
-            await Task.Yield();
-            GameManager.Instance.LevelManager.ContinueToNextLevel();
+            try
+            {
+                GameManager.Instance.EventManager.ShowInterstitial("LevelComplete");
+                await Task.Delay(TimeSpan.FromSeconds(.5f), destroyCancellationToken);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+            }
+            finally
+            {
+                GameManager.Instance.LevelManager.ContinueToNextLevel();  
+            }
             
         }
 

@@ -43,8 +43,9 @@ namespace MangoramaStudio.Scripts.Managers
         public event Action OnCompleteFlow;
         public event Action OnCompleteAllFlows;
         public event Action OnRestartLevel;
-
         public event Action OnUndo;
+
+        public event Action OnAutoComplete;
         
         public void RaiseWarning()
         {
@@ -79,6 +80,11 @@ namespace MangoramaStudio.Scripts.Managers
         public void Undo()
         {
             OnUndo?.Invoke();
+        }
+
+        public void AutoComplete()
+        {
+            OnAutoComplete?.Invoke();   
         }
 
 

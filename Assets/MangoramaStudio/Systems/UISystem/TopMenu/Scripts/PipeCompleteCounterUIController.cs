@@ -52,19 +52,25 @@ namespace Mechanics.RoboticFlows
                 _pipeCompleteCounter.onCompletePipe += UpdatePipeCompleteTMP;
                 _eventManager.OnRestartLevel += Restart;
                 _eventManager.OnUndo += Undo;
+                _eventManager.OnAutoComplete += AutoComplete;
             }
             else
             {
                 _pipeCompleteCounter.onCompletePipe -= UpdatePipeCompleteTMP;
                 _eventManager.OnRestartLevel -= Restart;
                 _eventManager.OnUndo -= Undo;
+                _eventManager.OnAutoComplete -= AutoComplete;
             }
+        }
+
+        private void AutoComplete()
+        {
+            _pipeCompleteCounter.AutoComplete();
         }
 
         private void Undo()
         {
             _pipeCompleteCounter.Undo();
-            
         }
 
         private void UpdatePipeCompleteTMP(int amount)

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using MangoramaStudio.Game.Scripts.Behaviours;
 using MangoramaStudio.Scripts.Managers;
 using Mechanics.Scripts;
@@ -43,7 +44,7 @@ namespace Mechanics.RoboticFlows
             
             foreach (var drawer in drawers)
             {
-                drawer.Initialize();
+                drawer.Initialize(this);
             }
             
         }
@@ -68,6 +69,7 @@ namespace Mechanics.RoboticFlows
             surface.Dragged += SurfaceDragged;
             surface.Released += SurfaceReleased;
             GameManager.Instance.EventManager.OnUndo += RaiseUndo;
+            GameManager.Instance.EventManager.OnAutoComplete += AutoComplete;
         }
 
         [Button]
@@ -78,6 +80,8 @@ namespace Mechanics.RoboticFlows
             surface.Dragged -= SurfaceDragged;
             surface.Released -= SurfaceReleased;
             GameManager.Instance.EventManager.OnUndo -= RaiseUndo;
+            GameManager.Instance.EventManager.OnAutoComplete -= AutoComplete;
+
         }
 
         [Button]
@@ -403,6 +407,12 @@ namespace Mechanics.RoboticFlows
         }
         #endregion
         
-        
+        protected override void AutoComplete()
+        {
+            base.AutoComplete();
+            drawers.ForEach(x=>x.AutoComplete());
+            CheckAndComplete();         
+            
+        }
     }
 }

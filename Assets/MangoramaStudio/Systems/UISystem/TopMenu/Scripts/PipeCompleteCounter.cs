@@ -79,5 +79,10 @@ namespace Mechanics.RoboticFlows
             var pipeComplete = Mathf.CeilToInt(CompletedPipeProportion);
             onCompletePipe?.Invoke(pipeComplete);
         }
+
+        public void AutoComplete()
+        {
+            CalculateCompletedPipe();
+        }
     }
 }
