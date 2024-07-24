@@ -13,6 +13,7 @@ namespace MangoramaStudio.Scripts.Managers.Buttons
         protected Button Button => _button ? _button : (_button = GetComponent<Button>());
         private Button _button;
         
+        protected bool IsClicked;
         protected override void OnEnable()
         {
             base.OnEnable();

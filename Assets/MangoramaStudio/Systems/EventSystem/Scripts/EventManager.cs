@@ -22,7 +22,6 @@ namespace MangoramaStudio.Scripts.Managers
         {
             OnLevelStarted?.Invoke();
         }
-
         
         public void LevelFailed()
         {
@@ -85,7 +84,23 @@ namespace MangoramaStudio.Scripts.Managers
 
 
         #endregion
-      
-        
+
+        #region Ads Events
+
+        public event Action<string> OnShowInterstitial;
+
+        public event Action<Action, Action, string> OnShowRewarded;
+
+        public void ShowInterstitial(string adTag)
+        {
+            OnShowInterstitial?.Invoke(adTag);
+        }
+
+        public void ShowRewarded(Action onRewardedSuccess, Action onRewardedFailure, string adTag)
+        {
+            OnShowRewarded?.Invoke(onRewardedSuccess, onRewardedFailure, adTag);
+        }
+
+        #endregion
     }
 }

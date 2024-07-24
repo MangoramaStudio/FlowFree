@@ -7,6 +7,23 @@ namespace MangoramaStudio.Systems.AdsSystem.Scripts
 {
     public class AdsManager : BaseManager
     {
+        
+        protected override void ToggleEvents(bool isToggled)
+        {
+            var eventManager = GameManager.Instance.EventManager;
+            
+            base.ToggleEvents(isToggled);
+            if (isToggled)
+            {
+                eventManager.OnShowInterstitial += ShowInterstitial;
+                eventManager.OnShowRewarded += ShowRewarded;
+            }
+            else
+            {
+                eventManager.OnShowInterstitial -= ShowInterstitial;
+                eventManager.OnShowRewarded -= ShowRewarded;
+            }
+        }
 
         private bool IsReady()
         {
@@ -22,8 +39,8 @@ namespace MangoramaStudio.Systems.AdsSystem.Scripts
         {
             Vegas.Banner.Hide();
         }
-        
-        public void ShowInterstitial(string adTag = null)
+
+        private void ShowInterstitial(string adTag = null)
         {
             if (!IsReady())
             {
@@ -31,9 +48,10 @@ namespace MangoramaStudio.Systems.AdsSystem.Scripts
                 return;
             }
             Vegas.Interstitial.Show(adTag);
+            Debug.Log($"AdsManager : Interstitial show send");
         }
 
-        public void ShowRewarded(Action onRewardedSuccess,Action onRewardedFailure,string adTag = null)
+        private void ShowRewarded(Action onRewardedSuccess,Action onRewardedFailure,string adTag = null)
         {
             if (!IsReady())
             {
@@ -42,7 +60,7 @@ namespace MangoramaStudio.Systems.AdsSystem.Scripts
             }
      
             Vegas.RewardedVideo.Show(onRewardedSuccess,onRewardedFailure,adTag);
-            
+            Debug.Log($"AdsManager : Rewarded show send");
         }
     }
 }

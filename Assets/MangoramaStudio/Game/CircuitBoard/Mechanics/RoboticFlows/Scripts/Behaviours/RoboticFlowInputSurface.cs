@@ -12,19 +12,16 @@ namespace Mechanics.RoboticFlows
         
         public void OnPointerDown(PointerEventData eventData)
         {
-            Debug.Log("Down");
             Pressed?.Invoke(eventData.position);
         }
 
         public void OnDrag(PointerEventData eventData)
         {
-            Debug.Log("Drag");
             Dragged?.Invoke(eventData.position);
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            Debug.Log("Up");
             Released?.Invoke(eventData.position);
         }
     }

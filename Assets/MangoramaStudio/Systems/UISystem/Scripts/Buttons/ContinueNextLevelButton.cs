@@ -1,29 +1,41 @@
+using System.Threading.Tasks;
+using MatchinghamGames.VegasModule;
 using UnityEngine;
 
 namespace MangoramaStudio.Scripts.Managers.Buttons
 {
     public class ContinueNextLevelButton : BaseButton
     {
-
-        private bool _isClicked;
-        protected override void Click()
+        
+        
+     
+        protected override async void Click()
         {
             base.Click();
-            if (_isClicked)
+            if (IsClicked)
             {
                 return;
             }
-            _isClicked = true;
+            
+            IsClicked = true;
+            GameManager.Instance.EventManager.ShowInterstitial("LevelComplete");
+            await Task.Yield();
             GameManager.Instance.LevelManager.ContinueToNextLevel();
+            
         }
 
         protected override void ToggleEvents(bool isToggled)
         {
             base.ToggleEvents(isToggled);
-            if (!isToggled)
+            if (isToggled)
             {
-                _isClicked = false;
+                
+            }
+            else
+            {
+                IsClicked = false;
             }
         }
+        
     }
 }
