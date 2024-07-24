@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using MatchinghamGames.VibrationModule;
 using Shapes;
 using Sirenix.OdinInspector;
@@ -17,7 +18,6 @@ namespace Mechanics.RoboticFlows
         [SerializeField] private SpriteRenderer tip;
 
         [SerializeField] private Sprite tileSprite;
-        
         private Stack<Cell> _drawnCells;
         
         public int Id => id;
@@ -33,9 +33,12 @@ namespace Mechanics.RoboticFlows
         public Polyline Polyline => polyline;
 
         public Color GetColor() => color;
+
+        private RoboticFlowDrawer _roboticFlowDrawer;
         
-        public void Initialize()
+        public void Initialize(RoboticFlowDrawer roboticFlowDrawer)
         {
+            _roboticFlowDrawer = roboticFlowDrawer;
             _drawnCells = new Stack<Cell>();
             polyline.enabled = false;
             tip.enabled = false;
@@ -109,6 +112,113 @@ namespace Mechanics.RoboticFlows
             }
             
         }
+
+        public List<Cell> a = new();
+
+        public RoboticFlowHint hint;
+        [Button]
+        public void AutoComplete()
+        {
+            polyline.points.Clear();
+            var cells = hint.GetHints(id);
+            var nodes = cells.FindAll(x => x.node != null).ToList();
+
+            
+            List<Vector2Int> path = FindPath(new Vector2Int(nodes[0].x,nodes[0].y), new Vector2Int(nodes[1].x,nodes[1].y),cells);
+
+
+            for (int i = 0; i < path.Count; i++)
+            {
+                var p = path[i];
+               var req = cells.Find(x => x.x == p.x && x.y == p.y);
+               if (req!=null)
+               {
+                   a.Add(req);
+               }
+            }
+            
+            
+            if (path != null)
+            {
+                foreach (Vector2Int position in path)
+                {
+                    Debug.Log(position);
+                }
+            }
+           
+        }
+        
+        List<Vector2Int> FindPath(Vector2Int start, Vector2Int end,List<Cell> cellList)
+        {
+            Queue<Vector2Int> queue = new Queue<Vector2Int>();
+            queue.Enqueue(start);
+
+            Dictionary<Vector2Int, Vector2Int> cameFrom = new Dictionary<Vector2Int, Vector2Int>();
+            cameFrom[start] = start;
+
+            while (queue.Count > 0)
+            {
+                Vector2Int current = queue.Dequeue();
+
+                if (current == end)
+                {
+                    return ReconstructPath(cameFrom, current);
+                }
+
+                foreach (Vector2Int next in GetNeighbors(current))
+                {
+                    if (!cameFrom.ContainsKey(next))
+                    {
+                        var any = cellList.Any(x => x.x == next.x && x.y == next.y);
+                        if (any)
+                        {
+                            queue.Enqueue(next);
+                            cameFrom[next] = current;      
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        List<Vector2Int> GetNeighbors(Vector2Int node)
+        {
+            List<Vector2Int> neighbors = new List<Vector2Int>();
+
+            Vector2Int[] directions = new Vector2Int[]
+            {
+                new Vector2Int(0, 1), // yukarı
+                new Vector2Int(1, 0), // sağ
+                new Vector2Int(0, -1), // aşağı
+                new Vector2Int(-1, 0) // sol
+            };
+
+            foreach (Vector2Int direction in directions)
+            {
+                Vector2Int neighbor = node + direction;
+                if (neighbor.x >= 0 && neighbor.x <5 && neighbor.y >= 0 && neighbor.y < 5)
+                {
+                    neighbors.Add(neighbor);
+                }
+            }
+
+            return neighbors;
+        }
+
+        List<Vector2Int> ReconstructPath(Dictionary<Vector2Int, Vector2Int> cameFrom, Vector2Int current)
+        {
+            List<Vector2Int> path = new List<Vector2Int>();
+            while (current != cameFrom[current])
+            {
+                path.Add(current);
+                current = cameFrom[current];
+            }
+            path.Add(current);
+            path.Reverse();
+            return path;
+        }
+        
 
         public void ClearToCell(Cell cell)
         {

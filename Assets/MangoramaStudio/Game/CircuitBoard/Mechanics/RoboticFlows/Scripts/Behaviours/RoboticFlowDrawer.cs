@@ -43,7 +43,7 @@ namespace Mechanics.RoboticFlows
             
             foreach (var drawer in drawers)
             {
-                drawer.Initialize();
+                drawer.Initialize(this);
             }
             
         }

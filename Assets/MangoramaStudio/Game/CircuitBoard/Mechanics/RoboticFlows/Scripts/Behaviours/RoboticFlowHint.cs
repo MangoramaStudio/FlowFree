@@ -18,6 +18,12 @@ namespace Mechanics.RoboticFlows
             hints = hintList.ToList();
         }
 
+        public List<Cell> GetHints(int id)
+        {
+            var hint = hints.Find(x => x.id == id);
+            return hint.cells.ToList();
+        }
+
         [Button(ButtonSizes.Large)]
         public void HighlightHint()
         {
