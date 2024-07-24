@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using MangoramaStudio.Scripts.Data;
 using MangoramaStudio.Scripts.Managers;
 using Sirenix.OdinInspector;
@@ -22,7 +24,6 @@ namespace MangoramaStudio.Systems.PopupSystem.Scripts
             base.Initialize();
             _popupCanvas = Instantiate(PopupConfig.popupCanvas);
             _tutorialData = GameManager.Instance.DataManager.GetData<TutorialData>();
-            CheckTutorialPopupOpen();
         }
 
         protected override void ToggleEvents(bool isToggled)
@@ -32,10 +33,12 @@ namespace MangoramaStudio.Systems.PopupSystem.Scripts
             if (isToggled)
             {
                 eventManager.OnOpenPopup += Show;
+                eventManager.OnStartGame += CheckTutorialPopupOpen;
             }
             else
             {
                 eventManager.OnOpenPopup -= Show;
+                eventManager.OnStartGame -= CheckTutorialPopupOpen;
             }
         }
         
@@ -68,11 +71,22 @@ namespace MangoramaStudio.Systems.PopupSystem.Scripts
             return popup ==null ? null : popup;
         }
 
-        private void CheckTutorialPopupOpen()
+        private async void CheckTutorialPopupOpen()
         {
-            if (levelData.currentLevelIndex == 0 && !_tutorialData.firstLevelShown)
+            try
             {
-                GameManager.EventManager.OpenPopup(PopupType.Tutorial);
+                await Task.Delay(TimeSpan.FromSeconds(.5f), destroyCancellationToken);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+            }
+            finally
+            {
+                if (levelData.currentLevelIndex == 0 && !_tutorialData.firstLevelShown)
+                {
+                    GameManager.EventManager.OpenPopup(PopupType.Tutorial);
+                }
             }
         }
     }

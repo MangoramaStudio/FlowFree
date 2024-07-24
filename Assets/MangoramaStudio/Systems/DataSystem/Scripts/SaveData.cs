@@ -21,6 +21,7 @@ namespace MangoramaStudio.Scripts.Data
     public class TutorialData : Data
     {
         public bool firstLevelShown;
+        public bool obstacleLevelShown;
     }
 
     [Serializable]
