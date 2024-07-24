@@ -2,10 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MangoramaStudio.Scripts.Behaviours;
 using MatchinghamGames.VibrationModule;
 using Shapes;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Mechanics.RoboticFlows
 {
@@ -113,42 +115,44 @@ namespace Mechanics.RoboticFlows
             
         }
 
-        public List<Cell> a = new();
 
-        public RoboticFlowHint hint;
         [Button]
         public void AutoComplete()
         {
             polyline.points.Clear();
+            for (int i = 0; i < correctOrderedCells.Count; i++)
+            {
+                DrawCell(correctOrderedCells[i]);
+            }
+        }
+        
+         [SerializeField] private List<Cell> correctOrderedCells = new();
+
+        [Button]
+        public void AddCorrectOrderCells(RoboticFlowHint hint,Vector2Int gridSize,LevelBehaviour levelBehaviour)
+        {
+            correctOrderedCells.Clear();
             var cells = hint.GetHints(id);
             var nodes = cells.FindAll(x => x.node != null).ToList();
-
             
-            List<Vector2Int> path = FindPath(new Vector2Int(nodes[0].x,nodes[0].y), new Vector2Int(nodes[1].x,nodes[1].y),cells);
-
-
+            List<Vector2Int> path = FindPath(new Vector2Int(nodes[0].x,nodes[0].y), new Vector2Int(nodes[1].x,nodes[1].y),cells,gridSize);
+            
             for (int i = 0; i < path.Count; i++)
             {
                 var p = path[i];
                var req = cells.Find(x => x.x == p.x && x.y == p.y);
                if (req!=null)
                {
-                   a.Add(req);
+                   correctOrderedCells.Add(req);
                }
             }
             
+            Debug.Log($"Level : {levelBehaviour.name} has done");
             
-            if (path != null)
-            {
-                foreach (Vector2Int position in path)
-                {
-                    Debug.Log(position);
-                }
-            }
-           
+            
         }
         
-        List<Vector2Int> FindPath(Vector2Int start, Vector2Int end,List<Cell> cellList)
+        List<Vector2Int> FindPath(Vector2Int start, Vector2Int end,List<Cell> cellList,Vector2Int gridSize)
         {
             Queue<Vector2Int> queue = new Queue<Vector2Int>();
             queue.Enqueue(start);
@@ -165,7 +169,7 @@ namespace Mechanics.RoboticFlows
                     return ReconstructPath(cameFrom, current);
                 }
 
-                foreach (Vector2Int next in GetNeighbors(current))
+                foreach (Vector2Int next in GetNeighbors(current,gridSize))
                 {
                     if (!cameFrom.ContainsKey(next))
                     {
@@ -182,22 +186,22 @@ namespace Mechanics.RoboticFlows
             return null;
         }
 
-        List<Vector2Int> GetNeighbors(Vector2Int node)
+        List<Vector2Int> GetNeighbors(Vector2Int node,Vector2Int gridSize)
         {
             List<Vector2Int> neighbors = new List<Vector2Int>();
 
             Vector2Int[] directions = new Vector2Int[]
             {
-                new Vector2Int(0, 1), // yukarı
-                new Vector2Int(1, 0), // sağ
-                new Vector2Int(0, -1), // aşağı
-                new Vector2Int(-1, 0) // sol
+                new Vector2Int(0, 1), 
+                new Vector2Int(1, 0),
+                new Vector2Int(0, -1),
+                new Vector2Int(-1, 0)
             };
 
             foreach (Vector2Int direction in directions)
             {
                 Vector2Int neighbor = node + direction;
-                if (neighbor.x >= 0 && neighbor.x <5 && neighbor.y >= 0 && neighbor.y < 5)
+                if (neighbor.x >= 0 && neighbor.x <gridSize.x && neighbor.y >= 0 && neighbor.y < gridSize.y)
                 {
                     neighbors.Add(neighbor);
                 }
