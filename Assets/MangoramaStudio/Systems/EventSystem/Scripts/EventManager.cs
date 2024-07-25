@@ -113,10 +113,18 @@ namespace MangoramaStudio.Scripts.Managers
 
         public event Action<PopupType> OnOpenPopup;
 
+        public event Action<PopupType> OnHidePopup;
+
         public void OpenPopup(PopupType popupType)
         {
             OnOpenPopup?.Invoke(popupType);
         }
+        
+        public void HidePopup(PopupType popupType)
+        {
+            OnHidePopup?.Invoke(popupType);
+        }
+        
 
         #endregion
 

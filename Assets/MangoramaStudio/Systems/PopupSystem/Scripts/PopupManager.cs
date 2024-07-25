@@ -33,12 +33,14 @@ namespace MangoramaStudio.Systems.PopupSystem.Scripts
             if (isToggled)
             {
                 eventManager.OnOpenPopup += Show;
-                eventManager.OnStartGame += CheckTutorialPopupOpen;
+                eventManager.OnHidePopup += Hide;
+                eventManager.OnLevelStarted += CheckTutorialPopupOpen;
             }
             else
             {
                 eventManager.OnOpenPopup -= Show;
-                eventManager.OnStartGame -= CheckTutorialPopupOpen;
+                eventManager.OnHidePopup -= Hide;
+                eventManager.OnLevelStarted -= CheckTutorialPopupOpen;
             }
         }
         
@@ -84,6 +86,10 @@ namespace MangoramaStudio.Systems.PopupSystem.Scripts
             finally
             {
                 if (levelData.currentLevelIndex == 0 && !_tutorialData.firstLevelShown)
+                {
+                    GameManager.EventManager.OpenPopup(PopupType.Tutorial);
+                }
+                else if (GameManager.LevelManager.CurrentLevel.HasObstacles && !_tutorialData.obstacleLevelShown)
                 {
                     GameManager.EventManager.OpenPopup(PopupType.Tutorial);
                 }

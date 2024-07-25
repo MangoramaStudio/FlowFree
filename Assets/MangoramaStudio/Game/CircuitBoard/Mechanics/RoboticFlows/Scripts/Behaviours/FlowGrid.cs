@@ -8,7 +8,9 @@ namespace Mechanics.RoboticFlows
     public class FlowGrid : MonoBehaviour
     {
         [SerializeField] private float orthoSize;
-
+        
+        public bool HasObstacles => _cells.Any(x => x.HasObstacles);
+        
         public void SetOrthoSize(float size)
         {
             orthoSize = size;

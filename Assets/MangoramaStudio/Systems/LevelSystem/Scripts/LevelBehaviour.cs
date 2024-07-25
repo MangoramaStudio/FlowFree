@@ -14,12 +14,15 @@ namespace MangoramaStudio.Scripts.Behaviours
     public class LevelBehaviour : MonoBehaviour
     {
 
+        [SerializeField] private FlowGrid flowGrid;
         [SerializeField] private PlayableMechanicContainer container;
         [SerializeField] private PipeCompleteCounter pipeCompleteCounter;
         [SerializeField] private MoveCounter moveCounter;
         public PlayableMechanicContainer Container => container;
         public PipeCompleteCounter PipeCompleteCounter => pipeCompleteCounter;
         public MoveCounter MoveCounter => moveCounter;
+
+        public bool HasObstacles => flowGrid.HasObstacles;
         
         private GameManager _gameManager;
 

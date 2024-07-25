@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MangoramaStudio.Scripts.Behaviours;
 using MatchinghamGames.VibrationModule;
+using Mechanics.RoboticFlows.Obstacles;
 using Shapes;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -173,12 +174,175 @@ namespace Mechanics.RoboticFlows
                 {
                     if (!cameFrom.ContainsKey(next))
                     {
-                        var any = cellList.Any(x => x.x == next.x && x.y == next.y);
-                        if (any)
+                        var f = cellList.Find(x=>x.x == next.x && x.y == next.y);
+                        var c = cellList.Find(x=>x.x == current.x && x.y == current.y);
+                        if (f != null)
                         {
-                            queue.Enqueue(next);
-                            cameFrom[next] = current;      
+                            var obs = f.GetComponentsInChildren<Obstacle>().ToList();
+                            var obsC = c.GetComponentsInChildren<Obstacle>().ToList();
+                            if (obs.Count>0)
+                            {
+                                for (int i = 0; i < obs.Count; i++)
+                                {
+                                    var o = obs[i];
+                                    if (current.y > next.y)
+                                    {
+                                        if (obs.Any(x => x.DirectionType == DirectionType.Up))
+                                        {
+                                            Debug.LogError("cant add it");
+                                        }
+                                        else
+                                        {
+                                            if (o.DirectionType != DirectionType.Up)
+                                            {
+                                                queue.Enqueue(next);
+                                                cameFrom[next] = current;    
+                                                Debug.LogError($"current : {current.x} {current.y} next : {next.x} {next.y}");
+                                            }          
+                                        }
+                                        
+
+                                    }
+                                    else if (current.y < next.y)
+                                    {
+                                        if (obs.Any(x => x.DirectionType == DirectionType.Down))
+                                        {
+                                            Debug.LogError("cant add it");
+                                        }
+
+                                        else
+                                        {
+                                            if (o.DirectionType != DirectionType.Down)
+                                            {
+                                                queue.Enqueue(next);
+                                                cameFrom[next] = current;    
+                                            }     
+                                        }
+                                    }
+                                    else if (current.x < next.x)
+                                    {
+                                        if (obs.Any(x => x.DirectionType == DirectionType.Left))
+                                        {
+                                            Debug.LogError("cant add it");
+                                        }
+
+                                        else
+                                        {
+                                            if (o.DirectionType != DirectionType.Left)
+                                            {
+                                                queue.Enqueue(next);
+                                                cameFrom[next] = current;    
+                                            }     
+                                        }
+                                    }
+                                    else if (current.x > next.x)
+                                    {
+                                        if (obs.Any(x => x.DirectionType == DirectionType.Right))
+                                        {
+                                            Debug.LogError("cant add it");
+                                        }
+
+                                        else
+                                        {
+                                            if (o.DirectionType != DirectionType.Right)
+                                            {
+                                                queue.Enqueue(next);
+                                                cameFrom[next] = current;    
+                                            }     
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (obsC.Count>0)
+                                {
+                                    for (int i = 0; i < obsC.Count; i++)
+                                    {
+                                        var o = obsC[i];
+                                        if (current.y > next.y)
+                                        {
+                                            if (obsC.Any(x => x.DirectionType == DirectionType.Down))
+                                            {
+                                                Debug.LogError("cant add it");
+                                            }
+                                            else
+                                            {
+                                                if (o.DirectionType != DirectionType.Down)
+                                                {
+                                                    queue.Enqueue(next);
+                                                    cameFrom[next] = current;    
+                                                    Debug.LogError($"current : {current.x} {current.y} next : {next.x} {next.y}");
+                                                }          
+                                            }
+                                        
+
+                                        }
+                                        else if (current.y < next.y)
+                                        {
+                                            if (obsC.Any(x => x.DirectionType == DirectionType.Up))
+                                            {
+                                                Debug.LogError("cant add it");
+                                            }
+
+                                            else
+                                            {
+                                                if (o.DirectionType != DirectionType.Up)
+                                                {
+                                                    queue.Enqueue(next);
+                                                    cameFrom[next] = current;    
+                                                }     
+                                            }
+                                        }
+                                        else if (current.x < next.x)
+                                        {
+                                            if (obsC.Any(x => x.DirectionType == DirectionType.Right))
+                                            {
+                                                Debug.LogError("cant add it");
+                                            }
+
+                                            else
+                                            {
+                                                if (o.DirectionType != DirectionType.Right)
+                                                {
+                                                    queue.Enqueue(next);
+                                                    cameFrom[next] = current;    
+                                                }     
+                                            }
+                                        }
+                                        else if (current.x > next.x)
+                                        {
+                                            if (obsC.Any(x => x.DirectionType == DirectionType.Left))
+                                            {
+                                                Debug.LogError("cant add it");
+                                            }
+
+                                            else
+                                            {
+                                                if (o.DirectionType != DirectionType.Left)
+                                                {
+                                                    queue.Enqueue(next);
+                                                    cameFrom[next] = current;    
+                                                }     
+                                            }
+                                        }
+                                    }   
+                                }
+                                else
+                                {
+                                    var any = cellList.Any(x =>x.x == next.x && x.y == next.y);
+                                    if (any)
+                                    {
+                                        queue.Enqueue(next);
+                                        cameFrom[next] = current;      
+                                    }      
+                                }
+                                
+                              
+                            }
+                            
                         }
+                        
                     }
                 }
             }
