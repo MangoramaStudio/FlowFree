@@ -24,27 +24,27 @@ namespace MangoramaStudio.Scripts.Managers
                 eventManager.OnLevelStarted += LevelStartedNotification;
                 eventManager.OnLevelFinished += LevelFinishedNotification;
                 eventManager.OnRaiseHint += HintUseTrackEvent;
-                eventManager.OnAutoComplete += SkipLevelTrackEvent;
+                eventManager.OnSendFirebaseEvent+=SendFirebaseEvent;;
             }
             else
             {
                 eventManager.OnLevelStarted -= LevelStartedNotification;
                 eventManager.OnLevelFinished -= LevelFinishedNotification;
                 eventManager.OnRaiseHint -= HintUseTrackEvent;
-                eventManager.OnAutoComplete -= SkipLevelTrackEvent;
+                eventManager.OnSendFirebaseEvent -=SendFirebaseEvent;;
             }
         }
 
-        private void SkipLevelTrackEvent()
+        private void SendFirebaseEvent(string eventName, bool withParameter)
         {
-            var eventName = $"level{levelData.currentLevelIndex}_skip";
-            TrackEventFirebase(eventName);
+            var trackEventName = $"level{levelData.currentLevelIndex}_{eventName}";
+            TrackEventFirebase(trackEventName,withParameter);    
         }
+        
 
         private void HintUseTrackEvent()
         {
             var eventName = $"level{levelData.currentLevelIndex}_hint";
-            TrackEventFirebase(eventName);
             TrackEventAdjust(eventName);
         }
 
@@ -76,7 +76,7 @@ namespace MangoramaStudio.Scripts.Managers
                 .SendCustom(SherlockUtility.GetToken<IAdjustAnalyticsService>(eventName));
         }
 
-        public void TrackEventFirebase(string eventName, bool isWithParameter = false)
+        private void TrackEventFirebase(string eventName, bool isWithParameter = false)
         {
             if (isWithParameter)
             {

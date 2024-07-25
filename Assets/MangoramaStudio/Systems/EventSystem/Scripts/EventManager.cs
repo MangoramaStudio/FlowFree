@@ -169,5 +169,17 @@ namespace MangoramaStudio.Scripts.Managers
         
         
         #endregion
+
+        #region Analytics Events
+
+        public event Action<string, bool> OnSendFirebaseEvent;
+        
+        public void SendFirebaseEvent(string eventName, bool withParameter)
+        {
+            OnSendFirebaseEvent?.Invoke(eventName, withParameter);
+        }
+        
+
+        #endregion
     }
 }

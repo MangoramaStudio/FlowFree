@@ -178,7 +178,6 @@ namespace Mechanics.RoboticFlows
         private bool ReachObstacles(Cell cell)
         {
             var direction =_selectedDrawer.CurrentCell.DirectionAccordingToTargetCell(cell);
-            Debug.LogError(direction);
                 
             if(_selectedDrawer.CurrentCell.HasObstacles)
             {

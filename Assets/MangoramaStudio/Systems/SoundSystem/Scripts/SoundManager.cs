@@ -36,27 +36,21 @@ namespace MangoramaStudio.Systems.SoundSystem.Scripts
             base.ToggleEvents(isToggled);
             if (isToggled)
             {
-              
                 eventManager.OnPlayNotes += PlayNotes;
                 eventManager.OnIncrementNoteIndex += IncrementNoteIndex;
                 eventManager.OnDecrementNoteIndex += DecrementNoteIndex;
                 eventManager.OnResetNoteIndex += ResetNoteIndex;
                 eventManager.OnPlayLevelSuccess += PlayCompleteLevel;
                 eventManager.OnPlayFlowSuccess += PlayCompleteLine;
-
             }
             else
             {
-            
                 eventManager.OnPlayNotes -= PlayNotes;
                 eventManager.OnIncrementNoteIndex -= IncrementNoteIndex;
                 eventManager.OnDecrementNoteIndex -= DecrementNoteIndex;
                 eventManager.OnResetNoteIndex -= ResetNoteIndex;
                 eventManager.OnPlayLevelSuccess -= PlayCompleteLevel;
                 eventManager.OnPlayFlowSuccess -= PlayCompleteLine;
-
-
-
             }
         }
 
