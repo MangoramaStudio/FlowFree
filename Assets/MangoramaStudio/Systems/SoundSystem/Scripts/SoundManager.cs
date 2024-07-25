@@ -20,7 +20,8 @@ namespace MangoramaStudio.Systems.SoundSystem.Scripts
         [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string drawSfx;
         [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private List<string> musicNotesSfx = new();
 
-        
+
+        private int _currentNoteIndex;
         
         public override void Initialize()
         {
@@ -30,28 +31,33 @@ namespace MangoramaStudio.Systems.SoundSystem.Scripts
 
         protected override void ToggleEvents(bool isToggled)
         {
+            var eventManager = GameManager.EventManager;
             base.ToggleEvents(isToggled);
             if (isToggled)
             {
-               // GameManager.Instance.EventManager.OnDrawCell += PlayDrawLine;
-                GameManager.Instance.EventManager.OnCompleteFlow += PlayCompleteLine;
-                GameManager.Instance.EventManager.OnCompleteAllFlows += PlayCompleteLevel;
-                GameManager.Instance.EventManager.OnPlayNotes += PlayNotes;
+                eventManager.OnCompleteFlow += PlayCompleteLine;
+                eventManager.OnCompleteAllFlows += PlayCompleteLevel;
+                eventManager.OnPlayNotes += PlayNotes;
+                eventManager.OnIncrementNoteIndex += IncrementNoteIndex;
+                eventManager.OnDecrementNoteIndex += DecrementNoteIndex;
+                eventManager.OnResetNoteIndex += ResetNoteIndex;
 
             }
             else
             {
-               // GameManager.Instance.EventManager.OnDrawCell -= PlayDrawLine;
-                GameManager.Instance.EventManager.OnCompleteFlow -= PlayCompleteLine;
-                GameManager.Instance.EventManager.OnCompleteAllFlows -= PlayCompleteLevel;
-                GameManager.Instance.EventManager.OnPlayNotes -= PlayNotes;
+                eventManager.OnCompleteFlow -= PlayCompleteLine;
+                eventManager.OnCompleteAllFlows -= PlayCompleteLevel;
+                eventManager.OnPlayNotes -= PlayNotes;
+                eventManager.OnIncrementNoteIndex -= IncrementNoteIndex;
+                eventManager.OnDecrementNoteIndex -= DecrementNoteIndex;
+                eventManager.OnResetNoteIndex -= ResetNoteIndex;
 
             }
         }
 
-        private void PlayNotes(int index)
+        private void PlayNotes()
         {
-           var note = musicNotesSfx.ElementAt(index);
+           var note = musicNotesSfx.ElementAt(_currentNoteIndex % musicNotesSfx.Count);
            Debug.LogWarning(note);
            TryPlaySound(note);
         }
@@ -62,11 +68,21 @@ namespace MangoramaStudio.Systems.SoundSystem.Scripts
             return SfxUtility.GetSfxKeys();
         }
 
-        private void PlayDrawLine()
+        private void IncrementNoteIndex()
         {
-            TryPlaySound(drawSfx);
+            _currentNoteIndex++;
         }
 
+        private void DecrementNoteIndex()
+        {
+            _currentNoteIndex--;
+        }
+
+        private void ResetNoteIndex()
+        {
+            _currentNoteIndex = 0;
+        }
+        
         private void PlayCompleteLine()
         {
             TryPlaySound(singleMatchSfx);

@@ -134,12 +134,27 @@ namespace MangoramaStudio.Scripts.Managers
 
         #region Sounds Events
 
-        public event Action<int> OnPlayNotes;
-
-        public void PlayNotes(int index)
+        public event Action OnPlayNotes;
+        public event Action OnIncrementNoteIndex;
+        public event Action OnDecrementNoteIndex;
+        public event Action OnResetNoteIndex; 
+        public void PlayNotes()
         {
-            OnPlayNotes?.Invoke(index);
+            OnPlayNotes?.Invoke();
         }
+        public void IncrementNoteIndex()
+        {
+            OnIncrementNoteIndex?.Invoke();
+        }
+        public void DecrementNoteIndex()
+        {
+            OnDecrementNoteIndex?.Invoke();
+        }
+        public void ResetNoteIndex()
+        {
+            OnResetNoteIndex?.Invoke();
+        }
+        
         
         #endregion
     }
