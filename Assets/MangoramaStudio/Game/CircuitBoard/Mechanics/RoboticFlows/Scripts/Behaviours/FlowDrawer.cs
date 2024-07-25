@@ -330,19 +330,17 @@ namespace Mechanics.RoboticFlows
                                 }
                                 else
                                 {
+                     
                                     var any = cellList.Any(x =>x.x == next.x && x.y == next.y);
                                     if (any)
                                     {
+                                        Debug.LogError($"current : {current.x} {current.y} next : {next.x} {next.y}");
                                         queue.Enqueue(next);
                                         cameFrom[next] = current;      
                                     }      
                                 }
-                                
-                              
                             }
-                            
                         }
-                        
                     }
                 }
             }

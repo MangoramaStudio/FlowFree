@@ -9,6 +9,7 @@ namespace Mechanics.RoboticFlows
     public class FlowDrawerConverter : MonoBehaviour
     {
 
+        public bool solvedManually;
         private List<FlowDrawer> _flowDrawers = new();
         private List<Cell> _cells = new List<Cell>();
         private RoboticFlowHint _hint;
@@ -36,6 +37,10 @@ namespace Mechanics.RoboticFlows
         [Button]
         public void AddCorrectOrderCells(Vector2Int size,LevelBehaviour levelBehaviour)
         {
+            if (solvedManually)
+            {
+                return;
+            }
             _hint = GetComponentInChildren<RoboticFlowHint>();
             _flowDrawers = GetComponentsInChildren<FlowDrawer>().ToList();
 
