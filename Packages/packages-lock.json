@@ -21,15 +21,6 @@
       "dependencies": {},
       "url": "https://upm.matchingham.net"
     },
-    "com.gameanalytics.sdk": {
-      "version": "https://github.com/GameAnalytics/GA-SDK-UNITY.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.google.external-dependency-manager": "1.2.168"
-      },
-      "hash": "3c2af032904636e32943fd5eae2fda4e4574556d"
-    },
     "com.google.android.appbundle": {
       "version": "1.9.0",
       "depth": 1,
@@ -43,6 +34,15 @@
       "source": "git",
       "dependencies": {},
       "hash": "7ed108bf4abe448cd87a5d3ce146594126ec9de7"
+    },
+    "com.google.firebase.analytics": {
+      "version": "11.8.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.google.firebase.app": "11.8.1"
+      },
+      "url": "https://upm.matchingham.net"
     },
     "com.google.firebase.app": {
       "version": "11.8.1",
@@ -318,6 +318,22 @@
         "com.matchinghamgames.handyman": "5.0.0",
         "com.matchinghamgames.sherlock": "11.0.0-prev.0",
         "com.matchinghamgames.admostmgsdkbridge": "5.0.0"
+      },
+      "url": "https://upm.matchingham.net"
+    },
+    "com.matchinghamgames.sherlockfirebaseservice": {
+      "version": "5.3.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.matchinghamgames.logger": "2.1.0",
+        "com.matchinghamgames.handyman": "5.3.1",
+        "com.matchinghamgames.firebaseapp": "4.2.1",
+        "com.matchinghamgames.sherlock": "11.2.0-prev.1",
+        "com.google.external-dependency-manager": "1.2.179",
+        "com.google.firebase.app": "11.8.0",
+        "com.google.firebase.analytics": "11.8.0",
+        "com.matchinghamgames.datausageconsent": "11.0.0"
       },
       "url": "https://upm.matchingham.net"
     },

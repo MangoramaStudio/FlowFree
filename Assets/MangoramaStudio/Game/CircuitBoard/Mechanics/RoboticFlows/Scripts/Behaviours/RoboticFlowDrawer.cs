@@ -29,7 +29,9 @@ namespace Mechanics.RoboticFlows
         public Action onDraw;
         public Action onConnectNode;
         public Action onClearDisconnected;
-       
+
+
+        private EventManager _eventManager;
 
         public IReadOnlyList<FlowDrawer> Drawers => drawers;
 
@@ -46,7 +48,8 @@ namespace Mechanics.RoboticFlows
             {
                 drawer.Initialize(this);
             }
-            
+
+
         }
 
         [Button]
@@ -63,13 +66,14 @@ namespace Mechanics.RoboticFlows
         [Button]
         public override void Enable()
         {
+            _eventManager = GameManager.Instance.EventManager;
             Debug.LogWarning("Enable");
             base.Enable();
             surface.Pressed += SurfacePressed;
             surface.Dragged += SurfaceDragged;
             surface.Released += SurfaceReleased;
-            GameManager.Instance.EventManager.OnUndo += RaiseUndo;
-            GameManager.Instance.EventManager.OnAutoComplete += AutoComplete;
+            _eventManager.OnUndo += RaiseUndo;
+            _eventManager.OnAutoComplete += AutoComplete;
         }
 
         [Button]
@@ -79,8 +83,8 @@ namespace Mechanics.RoboticFlows
             surface.Pressed -= SurfacePressed;
             surface.Dragged -= SurfaceDragged;
             surface.Released -= SurfaceReleased;
-            GameManager.Instance.EventManager.OnUndo -= RaiseUndo;
-            GameManager.Instance.EventManager.OnAutoComplete -= AutoComplete;
+            _eventManager.OnUndo -= RaiseUndo;
+            _eventManager.OnAutoComplete -= AutoComplete;
 
         }
 
@@ -126,6 +130,7 @@ namespace Mechanics.RoboticFlows
                 if (cell.node)
                 {
                     BounceFlow(cell.node.Id);
+                    _eventManager.ResetNoteIndexSound();
                 }
 
                 if (!_selectedDrawer)
@@ -216,6 +221,7 @@ namespace Mechanics.RoboticFlows
             return false;
         }
 
+        
         public void SurfaceDragged(Vector2 screenPosition)
         {
             if (CellRaycast(screenPosition, out var cell))
@@ -230,9 +236,11 @@ namespace Mechanics.RoboticFlows
                 
                 if (_selectedDrawer.DrawnCells.Contains(cell))
                 {
+                    _eventManager.DecrementNoteIndexSound();
+                    _eventManager.PlayNoteSound();
                     _selectedDrawer.ClearToCell(cell);
-                   
                     onClear?.Invoke();
+                   
                 }
                 else if (!_selectedDrawer.FlowComplete)
                 {
@@ -244,9 +252,11 @@ namespace Mechanics.RoboticFlows
                         drawer.Clear();
                         Remove(drawer);
                     }
-                    
-                    GameManager.Instance.EventManager.DrawCell();
+
+                    _eventManager.PlayNoteSound();
                     _selectedDrawer.DrawCell(cell);
+                    _eventManager.IncrementNoteIndexSound();
+                    _eventManager.DrawCell();
 
                     if (_selectedDrawer.FlowComplete)
                     {
@@ -255,9 +265,10 @@ namespace Mechanics.RoboticFlows
                         _selectedDrawer = null;
                         _selectedNode = null;
                         onConnectNode?.Invoke();
-                      
-                        GameManager.Instance.EventManager.CompleteFlow();
-                       
+                        _eventManager.ResetNoteIndexSound();
+                        _eventManager.CompleteFlow();
+                        _eventManager.PlayFlowSuccessSound();
+                        
                     }
                     
                     CheckAndComplete();
@@ -339,7 +350,8 @@ namespace Mechanics.RoboticFlows
                     if (cell.node)
                         cell.node.Bounce();
                 }
-                GameManager.Instance.EventManager.CompleteAllFlows();
+                _eventManager.CompleteAllFlows();
+                _eventManager.PlayLevelSuccessSound();
                 RaiseSuccess();
             }
             else if (drawers.All(d => d.FlowComplete))

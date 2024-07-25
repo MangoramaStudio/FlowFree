@@ -1,11 +1,8 @@
 using System.Collections.Generic;
 using Facebook.Unity;
-using GameAnalyticsSDK;
 using UnityEngine;
-using MangoramaStudio.Scripts.Data;
 using MatchinghamGames.SherlockModule;
 using MatchinghamGames.SherlockModule.Services.Firebase;
-using MatchinghamGames.SherlockModule.Services.GameAnalytics;
 using MatchinghamGames.SherlockModule.Services.Adjust;
 
 
@@ -17,7 +14,6 @@ namespace MangoramaStudio.Scripts.Managers
         {
             base.Initialize();
             InitializeFacebook();
-            GameAnalytics.Initialize();
         }
         
         protected override void ToggleEvents(bool isToggled)
@@ -78,23 +74,6 @@ namespace MangoramaStudio.Scripts.Managers
             }
             Sherlock.Service<IAdjustAnalyticsService>()
                 .SendCustom(SherlockUtility.GetToken<IAdjustAnalyticsService>(eventName));
-        }
-
-        public void TrackEventGameAnalytics(string eventName, bool isWithParameter = false)
-        {
-            if (isWithParameter)
-            {
-                Sherlock.Service<IGameAnalyticsService>().SendCustom(eventName, new Dictionary<string, object>
-            {
-                {"Level", levelData.currentLevelIndex }
-            });
-            }
-            else
-            {
-                Sherlock.Service<IGameAnalyticsService>().SendCustom(eventName);
-            }
-
-            Debug.Log($"GA {eventName}");
         }
 
         public void TrackEventFirebase(string eventName, bool isWithParameter = false)
