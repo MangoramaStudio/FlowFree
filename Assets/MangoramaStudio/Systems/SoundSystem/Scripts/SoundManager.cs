@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using MangoramaStudio.Scripts.Data;
 using MangoramaStudio.Scripts.Managers;
 using MatchinghamGames.ApolloModule;
@@ -17,7 +19,6 @@ namespace MangoramaStudio.Systems.SoundSystem.Scripts
         
         [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string singleMatchSfx;
         [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string fullMatchSfx;
-        [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string drawSfx;
         [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private List<string> musicNotesSfx = new();
 
 
@@ -35,22 +36,26 @@ namespace MangoramaStudio.Systems.SoundSystem.Scripts
             base.ToggleEvents(isToggled);
             if (isToggled)
             {
-                eventManager.OnCompleteFlow += PlayCompleteLine;
-                eventManager.OnCompleteAllFlows += PlayCompleteLevel;
+              
                 eventManager.OnPlayNotes += PlayNotes;
                 eventManager.OnIncrementNoteIndex += IncrementNoteIndex;
                 eventManager.OnDecrementNoteIndex += DecrementNoteIndex;
                 eventManager.OnResetNoteIndex += ResetNoteIndex;
+                eventManager.OnPlayLevelSuccess += PlayCompleteLevel;
+                eventManager.OnPlayFlowSuccess += PlayCompleteLine;
 
             }
             else
             {
-                eventManager.OnCompleteFlow -= PlayCompleteLine;
-                eventManager.OnCompleteAllFlows -= PlayCompleteLevel;
+            
                 eventManager.OnPlayNotes -= PlayNotes;
                 eventManager.OnIncrementNoteIndex -= IncrementNoteIndex;
                 eventManager.OnDecrementNoteIndex -= DecrementNoteIndex;
                 eventManager.OnResetNoteIndex -= ResetNoteIndex;
+                eventManager.OnPlayLevelSuccess -= PlayCompleteLevel;
+                eventManager.OnPlayFlowSuccess -= PlayCompleteLine;
+
+
 
             }
         }
@@ -88,9 +93,20 @@ namespace MangoramaStudio.Systems.SoundSystem.Scripts
             TryPlaySound(singleMatchSfx);
         }
 
-        private void PlayCompleteLevel()
+        private async void PlayCompleteLevel()
         {
-            TryPlaySound(fullMatchSfx);
+            try
+            {
+                await Task.Delay(TimeSpan.FromSeconds(.5f), destroyCancellationToken);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+            }
+            finally
+            {
+                TryPlaySound(fullMatchSfx);     
+            }
         }
         
         private void TryPlaySound(string id)

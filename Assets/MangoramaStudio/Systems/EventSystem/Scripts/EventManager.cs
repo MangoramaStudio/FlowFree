@@ -137,22 +137,34 @@ namespace MangoramaStudio.Scripts.Managers
         public event Action OnPlayNotes;
         public event Action OnIncrementNoteIndex;
         public event Action OnDecrementNoteIndex;
-        public event Action OnResetNoteIndex; 
-        public void PlayNotes()
+        public event Action OnResetNoteIndex;
+        public event Action OnPlayLevelSuccess;
+        public event Action OnPlayFlowSuccess;
+        public void PlayNoteSound()
         {
             OnPlayNotes?.Invoke();
         }
-        public void IncrementNoteIndex()
+        public void IncrementNoteIndexSound()
         {
             OnIncrementNoteIndex?.Invoke();
         }
-        public void DecrementNoteIndex()
+        public void DecrementNoteIndexSound()
         {
             OnDecrementNoteIndex?.Invoke();
         }
-        public void ResetNoteIndex()
+        public void ResetNoteIndexSound()
         {
             OnResetNoteIndex?.Invoke();
+        }
+
+        public void PlayLevelSuccessSound()
+        {
+            OnPlayLevelSuccess?.Invoke();
+        }
+
+        public void PlayFlowSuccessSound()
+        {
+            OnPlayFlowSuccess?.Invoke();
         }
         
         
