@@ -20,9 +20,9 @@ namespace MangoramaStudio.Systems.ReviewSystem.Scripts
 
         private void RequestCourt(bool _)
         {
-            if (levelData.currentLevelIndex == requestedLevel)
+            if (levelData.currentLevelIndex == requestedLevel-1)
             {
-                //Court.RequestJudgement(DismissAppReview);
+                Court.RequestJudgement(DismissAppReview);
                 GameManager.EventManager.OnLevelFinished -= RequestCourt;
             }
         }
