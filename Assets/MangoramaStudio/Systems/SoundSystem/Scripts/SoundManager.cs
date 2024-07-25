@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using MangoramaStudio.Scripts.Data;
 using MangoramaStudio.Scripts.Managers;
 using MatchinghamGames.ApolloModule;
@@ -17,7 +18,10 @@ namespace MangoramaStudio.Systems.SoundSystem.Scripts
         [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string singleMatchSfx;
         [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string fullMatchSfx;
         [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private string drawSfx;
+        [BoxGroup("SFX"), ValueDropdown(nameof(GetSfxKeys)), SerializeField] private List<string> musicNotesSfx = new();
 
+        
+        
         public override void Initialize()
         {
             base.Initialize();
@@ -29,17 +33,27 @@ namespace MangoramaStudio.Systems.SoundSystem.Scripts
             base.ToggleEvents(isToggled);
             if (isToggled)
             {
-                GameManager.Instance.EventManager.OnDrawCell += PlayDrawLine;
+               // GameManager.Instance.EventManager.OnDrawCell += PlayDrawLine;
                 GameManager.Instance.EventManager.OnCompleteFlow += PlayCompleteLine;
                 GameManager.Instance.EventManager.OnCompleteAllFlows += PlayCompleteLevel;
+                GameManager.Instance.EventManager.OnPlayNotes += PlayNotes;
 
             }
             else
             {
-                GameManager.Instance.EventManager.OnDrawCell -= PlayDrawLine;
+               // GameManager.Instance.EventManager.OnDrawCell -= PlayDrawLine;
                 GameManager.Instance.EventManager.OnCompleteFlow -= PlayCompleteLine;
                 GameManager.Instance.EventManager.OnCompleteAllFlows -= PlayCompleteLevel;
+                GameManager.Instance.EventManager.OnPlayNotes -= PlayNotes;
+
             }
+        }
+
+        private void PlayNotes(int index)
+        {
+           var note = musicNotesSfx.ElementAt(index);
+           Debug.LogWarning(note);
+           TryPlaySound(note);
         }
 
 

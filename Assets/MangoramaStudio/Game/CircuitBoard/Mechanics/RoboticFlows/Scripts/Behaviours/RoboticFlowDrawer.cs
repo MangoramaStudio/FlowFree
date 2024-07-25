@@ -126,6 +126,7 @@ namespace Mechanics.RoboticFlows
                 if (cell.node)
                 {
                     BounceFlow(cell.node.Id);
+                    _notesIndex = 0;
                 }
 
                 if (!_selectedDrawer)
@@ -216,6 +217,8 @@ namespace Mechanics.RoboticFlows
             return false;
         }
 
+        public int _notesIndex;
+        
         public void SurfaceDragged(Vector2 screenPosition)
         {
             if (CellRaycast(screenPosition, out var cell))
@@ -230,9 +233,11 @@ namespace Mechanics.RoboticFlows
                 
                 if (_selectedDrawer.DrawnCells.Contains(cell))
                 {
+                    GameManager.Instance.EventManager.PlayNotes(_notesIndex % 7);
                     _selectedDrawer.ClearToCell(cell);
-                   
+                    _notesIndex--;
                     onClear?.Invoke();
+                   
                 }
                 else if (!_selectedDrawer.FlowComplete)
                 {
@@ -244,9 +249,11 @@ namespace Mechanics.RoboticFlows
                         drawer.Clear();
                         Remove(drawer);
                     }
-                    
-                    GameManager.Instance.EventManager.DrawCell();
+
+                    GameManager.Instance.EventManager.PlayNotes(_notesIndex%7);
                     _selectedDrawer.DrawCell(cell);
+                    _notesIndex++;
+                    GameManager.Instance.EventManager.DrawCell();
 
                     if (_selectedDrawer.FlowComplete)
                     {
@@ -255,7 +262,7 @@ namespace Mechanics.RoboticFlows
                         _selectedDrawer = null;
                         _selectedNode = null;
                         onConnectNode?.Invoke();
-                      
+                        _notesIndex = 0;
                         GameManager.Instance.EventManager.CompleteFlow();
                        
                     }
