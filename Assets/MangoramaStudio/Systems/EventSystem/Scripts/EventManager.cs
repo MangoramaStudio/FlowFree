@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using MangoramaStudio.Systems.PopupSystem.Scripts;
+using Mechanics.RoboticFlows;
 using UnityEngine;
 
 namespace MangoramaStudio.Scripts.Managers
@@ -41,12 +42,15 @@ namespace MangoramaStudio.Scripts.Managers
         public event Action OnRaiseWarning;
         public event Action OnRaiseHint;
         public event Action OnDrawCell;
-        public event Action OnCompleteFlow;
+        public event Action<FlowDrawer,Node> OnCompleteFlow;
         public event Action OnCompleteAllFlows;
         public event Action OnRestartLevel;
         public event Action OnUndo;
-
         public event Action OnAutoComplete;
+        public event Action<FlowDrawer> OnClearCell;
+        public event Action<FlowDrawer> OnClearDisconnectedCell;
+
+        public event Action<FlowDrawer> OnResetFlow;
         
         public void RaiseWarning()
         {
@@ -63,9 +67,24 @@ namespace MangoramaStudio.Scripts.Managers
             OnDrawCell?.Invoke();
         }
 
-        public void CompleteFlow()
+        public void ResetFlow(FlowDrawer flowDrawer)
         {
-            OnCompleteFlow?.Invoke();
+            OnResetFlow?.Invoke(flowDrawer);
+        }
+
+        public void ClearCell(FlowDrawer flowDrawer)
+        {
+            OnClearCell?.Invoke(flowDrawer);
+        }
+
+        public void ClearDisconnectedCell(FlowDrawer flowDrawer)
+        {
+            OnClearDisconnectedCell?.Invoke(flowDrawer);
+        }
+
+        public void CompleteFlow(FlowDrawer flowDrawer,Node selectedNode)
+        {
+            OnCompleteFlow?.Invoke(flowDrawer,selectedNode);
         }
 
         public void CompleteAllFlows()
@@ -187,6 +206,30 @@ namespace MangoramaStudio.Scripts.Managers
             OnSendFirebaseEvent?.Invoke(eventName, withParameter);
         }
         
+
+        #endregion
+
+        #region Vibration Events
+
+        public event Action OnVibrateFlowComplete;
+        public event Action OnVibrateLevelComplete;
+
+        public event Action OnVibrateDrawCell;
+
+        public void VibrateFlowComplete()
+        {
+            OnVibrateFlowComplete?.Invoke();
+        }
+        
+        public void VibrateLevelComplete()
+        {
+            OnVibrateLevelComplete?.Invoke();
+        }
+
+        public void VibrateDrawCell()
+        {
+            OnVibrateDrawCell?.Invoke();
+        }
 
         #endregion
     }

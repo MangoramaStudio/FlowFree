@@ -129,6 +129,9 @@ namespace Mechanics.RoboticFlows
         
          [SerializeField] private List<Cell> correctOrderedCells = new();
 
+         public List<Cell> GetCorrectOrderedCells() => correctOrderedCells;
+         
+
         [Button]
         public void AddCorrectOrderCells(RoboticFlowHint hint,Vector2Int gridSize,LevelBehaviour levelBehaviour)
         {

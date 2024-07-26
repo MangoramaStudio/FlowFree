@@ -131,6 +131,7 @@ namespace Mechanics.RoboticFlows
                 {
                     BounceFlow(cell.node.Id);
                     _eventManager.ResetNoteIndexSound();
+                    _eventManager.ResetFlow(_selectedDrawer);
                 }
 
                 if (!_selectedDrawer)
@@ -158,6 +159,7 @@ namespace Mechanics.RoboticFlows
                     }
                     else
                     {
+                        _eventManager.ClearDisconnectedCell(_selectedDrawer);
                         _selectedDrawer.Clear();
                         Remove(_selectedDrawer);
                         _selectedDrawer = null;
@@ -238,6 +240,7 @@ namespace Mechanics.RoboticFlows
                     _eventManager.DecrementNoteIndexSound();
                     _eventManager.PlayNoteSound();
                     _selectedDrawer.ClearToCell(cell);
+                    _eventManager.ClearCell(_selectedDrawer);
                     onClear?.Invoke();
                    
                 }
@@ -255,18 +258,23 @@ namespace Mechanics.RoboticFlows
                     _eventManager.PlayNoteSound();
                     _selectedDrawer.DrawCell(cell);
                     _eventManager.IncrementNoteIndexSound();
+                    _eventManager.VibrateDrawCell();
                     _eventManager.DrawCell();
 
                     if (_selectedDrawer.FlowComplete)
                     {
+                       
                         BounceFlow(cell.node.Id);
                         Add();
+                      
+                        _eventManager.CompleteFlow(_selectedDrawer,_selectedNode);
                         _selectedDrawer = null;
                         _selectedNode = null;
                         onConnectNode?.Invoke();
                         _eventManager.ResetNoteIndexSound();
-                        _eventManager.CompleteFlow();
+                        _eventManager.VibrateFlowComplete();
                         _eventManager.PlayFlowSuccessSound();
+                       
                         
                     }
                     
@@ -350,6 +358,7 @@ namespace Mechanics.RoboticFlows
                         cell.node.Bounce();
                 }
                 _eventManager.CompleteAllFlows();
+                _eventManager.VibrateLevelComplete();
                 _eventManager.PlayLevelSuccessSound();
                 RaiseSuccess();
             }
