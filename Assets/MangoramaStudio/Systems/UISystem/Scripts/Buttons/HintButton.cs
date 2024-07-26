@@ -27,8 +27,7 @@ namespace MangoramaStudio.Scripts.Managers.Buttons
         private void OnRewardedFail()
         {
             IsClicked = false;
-            Debug.Log($"Hint rewarded is failed");
-
+            Debug.Log($"Hint rewarded is failed");          
         }
 
       

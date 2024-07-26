@@ -86,7 +86,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 456, y: 156}
+  m_SizeDelta: {x: 480, y: 156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7288597480742826140
 CanvasRenderer:
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f71ce6cbda3c0403288057c4b0e0ca88, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 135a74d3e6bd24f47a0ab8e486a7bf8f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_text: Level 39
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: da2d4db38885b4392a2bf30c86acb903, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: c95304f958ae34737b35ba280e73709b, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 330b4504883364f24ad227d1f1710fcf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: -5
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 13.244873, z: 0, w: 26.489502}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

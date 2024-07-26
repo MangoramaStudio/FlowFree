@@ -34,13 +34,13 @@ namespace MangoramaStudio.Systems.PopupSystem.Scripts
             {
                 eventManager.OnOpenPopup += Show;
                 eventManager.OnHidePopup += Hide;
-                eventManager.OnLevelStarted += CheckTutorialPopupOpen;
+                //eventManager.OnLevelStarted += CheckTutorialPopupOpen;
             }
             else
             {
                 eventManager.OnOpenPopup -= Show;
                 eventManager.OnHidePopup -= Hide;
-                eventManager.OnLevelStarted -= CheckTutorialPopupOpen;
+               //eventManager.OnLevelStarted -= CheckTutorialPopupOpen;
             }
         }
         
