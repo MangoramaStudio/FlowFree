@@ -4,6 +4,7 @@ using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using MangoramaStudio.Scripts.Data;
+using MangoramaStudio.Scripts.Managers;
 #if !DISABLE_SRDEBUGGER
 using SRDebugger;
 using SRDebugger.Services;
@@ -15,8 +16,34 @@ using Random = UnityEngine.Random;
 
 public partial class SROptions
 {
-
     
+    [Category("Set Level Index")]
+    public int LevelIndex
+    {
+        get { return _levelIndex; }
+        set
+        {
+            _levelIndex= value;
+            OnValueChanged("LevelIndex", value);
+        }
+    }
+
+    private int _levelIndex;
+    
+    private void OnValueChanged(string n, object newValue)
+    {
+        Debug.LogFormat("[SRDebug] {0} value changed to {1}", n, newValue);
+        OnPropertyChanged(n);
+    }
+    
+    [Category("Invoke Level")]
+    public void InvokeLevel()
+    {
+        GameManager.Instance.LevelManager.StartGameSR(LevelIndex);
+
+    }
+
+
 #if ENABLE_TEST_SROPTIONS
 
 

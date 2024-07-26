@@ -33,6 +33,18 @@ namespace MangoramaStudio.Scripts.Managers
            
         }
 
+        
+        public void StartGameSR(int index)
+        {
+            ClearLevel();
+            Resources.UnloadUnusedAssets();
+            InputController.IsInputDeactivated = false;
+            if (levelData.currentLevelIndex < totalLevelCount)
+            {
+                GameManager.AddressableManager.LoadCurrentLevelAsync(index,OnLevelLoaded);
+            }
+        }
+        
         private void StartGame()
         {
             ClearLevel();

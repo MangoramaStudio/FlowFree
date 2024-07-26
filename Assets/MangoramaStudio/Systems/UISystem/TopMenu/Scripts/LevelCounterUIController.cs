@@ -15,5 +15,6 @@ namespace Mechanics.RoboticFlows
             var data = GameManager.Instance.DataManager.GetData<LevelData>();
             levelCounterTMP.SetText($"Level {data.currentLevelIndex+1}");
         }
+        
     }
 }
