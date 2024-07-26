@@ -22,7 +22,7 @@ namespace MangoramaStudio.Systems.ReviewSystem.Scripts
         {
             if (levelData.currentLevelIndex == requestedLevel-1)
             {
-                Court.RequestJudgement(DismissAppReview);
+               // Court.RequestJudgement(DismissAppReview);
                 GameManager.EventManager.OnLevelFinished -= RequestCourt;
             }
         }

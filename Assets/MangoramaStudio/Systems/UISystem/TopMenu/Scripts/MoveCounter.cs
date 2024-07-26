@@ -9,6 +9,8 @@ namespace Mechanics.RoboticFlows
     {
         [SerializeField] private RoboticFlowDrawer flowDrawer;
 
+        public int MoveCount() => _moveCount;
+        
         private int _moveCount;
         public Action<int> onMoveCountUpdate;
         

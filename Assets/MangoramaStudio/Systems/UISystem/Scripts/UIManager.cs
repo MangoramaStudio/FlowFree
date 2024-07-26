@@ -17,6 +17,8 @@ namespace MangoramaStudio.Scripts.Managers
         public Action<MenuType> onChangeMenu;
 
         private List<BaseMenu> _menus = new();
+
+        public GameplayMenu GameplayMenu() => gameplayMenu;
         
         
         public override void Initialize()

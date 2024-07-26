@@ -35,6 +35,8 @@ namespace MangoramaStudio.Scripts.Managers
         public VibrationManager VibrationManager => vibrationManager;
         public SoundManager SoundManager => soundManager;
 
+
+        public UIManager UIManager => uiManager;
         public AdsManager AdsManager => adsManager;
         
         public static GameManager Instance;

@@ -79,7 +79,7 @@ namespace MangoramaStudio.Scripts.Managers
             StartGame();
         }
 
-        private void RetryCurrentLevel()
+        public void RetryCurrentLevel()
         {
             GameManager.EventManager.StartLevel();
             StartGame();

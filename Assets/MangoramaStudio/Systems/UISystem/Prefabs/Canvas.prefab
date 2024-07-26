@@ -125,6 +125,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3026523991913635928}
     m_Modifications:
+    - target: {fileID: 4054547053047624458, guid: dfc49a7e26b9c4e0bab527a1bbf754d1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 41
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397852202078891082, guid: dfc49a7e26b9c4e0bab527a1bbf754d1, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397852202078891082, guid: dfc49a7e26b9c4e0bab527a1bbf754d1, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 5214771936265626247, guid: dfc49a7e26b9c4e0bab527a1bbf754d1, type: 3}
       propertyPath: m_Name
       value: WinMenu
@@ -212,6 +224,18 @@ PrefabInstance:
     - target: {fileID: 6931292272789949047, guid: dfc49a7e26b9c4e0bab527a1bbf754d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917619026640277348, guid: dfc49a7e26b9c4e0bab527a1bbf754d1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 212.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917619026640277348, guid: dfc49a7e26b9c4e0bab527a1bbf754d1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 575
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964975860442524090, guid: dfc49a7e26b9c4e0bab527a1bbf754d1, type: 3}
+      propertyPath: m_fontSize
+      value: 105
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

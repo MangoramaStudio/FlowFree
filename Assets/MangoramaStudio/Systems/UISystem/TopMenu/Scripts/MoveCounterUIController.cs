@@ -12,6 +12,8 @@ namespace Mechanics.RoboticFlows
         private MoveCounter _moveCounter;
 
         private EventManager _eventManager;
+
+        public MoveCounter MoveCounter() => _moveCounter;
         
         public void Initialize()
         {

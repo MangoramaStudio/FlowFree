@@ -12,13 +12,14 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
         [SerializeField] private MoveCounterUIController moveCounterUIController;
         [SerializeField] private LevelCounterUIController levelCounterUIController;
 
+        public int GetMoveCount() => moveCounterUIController.MoveCounter().MoveCount();
+        
         public override void Initialize()
         {
             base.Initialize();
             pipeCompleteCounterUIController.Initialize();
             moveCounterUIController.Initialize();
             levelCounterUIController.Initialize();
-            
         }
 
         protected override void ToggleEvents(bool isToggled)
