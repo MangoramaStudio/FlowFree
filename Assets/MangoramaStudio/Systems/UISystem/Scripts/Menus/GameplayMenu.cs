@@ -1,7 +1,9 @@
+using System.Collections.Generic;
 using MangoramaStudio.Scripts.Managers;
 using Mechanics.RoboticFlows;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
 {
@@ -12,14 +14,22 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
         [SerializeField] private MoveCounterUIController moveCounterUIController;
         [SerializeField] private LevelCounterUIController levelCounterUIController;
 
+        [SerializeField] private List<LevelTypeMenuDefinition> levelTypeMenuDefinitions = new();
+        [SerializeField] private Image topBg, bottomBg;
+        public List<LevelTypeMenuDefinition> LevelTypeMenuDefinitions => levelTypeMenuDefinitions;
         public int GetMoveCount() => moveCounterUIController.MoveCounter().MoveCount();
         
         public override void Initialize()
         {
             base.Initialize();
+            
             pipeCompleteCounterUIController.Initialize();
             moveCounterUIController.Initialize();
             levelCounterUIController.Initialize();
+            var definition = levelTypeMenuDefinitions.Find(x =>
+                x.levelType == GameManager.Instance.LevelManager.CurrentLevel.LevelType);
+            topBg.sprite = definition.topHeader;
+            bottomBg.sprite = definition.bottomHeader;
         }
 
         protected override void ToggleEvents(bool isToggled)
@@ -28,7 +38,6 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
             if (isToggled)
             {
                 GameManager.Instance.EventManager.OnRaiseWarning+=RaiseWarning;
-                
             }
             else
             {

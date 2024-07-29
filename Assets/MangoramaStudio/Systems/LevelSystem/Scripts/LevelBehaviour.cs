@@ -10,10 +10,17 @@ using Sirenix.OdinInspector;
 namespace MangoramaStudio.Scripts.Behaviours
 {
 
+    public enum LevelType
+    {
+        Default,
+        Hard,
+        SuperHard
+    }
 
     public class LevelBehaviour : MonoBehaviour
     {
 
+        [SerializeField] private LevelType levelType;
         [SerializeField] private FlowGrid flowGrid;
         [SerializeField] private PlayableMechanicContainer container;
         [SerializeField] private PipeCompleteCounter pipeCompleteCounter;
@@ -22,6 +29,7 @@ namespace MangoramaStudio.Scripts.Behaviours
         public PipeCompleteCounter PipeCompleteCounter => pipeCompleteCounter;
         public MoveCounter MoveCounter => moveCounter;
 
+        public LevelType LevelType => levelType;
         public bool HasObstacles => flowGrid.HasObstacles;
         
         private GameManager _gameManager;

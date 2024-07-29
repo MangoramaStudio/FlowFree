@@ -26,7 +26,6 @@ namespace MangoramaStudio.Scripts.Managers
             base.Initialize();
             AddMenusToList();
             ToggleEvents(true);
-            ChangeMenu(MenuType.Gameplay);
         }
 
         protected override void ToggleEvents(bool isToggled)

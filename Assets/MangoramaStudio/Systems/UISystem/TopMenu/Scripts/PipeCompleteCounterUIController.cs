@@ -1,15 +1,19 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using MangoramaStudio.Scripts.Behaviours;
 using MangoramaStudio.Scripts.Managers;
 using MangoramaStudio.Scripts.Managers.Buttons;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Mechanics.RoboticFlows
 {
     public class PipeCompleteCounterUIController : UIBehaviour
     {
         [SerializeField] private TextMeshProUGUI pipeCounterTMP;
-
+        [SerializeField] private Image bg, headerBg;
         private PipeCompleteCounter _pipeCompleteCounter;
         private EventManager _eventManager;
 
@@ -20,12 +24,21 @@ namespace Mechanics.RoboticFlows
            UpdatePipeCompleteTMP(0);
            GatherPipeCompleteData(false);
            GatherPipeCompleteData(true);
+           SetTheme(GameManager.Instance.LevelManager.CurrentLevel.LevelType);
         }
 
         protected override void OnDestroy()
         {
             base.OnDestroy();
             GatherPipeCompleteData(false);
+        }
+
+        private void SetTheme(LevelType levelType)
+        {
+            var definition = GameManager.Instance.UIManager.GameplayMenu().LevelTypeMenuDefinitions.Find(x => x.levelType == levelType);
+            bg.sprite = definition.topMenuPipeBg;
+            headerBg.sprite = definition.topMenuPipeHeaderBg;
+            pipeCounterTMP.color = definition.counterColor;
         }
 
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Managers;
 using MangoramaStudio.Scripts.Controllers;
 using MangoramaStudio.Scripts.Data;
 using MangoramaStudio.Systems.AdsSystem.Scripts;
@@ -35,9 +36,14 @@ namespace MangoramaStudio.Scripts.Managers
         public VibrationManager VibrationManager => vibrationManager;
         public SoundManager SoundManager => soundManager;
 
+        public AnalyticsManager AnalyticsManager => analyticsManager;
 
+        public ReviewManager ReviewManager => reviewManager;
+        
         public UIManager UIManager => uiManager;
         public AdsManager AdsManager => adsManager;
+        
+        public PopupManager PopupManager => popupManager;
         
         public static GameManager Instance;
 
@@ -48,8 +54,17 @@ namespace MangoramaStudio.Scripts.Managers
             Instance = this;
 
             AddressableManager = FindObjectOfType<AddressableManager>();
+            DataManager.Initialize();
+            EventManager.Initialize();
+            AnalyticsManager.Initialize();
+            LevelManager.Initialize();
+            UIManager.Initialize();
+            ReviewManager.Initialize();
+            PopupManager.Initialize();
+            VibrationManager.Initialize();
+            SoundManager.Initialize();
+            AdsManager.Initialize();
             GatherManagers();
-            InitializeManagers();
         }
         
         private void Start()

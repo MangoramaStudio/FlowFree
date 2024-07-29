@@ -337,6 +337,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pipeCounterTMP: {fileID: 8293958003217421098}
+  bg: {fileID: 3610841517359457868}
+  headerBg: {fileID: 5169807885015321568}
+  levelTypeMenuDefinitions:
+  - levelType: 0
+    topMenuPipeBg: {fileID: 21300000, guid: 45d0e9e406c0e489797d8d0128d30bb6, type: 3}
+    topMenuPipeHeaderBg: {fileID: 21300000, guid: daa4f207e7c6e476588dc6c57da540a1, type: 3}
+    counterColor: {r: 0.2509804, g: 0.3137255, b: 0.54509807, a: 1}
+    topHeader: {fileID: 21300000, guid: dcffc67698f9b44a68daa6426aed0589, type: 3}
+    bottomHeader: {fileID: 21300000, guid: 19b9f223e7b8b4c219835fd8a9572265, type: 3}
+  - levelType: 1
+    topMenuPipeBg: {fileID: 21300000, guid: 487b9b63d5b0140218d84b8cb9bf45eb, type: 3}
+    topMenuPipeHeaderBg: {fileID: 21300000, guid: c72738059724d4255b5e50f9a259f642, type: 3}
+    counterColor: {r: 1, g: 0.78823537, b: 0.050980397, a: 1}
+    topHeader: {fileID: 21300000, guid: 3e18e298218844db4a8bed128e4244c2, type: 3}
+    bottomHeader: {fileID: 21300000, guid: f67c731bdac8e42b4957bcbea3bcc659, type: 3}
+  - levelType: 2
+    topMenuPipeBg: {fileID: 21300000, guid: 5b49bd1ef8d40456682ff5cc39944a71, type: 3}
+    topMenuPipeHeaderBg: {fileID: 21300000, guid: d18c5c971fb1f4601b5a805b5b9ac478, type: 3}
+    counterColor: {r: 0.9490197, g: 0.47450984, b: 0.77647066, a: 1}
+    topHeader: {fileID: 21300000, guid: 88fb1ff1f654c43a79ddeaefd125c934, type: 3}
+    bottomHeader: {fileID: 21300000, guid: c25387f0ae4234a6ba21f8bfe4b77c76, type: 3}
 --- !u!1 &3662839640512907815
 GameObject:
   m_ObjectHideFlags: 0

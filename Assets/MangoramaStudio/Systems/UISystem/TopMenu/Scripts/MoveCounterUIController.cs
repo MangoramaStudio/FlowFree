@@ -1,16 +1,19 @@
+using MangoramaStudio.Scripts.Behaviours;
 using MangoramaStudio.Scripts.Managers;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Mechanics.RoboticFlows
 {
     public class MoveCounterUIController : UIBehaviour
     {
         [SerializeField] private TextMeshProUGUI moveCounterTMP;
-        private MoveCounter _moveCounter;
+        [SerializeField] private Image bg, headerBg;
 
+        private MoveCounter _moveCounter;
         private EventManager _eventManager;
 
         public MoveCounter MoveCounter() => _moveCounter;
@@ -22,6 +25,7 @@ namespace Mechanics.RoboticFlows
             UpdateMoveCounterTMP(0);
             GatherMoveCounterData(false);
             GatherMoveCounterData(true);
+            SetTheme(GameManager.Instance.LevelManager.CurrentLevel.LevelType);
         }
 
         protected override void OnDestroy()
@@ -29,6 +33,15 @@ namespace Mechanics.RoboticFlows
             base.OnDestroy();
             GatherMoveCounterData(false);
         }
+        
+        private void SetTheme(LevelType levelType)
+        {
+            var definition = GameManager.Instance.UIManager.GameplayMenu().LevelTypeMenuDefinitions.Find(x => x.levelType == levelType);
+            bg.sprite = definition.topMenuPipeBg;
+            headerBg.sprite = definition.topMenuPipeHeaderBg;
+            moveCounterTMP.color = definition.counterColor;
+        }
+
 
         private void SetMoveCounter()
         {
@@ -86,5 +99,6 @@ namespace Mechanics.RoboticFlows
             moveCounterTMP.SetText($"{amount}");
         }
     }
+    
     
 }
