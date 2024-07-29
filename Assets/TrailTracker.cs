@@ -70,6 +70,7 @@ public class TrailTracker : MonoBehaviour
 
     private void ResetTrail()
     {
+       
         trailRenderer.gameObject.transform.localPosition = new Vector3(0, 1.5f, 0);
         trailRenderer.Clear();
         trailRenderer.enabled = true;
@@ -77,12 +78,11 @@ public class TrailTracker : MonoBehaviour
     
     private void GetCellsList(FlowDrawer flowDrawer,Node selectedNode)
     {
-        ResetTrail();
-        positions.Clear();
-        positions = flowDrawer.DrawnCells.ToList();
-
         if (IsMatchedWithDrawer(flowDrawer))
         {
+            ResetTrail();
+            positions.Clear();
+            positions = flowDrawer.DrawnCells.ToList();
             if (node == selectedNode)
             {
                 var cell = node.GetComponentInParent<Cell>();
