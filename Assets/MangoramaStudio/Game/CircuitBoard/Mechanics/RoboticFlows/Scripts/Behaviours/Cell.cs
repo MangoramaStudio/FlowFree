@@ -95,8 +95,10 @@ namespace Mechanics.RoboticFlows
             _blobSeq.Kill(true);
             _blobSeq = DOTween.Sequence();
             _blobSeq.AppendInterval(id * .05f);
-            _blobSeq.Append(spriteRenderer.transform.DOScale(.32f, .1f).SetEase(Ease.InOutSine)
-                .SetLoops(2, LoopType.Yoyo).OnStart(SetCompleteColor));
+            _blobSeq.Append(spriteRenderer.transform.DOScale(.33f, .15f).SetEase(Ease.InOutSine).OnStart(SetCompleteColor));
+            _blobSeq.Append(spriteRenderer.transform.DOScale(.28f, .15f).SetEase(Ease.InOutSine));
+            _blobSeq.Append(spriteRenderer.transform.DOScale(.3f, .15f).SetEase(Ease.InOutSine));
+          
             
         }
         
@@ -111,8 +113,10 @@ namespace Mechanics.RoboticFlows
         {
             _blobSeq.Kill(true);
             _blobSeq = DOTween.Sequence();
-            _blobSeq.Append(spriteRenderer.transform.DOScale(.35f, .15f).SetEase(Ease.InOutSine)
-                .SetLoops(2, LoopType.Yoyo));    
+            _blobSeq.Append(spriteRenderer.transform.DOScale(.33f, .15f).SetEase(Ease.InOutSine));
+            _blobSeq.Append(spriteRenderer.transform.DOScale(.28f, .15f).SetEase(Ease.InOutSine));
+            _blobSeq.Append(spriteRenderer.transform.DOScale(.3f, .15f).SetEase(Ease.InOutSine));
+            
         }
 
         public void ShowFillHint(bool state)

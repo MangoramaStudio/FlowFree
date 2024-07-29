@@ -11,8 +11,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: a36b7719ff0465b42ab1407d67672c5f, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - CLIPPING_ON
+  m_ValidKeywords: []
   m_InvalidKeywords:
   - _CANVAS_GROUP_COMPATIBLE
   - _USE8NEIGHBOURHOOD_ON
@@ -79,9 +78,9 @@ Material:
     - _Alpha: 1
     - _AlphaCutoffValue: 0.25
     - _AlphaOutlineBlend: 1
-    - _AlphaOutlineGlow: 5
-    - _AlphaOutlineMinAlpha: 0
-    - _AlphaOutlinePower: 1
+    - _AlphaOutlineGlow: 61.2
+    - _AlphaOutlineMinAlpha: 1
+    - _AlphaOutlinePower: 4.06
     - _AlphaRoundThreshold: 0.005
     - _BillboardY: 0
     - _BlurHD: 0
@@ -227,7 +226,7 @@ Material:
     - _ZWrite: 0
     - _ZoomUvAmount: 0.1
     m_Colors:
-    - _AlphaOutlineColor: {r: 1, g: 1, b: 1, a: 1}
+    - _AlphaOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorChangeNewCol: {r: 0, g: 0.77877903, b: 1, a: 1}
     - _ColorChangeNewCol2: {r: 1, g: 1, b: 0, a: 1}
@@ -248,7 +247,7 @@ Material:
     - _HitEffectColor: {r: 1, g: 1, b: 1, a: 1}
     - _HologramStripeColor: {r: 0, g: 1, b: 1, a: 1}
     - _InnerOutlineColor: {r: 1, g: 0, b: 0, a: 1}
-    - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineColor: {r: 0.01886791, g: 0.01877891, b: 0.01877891, a: 1}
     - _OverlayColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
     - _ShineColor: {r: 0.9056604, g: 0.35457456, b: 0.35457456, a: 1}
