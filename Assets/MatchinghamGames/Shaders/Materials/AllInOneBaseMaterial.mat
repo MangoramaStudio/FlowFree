@@ -12,6 +12,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - GLOW_ON
   - SHAKEUV_ON
   - TEXTURESCROLL_ON
   - TWISTUV_ON
@@ -87,8 +88,8 @@ Material:
     - _AlphaRoundThreshold: 0.005
     - _BillboardY: 0
     - _BlurHD: 0
-    - _BlurIntensity: 10
-    - _Brightness: 0
+    - _BlurIntensity: 99.3
+    - _Brightness: -0.4
     - _CanvasGroupCompatible: 1
     - _ChromAberrAlpha: 0.4
     - _ChromAberrAmount: 1
@@ -128,7 +129,7 @@ Material:
     - _GhostTransparency: 0
     - _GlitchAmount: 3
     - _GlitchSize: 1
-    - _Glow: 10
+    - _Glow: 8.9
     - _GlowGlobal: 1
     - _GradBlend: 1
     - _GradBoostX: 1.2

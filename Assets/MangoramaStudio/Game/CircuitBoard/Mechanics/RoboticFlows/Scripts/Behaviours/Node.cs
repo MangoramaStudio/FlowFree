@@ -43,6 +43,28 @@ namespace Mechanics.RoboticFlows
             var tween = targetTransform.DOPunchScale(0.1f * Vector3.one, 0.5f, 1).SetEase(Ease.OutSine);
             return tween;
         }
+        
+        public Tween ScaleUp()
+        {
+            var targetTransform = spriteRenderer.transform;
+            
+            targetTransform.DOKill();
+            targetTransform.localScale = surfaceSize * Vector3.one;
+            
+            var tween = targetTransform.DOScale(.3f,.05f).SetEase(Ease.OutSine);
+            return tween;
+        }
+        
+        public Tween ScaleDown()
+        {
+            var targetTransform = spriteRenderer.transform;
+            
+            targetTransform.DOKill();
+            targetTransform.localScale = surfaceSize * Vector3.one;
+            
+            var tween = targetTransform.DOScale(.25f,.1f).SetEase(Ease.InOutSine);
+            return tween;
+        }
 
         public void AnimateIn(float duration, float delay, Action onComplete = null)
         {

@@ -125,12 +125,12 @@ namespace Mechanics.RoboticFlows
                 if (!_selectedDrawer && cell.node)
                 {
                     SelectNode(cell.node);
+                  
                 }
 
                 if (cell.node)
                 {
-                    BounceFlow(cell.node.Id);
-                   
+                    
                     _eventManager.ResetNoteIndexSound();
                     _eventManager.ResetFlow(_selectedDrawer);
                 }
@@ -139,6 +139,8 @@ namespace Mechanics.RoboticFlows
                 {
                     return;
                 }
+                
+                ScaleUpNodes(cell.node.Id);
                 
                 hint.StopHighlight();
 
@@ -314,6 +316,7 @@ namespace Mechanics.RoboticFlows
             if (!_selectedDrawer)
                 return;
 
+            ScaleDownNodes(_selectedDrawer.Id);
             if (_selectedDrawer.DrawnCells.Count <= 1)
             {
                 _selectedDrawer.Clear();
@@ -340,7 +343,18 @@ namespace Mechanics.RoboticFlows
                     _selectedDrawer = null;
                     _selectedNode = null;
                 }
+                else
+                {
+                    var reverse = _selectedDrawer.DrawnCells.Reverse().ToList();
+                    for (int i = 0; i < reverse.Count; i++)
+                    {
+                        reverse.ElementAt(i).PlayCompleteBlob(i);   
+                    }  
+                }
             }
+            
+         
+        
             
             onRelease?.Invoke();
         }
@@ -381,8 +395,28 @@ namespace Mechanics.RoboticFlows
             {
                 cell.node.Bounce();  
             }
-              
         }
+        
+        private void ScaleUpNodes(int id)
+        {
+            var cells = grid.Cells.Where(c => c.node && c.node.Id == id);
+
+            foreach (var cell in cells)
+            {
+                cell.node.ScaleUp();  
+            }
+        }
+        
+        private void ScaleDownNodes(int id)
+        {
+            var cells = grid.Cells.Where(c => c.node && c.node.Id == id);
+
+            foreach (var cell in cells)
+            {
+                cell.node.ScaleDown();  
+            }
+        }
+
 
         private void CheckAndComplete()
         {
