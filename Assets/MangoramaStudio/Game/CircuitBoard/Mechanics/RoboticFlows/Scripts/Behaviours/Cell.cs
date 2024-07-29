@@ -87,7 +87,7 @@ namespace Mechanics.RoboticFlows
         public void SetCompleteColor()
         {
             spriteRenderer.color = occupiedColor;
-            spriteRenderer.DOFade(.6f, 0f);
+            spriteRenderer.DOFade(.5f, 0f);
         }
         
         public void PlayCompleteBlob(int id)

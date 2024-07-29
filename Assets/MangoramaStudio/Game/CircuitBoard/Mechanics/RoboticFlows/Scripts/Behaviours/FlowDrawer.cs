@@ -115,8 +115,8 @@ namespace Mechanics.RoboticFlows
                 tip.enabled = true;
                 polyline.enabled = true;
             }
-            
         }
+        
 
 
         [Button]
@@ -126,6 +126,7 @@ namespace Mechanics.RoboticFlows
             for (int i = 0; i < correctOrderedCells.Count; i++)
             {
                 DrawCell(correctOrderedCells[i]);
+                correctOrderedCells[i].SetCompleteColor();
             }
         }
         

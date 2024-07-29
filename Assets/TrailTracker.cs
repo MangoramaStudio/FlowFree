@@ -21,19 +21,19 @@ public class TrailTracker : MonoBehaviour
     private void Start()
     {
         _initialTime = trailRenderer.time;
-       // ToggleEvents(true);
+        ToggleEvents(true);
         
     }
 
 
     private void OnDisable()
     {
-        //ToggleEvents(false);
+        ToggleEvents(false);
     }
 
     private void OnDestroy()
     {
-       // ToggleEvents(false);
+       ToggleEvents(false);
     }
 
     private void ToggleEvents(bool isToggled)
@@ -63,14 +63,14 @@ public class TrailTracker : MonoBehaviour
         {
             KillSequence();
             trailRenderer.Clear();
-            trailRenderer.gameObject.transform.localPosition = Vector3.zero;
+            trailRenderer.gameObject.transform.localPosition = new Vector3(0, 1.5f, 0);
             trailRenderer.enabled = false;
         }
     }
 
     private void ResetTrail()
     {
-        trailRenderer.gameObject.transform.localPosition = Vector3.zero;
+        trailRenderer.gameObject.transform.localPosition = new Vector3(0, 1.5f, 0);
         trailRenderer.Clear();
         trailRenderer.enabled = true;
     }
@@ -109,7 +109,8 @@ public class TrailTracker : MonoBehaviour
          _flowSequence = DOTween.Sequence();
         foreach (Cell pos in positions)
         {
-            _flowSequence.Append(transform.DOMove(pos.transform.position, speed).SetEase(Ease.Linear));
+            var newPos = new Vector3(pos.transform.position.x, 1.5f, pos.transform.position.z);
+            _flowSequence.Append(transform.DOMove(newPos, speed).SetEase(Ease.Linear));
         }
         _flowSequence.Play();
     }
