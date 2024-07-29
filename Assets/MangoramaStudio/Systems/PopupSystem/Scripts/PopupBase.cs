@@ -8,7 +8,8 @@ namespace MangoramaStudio.Systems.PopupSystem.Scripts
     public enum PopupType
     {
         Default,
-        Tutorial
+        Tutorial,
+        Settings
     }
     public abstract class PopupBase : UIBehaviour
     {
