@@ -39,7 +39,7 @@ namespace MangoramaStudio.Scripts.Managers
             }
             else if (settingsType == SettingsType.Sound)
             {
-                _isToggleOn = settingsData.isMusicEnabled == 1;
+                _isToggleOn = settingsData.isSfxEnabled == 1;
             }
             
             ClickInStart();
@@ -110,7 +110,7 @@ namespace MangoramaStudio.Scripts.Managers
             }
             else if (settingsType == SettingsType.Sound)
             {
-                settingsData.isMusicEnabled = _isToggleOn ? 1 : 0;
+                settingsData.isSfxEnabled = _isToggleOn ? 1 : 0;
             }
             
             GameManager.Instance.EventManager.SaveData();
