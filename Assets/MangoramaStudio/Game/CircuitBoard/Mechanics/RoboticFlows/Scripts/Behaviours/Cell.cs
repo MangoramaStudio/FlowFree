@@ -60,7 +60,9 @@ namespace Mechanics.RoboticFlows
         {
             occupiedColor = c;
             if (IsOccupied)
-                spriteRenderer.color = c;
+            {
+                //spriteRenderer.color = c;  
+            }
         }
 
         public void SetColor(Color c)
@@ -74,10 +76,43 @@ namespace Mechanics.RoboticFlows
                
         }
 
+        private Sequence _blobSeq;
+        
         public void SetOccupied(bool occupiedState)
         {
             IsOccupied = occupiedState;
-            spriteRenderer.color = occupiedState ? occupiedColor : Color.white;
+            //spriteRenderer.color = occupiedState ? occupiedColor : Color.white;
+        }
+
+        public void SetCompleteColor()
+        {
+            spriteRenderer.color = occupiedColor;
+            spriteRenderer.DOFade(.6f, 0f);
+        }
+        
+        public void PlayCompleteBlob(int id)
+        {
+            _blobSeq.Kill(true);
+            _blobSeq = DOTween.Sequence();
+            _blobSeq.AppendInterval(id * .05f);
+            _blobSeq.Append(spriteRenderer.transform.DOScale(.32f, .1f).SetEase(Ease.InOutSine)
+                .SetLoops(2, LoopType.Yoyo).OnStart(SetCompleteColor));
+            
+        }
+        
+        public void SetDefaultColor()
+        {
+            spriteRenderer.color = Color.white;
+            spriteRenderer.DOFade(.6f, 0f);
+        }
+
+
+        public void PlayBlob()
+        {
+            _blobSeq.Kill(true);
+            _blobSeq = DOTween.Sequence();
+            _blobSeq.Append(spriteRenderer.transform.DOScale(.35f, .15f).SetEase(Ease.InOutSine)
+                .SetLoops(2, LoopType.Yoyo));    
         }
 
         public void ShowFillHint(bool state)
@@ -104,6 +139,7 @@ namespace Mechanics.RoboticFlows
         {
             spriteRenderer.DOKill();
             spriteRenderer.transform.DOKill();
+            SetDefaultColor();
             spriteRenderer.transform.localScale = Vector3.zero;
 
             var c = spriteRenderer.color;

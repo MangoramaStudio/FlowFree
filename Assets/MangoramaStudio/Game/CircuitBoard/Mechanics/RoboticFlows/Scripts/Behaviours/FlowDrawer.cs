@@ -49,6 +49,7 @@ namespace Mechanics.RoboticFlows
 
         public void Prepare()
         {
+            
             polyline.Color = color;
             tip.color = color;
         }
@@ -92,6 +93,7 @@ namespace Mechanics.RoboticFlows
             _drawnCells.Push(cell);
             
             cell.SetOccupied(true);
+            cell.PlayBlob();
             cell.SetOccupiedColor(GetOccupiedColor());
             cell.ShowFillHint(false);
 
@@ -416,6 +418,7 @@ namespace Mechanics.RoboticFlows
                 }
                 else
                 {
+                    top.PlayBlob();
                     Vibrator.Vibrate(VibrationType.Light);
                 }
             }

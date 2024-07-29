@@ -130,6 +130,7 @@ namespace Mechanics.RoboticFlows
                 if (cell.node)
                 {
                     BounceFlow(cell.node.Id);
+                   
                     _eventManager.ResetNoteIndexSound();
                     _eventManager.ResetFlow(_selectedDrawer);
                 }
@@ -141,6 +142,12 @@ namespace Mechanics.RoboticFlows
                 
                 hint.StopHighlight();
 
+                foreach (var selectedDrawerDrawnCell in _selectedDrawer.DrawnCells)
+                {
+                    selectedDrawerDrawnCell.SetDefaultColor();
+                }
+
+                
                 if (_selectedDrawer.DrawnCells.Contains(cell))
                 {
                     _selectedDrawer.ClearToCell(cell);
@@ -237,6 +244,7 @@ namespace Mechanics.RoboticFlows
                 
                 if (_selectedDrawer.DrawnCells.Contains(cell))
                 {
+              
                     _eventManager.DecrementNoteIndexSound();
                     _eventManager.PlayNoteSound();
                     _selectedDrawer.ClearToCell(cell);
@@ -251,6 +259,10 @@ namespace Mechanics.RoboticFlows
                         var drawer = drawers.First(d => d.DrawnCells.Contains(cell));
                         if (cell.node)
                             return;
+                        foreach (var selectedDrawerDrawnCell in drawer.DrawnCells)
+                        {
+                            selectedDrawerDrawnCell.SetDefaultColor();
+                        }
                         drawer.Clear();
                         Remove(drawer);
                     }
@@ -266,6 +278,17 @@ namespace Mechanics.RoboticFlows
                        
                         BounceFlow(cell.node.Id);
                         Add();
+
+                        var reverse = _selectedDrawer.DrawnCells.Reverse().ToList();
+                        for (int i = 0; i < reverse.Count; i++)
+                        {
+                            reverse.ElementAt(i).PlayCompleteBlob(i);   
+                        }
+                        
+                        foreach (var selectedDrawerDrawnCell in _selectedDrawer.DrawnCells)
+                        {
+                           // selectedDrawerDrawnCell.SetCompleteColor();
+                        }
                       
                         _eventManager.CompleteFlow(_selectedDrawer,_selectedNode);
                         _selectedDrawer = null;
@@ -295,6 +318,11 @@ namespace Mechanics.RoboticFlows
             {
                 _selectedDrawer.Clear();
                 Remove(_selectedDrawer);
+                foreach (var selectedDrawerDrawnCell in _selectedDrawer.DrawnCells)
+                {
+                    selectedDrawerDrawnCell.SetDefaultColor();
+                }
+
                 _selectedDrawer = null;
                 _selectedNode = null;
             }
@@ -304,6 +332,11 @@ namespace Mechanics.RoboticFlows
                 {
                     _selectedDrawer.Clear();
                     Remove(_selectedDrawer);
+                    foreach (var selectedDrawerDrawnCell in _selectedDrawer.DrawnCells)
+                    {
+                        selectedDrawerDrawnCell.SetDefaultColor();
+                    }
+
                     _selectedDrawer = null;
                     _selectedNode = null;
                 }
@@ -345,7 +378,10 @@ namespace Mechanics.RoboticFlows
             var cells = grid.Cells.Where(c => c.node && c.node.Id == id);
 
             foreach (var cell in cells)
-                cell.node.Bounce();
+            {
+                cell.node.Bounce();  
+            }
+              
         }
 
         private void CheckAndComplete()
