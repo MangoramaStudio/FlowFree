@@ -12,7 +12,7 @@ namespace Mechanics.RoboticFlows
 {
     public class PipeCompleteCounterUIController : UIBehaviour
     {
-        [SerializeField] private TextMeshProUGUI pipeCounterTMP;
+        [SerializeField] private TextMeshProUGUI pipeCounterTMP,pipeCounterHeaderTMP;
         [SerializeField] private Image bg, headerBg;
         private PipeCompleteCounter _pipeCompleteCounter;
         private EventManager _eventManager;
@@ -39,6 +39,8 @@ namespace Mechanics.RoboticFlows
             bg.sprite = definition.topMenuPipeBg;
             headerBg.sprite = definition.topMenuPipeHeaderBg;
             pipeCounterTMP.color = definition.counterColor;
+            pipeCounterHeaderTMP.fontSharedMaterial = definition.headerTMPMaterial;
+
         }
 
 

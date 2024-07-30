@@ -1,3 +1,4 @@
+using System.Linq;
 using MangoramaStudio.Scripts.Behaviours;
 using MangoramaStudio.Scripts.Managers;
 using TMPro;
@@ -10,7 +11,7 @@ namespace Mechanics.RoboticFlows
 {
     public class MoveCounterUIController : UIBehaviour
     {
-        [SerializeField] private TextMeshProUGUI moveCounterTMP;
+        [SerializeField] private TextMeshProUGUI moveCounterTMP,moveCounterHeaderTMP;
         [SerializeField] private Image bg, headerBg;
 
         private MoveCounter _moveCounter;
@@ -40,6 +41,8 @@ namespace Mechanics.RoboticFlows
             bg.sprite = definition.topMenuPipeBg;
             headerBg.sprite = definition.topMenuPipeHeaderBg;
             moveCounterTMP.color = definition.counterColor;
+            moveCounterHeaderTMP.fontSharedMaterial = definition.headerTMPMaterial;
+            
         }
 
 

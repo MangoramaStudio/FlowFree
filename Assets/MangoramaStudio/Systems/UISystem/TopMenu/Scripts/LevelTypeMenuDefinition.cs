@@ -13,5 +13,6 @@ namespace Mechanics.RoboticFlows
         public Color counterColor;
         public Sprite topHeader;
         public Sprite bottomHeader;
+        public Material headerTMPMaterial;
     }
 }
