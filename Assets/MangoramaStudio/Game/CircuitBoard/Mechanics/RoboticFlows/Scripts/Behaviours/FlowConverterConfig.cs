@@ -116,6 +116,8 @@ namespace Mechanics.RoboticFlows
     [Serializable]
     public class SetLevelTypeDefinition
     {
+#if UNITY_EDITOR
+
         public LevelType levelType;
         public List<LevelBehaviour> levels = new();
 
@@ -129,5 +131,6 @@ namespace Mechanics.RoboticFlows
                 PrefabUtility.SavePrefabAsset(x.gameObject);
             }
         }
+#endif
     }
 }
