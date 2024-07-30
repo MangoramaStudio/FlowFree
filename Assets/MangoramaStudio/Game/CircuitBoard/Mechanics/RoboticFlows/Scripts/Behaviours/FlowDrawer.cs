@@ -99,6 +99,8 @@ namespace Mechanics.RoboticFlows
 
             var position = cell.transform.position - transform.position;
             polyline.AddPoint(new Vector3(position.x, position.z));
+           
+            
             tip.transform.position = cell.transform.position;
 
             if (cell.node)
