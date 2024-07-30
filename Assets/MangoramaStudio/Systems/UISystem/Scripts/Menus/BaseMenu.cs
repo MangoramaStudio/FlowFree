@@ -15,18 +15,15 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
         [SerializeField] private MenuType menuType;
 
         public MenuType MenuType => menuType;
+        
+        public bool IsInitialized { get; set; }
 
         public virtual void Initialize()
         {
             ToggleEvents(true);
+            IsInitialized = true;
         }
-
-        protected override void OnEnable()
-        {
-            base.OnEnable();
         
-        }
-
         protected override void OnDisable()
         {
             base.OnDisable();
@@ -41,14 +38,7 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
 
         protected virtual void ToggleEvents(bool isToggled)
         {
-            if (isToggled)
-            {
-                
-            }
-            else
-            {
-                
-            }
+           
         }
     }
 }

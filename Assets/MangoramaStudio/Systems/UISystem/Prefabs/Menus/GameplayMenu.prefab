@@ -1001,6 +1001,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1587601409563269411, guid: 59334ca27077f43b7af201e1c8d6fc9b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5530465647408991112}
+    - targetCorrespondingSourceObject: {fileID: 1587601409563269411, guid: 59334ca27077f43b7af201e1c8d6fc9b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4497419308388565508}
   m_SourcePrefab: {fileID: 100100000, guid: 59334ca27077f43b7af201e1c8d6fc9b, type: 3}
 --- !u!1 &5214771936265626247 stripped
 GameObject:
@@ -1048,6 +1051,18 @@ MonoBehaviour:
     headerTMPMaterial: {fileID: 2100000, guid: 16ef157c7fb8b4f02a27ce8aa7ae8f41, type: 2}
   topBg: {fileID: 163072811973648918}
   bottomBg: {fileID: 693787180201687730}
+--- !u!225 &4497419308388565508
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5214771936265626247}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!224 &5650678210249023370 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1170339438019650606, guid: 59334ca27077f43b7af201e1c8d6fc9b, type: 3}

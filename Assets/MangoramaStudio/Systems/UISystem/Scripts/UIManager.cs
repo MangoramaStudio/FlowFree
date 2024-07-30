@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using MangoramaStudio.Systems.UISystem.Scripts.Menus;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -17,6 +18,8 @@ namespace MangoramaStudio.Scripts.Managers
         public Action<MenuType> onChangeMenu;
 
         private List<BaseMenu> _menus = new();
+        
+        private BaseMenu _currentMenu;
 
         public GameplayMenu GameplayMenu() => gameplayMenu;
         
@@ -25,7 +28,7 @@ namespace MangoramaStudio.Scripts.Managers
         {
             base.Initialize();
             AddMenusToList();
-            ToggleEvents(true);
+            ChangeMenu(MenuType.Main);
         }
 
         protected override void ToggleEvents(bool isToggled)
@@ -33,13 +36,11 @@ namespace MangoramaStudio.Scripts.Managers
             base.ToggleEvents(isToggled);
             if (isToggled)
             {
-                onChangeMenu += ChangeMenu;
                 GameManager.EventManager.OnLevelStarted += StartLevel;
                 GameManager.EventManager.OnLevelFinished += CompleteLevel;
             }
             else
             {
-                onChangeMenu -= ChangeMenu;
                 GameManager.EventManager.OnLevelStarted -= StartLevel;
                 GameManager.EventManager.OnLevelFinished -= CompleteLevel;
             }
@@ -47,6 +48,7 @@ namespace MangoramaStudio.Scripts.Managers
 
         private void StartLevel()
         {
+         
             ChangeMenu(MenuType.Gameplay);
         }
 
@@ -57,21 +59,29 @@ namespace MangoramaStudio.Scripts.Managers
 
         private void ChangeMenu(MenuType menuType)
         {
-            _menus.ForEach(x=>x.gameObject.SetActive(false));
-            
+    
             switch (menuType)
             {
                 case MenuType.Main:
+                    winMenu.gameObject.SetActive(false);
+                    gameplayMenu.gameObject.SetActive(false);
+                    mainMenu.Initialize();     
                     mainMenu.gameObject.SetActive(true);
-                    mainMenu.Initialize();
+                    _currentMenu = mainMenu;
                     break;
                 case MenuType.Gameplay:
-                    gameplayMenu.gameObject.SetActive(true);
+                    mainMenu.gameObject.SetActive(false);
+                    winMenu.gameObject.SetActive(false);
                     gameplayMenu.Initialize();
+                    gameplayMenu.gameObject.SetActive(true);
+                    _currentMenu = gameplayMenu;
                     break;
                 case MenuType.Win:
-                    winMenu.gameObject.SetActive(true);
+                    mainMenu.gameObject.SetActive(false);
+                    gameObject.gameObject.SetActive(false);
                     winMenu.Initialize();
+                    winMenu.gameObject.SetActive(true);
+                    _currentMenu = winMenu;
                     break;
             }
         }
@@ -82,12 +92,7 @@ namespace MangoramaStudio.Scripts.Managers
             _menus.Add(gameplayMenu);
             _menus.Add(winMenu);
         }
-
-        [Button]
-        private void Test(MenuType type)
-        {
-            ChangeMenu(type);
-        }
+        
     }
     
 }

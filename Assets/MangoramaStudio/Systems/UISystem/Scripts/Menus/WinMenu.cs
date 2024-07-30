@@ -15,7 +15,7 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
             SetText();
         }
 
-        public void SetText()
+        private void SetText()
         {
             var move = GameManager.Instance.UIManager.GameplayMenu().GetMoveCount();
             areaTextTMP.SetText($"You cleared in {move} moves");

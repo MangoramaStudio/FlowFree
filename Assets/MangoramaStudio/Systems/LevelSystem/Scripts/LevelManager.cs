@@ -75,13 +75,11 @@ namespace MangoramaStudio.Scripts.Managers
         {
             IncrementLevel();
             await Task.Yield();
-            GameManager.EventManager.StartLevel();
             StartGame();
         }
 
         public void RetryCurrentLevel()
         {
-            GameManager.EventManager.StartLevel();
             StartGame();
         }
 

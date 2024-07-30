@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using MangoramaStudio.Scripts.Managers;
 using Mechanics.RoboticFlows;
 using TMPro;
@@ -22,7 +23,6 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
         public override void Initialize()
         {
             base.Initialize();
-            
             pipeCompleteCounterUIController.Initialize();
             moveCounterUIController.Initialize();
             levelCounterUIController.Initialize();
