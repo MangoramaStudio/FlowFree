@@ -16,28 +16,36 @@ MonoBehaviour:
   <Enabled>k__BackingField: 1
   AutoLoadBannerAfterInit: 1
   AutoShowBannerAfterLoad: 1
-  BannerEcpmEventThresholds: 64000000f4010000e8030000
-  BannerCumulativeRevenueEventThresholds: 3200000064000000c8000000
+  BannerEcpmEventThresholds: 0a000000640000002c010000f4010000e8030000
+  BannerCumulativeRevenueEventThresholds: 050000000a000000140000003200000064000000c8000000
+  CustomBannerRevenueEventsToFirebase: []
   AutoLoadInterstitialAfterInit: 1
   AutoLoadInterstitialAfterClose: 1
   FirstInterstitialShowCap: 60
   RewardedVideoInterstitialCap: 0
   InterstitialShowCap: 60
-  InterstitialEcpmEventThresholds: 64000000f4010000e8030000
-  InterstitialCumulativeRevenueEventThresholds: 3200000064000000c8000000
+  InterstitialEcpmEventThresholds: 0a000000640000002c010000f4010000e8030000
+  InterstitialCumulativeRevenueEventThresholds: 050000000a000000140000003200000064000000c8000000
+  CustomInterstitialRevenueEventsToFirebase:
+  - ad_revenue_total
   AutoLoadRewardedVideoAfterInit: 1
   AutoLoadRewardedVideoAfterClose: 1
-  RewardedVideoEcpmEventThresholds: 64000000f4010000e8030000
-  RewardedVideoCumulativeRevenueEventThresholds: 3200000064000000c8000000
+  RewardedVideoEcpmEventThresholds: 0a000000640000002c010000f4010000e8030000
+  RewardedVideoCumulativeRevenueEventThresholds: 050000000a000000140000003200000064000000c8000000
+  CustomRewardedVideoRevenueEventsToFirebase:
+  - ad_revenue_total
   AutoLoadAppOpenAfterInit: 0
   AutoLoadAppOpenAfterClose: 1
   FirstAppOpenShowCap: 0
   AppOpenShowCap: 0
-  AppOpenEcpmEventThresholds: 64000000f4010000e8030000
-  AppOpenCumulativeRevenueEventThresholds: 3200000064000000c8000000
+  AppOpenEcpmEventThresholds: 0a000000640000002c010000f4010000e8030000
+  AppOpenCumulativeRevenueEventThresholds: 050000000a000000140000003200000064000000c8000000
+  CustomAppOpenRevenueEventsToFirebase:
+  - ad_revenue_total
   AutoLoadMrecAfterInit: 1
-  MrecEcpmEventThresholds: 64000000f4010000e8030000
-  MrecCumulativeRevenueEventThresholds: 3200000064000000c8000000
+  MrecEcpmEventThresholds: 0a000000640000002c010000f4010000e8030000
+  MrecCumulativeRevenueEventThresholds: 050000000a000000140000003200000064000000c8000000
+  CustomMrecRevenueEventsToFirebase: []
   FullscreenAdWrapperEnabled: 1
   FullscreenAdWrapperIntersBeforeForcedRewarded: 2
   CumulativeEcpmEvents: 1
@@ -45,6 +53,9 @@ MonoBehaviour:
   SendEcpmEventsToAdjust: 1
   SendAdRevenueEventsToAdjust: 1
   SendCumulativeRevenueEventsToAdjust: 1
+  SendEcpmEventsToFirebase: 1
+  SendAdRevenueEventsToFirebase: 1
+  SendCumulativeRevenueEventsToFirebase: 1
   OpenMediationDebuggerOnTestDevices: 0
   TestDeviceIds: []
   AdImpressionCountEventThresholds: 1e00000032000000

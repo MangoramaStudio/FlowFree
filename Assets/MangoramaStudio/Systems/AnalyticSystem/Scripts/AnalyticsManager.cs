@@ -37,8 +37,7 @@ namespace MangoramaStudio.Scripts.Managers
 
         private void SendFirebaseEvent(string eventName, bool withParameter)
         {
-            var trackEventName = $"level{levelData.currentLevelIndex}_{eventName}";
-            TrackEventFirebase(trackEventName,withParameter);    
+            TrackEventFirebase(eventName,withParameter);    
         }
         
 
