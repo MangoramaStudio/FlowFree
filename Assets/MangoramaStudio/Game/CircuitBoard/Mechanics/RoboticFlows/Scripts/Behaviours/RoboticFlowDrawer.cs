@@ -125,7 +125,8 @@ namespace Mechanics.RoboticFlows
                 if (!_selectedDrawer && cell.node)
                 {
                     SelectNode(cell.node);
-                  
+                    ScaleUpNodes(cell.node.Id);
+                    
                 }
 
                 if (cell.node)
@@ -140,7 +141,6 @@ namespace Mechanics.RoboticFlows
                     return;
                 }
                 
-                ScaleUpNodes(cell.node.Id);
                 
                 hint.StopHighlight();
 

@@ -13,9 +13,8 @@ namespace Mechanics.RoboticFlows
     public class FlowConverterConfig : ScriptableObject
     {
         public List<LevelBehaviour> levelBehaviours = new();
-
         public List<LevelSizeCategoryDefinition> levelSizeCategoryDefinitions = new();
-        
+        public List<SetLevelTypeDefinition> setLevelTypeMenuDefinitions = new();
 
 #if UNITY_EDITOR
         [Button(ButtonSizes.Medium)]
@@ -112,5 +111,23 @@ namespace Mechanics.RoboticFlows
             }
         }
 #endif
+    }
+
+    [Serializable]
+    public class SetLevelTypeDefinition
+    {
+        public LevelType levelType;
+        public List<LevelBehaviour> levels = new();
+
+        [Button(ButtonSizes.Medium),GUIColor(0.5f,0.5f,0.5f)]
+        public void SetLevelType()
+        {
+            foreach (var x in levels)
+            {
+                x.SetLevelType(levelType);
+                EditorUtility.SetDirty(x.gameObject);
+                PrefabUtility.SavePrefabAsset(x.gameObject);
+            }
+        }
     }
 }

@@ -65,6 +65,11 @@ namespace MangoramaStudio.Scripts.Behaviours
             _isLevelEnded = true;
             container.DeInitialize();
         }
+
+        public void SetLevelType(LevelType type)
+        {
+            levelType = type;
+        }
         
     }
 

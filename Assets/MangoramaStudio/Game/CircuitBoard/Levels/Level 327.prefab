@@ -12761,6 +12761,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 327
       objectReference: {fileID: 0}
+    - target: {fileID: 5553801964788344143, guid: 5a2f378d5be604c5e845c6051d6a0a56, type: 3}
+      propertyPath: levelType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5803926135255330145, guid: 5a2f378d5be604c5e845c6051d6a0a56, type: 3}
       propertyPath: orthoSize
       value: 5.6298666
