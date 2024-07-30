@@ -2,12 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using MangoramaStudio.Game.Scripts.Behaviours;
 using MangoramaStudio.Scripts.Managers;
+using MangoramaStudio.Systems.TutorialSystem.Scripts;
 using Mechanics.Scripts;
 using Sirenix.OdinInspector;
-using UnityEditor.Localization.Plugins.XLIFF.V12;
+using Sirenix.Utilities;
 using UnityEngine;
 
 namespace Mechanics.RoboticFlows
@@ -18,7 +18,7 @@ namespace Mechanics.RoboticFlows
         [SerializeField] private RoboticFlowHint hint;
         [SerializeField] private RoboticFlowInputSurface surface;
         [SerializeField] private List<FlowDrawer> drawers;
-        
+        [SerializeField] private TutorialComponent tutorialComponent;
         public List<FlowDrawer> completedDrawers = new();
         
         private Camera _mainCamera;
@@ -51,6 +51,10 @@ namespace Mechanics.RoboticFlows
                 drawer.Initialize(this);
             }
 
+            if (HasTutorialComponent())
+            {
+                tutorialComponent.SetPlayableCells(grid.Cells.ToList());
+            }
 
         }
 
@@ -120,8 +124,16 @@ namespace Mechanics.RoboticFlows
             hint.HighlightHint();
         }
 
+        public bool HasTutorialComponent()
+        {
+            return tutorialComponent != null;
+        }
+        
         public void SurfacePressed(Vector2 screenPosition)
         {
+
+            
+            
             if (CellRaycast(screenPosition, out var cell))
             {
                 if (!_selectedDrawer && cell.node)
@@ -279,7 +291,17 @@ namespace Mechanics.RoboticFlows
 
                     if (_selectedDrawer.FlowComplete)
                     {
-                       
+
+                        if (HasTutorialComponent())
+                        {
+                            var def = tutorialComponent.GetCurrentTutorialDefinition;
+                            if (def.flowDrawer == _selectedDrawer)
+                            {
+                                def.isCompleted = true;
+                                tutorialComponent.TryIncrementTutorialIndex();
+                                tutorialComponent.SetPlayableCells(grid.Cells.ToList());
+                            }
+                        }
                         BounceFlow(cell.node.Id);
                         Add();
 
@@ -289,10 +311,7 @@ namespace Mechanics.RoboticFlows
                             reverse.ElementAt(i).PlayCompleteBlob(i);   
                         }
                         
-                        foreach (var selectedDrawerDrawnCell in _selectedDrawer.DrawnCells)
-                        {
-                           // selectedDrawerDrawnCell.SetCompleteColor();
-                        }
+                  
                       
                         _eventManager.CompleteFlow(_selectedDrawer,_selectedNode);
                         _selectedDrawer = null;
