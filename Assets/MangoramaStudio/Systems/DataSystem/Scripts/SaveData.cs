@@ -14,7 +14,7 @@ namespace MangoramaStudio.Scripts.Data
     [Serializable]
     public class LevelData : Data
     {
-        public int currentLevelIndex;
+        public int currentLevelIndex = 1;
     }
     
     [Serializable]

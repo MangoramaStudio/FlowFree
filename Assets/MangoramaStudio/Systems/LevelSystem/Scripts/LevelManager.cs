@@ -52,7 +52,7 @@ namespace MangoramaStudio.Scripts.Managers
             InputController.IsInputDeactivated = false;
             if (levelData.currentLevelIndex < totalLevelCount)
             {
-                GameManager.AddressableManager.LoadCurrentLevelAsync(levelData.currentLevelIndex,OnLevelLoaded);
+                GameManager.AddressableManager.LoadCurrentLevelAsync(levelData.currentLevelIndex-1,OnLevelLoaded);
             }
         }
         

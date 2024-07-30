@@ -19,7 +19,7 @@ namespace Mechanics.RoboticFlows
             levelCounterTMP.transform.localScale = Vector3.one;
             _loopSequence?.Kill(true);
             var data = GameManager.Instance.DataManager.GetData<LevelData>();
-            levelCounterTMP.SetText($"Level {data.currentLevelIndex+1}");
+            levelCounterTMP.SetText($"Level {data.currentLevelIndex}");
 
             if (GameManager.Instance.LevelManager.CurrentLevel.LevelType is LevelType.Hard or LevelType.SuperHard)
             {
