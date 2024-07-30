@@ -48,7 +48,6 @@ namespace MangoramaStudio.Scripts.Managers
 
         private void StartLevel()
         {
-         
             ChangeMenu(MenuType.Gameplay);
         }
 

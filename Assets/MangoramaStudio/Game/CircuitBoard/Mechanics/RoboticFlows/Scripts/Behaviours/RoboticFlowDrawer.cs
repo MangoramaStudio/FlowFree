@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,6 +7,7 @@ using MangoramaStudio.Game.Scripts.Behaviours;
 using MangoramaStudio.Scripts.Managers;
 using Mechanics.Scripts;
 using Sirenix.OdinInspector;
+using UnityEditor.Localization.Plugins.XLIFF.V12;
 using UnityEngine;
 
 namespace Mechanics.RoboticFlows
@@ -417,6 +419,15 @@ namespace Mechanics.RoboticFlows
             }
         }
 
+        private IEnumerator CRCheck()
+        {
+            yield return new WaitUntil(() => grid.Cells.All(x => x.isColorAnimCompleted));
+            yield return new WaitForSeconds(.75f);
+            _eventManager.CompleteAllFlows();
+            _eventManager.VibrateLevelComplete();
+            _eventManager.PlayLevelSuccessSound();
+            RaiseSuccess();
+        }
 
         private void CheckAndComplete()
         {
@@ -427,10 +438,8 @@ namespace Mechanics.RoboticFlows
                     if (cell.node)
                         cell.node.Bounce();
                 }
-                _eventManager.CompleteAllFlows();
-                _eventManager.VibrateLevelComplete();
-                _eventManager.PlayLevelSuccessSound();
-                RaiseSuccess();
+
+                StartCoroutine(CRCheck());
             }
             else if (drawers.All(d => d.FlowComplete))
             {

@@ -84,10 +84,15 @@ namespace Mechanics.RoboticFlows
             //spriteRenderer.color = occupiedState ? occupiedColor : Color.white;
         }
 
+        public bool isColorAnimCompleted;
+
         public void SetCompleteColor()
         {
             spriteRenderer.color = occupiedColor;
-            spriteRenderer.DOFade(.5f, 0f);
+            spriteRenderer.DOFade(.5f, 0f).OnComplete(()=>
+            {
+                isColorAnimCompleted = true;
+            });
         }
         
         public void PlayCompleteBlob(int id)
@@ -98,14 +103,13 @@ namespace Mechanics.RoboticFlows
             _blobSeq.Append(spriteRenderer.transform.DOScale(.33f, .15f).SetEase(Ease.InOutSine).OnStart(SetCompleteColor));
             _blobSeq.Append(spriteRenderer.transform.DOScale(.28f, .15f).SetEase(Ease.InOutSine));
             _blobSeq.Append(spriteRenderer.transform.DOScale(.3f, .15f).SetEase(Ease.InOutSine));
-          
-            
         }
         
         public void SetDefaultColor()
         {
             spriteRenderer.color = Color.white;
             spriteRenderer.DOFade(.6f, 0f);
+            isColorAnimCompleted = false;
         }
 
 
