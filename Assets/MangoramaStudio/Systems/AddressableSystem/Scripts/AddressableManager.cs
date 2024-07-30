@@ -35,7 +35,16 @@ namespace MangoramaStudio.Scripts.Managers
         
         public void LoadCurrentLevelAsync(int index,Action onComplete = null)
         {
-            LoadLevelAsync(GetCurrentLevel(index),onComplete);
+            if (index < LevelOrderHandler.GetCurrentLevelOrder().Count)
+            {
+                LoadLevelAsync(GetCurrentLevel(index),onComplete);     
+            }
+            else
+            {
+                var loopIndex = (index - LevelOrderHandler.GetCurrentLevelOrder().Count) % LevelOrderHandler.GetCurrentLoopLevelOrder().Count;
+                LoadLevelAsync(GetCurrentLoopLevel(loopIndex),onComplete);     
+            }
+           
         }
 
         private void LoadLevelAsync(string levelName, Action onComplete = null)
@@ -65,6 +74,13 @@ namespace MangoramaStudio.Scripts.Managers
         private string GetCurrentLevel(int index)
         {
             var list = LevelOrderHandler.GetCurrentLevelOrder();
+            var element = list.ElementAt(index);
+            return $"{Prefix} {element}";
+        }
+        
+        private string GetCurrentLoopLevel(int index)
+        {
+            var list = LevelOrderHandler.GetCurrentLoopLevelOrder();
             var element = list.ElementAt(index);
             return $"{Prefix} {element}";
         }

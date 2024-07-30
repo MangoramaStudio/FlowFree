@@ -13,7 +13,6 @@ namespace MangoramaStudio.Scripts.Managers
     public class LevelManager : BaseManager
     {
         [FormerlySerializedAs("_totalLevelCount")] [SerializeField] private int totalLevelCount;
-
         private LevelBehaviour _desiredLoadedLevelPrefab;
 
 
@@ -50,10 +49,7 @@ namespace MangoramaStudio.Scripts.Managers
             ClearLevel();
             Resources.UnloadUnusedAssets();
             InputController.IsInputDeactivated = false;
-            if (levelData.currentLevelIndex < totalLevelCount)
-            {
-                GameManager.AddressableManager.LoadCurrentLevelAsync(levelData.currentLevelIndex-1,OnLevelLoaded);
-            }
+            GameManager.AddressableManager.LoadCurrentLevelAsync(levelData.currentLevelIndex-1,OnLevelLoaded);
         }
         
         private void OnLevelLoaded()
