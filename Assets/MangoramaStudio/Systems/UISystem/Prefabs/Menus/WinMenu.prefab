@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 41}
   m_SizeDelta: {x: 900, y: 900}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2807737179191826058
@@ -112,7 +112,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4.1087036, y: 0}
+  m_AnchoredPosition: {x: 4.8219604, y: -2.9042053}
   m_SizeDelta: {x: -8.2174, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8064468497409916362
@@ -170,12 +170,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 105
+  m_fontSize: 85
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 105
+  m_fontSizeMax: 85
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 4096
@@ -279,7 +279,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: e731cb56e703b4f3b9084e4f0bb47dfa, type: 3}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.8
 --- !u!1 &4442625172589072168
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +322,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 11.5, y: -117}
+  m_AnchoredPosition: {x: 0, y: -118.71091}
   m_SizeDelta: {x: 408, y: 432}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &5475173884743104507
@@ -397,7 +397,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1.3590393, y: -0.44327545}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &249799247247625711
@@ -455,17 +455,17 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65
+  m_fontSize: 50
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 65
+  m_fontSizeMax: 50
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
-  m_characterSpacing: -5
+  m_characterSpacing: 5
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -647,11 +647,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3205873088719538860, guid: b63b6f3fac7744371a940f2bc2200654, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 176.5
+      value: 167.16136
       objectReference: {fileID: 0}
     - target: {fileID: 3205873088719538860, guid: b63b6f3fac7744371a940f2bc2200654, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 582
+      value: 608.77545
       objectReference: {fileID: 0}
     - target: {fileID: 3205873088719538860, guid: b63b6f3fac7744371a940f2bc2200654, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -746,6 +746,14 @@ PrefabInstance:
     - target: {fileID: 1977567396059084406, guid: 45b09fa8470984d71a2a18ee6413d284, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977567396059084406, guid: 45b09fa8470984d71a2a18ee6413d284, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -180.7517
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977567396059084406, guid: 45b09fa8470984d71a2a18ee6413d284, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 615.5707
       objectReference: {fileID: 0}
     - target: {fileID: 1977567396059084406, guid: 45b09fa8470984d71a2a18ee6413d284, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -921,6 +929,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuType: 2
   areaTextTMP: {fileID: 150445498519799117}
+  preExplanation: You cleared in
+  postExplanation: moves
+  color: {r: 0.909804, g: 0.18823531, b: 0.41176474, a: 1}
 --- !u!224 &6931292272789949047 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4496345021098389971, guid: 59334ca27077f43b7af201e1c8d6fc9b, type: 3}
