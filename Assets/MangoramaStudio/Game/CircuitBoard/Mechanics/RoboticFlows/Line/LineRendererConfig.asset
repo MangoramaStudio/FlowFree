@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7456ea8e6cd42f0af287865ddcb0533, type: 3}
+  m_Name: LineRendererConfig
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: fe1afda3e3fe44e13a955a3814c7e5b6, type: 2}
+  lineDefinitions:
+  - id: 0
+    texture: {fileID: 2800000, guid: f8edc1ac2c8f94b40b8c9ebd600de30d, type: 3}
+  - id: 1
+    texture: {fileID: 2800000, guid: 1737f2f1bcef04299929eb1e34bbfc7f, type: 3}
+  - id: 2
+    texture: {fileID: 2800000, guid: af5e9cefbf3d94a7cb561a0c0b62f2ca, type: 3}
+  - id: 3
+    texture: {fileID: 2800000, guid: 2d975578a8c93488c8d12ddd2e3a7f69, type: 3}
+  - id: 4
+    texture: {fileID: 2800000, guid: 7ed801dcd561343eab95660c093759d9, type: 3}
+  - id: 5
+    texture: {fileID: 2800000, guid: 8686e3fc81ee64a51aba0329799995a5, type: 3}
+  - id: 6
+    texture: {fileID: 2800000, guid: 68020aafc5807445a97f1c04d598fe8c, type: 3}
+  - id: 7
+    texture: {fileID: 2800000, guid: 566e98bfdfec044b087ced76ccb3541b, type: 3}
+  - id: 8
+    texture: {fileID: 2800000, guid: 981d5168347c64cb089d4137702ab789, type: 3}
+  - id: 9
+    texture: {fileID: 2800000, guid: d7fb6306bd8134fb58e6595a4d762142, type: 3}
+  - id: 10
+    texture: {fileID: 2800000, guid: 2eed0372c15e546b9ad9de838645e694, type: 3}
+  - id: 11
+    texture: {fileID: 2800000, guid: f3ab1a076c3ec48eea912a868cbc109a, type: 3}

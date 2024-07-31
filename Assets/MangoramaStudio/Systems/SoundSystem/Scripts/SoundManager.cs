@@ -56,6 +56,7 @@ namespace MangoramaStudio.Systems.SoundSystem.Scripts
 
         private void PlayNotes()
         {
+            // TODO Irfan solve bug here none element
            var note = musicNotesSfx.ElementAt(_currentNoteIndex % musicNotesSfx.Count);
            Debug.LogWarning(note);
            TryPlaySound(note);

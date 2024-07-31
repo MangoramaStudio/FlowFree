@@ -10,6 +10,10 @@ namespace Mechanics.RoboticFlows
         [SerializeField] private float surfaceSize;
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private Sprite ballSprite;
+
+        private RoboticFlowDrawer FlowDrawer => _flowDrawer ? _flowDrawer : (_flowDrawer = GetComponentInParent<RoboticFlowDrawer>());
+        private RoboticFlowDrawer _flowDrawer;
+        
         public int Id => id;
 
         public Sprite BallSprite => ballSprite;

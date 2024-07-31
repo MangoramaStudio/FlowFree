@@ -21,8 +21,9 @@ namespace Mechanics.RoboticFlows
         [SerializeField] private SpriteRenderer tip;
 
         [SerializeField] private Sprite tileSprite;
-        private Stack<Cell> _drawnCells;
-        
+        [ShowInInspector]private Stack<Cell> _drawnCells;
+
+        public LineRendererController lineRendererController;
         public int Id => id;
 
         public Sprite TileSprite => tileSprite;
@@ -63,6 +64,7 @@ namespace Mechanics.RoboticFlows
             
             _drawnCells.Clear();
             polyline.points.Clear();
+            lineRendererController.Clear();
             polyline.enabled = false;
             tip.enabled = false;
         }
@@ -99,23 +101,28 @@ namespace Mechanics.RoboticFlows
 
             var position = cell.transform.position - transform.position;
             polyline.AddPoint(new Vector3(position.x, position.z));
-           
             
             tip.transform.position = cell.transform.position;
 
             if (cell.node)
             {
                 Vibrator.Vibrate(VibrationType.Rigid);
+                if (lineRendererController != null)
+                {
+                    lineRendererController.GoToNode(cell);
+                }
             }
             else
             {
+            
+                lineRendererController.SetNewPosition(position);
                 Vibrator.Vibrate(VibrationType.Light);
             }
 
             if (polyline.Count > 1)
             {
                 tip.enabled = true;
-                polyline.enabled = true;
+                //polyline.enabled = true;
             }
         }
         
@@ -125,6 +132,7 @@ namespace Mechanics.RoboticFlows
         public void AutoComplete()
         {
             polyline.points.Clear();
+            lineRendererController.Clear();
             for (int i = 0; i < correctOrderedCells.Count; i++)
             {
                 DrawCell(correctOrderedCells[i]);
@@ -401,6 +409,7 @@ namespace Mechanics.RoboticFlows
                 var popped = _drawnCells.Pop();
                 popped.SetOccupied(false);
                 polyline.points.RemoveAt(polyline.Count - 1);
+                lineRendererController.RemoveLine();
                 polyline.meshOutOfDate = true;
             }
 
