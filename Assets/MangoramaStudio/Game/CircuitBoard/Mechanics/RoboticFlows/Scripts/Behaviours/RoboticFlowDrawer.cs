@@ -202,6 +202,16 @@ namespace Mechanics.RoboticFlows
         /// <returns></returns>
         private bool ReachObstacles(Cell cell)
         {
+            if (_selectedDrawer == null)
+            {
+                return false;
+            }
+
+            if (_selectedDrawer.CurrentCell == null)
+            {
+                return false;
+            }
+            
             var direction =_selectedDrawer.CurrentCell.DirectionAccordingToTargetCell(cell);
                 
             if(_selectedDrawer.CurrentCell.HasObstacles)
@@ -261,7 +271,7 @@ namespace Mechanics.RoboticFlows
                 if (_selectedDrawer.DrawnCells.Contains(cell))
                 {
               
-                    _eventManager.DecrementNoteIndexSound();
+                    _eventManager.DecrementNoteIndexSound(_selectedDrawer.DrawnCells.Count-1);
                     _eventManager.PlayNoteSound();
                     _selectedDrawer.ClearToCell(cell);
                     _eventManager.ClearCell(_selectedDrawer);

@@ -163,7 +163,7 @@ namespace MangoramaStudio.Scripts.Managers
 
         public event Action OnPlayNotes;
         public event Action OnIncrementNoteIndex;
-        public event Action OnDecrementNoteIndex;
+        public event Action<int> OnDecrementNoteIndex;
         public event Action OnResetNoteIndex;
         public event Action OnPlayLevelSuccess;
         public event Action OnPlayFlowSuccess;
@@ -175,9 +175,9 @@ namespace MangoramaStudio.Scripts.Managers
         {
             OnIncrementNoteIndex?.Invoke();
         }
-        public void DecrementNoteIndexSound()
+        public void DecrementNoteIndexSound(int index)
         {
-            OnDecrementNoteIndex?.Invoke();
+            OnDecrementNoteIndex?.Invoke(index);
         }
         public void ResetNoteIndexSound()
         {

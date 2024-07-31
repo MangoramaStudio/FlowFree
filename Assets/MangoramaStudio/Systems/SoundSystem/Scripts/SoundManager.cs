@@ -42,6 +42,7 @@ namespace MangoramaStudio.Systems.SoundSystem.Scripts
                 eventManager.OnResetNoteIndex += ResetNoteIndex;
                 eventManager.OnPlayLevelSuccess += PlayCompleteLevel;
                 eventManager.OnPlayFlowSuccess += PlayCompleteLine;
+                eventManager.OnRestartLevel += ResetData;
             }
             else
             {
@@ -51,7 +52,13 @@ namespace MangoramaStudio.Systems.SoundSystem.Scripts
                 eventManager.OnResetNoteIndex -= ResetNoteIndex;
                 eventManager.OnPlayLevelSuccess -= PlayCompleteLevel;
                 eventManager.OnPlayFlowSuccess -= PlayCompleteLine;
+                eventManager.OnRestartLevel -= ResetData;
             }
+        }
+
+        private void ResetData()
+        {
+            ResetNoteIndex();
         }
 
         private void PlayNotes()
@@ -73,13 +80,28 @@ namespace MangoramaStudio.Systems.SoundSystem.Scripts
             _currentNoteIndex++;
         }
 
-        private void DecrementNoteIndex()
+        private bool _addToDecrement;
+
+        private void DecrementNoteIndex(int index)
         {
+            if (!_addToDecrement)
+            {
+                _currentNoteIndex = index;
+                _addToDecrement = true;
+            }
+       
             _currentNoteIndex--;
+            
+            if (_currentNoteIndex<=0)
+            {
+                _currentNoteIndex = 0;
+            }
+        
         }
 
         private void ResetNoteIndex()
         {
+            _addToDecrement = false;
             _currentNoteIndex = 0;
         }
         
