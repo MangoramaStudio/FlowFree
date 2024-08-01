@@ -21,16 +21,16 @@ namespace Mechanics.RoboticFlows
         {
             
             _flowDrawers = GetComponentsInChildren<FlowDrawer>().ToList();
-            //_cells = GetComponentsInChildren<Cell>().ToList();
+            _cells = GetComponentsInChildren<Cell>().ToList();
             foreach (var drawer in _flowDrawers)
             {
-                //drawer.GetComponent<FlowDrawerColorToSpriteConverter>().Convert();
+                drawer.GetComponent<FlowDrawerColorToSpriteConverter>().Convert();
                 drawer.transform.localPosition = new Vector3(0, 0f, 0);
             }
 
             foreach (var cell in _cells)
             {
-               // cell.GetComponent<CellGridColorToSpriteConverter>().Convert();
+                cell.GetComponent<CellGridColorToSpriteConverter>().Convert();
             }
         }
 
