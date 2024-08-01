@@ -1,0 +1,36 @@
+{
+    "name": "MatchinghamGames.DataUsageConsent.Runtime",
+    "rootNamespace": "MatchinghamGames.DataUsageConsentModule",
+    "references": [
+        "Unity.TextMeshPro",
+        "MatchinghamGames.Handyman.Runtime",
+        "Unity.Advertisement.IosSupport",
+        "MatchinghamGames.Logger.Runtime",
+        "MatchinghamGames.WorldWide.Localization.Runtime",
+        "Unity.Localization",
+        "FancyTextRendering",
+        "MatchinghamGames.PrivacyPolicyPopup.Runtime",
+        "Bidtellect.Tcf",
+        "MatchinghamGames.Stash.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.textmeshpro",
+            "expression": "",
+            "define": "TMP"
+        },
+        {
+            "name": "com.unity.ugui",
+            "expression": "2.0.0",
+            "define": "UGUI_2_OR_NEWER"
+        }
+    ],
+    "noEngineReferences": false
+}

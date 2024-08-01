@@ -1,0 +1,26 @@
+{
+  "name": "com.matchinghamgames.datausageconsent",
+  "version": "11.1.0",
+  "displayName": "Data Usage Consent Module",
+  "author": {
+    "name": "Matchingham Games",
+    "url": "https://matchingham.gs/"
+  },
+  "documentationUrl": "https://matchinghamgames.gitlab.io/docs/data-usage-consent",
+  "changelogUrl": "https://matchinghamgames.gitlab.io/docs/data-usage-consent/CHANGELOG",
+  "licensesUrl": "https://matchinghamgames.gitlab.io/docs/agreement",
+  "dependencies": {
+    "com.matchinghamgames.handyman": "5.3.1",
+    "com.matchinghamgames.logger": "2.1.0",
+    "com.matchinghamgames.worldwide": "4.1.0",
+    "com.unity.ads.ios-support": "1.2.0",
+    "com.matchinghamgames.privacypolicy": "5.1.1",
+    "com.matchinghamgames.stash": "1.4.0"
+  },
+  "unity": "2021.3",
+  "description": "For data usage consent management",
+  "hideInEditor": false,
+  "_upm": {
+    "changelog": "### Added\n* Privacy Policy Popup v5.1.x support\n### Changed\n* Privacy Policy Popup dependency: v5.0.0 -> v5.1.1\n### Removed\n* `Config.OpenPopupInDefaultPopup`: Configure it from `Privacy Policy Popup` package instead."
+  }
+}

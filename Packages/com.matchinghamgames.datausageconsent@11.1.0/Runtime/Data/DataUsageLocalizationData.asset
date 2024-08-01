@@ -1,0 +1,991 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03b808dccf24451488ef5777adc78d4a, type: 3}
+  m_Name: DataUsageLocalizationData
+  m_EditorClassIdentifier: 
+  Data:
+    m_keys:
+    - DataConsentParagraph
+    - DataConsentCheck
+    - ConfirmAndPlay
+    - PrivacyPolicy
+    - TermsOfService
+    - ThanksForDownloading
+    - DataConsentCheckPP
+    - DataConsentCheckToS
+    - NativeConsentCheck
+    - NativeConsentParagraph
+    - OK
+    m_values:
+    - m_keys:
+      - en
+      - ar
+      - zh-Hans
+      - zh-HK
+      - hr
+      - da
+      - nl
+      - fil
+      - fi
+      - fr
+      - de
+      - el
+      - he
+      - hi
+      - hu
+      - id
+      - it
+      - ja
+      - ko
+      - ms
+      - no
+      - pl
+      - pt
+      - ro
+      - ru
+      - sr
+      - es
+      - sv
+      - th
+      - tr
+      - uk
+      - ur
+      - vi
+      m_values:
+      - Before playing our games, you'll need to agree to our Privacy Policy and
+        Terms of Service
+      - "\u0642\u0628\u0644 \u0623\u0646 \u062A\u062A\u0645\u0643\u0646 \u0645\u0646
+        \u0627\u0644\u0627\u0633\u062A\u0645\u062A\u0627\u0639 \u0628\u0623\u0644\u0639\u0627\u0628\u0646\u0627
+        \u064A\u062C\u0628 \u0627\u0644\u0645\u0648\u0627\u0641\u0642\u0629 \u0639\u0644\u0649
+        \u0634\u0631\u0648\u0637 \u0627\u0644\u062E\u062F\u0645\u0629 \u0648\u0633\u064A\u0627\u0633\u0629
+        \u0627\u0644\u062E\u0635\u0648\u0635\u064A\u0629 \u0644\u062F\u064A\u0646\u0627"
+      - "\u5728\u73A9\u6211\u4EEC\u7684\u6E38\u620F\u4E4B\u524D\uFF0C\u60A8\u9700\u8981\u5148\u540C\u610F\u6211\u4EEC\u7684\u300A\u9690\u79C1\u653F\u7B56\u300B\u548C\u300A\u670D\u52A1\u6761\u6B3E\u300B"
+      - "\u5728\u73A9\u6211\u5011\u7684\u904A\u6232\u4E4B\u524D\uFF0C\u60A8\u9700\u8981\u540C\u610F\u6211\u5011\u7684\u96B1\u79C1\u6B0A\u653F\u7B56\u8207\u670D\u52D9\u689D\u6B3E"
+      - "Prije nego \u0161to po\u010Dnete igrati na\u0161e igre, trebate prihvatiti
+        Pravila o za\u0161titi privatnosti i Uvjete pru\u017Eanja usluge."
+      - "F\xF8r du kan spille vores spil, skal du acceptere vores privatlivspolitik
+        og servicevilk\xE5r"
+      - Voordat je onze games speelt, moet je akkoord gaan met onze algemene voorwaarden
+        en ons privacybeleid bevestigen
+      - Bago maglaro ng aming mga game, kailangan mong sumang-ayon sa aming Patakaran
+        sa Privacy at Mga Tuntunin ng Serbisyo
+      - 
+      - "Avant de jouer \xE0 nos jeux, vous devez accepter notre politique de confidentialit\xE9
+        et nos conditions d'utilisation."
+      - "Bevor du unsere Spiele spielen kannst, musst du unserer Datenschutzerkl\xE4rung
+        und unseren Nutzungsbedingungen zustimmen."
+      - "\u03A0\u03C1\u03BF\u03C4\u03BF\u03CD \u03C0\u03B1\u03AF\u03BE\u03B5\u03B9\u03C2
+        \u03C4\u03B1 \u03C0\u03B1\u03B9\u03C7\u03BD\u03AF\u03B4\u03B9\u03B1 \u03BC\u03B1\u03C2,
+        \u03C0\u03C1\u03AD\u03C0\u03B5\u03B9 \u03BD\u03B1 \u03C3\u03C5\u03BC\u03C6\u03C9\u03BD\u03AE\u03C3\u03B5\u03B9\u03C2
+        \u03BC\u03B5 \u03C4\u03B7\u03BD \u03A0\u03BF\u03BB\u03B9\u03C4\u03B9\u03BA\u03AE
+        \u03B1\u03C0\u03BF\u03C1\u03C1\u03AE\u03C4\u03BF\u03C5 \u03BA\u03B1\u03B9
+        \u03C4\u03BF\u03C5\u03C2 \u038C\u03C1\u03BF\u03C5\u03C2 \u03C7\u03C1\u03AE\u03C3\u03B7\u03C2
+        \u03BC\u03B1\u03C2"
+      - "\u05DC\u05E4\u05E0\u05D9 \u05E9\u05EA\u05E9\u05D7\u05E7\u05D5 \u05D1\u05DE\u05E9\u05D7\u05E7\u05D9\u05DD
+        \u05E9\u05DC\u05E0\u05D5, \u05E2\u05DC\u05D9\u05DB\u05DD \u05DC\u05D4\u05E1\u05DB\u05D9\u05DD
+        \u05DC\u05EA\u05E0\u05D0\u05D9 \u05D4\u05E9\u05D9\u05E8\u05D5\u05EA \u05D5\u05DC\u05D0\u05E9\u05E8
+        \u05D0\u05EA \u05DE\u05D3\u05D9\u05E0\u05D9\u05D5\u05EA \u05D4\u05E4\u05E8\u05D8\u05D9\u05D5\u05EA"
+      - "\u0939\u092E\u093E\u0930\u0947 \u0917\u0947\u092E \u0916\u0947\u0932\u0928\u0947
+        \u0938\u0947 \u092A\u0939\u0932\u0947, \u0906\u092A\u0915\u094B \u0939\u092E\u093E\u0930\u0940
+        \u0928\u093F\u091C\u0924\u093E \u0928\u0940\u0924\u093F \u0914\u0930 \u0938\u0947\u0935\u093E
+        \u0915\u0940 \u0936\u0930\u094D\u0924\u094B\u0902 \u0938\u0947 \u0938\u0939\u092E\u0924
+        \u0939\u094B\u0928\u093E \u091A\u093E\u0939\u093F\u090F"
+      - "Miel\u0151tt a j\xE1t\xE9kainkkal j\xE1tszan\xE1l, el kell fogadnod Szolg\xE1ltat\xE1si
+        felt\xE9teleinket \xE9s Adatv\xE9delmi szab\xE1lyzatunkat"
+      - Sebelum memainkan game kami, Anda harus menyetujui Kebijakan Privasi dan
+        Persyaratan Layanan kami
+      - Prima di utilizzare i nostri giochi, devi acconsentire alla nostra Informativa
+        sulla privacy e ai nostri Termini di servizio.
+      - "\u30B2\u30FC\u30E0\u3092\u30D7\u30EC\u30A4\u3059\u308B\u524D\u306B\u3001\u30D7\u30E9\u30A4\u30D0\u30B7\u30FC\u30DD\u30EA\u30B7\u30FC\u3068\u5229\u7528\u898F\u7D04\u306B\u540C\u610F\u3057\u3066\u3044\u305F\u3060\u304F\u5FC5\u8981\u304C\u3042\u308A\u307E\u3059"
+      - "\uAC8C\uC784\uC744 \uD50C\uB808\uC774\uD558\uAE30 \uC804\uC5D0 \uC11C\uBE44\uC2A4
+        \uC57D\uAD00\uACFC \uAC1C\uC778\uC815\uBCF4 \uCC98\uB9AC\uBC29\uCE68\uC5D0
+        \uB3D9\uC758\uD574\uC57C \uD569\uB2C8\uB2E4."
+      - Sebelum bermain permainan kami, anda perlu bersetuju dengan Dasar Privasi
+        dan Terma Perkhidmatan kami
+      - "F\xF8r du spiller spillene v\xE5re m\xE5 du godta v\xE5re personvernsforskrifter
+        og tjenestevilk\xE5r."
+      - "Przed zagraniem w nasze gry musisz zaakceptowa\u0107 Warunki \u015Bwiadczenia
+        us\u0142ug oraz Polityk\u0119 prywatno\u015Bci"
+      - "Antes de jogar nossos jogos, voc\xEA precisa concordar com nossos Termos
+        de Servi\xE7o e Pol\xEDtica de Privacidade"
+      - "\xCEnainte de a juca jocurile noastre, trebuie s\u0103 accep\u021Bi Politica
+        de confiden\u021Bialitate \u015Fi Termenii de utilizare"
+      - "\u041D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E \u043F\u0440\u0438\u043D\u044F\u0442\u044C
+        \u0443\u0441\u043B\u043E\u0432\u0438\u044F \u043D\u0430\u0448\u0435\u0433\u043E
+        \u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\u0441\u043A\u043E\u0433\u043E
+        \u0441\u043E\u0433\u043B\u0430\u0448\u0435\u043D\u0438\u044F \u0438 \u041F\u043E\u043B\u0438\u0442\u0438\u043A\u0443
+        \u043A\u043E\u043D\u0444\u0438\u0434\u0435\u043D\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u0438,
+        \u0447\u0442\u043E\u0431\u044B \u043D\u0430\u0447\u0430\u0442\u044C \u0438\u0433\u0440\u0430\u0442\u044C."
+      - 
+      - "Antes de jugar a nuestros juegos, tienes que aceptar nuestra Pol\xEDtica
+        de privacidad y nuestros T\xE9rminos de servicio"
+      - 
+      - "\u0E01\u0E48\u0E2D\u0E19\u0E40\u0E25\u0E48\u0E19\u0E40\u0E01\u0E21\u0E02\u0E2D\u0E07\u0E40\u0E23\u0E32
+        \u0E04\u0E38\u0E13\u0E08\u0E30\u0E15\u0E49\u0E2D\u0E07\u0E22\u0E2D\u0E21\u0E23\u0E31\u0E1A\u0E40\u0E07\u0E37\u0E48\u0E2D\u0E19\u0E44\u0E02\u0E01\u0E32\u0E23\u0E43\u0E0A\u0E49\u0E1A\u0E23\u0E34\u0E01\u0E32\u0E23\u0E41\u0E25\u0E30\u0E19\u0E42\u0E22\u0E1A\u0E32\u0E22\u0E04\u0E27\u0E32\u0E21\u0E40\u0E1B\u0E47\u0E19\u0E2A\u0E48\u0E27\u0E19\u0E15\u0E31\u0E27\u0E02\u0E2D\u0E07\u0E40\u0E23\u0E32"
+      - "Oyunlar\u0131m\u0131z\u0131 oynamadan \xF6nce Gizlilik Politikam\u0131z\u0131
+        ve Hizmet \u015Eartlar\u0131m\u0131z\u0131 kabul etmeniz gerekir"
+      - "\u041F\u0435\u0440\u0448 \u043D\u0456\u0436 \u0440\u043E\u0437\u043F\u043E\u0447\u0430\u0442\u0438
+        \u0433\u0440\u0443, \u0432\u0430\u043C \u043F\u043E\u0442\u0440\u0456\u0431\u043D\u043E
+        \u043F\u043E\u0433\u043E\u0434\u0438\u0442\u0438\u0441\u044F \u0437 \u043D\u0430\u0448\u043E\u044E
+        \u041F\u043E\u043B\u0456\u0442\u0438\u043A\u043E\u044E \u043A\u043E\u043D\u0444\u0456\u0434\u0435\u043D\u0446\u0456\u0439\u043D\u043E\u0441\u0442\u0456
+        \u0442\u0430 \u0423\u043C\u043E\u0432\u0430\u043C\u0438 \u043E\u0431\u0441\u043B\u0443\u0433\u043E\u0432\u0443\u0432\u0430\u043D\u043D\u044F"
+      - "\u06C1\u0645\u0627\u0631\u06CC \u06AF\u06CC\u0645\u0632 \u06A9\u06BE\u06CC\u0644\u0646\u06D2
+        \u0633\u06D2 \u067E\u06C1\u0644\u06D2 \u0622\u067E \u06A9\u0648 \u06C1\u0645\u0627\u0631\u06CC
+        \u0631\u0627\u0632\u062F\u0627\u0631\u06CC \u06A9\u06CC \u067E\u0627\u0644\u06CC\u0633\u06CC
+        \u0627\u0648\u0631 \u062E\u062F\u0645\u062A \u06A9\u06CC \u0634\u0631\u0627\u0626\u0637
+        \u0633\u06D2 \u0627\u062A\u0641\u0627\u0642 \u06A9\u0631\u0646\u0627 \u06C1\u0648
+        \u06AF\u0627\u06D4"
+      - "Tr\u01B0\u1EDBc khi ch\u01A1i c\xE1c game c\u1EE7a ch\xFAng t\xF4i, b\u1EA1n
+        c\u1EA7n \u0111\u1ED3ng \xFD v\u1EDBi Ch\xEDnh s\xE1ch Quy\u1EC1n ri\xEAng
+        t\u01B0 v\xE0 \u0110i\u1EC1u kho\u1EA3n D\u1ECBch v\u1EE5 c\u1EE7a ch\xFAng
+        t\xF4i"
+    - m_keys:
+      - en
+      - ar
+      - zh-Hans
+      - zh-HK
+      - hr
+      - da
+      - nl
+      - fil
+      - fi
+      - fr
+      - de
+      - el
+      - he
+      - hi
+      - hu
+      - id
+      - it
+      - ja
+      - ko
+      - ms
+      - no
+      - pl
+      - pt
+      - ro
+      - ru
+      - sr
+      - es
+      - sv
+      - th
+      - tr
+      - uk
+      - ur
+      - vi
+      m_values:
+      - By tapping the Confirm and Play button, you confirm that you are at least
+        {3} years old and have read, understood and accepted {0} and {1} of {2}
+      - "\u0628\u0627\u0644\u0636\u063A\u0637 \u0639\u0644\u0649 \u0632\u0631 \"\u0627\u0644\u062A\u0623\u0643\u064A\u062F
+        \u0648\u0627\u0644\u0644\u0639\u0628\" \u062A\u0642\u0631 \u0628\u0623\u0646
+        \u0639\u0645\u0631\u0643 {3} \u0639\u0627\u0645\u064B\u0627 \u0639\u0644\u0649
+        \u0627\u0644\u0623\u0642\u0644\u060C \u0648\u0623\u0646\u0643 \u0642\u062F
+        \u0642\u0631\u0623\u062A \u0648\u0627\u0633\u062A\u0648\u0639\u0628\u062A
+        \u0648\u0642\u0628\u0644\u062A {0} \u0648{1} \u0627\u0644\u062E\u0627\u0635\u0629
+        \u0628\u0640 {2}"
+      - "\u70B9\u51FB\u201C\u786E\u8BA4\u5E76\u6E38\u73A9\u201D\u6309\u94AE\uFF0C\u5373\u786E\u8BA4\u60A8\u5DF2\u5E74\u6EE1
+        {3} \u5468\u5C81\uFF0C\u4E14\u5DF2\u9605\u8BFB\u3001\u7406\u89E3\u5E76\u63A5\u53D7
+        \u300A{2}\u300B \u7684\u300A{0}\u300B\u548C\u300A{1}\u300B"
+      - "\u6309\u4E0B\u300C\u78BA\u8A8D\u4E26\u958B\u59CB\u73A9\u904A\u6232\u300D\u7684\u6309\u9215\uFF0C\u60A8\u5373\u78BA\u8A8D\u60A8\u5DF2\u5E74\u6EFF
+        {3} \u6B72\u4E26\u5DF2\u95B1\u8B80\u3001\u4E86\u89E3\u4E26\u63A5\u53D7 {2}
+        \u7684{0}\u548C{1}"
+      - "Dodirom gumba Potvrdi i igraj potvr\u0111ujete da imate najmanje {3} godina
+        te da ste pro\u010Ditali, shvatili i da prihva\u0107ate {0} i {1} dru\u0161tva
+        {2}."
+      - "Ved at trykke p\xE5 knappen Bekr\xE6ft og spil bekr\xE6fter du, at du er
+        mindst {3} \xE5r gammel og har l\xE6st, forst\xE5et og accepteret {0} og
+        {1} af {2}"
+      - Door op de knop 'Bevestigen en spelen' te tikken, bevestig je dat je minimaal
+        {3} jaar oud ben en het {0} en de {1} van {2} hebt gelezen, begrepen en geaccepteerd
+      - Sa pag-tap ng Kumpirmahin at Maglaro na button, kinukumpirma mo na ikaw ay
+        hindi bababa sa {3} na taong gulang at nabasa, nauunawaan at tinatanggap
+        mo ang {0} at {1} ng {2}
+      - 
+      - "En appuyant sur le bouton Confirmer et jouer, vous confirmez que vous avez
+        au moins {3} ans et que vous avez lu, compris et accept\xE9 la {0} et les
+        {1} de {2}."
+      - "Indem du auf \"Best\xE4tigen und spielen\" klickst, best\xE4tigst du, dass
+        du mindestens {3} Jahre alt bist und die {0} und {1} von {2} gelesen, verstanden
+        und akzeptiert hast."
+      - "\u039C\u03B5 \u03C4\u03BF \u03C0\u03AC\u03C4\u03B7\u03BC\u03B1 \u03C4\u03BF\u03C5
+        \u03BA\u03BF\u03C5\u03BC\u03C0\u03B9\u03BF\u03CD \xAB\u0395\u03C0\u03B9\u03B2\u03B5\u03B2\u03B1\u03AF\u03C9\u03C3\u03B5
+        \u03BA\u03B1\u03B9 \u03C0\u03B1\u03AF\u03BE\u03B5\xBB \u03B5\u03C0\u03B9\u03B2\u03B5\u03B2\u03B1\u03B9\u03CE\u03BD\u03B5\u03B9\u03C2
+        \u03CC\u03C4\u03B9 \u03B5\u03AF\u03C3\u03B1\u03B9 \u03C4\u03BF\u03C5\u03BB\u03AC\u03C7\u03B9\u03C3\u03C4\u03BF\u03BD
+        {3} \u03B5\u03C4\u03CE\u03BD \u03BA\u03B1\u03B9 \u03CC\u03C4\u03B9 \u03AD\u03C7\u03B5\u03B9\u03C2
+        \u03B4\u03B9\u03B1\u03B2\u03AC\u03C3\u03B5\u03B9, \u03BA\u03B1\u03C4\u03B1\u03BD\u03BF\u03AE\u03C3\u03B5\u03B9
+        \u03BA\u03B1\u03B9 \u03B1\u03C0\u03BF\u03B4\u03B5\u03C7\u03C4\u03B5\u03AF
+        \u03C4\u03B7\u03BD {0} \u03BA\u03B1\u03B9 \u03C4\u03BF\u03C5\u03C2 {1} \u03C4\u03B7\u03C2
+        {2}"
+      - "\u05E2\u05DC-\u05D9\u05D3\u05D9 \u05D4\u05E7\u05E9\u05D4 \u05E2\u05DC \u05DB\u05E4\u05EA\u05D5\u05E8
+        \u05D4\"\u05D0\u05E9\u05E8\u05D5 \u05D5\u05E9\u05D7\u05E7\u05D5\" \u05D0\u05EA\u05DD
+        \u05DE\u05D0\u05E9\u05E8\u05D9\u05DD \u05E9\u05D0\u05EA\u05DD \u05D1\u05E0\u05D9
+        {3} \u05DC\u05E4\u05D7\u05D5\u05EA \u05D5\u05E9\u05E7\u05E8\u05D0\u05EA\u05DD,
+        \u05D4\u05D1\u05E0\u05EA\u05DD \u05D5\u05E7\u05D9\u05D1\u05DC\u05EA\u05DD
+        \u05D0\u05EA {0} {1} \u05E9\u05DC {2}."
+      - "\u092A\u0941\u0937\u094D\u091F\u093F \u0915\u0930\u0947\u0902 \u0914\u0930
+        \u0916\u0947\u0932\u0947\u0902 \u092C\u091F\u0928 \u092A\u0930 \u091F\u0948\u092A
+        \u0915\u0930\u0915\u0947, \u0906\u092A \u092A\u0941\u0937\u094D\u091F\u093F
+        \u0915\u0930\u0924\u0947 \u0939\u0948\u0902 \u0915\u093F \u0906\u092A \u0915\u092E
+        \u0938\u0947 \u0915\u092E {3} \u0938\u093E\u0932 \u0915\u0947 \u0939\u0948\u0902
+        \u0914\u0930 \u0906\u092A\u0928\u0947 {2} \u0915\u0940 {0} \u0914\u0930 {1}
+        \u0915\u094B \u092A\u0922\u093C, \u0938\u092E\u091D \u0914\u0930 \u0938\u094D\u0935\u0940\u0915\u093E\u0930
+        \u0915\u0930 \u0932\u093F\u092F\u093E \u0939\u0948"
+      - "A Meger\u0151s\xEDt\xE9s \xE9s j\xE1t\xE9k gombra koppintva meger\u0151s\xEDted,
+        hogy elm\xFAlt\xE1l {3} \xE9ves, \xE9s elolvastad, meg\xE9rtetted \xE9s elfogadod
+        a {2} {0}\xE1t \xE9s {1}"
+      - Dengan mengetuk tombol Konfirmasikan dan Main, Anda mengonfirmasi bahwa Anda
+        berusia sedikitnya {3} tahun dan telah membaca, memahami, dan menyetujui
+        {0} dan {1} {2}
+      - Toccando il pulsante Conferma e gioca, confermi di avere almeno {3} anni
+        e di aver letto, compreso e accettato l'{0} e i {1} di {2}
+      - "\u300C\u78BA\u8A8D\u3057\u3066\u30D7\u30EC\u30A4\u3059\u308B\u300D\u30DC\u30BF\u30F3\u3092\u30BF\u30C3\u30D7\u3059\u308B\u3053\u3068\u3067\u3001\u3042\u306A\u305F\u306F{3}\u6B73\u4EE5\u4E0A\u3067\u3042\u308B\u3053\u3068\u3092\u78BA\u8A8D\u3057\u3001{2}\u306E{0}\u3068{1}\u3092\u8AAD\u307F\u3001\u7406\u89E3\u3057\u3001\u540C\u610F\u3057\u305F\u3053\u3068\u306B\u306A\u308A\u307E\u3059"
+      - "\uD655\uC778 \uBC0F \uD50C\uB808\uC774\uB97C \uB204\uB974\uBA74 \uBCF8\uC778\uC740
+        {3}\uC138 \uC774\uC0C1\uC774\uBA70, {2}\uC758 {0} \uBC0F {1}\uC744 \uC77D\uACE0
+        \uC774\uD574\uD588\uC73C\uBA70 \uC774\uC5D0 \uB3D9\uC758\uD569\uB2C8\uB2E4."
+      - Dengan mengetik butang Sahkan dan Main, anda mengesahkan bahawa anda berumur
+        sekurang-kurangnya {3} tahun dan telah membaca, memahami dan menerima {0}
+        dan {1} {2}
+      - "Ved \xE5 trykke p\xE5 Bekreft og spill-knappen, bekrefter du at du er minst
+        {3} \xE5r gammel og har lest, forst\xE5tt og godtar {0} and {1} of {2}."
+      - "Stukaj\u0105c przycisk \u201EPotwierd\u017A i zacznij gr\u0119\u201D, potwierdzasz,
+        \u017Ce masz co najmniej {3} lat, a tak\u017Ce zapozna\u0142e\u015B(-\u0142a\u015B)
+        si\u0119 z {1} i {0} {2} oraz rozumiesz je i akceptujesz."
+      - "Ao tocar no bot\xE3o Confirmar e jogar, voc\xEA confirma que tem pelo menos
+        {3} anos e j\xE1 leu, entendeu e aceitou os {1} e a {0} da {2}"
+      - "Ap\u0103s\xE2nd pe butoanele Confirm\u0103 \u015Fi Joac\u0103, confirmi
+        c\u0103 ai cel pu\u021Bin {3} ani \u015Fi c\u0103 ai citit, \xEEn\u021Beles
+        \u015Fi acceptat {0} \u015Fi {1} ai companiei {2}"
+      - "\u041D\u0430\u0436\u0438\u043C\u0430\u044F \xAB\u041F\u043E\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u044C
+        \u0438 \u043D\u0430\u0447\u0430\u0442\u044C\xBB, \u0432\u044B \u043F\u043E\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0430\u0435\u0442\u0435,
+        \u0447\u0442\u043E \u0432\u0430\u043C \u0438\u0441\u043F\u043E\u043B\u043D\u0438\u043B\u043E\u0441\u044C
+        {3} \u043B\u0435\u0442, \u0441\u043E\u0433\u043B\u0430\u0448\u0430\u0435\u0442\u0435\u0441\u044C
+        \u0441 {0} \u0438 \u043F\u0440\u0438\u043D\u0438\u043C\u0430\u0435\u0442\u0435
+        \u0443\u0441\u043B\u043E\u0432\u0438\u044F {1} {2}."
+      - 
+      - "Al tocar el bot\xF3n de Confirmar y jugar, confirmas que tienes al menos
+        {3} a\xF1os y que has le\xEDdo, entendido y aceptado la {0} y los {1} de
+        {2}"
+      - 
+      - "\u0E40\u0E21\u0E37\u0E48\u0E2D\u0E41\u0E15\u0E30\u0E1B\u0E38\u0E48\u0E21\u0E22\u0E37\u0E19\u0E22\u0E31\u0E19\u0E41\u0E25\u0E30\u0E40\u0E25\u0E48\u0E19\u0E08\u0E30\u0E40\u0E1B\u0E47\u0E19\u0E01\u0E32\u0E23\u0E22\u0E37\u0E19\u0E22\u0E31\u0E19\u0E27\u0E48\u0E32\u0E04\u0E38\u0E13\u0E21\u0E35\u0E2D\u0E32\u0E22\u0E38\u0E21\u0E32\u0E01\u0E01\u0E27\u0E48\u0E32
+        {3} \u0E1B\u0E35\u0E41\u0E25\u0E30\u0E44\u0E14\u0E49\u0E2D\u0E48\u0E32\u0E19
+        \u0E17\u0E33\u0E04\u0E27\u0E32\u0E21\u0E40\u0E02\u0E49\u0E32\u0E43\u0E08\u0E41\u0E25\u0E30\u0E22\u0E2D\u0E21\u0E23\u0E31\u0E1A{1}\u0E41\u0E25\u0E30{0}\u0E02\u0E2D\u0E07
+        {2}"
+      - "Onayla ve Oyna butonuna basarak en az {3} ya\u015F\u0131nda oldu\u011Funuzu
+        ve {2}'in {0}n\u0131 ve {1}n\u0131 okudu\u011Funuzu, anlad\u0131\u011F\u0131n\u0131z\u0131
+        ve kabul etti\u011Finizi onaylam\u0131\u015F olursunuz"
+      - "\u041D\u0430\u0442\u0438\u0441\u043D\u0443\u0432\u0448\u0438 \xAB\u041F\u0456\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u0438
+        \u0442\u0430 \u0433\u0440\u0430\u0442\u0438\xBB, \u0432\u0438 \u043F\u0456\u0434\u0442\u0432\u0435\u0440\u0434\u0436\u0443\u0454\u0442\u0435,
+        \u0449\u043E \u0432\u0430\u043C \u043D\u0435 \u043C\u0435\u043D\u0448\u0435
+        {3} \u0440\u043E\u043A\u0456\u0432 \u0456 \u0432\u0438 \u043E\u0437\u043D\u0430\u0439\u043E\u043C\u0438\u043B\u0438\u0441\u044F,
+        \u0437\u0440\u043E\u0437\u0443\u043C\u0456\u043B\u0438 \u0442\u0430 \u043F\u0440\u0438\u0439\u043D\u044F\u043B\u0438
+        {0} \u0442\u0430 {1} {2}"
+      - "\u062A\u0635\u062F\u06CC\u0642 \u06A9\u0631\u06CC\u06BA \u0627\u0648\u0631
+        \u06A9\u06BE\u06CC\u0644\u06CC\u06BA \u06A9\u06D2 \u0628\u0679\u0646 \u067E\u0631
+        \u0679\u06CC\u067E \u06A9\u0631\u0646\u06D2 \u0633\u06D2 \u0622\u067E \u062A\u0635\u062F\u06CC\u0642
+        \u06A9\u0631\u062A\u06D2 \u06C1\u06CC\u06BA \u06A9\u06C1 \u0622\u067E \u06A9\u06CC
+        \u0639\u0645\u0631 \u06A9\u0645 \u0627\u0632 \u06A9\u0645 {3} \u0633\u0627\u0644
+        \u06C1\u06D2 \u0627\u0648\u0631 \u0622\u067E \u0646\u06D2 {2} \u06A9\u06CC
+        {0} \u0627\u0648\u0631 {1} \u06A9\u0648 \u067E\u0691\u06BE \u0627\u0648\u0631
+        \u0633\u0645\u062C\u06BE \u06A9\u0631 \u0642\u0628\u0648\u0644 \u06A9\u0631
+        \u0644\u06CC\u0627 \u06C1\u06D2\u06D4"
+      - "B\u1EB1ng c\xE1ch nh\u1EA5n v\xE0o n\xFAt X\xE1c nh\u1EADn v\xE0 ch\u01A1i,
+        b\u1EA1n x\xE1c nh\u1EADn r\u1EB1ng b\u1EA1n \u0111\u01B0\u1EE3c \xEDt nh\u1EA5t
+        {3} tu\u1ED5i v\xE0 \u0111\xE3 \u0111\u1ECDc, hi\u1EC3u v\xE0 ch\u1EA5p nh\u1EADn
+        {0} v\xE0 {1} c\u1EE7a {2}"
+    - m_keys:
+      - en
+      - ar
+      - zh-Hans
+      - zh-HK
+      - hr
+      - da
+      - nl
+      - fil
+      - fi
+      - fr
+      - de
+      - el
+      - he
+      - hi
+      - hu
+      - id
+      - it
+      - ja
+      - ko
+      - ms
+      - no
+      - pl
+      - pt
+      - ro
+      - ru
+      - sr
+      - es
+      - sv
+      - th
+      - tr
+      - uk
+      - ur
+      - vi
+      m_values:
+      - Confirm and Play
+      - "\u0627\u0644\u062A\u0623\u0643\u064A\u062F \u0648\u0627\u0644\u0644\u0639\u0628"
+      - "\u786E\u8BA4\u5E76\u6E38\u73A9"
+      - "\u78BA\u8A8D\u4E26\u958B\u59CB\u73A9\u904A\u6232"
+      - Potvrdi i igraj
+      - "Bekr\xE6ft og spil"
+      - Bevestigen en spelen
+      - Kumpirmahin at Maglaro
+      - 
+      - Confirmer et jouer
+      - "Best\xE4tigen und spielen"
+      - "\u0395\u03C0\u03B9\u03B2\u03B5\u03B2\u03B1\u03AF\u03C9\u03C3\u03B5 \u03BA\u03B1\u03B9
+        \u03C0\u03B1\u03AF\u03BE\u03B5"
+      - "\u05D0\u05E9\u05E8\u05D5 \u05D5\u05E9\u05D7\u05E7\u05D5"
+      - "\u092A\u0941\u0937\u094D\u091F\u093F \u0915\u0930\u0947\u0902 \u0914\u0930
+        \u0916\u0947\u0932\u0947\u0902"
+      - "Meger\u0151s\xEDt\xE9s \xE9s j\xE1t\xE9k"
+      - Konfirmasikan dan Main
+      - Conferma e gioca
+      - "\u78BA\u8A8D\u3057\u3066\u30D7\u30EC\u30A4\u3059\u308B"
+      - "\uD655\uC778 \uBC0F \uD50C\uB808\uC774"
+      - Sahkan dan Main
+      - Bekreft og spill
+      - "Potwierd\u017A i zacznij gr\u0119"
+      - Confirmar e jogar
+      - "Confirm\u0103 \u015Fi joac\u0103"
+      - "\u041F\u043E\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u044C \u0438
+        \u043D\u0430\u0447\u0430\u0442\u044C"
+      - 
+      - Confirmar y jugar
+      - 
+      - "\u0E22\u0E37\u0E19\u0E22\u0E31\u0E19\u0E41\u0E25\u0E30\u0E40\u0E25\u0E48\u0E19"
+      - Onayla ve Oyna
+      - "\u041F\u0456\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u0438 \u0442\u0430
+        \u0433\u0440\u0430\u0442\u0438"
+      - "\u062A\u0635\u062F\u06CC\u0642 \u06A9\u0631\u06CC\u06BA \u0627\u0648\u0631
+        \u06A9\u06BE\u06CC\u0644\u06CC\u06BA"
+      - "X\xE1c nh\u1EADn v\xE0 ch\u01A1i"
+    - m_keys:
+      - en
+      - ar
+      - zh-Hans
+      - zh-HK
+      - hr
+      - da
+      - nl
+      - fil
+      - fi
+      - fr
+      - de
+      - el
+      - he
+      - hi
+      - hu
+      - id
+      - it
+      - ja
+      - ko
+      - ms
+      - no
+      - pl
+      - pt
+      - ro
+      - ru
+      - sr
+      - es
+      - sv
+      - th
+      - tr
+      - uk
+      - ur
+      - vi
+      m_values:
+      - Privacy Policy
+      - "\u0633\u064A\u0627\u0633\u0629 \u0627\u0644\u062E\u0635\u0648\u0635\u064A\u0629"
+      - "\u9690\u79C1\u653F\u7B56"
+      - "\u96B1\u79C1\u6B0A\u653F\u7B56"
+      - "Pravila o za\u0161titi privatnosti"
+      - Privatlivspolitik
+      - Privacybeleid
+      - Patakaran sa Privacy
+      - 
+      - "Politique de confidentialit\xE9"
+      - "Datenschutzerkl\xE4rung"
+      - "\u03A0\u03BF\u03BB\u03B9\u03C4\u03B9\u03BA\u03AE \u03B1\u03C0\u03BF\u03C1\u03C1\u03AE\u03C4\u03BF\u03C5"
+      - "\u05DE\u05D3\u05D9\u05E0\u05D9\u05D5\u05EA \u05E4\u05E8\u05D8\u05D9\u05D5\u05EA"
+      - "\u0928\u093F\u091C\u0924\u093E \u0928\u0940\u0924\u093F"
+      - "Adatv\xE9delmi szab\xE1lyzat"
+      - Kebijakan Privasi
+      - Informativa sulla privacy
+      - "\u30D7\u30E9\u30A4\u30D0\u30B7\u30FC\u30DD\u30EA\u30B7\u30FC"
+      - "\uAC1C\uC778\uC815\uBCF4 \uCC98\uB9AC\uBC29\uCE68"
+      - Dasar Privasi
+      - Personvernsforskrifter
+      - "Polityka prywatno\u015Bci"
+      - "Pol\xEDtica de Privacidade"
+      - "Politica de confiden\u021Bialitate"
+      - "\u041F\u043E\u043B\u0438\u0442\u0438\u043A\u0430 \u043A\u043E\u043D\u0444\u0438\u0434\u0435\u043D\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u0438"
+      - 
+      - "Pol\xEDtica de privacidad"
+      - 
+      - "\u0E19\u0E42\u0E22\u0E1A\u0E32\u0E22\u0E04\u0E27\u0E32\u0E21\u0E40\u0E1B\u0E47\u0E19\u0E2A\u0E48\u0E27\u0E19\u0E15\u0E31\u0E27"
+      - "Gizlilik Politikas\u0131"
+      - "\u041F\u043E\u043B\u0456\u0442\u0438\u043A\u0430 \u043A\u043E\u043D\u0444\u0456\u0434\u0435\u043D\u0446\u0456\u0439\u043D\u043E\u0441\u0442\u0456"
+      - "\u0631\u0627\u0632\u062F\u0627\u0631\u06CC \u06A9\u06CC \u067E\u0627\u0644\u06CC\u0633\u06CC"
+      - "Ch\xEDnh s\xE1ch Quy\u1EC1n ri\xEAng t\u01B0"
+    - m_keys:
+      - en
+      - ar
+      - zh-Hans
+      - zh-HK
+      - hr
+      - da
+      - nl
+      - fil
+      - fi
+      - fr
+      - de
+      - el
+      - he
+      - hi
+      - hu
+      - id
+      - it
+      - ja
+      - ko
+      - ms
+      - no
+      - pl
+      - pt
+      - ro
+      - ru
+      - sr
+      - es
+      - sv
+      - th
+      - tr
+      - uk
+      - ur
+      - vi
+      m_values:
+      - Terms of Service
+      - "\u0634\u0631\u0648\u0637 \u0627\u0644\u062E\u062F\u0645\u0629"
+      - "\u670D\u52A1\u6761\u6B3E"
+      - "\u670D\u52D9\u689D\u6B3E"
+      - "Uvjeti pru\u017Eanja usluge"
+      - "Servicevilk\xE5r"
+      - Algemene voorwaarden
+      - Mga Tuntunin ng Serbisyo
+      - 
+      - Conditions d'utilisation
+      - Nutzungsbedingungen
+      - "\u038C\u03C1\u03BF\u03B9 \u03C7\u03C1\u03AE\u03C3\u03B7\u03C2"
+      - "\u05EA\u05E0\u05D0\u05D9 \u05E9\u05D9\u05E8\u05D5\u05EA"
+      - "\u0938\u0947\u0935\u093E \u0915\u0940 \u0936\u0930\u094D\u0924\u0947\u0902"
+      - "Szolg\xE1ltat\xE1si felt\xE9telek"
+      - Persyaratan Layanan
+      - Termini di servizio
+      - "\u5229\u7528\u898F\u7D04"
+      - "\uC11C\uBE44\uC2A4 \uC57D\uAD00"
+      - Terma Perkhidmatan
+      - "Tjenestevilk\xE5r"
+      - "Warunki \u015Bwiadczenia us\u0142ug"
+      - "Termos de Servi\xE7o"
+      - Termenii de utilizare
+      - "\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\u0441\u043A\u043E\u0435
+        \u0441\u043E\u0433\u043B\u0430\u0448\u0435\u043D\u0438\u0435"
+      - 
+      - "T\xE9rminos de servicio"
+      - 
+      - "\u0E40\u0E07\u0E37\u0E48\u0E2D\u0E19\u0E44\u0E02\u0E01\u0E32\u0E23\u0E43\u0E0A\u0E49\u0E1A\u0E23\u0E34\u0E01\u0E32\u0E23"
+      - "Hizmet \u015Eartlar\u0131"
+      - "\u0423\u043C\u043E\u0432\u0438 \u043E\u0431\u0441\u043B\u0443\u0433\u043E\u0432\u0443\u0432\u0430\u043D\u043D\u044F"
+      - "\u062E\u062F\u0645\u062A \u06A9\u06CC \u0634\u0631\u0627\u0626\u0637"
+      - "\u0110i\u1EC1u kho\u1EA3n D\u1ECBch v\u1EE5"
+    - m_keys:
+      - en
+      - ar
+      - zh-Hans
+      - zh-HK
+      - hr
+      - da
+      - nl
+      - fil
+      - fi
+      - fr
+      - de
+      - el
+      - he
+      - hi
+      - hu
+      - id
+      - it
+      - ja
+      - ko
+      - ms
+      - no
+      - pl
+      - pt
+      - ro
+      - ru
+      - sr
+      - es
+      - sv
+      - th
+      - tr
+      - uk
+      - ur
+      - vi
+      m_values:
+      - Thanks for downloading
+      - "\u0634\u0643\u0631\u064B\u0627 \u0639\u0644\u0649 \u0627\u0644\u062A\u0646\u0632\u064A\u0644"
+      - "\u611F\u8C22\u4E0B\u8F7D"
+      - "\u611F\u8B1D\u4E0B\u8F09"
+      - "Hvala \u0161to ste preuzeli"
+      - Tak for at downloade
+      - Bedankt voor het downloaden
+      - Salamat sa pag-download
+      - 
+      - "Merci d'avoir t\xE9l\xE9charg\xE9"
+      - "Danke f\xFCrs Herunterladen"
+      - "\u03A3\u03B5 \u03B5\u03C5\u03C7\u03B1\u03C1\u03B9\u03C3\u03C4\u03BF\u03CD\u03BC\u03B5
+        \u03C0\u03BF\u03C5 \u03BA\u03B1\u03C4\u03AD\u03B2\u03B1\u03C3\u03B5\u03C2
+        \u03C4\u03BF \u03C0\u03B1\u03B9\u03C7\u03BD\u03AF\u03B4\u03B9 \u03BC\u03B1\u03C2"
+      - "\u05EA\u05D5\u05D3\u05D4 \u05E9\u05D4\u05D5\u05E8\u05D3\u05EA\u05DD"
+      - "\u0921\u093E\u0909\u0928\u0932\u094B\u0921 \u0915\u0930\u0928\u0947 \u0915\u0947
+        \u0932\u093F\u090F \u0936\u0941\u0915\u094D\u0930\u093F\u092F\u093E"
+      - "K\xF6sz\xF6nj\xFCk a let\xF6lt\xE9st"
+      - Terima kasih telah mengunduh
+      - Grazie per il download
+      - "\u30C0\u30A6\u30F3\u30ED\u30FC\u30C9\u3057\u3066\u304F\u308C\u3066\u3042\u308A\u304C\u3068\u3046"
+      - "\uB2E4\uC6B4\uB85C\uB4DC\uD574\uC8FC\uC154\uC11C \uAC10\uC0AC\uD569\uB2C8\uB2E4"
+      - Terima kasih kerana memuat turun
+      - Takk for nedlastingen
+      - "Dzi\u0119kujemy za pobranie"
+      - Agradecemos o download
+      - "\xCE\u021Bi mul\u021Bumim pentru desc\u0103rcare"
+      - "\u0421\u043F\u0430\u0441\u0438\u0431\u043E \u0437\u0430 \u043F\u043E\u0434\u0434\u0435\u0440\u0436\u043A\u0443"
+      - 
+      - Gracias por descargar
+      - 
+      - "\u0E02\u0E2D\u0E1A\u0E04\u0E38\u0E13\u0E2A\u0E33\u0E2B\u0E23\u0E31\u0E1A\u0E01\u0E32\u0E23\u0E14\u0E32\u0E27\u0E19\u0E4C\u0E42\u0E2B\u0E25\u0E14"
+      - "\u0130ndirdi\u011Finiz i\xE7in te\u015Fekk\xFCrler"
+      - "\u0414\u044F\u043A\u0443\u0454\u043C\u043E, \u0449\u043E \u0437\u0430\u0432\u0430\u043D\u0442\u0430\u0436\u0438\u043B\u0438"
+      - "\u0688\u0627\u0624\u0646\u0644\u0648\u0688 \u06A9\u0631\u0646\u06D2 \u06A9\u0627
+        \u0634\u06A9\u0631\u06CC\u06C1"
+      - "C\u1EA3m \u01A1n b\u1EA1n \u0111\xE3 t\u1EA3i v\u1EC1"
+    - m_keys:
+      - en
+      - ar
+      - zh-Hans
+      - zh-HK
+      - hr
+      - da
+      - nl
+      - fil
+      - fi
+      - fr
+      - de
+      - el
+      - he
+      - hi
+      - hu
+      - id
+      - it
+      - ja
+      - ko
+      - ms
+      - no
+      - pl
+      - pt
+      - ro
+      - ru
+      - sr
+      - es
+      - sv
+      - th
+      - tr
+      - uk
+      - ur
+      - vi
+      m_values:
+      - Privacy Policy
+      - "\u0633\u064A\u0627\u0633\u0629 \u0627\u0644\u062E\u0635\u0648\u0635\u064A\u0629"
+      - "\u9690\u79C1\u653F\u7B56"
+      - "\u96B1\u79C1\u6B0A\u653F\u7B56"
+      - "Pravila o za\u0161titi privatnosti"
+      - Privatlivspolitik
+      - Privacybeleid
+      - Patakaran sa Privacy
+      - 
+      - "Politique de confidentialit\xE9"
+      - "Datenschutzerkl\xE4rung"
+      - "\u03A0\u03BF\u03BB\u03B9\u03C4\u03B9\u03BA\u03AE \u03B1\u03C0\u03BF\u03C1\u03C1\u03AE\u03C4\u03BF\u03C5"
+      - "\u05DE\u05D3\u05D9\u05E0\u05D9\u05D5\u05EA \u05D4\u05E4\u05E8\u05D8\u05D9\u05D5\u05EA"
+      - "\u0928\u093F\u091C\u0924\u093E \u0928\u0940\u0924\u093F"
+      - "Adatv\xE9delmi szab\xE1lyzat"
+      - Kebijakan Privasi
+      - Informativa sulla privacy
+      - "\u30D7\u30E9\u30A4\u30D0\u30B7\u30FC\u30DD\u30EA\u30B7\u30FC"
+      - "\uAC1C\uC778\uC815\uBCF4 \uCC98\uB9AC\uBC29\uCE68"
+      - Dasar Privasi
+      - Personvernsforskrifter
+      - "Polityk\u0105 prywatno\u015Bci"
+      - "Pol\xEDtica de Privacidade"
+      - "Politica de confiden\u021Bialitate"
+      - "\u041F\u043E\u043B\u0438\u0442\u0438\u043A\u043E\u0439 \u043A\u043E\u043D\u0444\u0438\u0434\u0435\u043D\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u0438"
+      - 
+      - "Pol\xEDtica de privacidad"
+      - 
+      - "\u0E19\u0E42\u0E22\u0E1A\u0E32\u0E22\u0E04\u0E27\u0E32\u0E21\u0E40\u0E1B\u0E47\u0E19\u0E2A\u0E48\u0E27\u0E19\u0E15\u0E31\u0E27"
+      - "Gizlilik Politikas\u0131"
+      - "\u041F\u043E\u043B\u0456\u0442\u0438\u043A\u0443 \u043A\u043E\u043D\u0444\u0456\u0434\u0435\u043D\u0446\u0456\u0439\u043D\u043E\u0441\u0442\u0456"
+      - "\u0631\u0627\u0632\u062F\u0627\u0631\u06CC \u06A9\u06CC \u067E\u0627\u0644\u06CC\u0633\u06CC"
+      - "Ch\xEDnh s\xE1ch Quy\u1EC1n ri\xEAng t\u01B0"
+    - m_keys:
+      - en
+      - ar
+      - zh-Hans
+      - zh-HK
+      - hr
+      - da
+      - nl
+      - fil
+      - fi
+      - fr
+      - de
+      - el
+      - he
+      - hi
+      - hu
+      - id
+      - it
+      - ja
+      - ko
+      - ms
+      - no
+      - pl
+      - pt
+      - ro
+      - ru
+      - sr
+      - es
+      - sv
+      - th
+      - tr
+      - uk
+      - ur
+      - vi
+      m_values:
+      - Terms of Service
+      - "\u0634\u0631\u0648\u0637 \u0627\u0644\u062E\u062F\u0645\u0629"
+      - "\u670D\u52A1\u6761\u6B3E"
+      - "\u670D\u52D9\u689D\u6B3E"
+      - "Uvjete pru\u017Eanja usluge"
+      - "Servicevilk\xE5r"
+      - Algemene voorwaarden
+      - Mga Tuntunin ng Serbisyo
+      - 
+      - Conditions d'utilisation
+      - Nutzungsbedingungen
+      - "\u038C\u03C1\u03BF\u03C5\u03C2 \u03C7\u03C1\u03AE\u03C3\u03B7\u03C2"
+      - "\u05D5\u05EA\u05E0\u05D0\u05D9 \u05D4\u05E9\u05D9\u05E8\u05D5\u05EA"
+      - "\u0938\u0947\u0935\u093E \u0915\u0940 \u0936\u0930\u094D\u0924\u094B\u0902"
+      - "Szolg\xE1ltat\xE1si felt\xE9teleit"
+      - Persyaratan Layanan
+      - Termini di servizio
+      - "\u5229\u7528\u898F\u7D04"
+      - "\uC11C\uBE44\uC2A4 \uC57D\uAD00"
+      - Terma Perkhidmatan
+      - "Tjenestevilk\xE5r"
+      - "Warunkami \u015Bwiadczenia us\u0142ug"
+      - "Termos de Servi\xE7o"
+      - Termenii de utilizare
+      - "\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\u0441\u043A\u043E\u0433\u043E
+        \u0441\u043E\u0433\u043B\u0430\u0448\u0435\u043D\u0438\u044F"
+      - 
+      - "T\xE9rminos de servicio"
+      - 
+      - "\u0E40\u0E07\u0E37\u0E48\u0E2D\u0E19\u0E44\u0E02\u0E01\u0E32\u0E23\u0E43\u0E0A\u0E49\u0E1A\u0E23\u0E34\u0E01\u0E32\u0E23"
+      - "Hizmet \u015Eartlar\u0131"
+      - "\u0423\u043C\u043E\u0432\u0438 \u043E\u0431\u0441\u043B\u0443\u0433\u043E\u0432\u0443\u0432\u0430\u043D\u043D\u044F"
+      - "\u062E\u062F\u0645\u062A \u06A9\u06CC \u0634\u0631\u0627\u0626\u0637"
+      - "\u0110i\u1EC1u kho\u1EA3n D\u1ECBch v\u1EE5"
+    - m_keys:
+      - en
+      - ar
+      - zh-Hans
+      - zh-HK
+      - hr
+      - da
+      - nl
+      - fil
+      - fi
+      - fr
+      - de
+      - el
+      - he
+      - hi
+      - hu
+      - id
+      - it
+      - ja
+      - ko
+      - ms
+      - no
+      - pl
+      - pt
+      - ro
+      - ru
+      - sr
+      - es
+      - sv
+      - th
+      - tr
+      - uk
+      - ur
+      - vi
+      m_values:
+      - Please press "OK" to agree and start using our app.
+      - "\u064A\u064F\u0631\u062C\u0649 \u0627\u0644\u0636\u063A\u0637 \u0639\u0644\u0649
+        \"\u0645\u0648\u0627\u0641\u0642\" \u0644\u0644\u0642\u0628\u0648\u0644 \u0648\u0627\u0644\u0628\u062F\u0621
+        \u0641\u064A \u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u062A\u0637\u0628\u064A\u0642\u0646\u0627."
+      - "\u8BF7\u6309\u201C\u786E\u5B9A\u201D\u540C\u610F\u5E76\u5F00\u59CB\u4F7F\u7528\u6211\u4EEC\u7684\u5E94\u7528\u3002"
+      - "\u8ACB\u6309\u300C\u78BA\u5B9A\u300D\u540C\u610F\u4E26\u958B\u59CB\u4F7F\u7528\u6211\u5011\u7684\u61C9\u7528\u7A0B\u5F0F\u3002"
+      - 
+      - 
+      - "Druk op Ok\xE9 om akkoord te gaan en onze app te gebruiken."
+      - 
+      - 
+      - "Appuyez sur \xAB\_OK\_\xBB et commencez \xE0 utiliser notre appli."
+      - "Bitte dr\xFCcke \u201EOK\u201C, um zuzustimmen und unsere App zu nutzen."
+      - "\u03A0\u03AC\u03C4\u03B7\u03C3\u03B5 \xABOK\xBB \u03B3\u03B9\u03B1 \u03BD\u03B1
+        \u03C3\u03C5\u03BC\u03C6\u03C9\u03BD\u03AE\u03C3\u03B5\u03B9\u03C2 \u03BA\u03B1\u03B9
+        \u03BD\u03B1 \u03B1\u03C1\u03C7\u03AF\u03C3\u03B5\u03B9\u03C2 \u03BD\u03B1
+        \u03C7\u03C1\u03B7\u03C3\u03B9\u03BC\u03BF\u03C0\u03BF\u03B9\u03B5\u03AF\u03C2
+        \u03C4\u03B7\u03BD \u03B5\u03C6\u03B1\u03C1\u03BC\u03BF\u03B3\u03AE \u03BC\u03B1\u03C2."
+      - "\u05E0\u05D0 \u05DC\u05D7\u05E6\u05D5 \u05E2\u05DC \"\u05D0\u05D9\u05E9\u05D5\u05E8\"
+        \u05DB\u05D3\u05D9 \u05DC\u05D4\u05E1\u05DB\u05D9\u05DD \u05D5\u05D4\u05EA\u05D7\u05D9\u05DC\u05D5
+        \u05DC\u05D4\u05E9\u05EA\u05DE\u05E9 \u05D1\u05D0\u05E4\u05DC\u05D9\u05E7\u05E6\u05D9\u05D4."
+      - "\u0938\u0939\u092E\u0924 \u0939\u094B\u0928\u0947 \u0914\u0930 \u0939\u092E\u093E\u0930\u0947
+        \u0910\u092A \u0915\u093E \u0909\u092A\u092F\u094B\u0917 \u0936\u0941\u0930\u0942
+        \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u0915\u0943\u092A\u092F\u093E
+        \"\u0920\u0940\u0915 \u0939\u0948\" \u0926\u092C\u093E\u090F\u0902."
+      - 
+      - Silakan tekan "Oke" untuk menyetujui dan mulai menggunakan aplikasi kami.
+      - Premi OK per accettare e iniziare a usare l'app.
+      - "\u300COK\u300D\u3092\u62BC\u3057\u3066\u540C\u610F\u3057\u3001\u30A2\u30D7\u30EA\u306E\u4F7F\u7528\u3092\u958B\u59CB\u3057\u3066\u304F\u3060\u3055\u3044\u3002"
+      - "\"\uD655\uC778\"\uC744 \uB204\uB974\uBA74 \uB3D9\uC758\uD558\uACE0 \uC571\uC744
+        \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+      - Sila tekan "OK" untuk bersetuju dan menggunakan aplikasi kami.
+      - 
+      - "Naci\u015Bnij przycisk OK, aby wyrazi\u0107 zgod\u0119 i zacz\u0105\u0107
+        korzysta\u0107 z aplikacji."
+      - "Aperte \"OK\" para concordar e come\xE7ar a usar nosso aplicativo."
+      - 
+      - "\u041D\u0430\u0436\u043C\u0438 \xAB\u041E\u041A\xBB, \u0447\u0442\u043E\u0431\u044B
+        \u043F\u0440\u0438\u043D\u044F\u0442\u044C \u0438 \u043D\u0430\u0447\u0430\u0442\u044C
+        \u0438\u0433\u0440\u0430\u0442\u044C."
+      - 
+      - "Pulsa \"Aceptar\" para aceptar y empezar a usar nuestra aplicaci\xF3n."
+      - 
+      - "\u0E01\u0E14 \"\u0E15\u0E01\u0E25\u0E07\" \u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E22\u0E2D\u0E21\u0E23\u0E31\u0E1A\u0E41\u0E25\u0E49\u0E27\u0E40\u0E23\u0E34\u0E48\u0E21\u0E43\u0E0A\u0E49\u0E07\u0E32\u0E19\u0E41\u0E2D\u0E1B"
+      - "Kabul etmek i\xE7in \"Tamam\"a bas ve uygulamam\u0131z\u0131 kullanmaya
+        ba\u015Fla."
+      - 
+      - 
+      - "Vui l\xF2ng nh\u1EA5n \"OK\" \u0111\u1EC3 \u0111\u1ED3ng \xFD v\xE0 b\u1EAFt
+        \u0111\u1EA7u d\xF9ng \u1EE9ng d\u1EE5ng c\u1EE7a ch\xFAng t\xF4i."
+    - m_keys:
+      - en
+      - ar
+      - zh-Hans
+      - zh-HK
+      - hr
+      - da
+      - nl
+      - fil
+      - fi
+      - fr
+      - de
+      - el
+      - he
+      - hi
+      - hu
+      - id
+      - it
+      - ja
+      - ko
+      - ms
+      - no
+      - pl
+      - pt
+      - ro
+      - ru
+      - sr
+      - es
+      - sv
+      - th
+      - tr
+      - uk
+      - ur
+      - vi
+      m_values:
+      - To use "{0}" please agree to our {1} and {2}. User privacy is important to
+        us.
+      - "\u0639\u0644\u064A\u0643 \u0642\u0628\u0648\u0644 {1} \u0648{2} \u0644\u0644\u062A\u0645\u0643\u0646
+        \u0645\u0646 \u0627\u0633\u062A\u062E\u062F\u0627\u0645 \"{0}\". \u062E\u0635\u0648\u0635\u064A\u0629
+        \u0627\u0644\u0645\u0633\u062A\u062E\u062F\u0645 \u062A\u0647\u0645\u0646\u0627."
+      - "\u82E5\u8981\u4F7F\u7528\u201C{0}\u201D\uFF0C\u5FC5\u987B\u540C\u610F\u6211\u4EEC\u7684\u300A{1}\u300B\u548C\u300A{2}\u300B\u3002\u6211\u4EEC\u975E\u5E38\u91CD\u89C6\u7528\u6237\u7684\u9690\u79C1\u3002"
+      - "\u8981\u4F7F\u7528\u300C{0}\u300D\uFF0C\u60A8\u5FC5\u9808\u540C\u610F\u6211\u5011\u7684{1}\u548C{2}\u3002\u4F7F\u7528\u8005\u96B1\u79C1\u5C0D\u6211\u5011\u4F86\u8AAA\u81F3\u95DC\u91CD\u8981\u3002"
+      - 
+      - 
+      - Als je '{0}' wilt spelen, moet je akkoord gaan met ons {1} en onze {2}. We
+        vinden privacy van onze spelers erg belangrijk.
+      - 
+      - 
+      - "Afin d'utiliser \xAB\_{0}\_\xBB, vous devez accepter notre {1} et nos {2}.
+        La confidentialit\xE9 de nos utilisateurs nous importe."
+      - "Um \u201E{0}\u201C zu nutzen, musst du unserer {1} und unseren {2} zustimmen.
+        Die Privatsph\xE4re der Nutzer ist uns wichtig."
+      - "\u0393\u03B9\u03B1 \u03BD\u03B1 \u03C7\u03C1\u03B7\u03C3\u03B9\u03BC\u03BF\u03C0\u03BF\u03B9\u03AE\u03C3\u03B5\u03B9\u03C2
+        \u03C4\u03BF \xAB{0}\xBB, \u03C0\u03C1\u03AD\u03C0\u03B5\u03B9 \u03BD\u03B1
+        \u03C3\u03C5\u03BC\u03C6\u03C9\u03BD\u03AE\u03C3\u03B5\u03B9\u03C2 \u03BC\u03B5
+        \u03CC\u03C4\u03B9 \u03C0\u03C1\u03BF\u03B2\u03BB\u03AD\u03C0\u03BF\u03C5\u03BD
+        \u03B7 {1} \u03BA\u03B1\u03B9 \u03BF\u03B9 {2} \u03BC\u03B1\u03C2. \u03A4\u03BF
+        \u03B1\u03C0\u03CC\u03C1\u03C1\u03B7\u03C4\u03BF \u03C4\u03C9\u03BD \u03C7\u03C1\u03B7\u03C3\u03C4\u03CE\u03BD
+        \u03B5\u03AF\u03BD\u03B1\u03B9 \u03C3\u03B7\u03BC\u03B1\u03BD\u03C4\u03B9\u03BA\u03CC
+        \u03B3\u03B9\u03B1 \u03B5\u03BC\u03AC\u03C2!"
+      - "\u05DB\u05D3\u05D9 \u05DC\u05D4\u05E9\u05EA\u05DE\u05E9 \u05D1-{0} \u05D9\u05E9
+        \u05DC\u05D4\u05E1\u05DB\u05D9\u05DD \u05DC-{1} \u05D5\u05DC-{2} \u05E9\u05DC\u05E0\u05D5.
+        \u05E4\u05E8\u05D8\u05D9\u05D5\u05EA \u05D4\u05DE\u05E9\u05EA\u05DE\u05E9
+        \u05D7\u05E9\u05D5\u05D1\u05D4 \u05DC\u05E0\u05D5 \u05DE\u05D0\u05D5\u05D3."
+      - "\"{0}\" \u0915\u093E \u0909\u092A\u092F\u094B\u0917 \u0915\u0930\u0928\u0947
+        \u0915\u0947 \u0932\u093F\u090F \u0906\u092A\u0915\u094B \u0939\u092E\u093E\u0930\u0940
+        {1} \u0914\u0930 {2} \u0938\u0947 \u0938\u0939\u092E\u0924 \u0939\u094B\u0928\u093E
+        \u0939\u094B\u0917\u093E. \u092F\u0942\u095B\u0930 \u0915\u0940 \u0928\u093F\u091C\u0924\u093E
+        \u0939\u092E\u093E\u0930\u0947 \u0932\u093F\u090F \u092E\u0939\u0924\u094D\u0935\u092A\u0942\u0930\u094D\u0923
+        \u0939\u0948."
+      - "A(z) \u201E{0}\u201D j\xE1t\xE9k haszn\xE1lat\xE1hoz el kell fogadnod ezeket:
+        {1} \xE9s {2}. Felhaszn\xE1l\xF3ink adatainak v\xE9delme fontos a sz\xE1munkra."
+      - Untuk menggunakan "{0}", Anda harus menyetujui {1} dan {2} kami. Privasi
+        pengguna penting bagi kami.
+      - Per usare {0}, devi accettare {1} e {2}. Abbiamo a cuore la privacy degli
+        utenti.
+      - "\u300E{0}\u300F\u3092\u30D7\u30EC\u30A4\u3059\u308B\u306B\u306F\u3001{1}\u3068{2}\u306B\u540C\u610F\u3059\u308B\u5FC5\u8981\u304C\u3042\u308A\u307E\u3059\u3002\u5F0A\u793E\u306B\u3068\u3063\u3066\u30E6\u30FC\u30B6\u30FC\u30D7\u30E9\u30A4\u30D0\u30B7\u30FC\u306F\u91CD\u8981\u306A\u3082\u306E\u3067\u3059\u3002"
+      - "\"{0}\" \uC0AC\uC6A9\uC744 \uC704\uD574 {1} \uBC0F {2} \uB3D9\uC758\uAC00
+        \uD544\uC694\uD569\uB2C8\uB2E4. \uC6B0\uB9AC\uB294 \uC0AC\uC6A9\uC790\uC758
+        \uAC1C\uC778\uC815\uBCF4\uB97C \uC911\uC2DC\uD569\uB2C8\uB2E4."
+      - Untuk menggunakan "{0}" anda perlu bersetuju dengan {1} dan {2} kami. Privasi
+        pengguna amat penting buat kami.
+      - 
+      - "Aby zagra\u0107 w \u201E{0}\u201D musisz przedtem wyrazi\u0107 zgod\u0119
+        na postanowienia dokument\xF3w {1} i {2}. Prywatno\u015B\u0107 u\u017Cytkownik\xF3w
+        jest dla na wa\u017Cna."
+      - "Para usar \"{0}\", voc\xEA precisa concordar com nossa {1} e {2}. A privacidade
+        dos usu\xE1rios \xE9 importante para n\xF3s."
+      - "Pentru a folosi \u201E{0}\u201D, trebuie s\u0103 accep\u021Bi mai \xEEnt\xE2i
+        {1} \u0219i {2}. Confiden\u021Bialitatea utilizatorilor este important\u0103
+        pentru noi."
+      - "\u0427\u0442\u043E\u0431\u044B \u0438\u0433\u0440\u0430\u0442\u044C \u0432
+        {0}, \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E \u043F\u0440\u0438\u043D\u044F\u0442\u044C
+        \u043D\u0430\u0448\u0438 \u0443\u0441\u043B\u043E\u0432\u0438\u044F: {1}
+        \u0438 {2}. \u041C\u044B \u0446\u0435\u043D\u0438\u043C \u0442\u0432\u043E\u044E
+        \u043A\u043E\u043D\u0444\u0438\u0434\u0435\u043D\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u044C."
+      - 
+      - Para usar "{0}", debes aceptar nuestra {1} y nuestros {2}. Nos importa la
+        privacidad de los usuarios.
+      - 
+      - "\u0E04\u0E38\u0E13\u0E15\u0E49\u0E2D\u0E07\u0E22\u0E2D\u0E21\u0E23\u0E31\u0E1A{1}\u0E41\u0E25\u0E30{2}\u0E02\u0E2D\u0E07\u0E40\u0E23\u0E32\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E43\u0E0A\u0E49\u0E07\u0E32\u0E19
+        \"{0}\" \u0E04\u0E27\u0E32\u0E21\u0E40\u0E1B\u0E47\u0E19\u0E2A\u0E48\u0E27\u0E19\u0E15\u0E31\u0E27\u0E02\u0E2D\u0E07\u0E1C\u0E39\u0E49\u0E43\u0E0A\u0E49\u0E21\u0E35\u0E04\u0E27\u0E32\u0E21\u0E2A\u0E33\u0E04\u0E31\u0E0D\u0E01\u0E31\u0E1A\u0E40\u0E23\u0E32"
+      - "\"{0}\" kullanmak i\xE7in {1} ve {2} kabul edilmelidir. Kullan\u0131c\u0131n\u0131n
+        gizlili\u011Fi bizim i\xE7in \xF6nemlidir."
+      - 
+      - "{0} \u0627\u0633\u062A\u0639\u0645\u0627\u0644 \u06A9\u0631\u0646\u06D2
+        \u06A9\u06D2 \u0644\u0626\u06D2 \u06C1\u0645\u0627\u0631\u06D2 {1} \u0627\u0648\u0631
+        {2} \u0633\u06D2 \u0627\u062A\u0641\u0627\u0642 \u06A9\u0631\u0646\u0627
+        \u0636\u0631\u0648\u0631\u06CC \u06C1\u06D2\u06D4 \u0635\u0627\u0631\u0641
+        \u06A9\u06CC \u0631\u0627\u0632\u062F\u0627\u0631\u06CC \u06C1\u0645\u0627\u0631\u06D2
+        \u0644\u0626\u06D2 \u0627\u06C1\u0645 \u06C1\u06D2\u06D4"
+      - "\u0110\u1EC3 s\u1EED d\u1EE5ng \"{0}\" b\u1EA1n ph\u1EA3i \u0111\u1ED3ng
+        \xFD v\u1EDBi {1} v\xE0 {2} c\u1EE7a ch\xFAng t\xF4i. Quy\u1EC1n ri\xEAng
+        t\u01B0 c\u1EE7a ng\u01B0\u1EDDi d\xF9ng c\xF3 \xFD ngh\u0129a r\u1EA5t quan
+        tr\u1ECDng \u0111\u1ED1i v\u1EDBi ch\xFAng t\xF4i.NativeConsentParagraph"
+    - m_keys:
+      - en
+      - ar
+      - zh-Hans
+      - zh-HK
+      - hr
+      - da
+      - nl
+      - fil
+      - fi
+      - fr
+      - de
+      - el
+      - he
+      - hi
+      - hu
+      - id
+      - it
+      - ja
+      - ko
+      - ms
+      - no
+      - pl
+      - pt
+      - ro
+      - ru
+      - sr
+      - es
+      - sv
+      - th
+      - tr
+      - uk
+      - ur
+      - vi
+      m_values:
+      - OK
+      - "\u0645\u0648\u0627\u0641\u0642"
+      - "\u786E\u5B9A"
+      - "\u78BA\u5B9A"
+      - 
+      - 
+      - "Ok\xE9"
+      - 
+      - 
+      - OK
+      - OK
+      - "\u039F\u039A"
+      - "\u05D0\u05D9\u05E9\u05D5\u05E8"
+      - "\u0920\u0940\u0915 \u0939\u0948"
+      - 
+      - Oke
+      - OK
+      - OK
+      - "\uD655\uC778"
+      - OK
+      - 
+      - OK
+      - OK
+      - 
+      - "\u041E\u041A"
+      - 
+      - Aceptar
+      - 
+      - "\u0E15\u0E01\u0E25\u0E07"
+      - Tamam
+      - 
+      - 
+      - OK
+  importPaths: Packages\com.matchinghamgames.datausageconsent\Runtime\Data\DataConsent.tsv

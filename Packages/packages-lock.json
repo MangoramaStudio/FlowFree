@@ -102,7 +102,7 @@
     },
     "com.jimmycushnie.fancyrendering": {
       "version": "1.1.1",
-      "depth": 3,
+      "depth": 2,
       "source": "registry",
       "dependencies": {
         "com.jimmycushnie.jimmysunityutilities": "1.0.0"
@@ -155,9 +155,9 @@
       "url": "https://upm.matchingham.net"
     },
     "com.matchinghamgames.datausageconsent": {
-      "version": "11.1.0",
-      "depth": 1,
-      "source": "registry",
+      "version": "file:com.matchinghamgames.datausageconsent@11.1.0",
+      "depth": 0,
+      "source": "embedded",
       "dependencies": {
         "com.matchinghamgames.handyman": "5.3.1",
         "com.matchinghamgames.logger": "2.1.0",
@@ -165,8 +165,7 @@
         "com.unity.ads.ios-support": "1.2.0",
         "com.matchinghamgames.privacypolicy": "5.1.1",
         "com.matchinghamgames.stash": "1.4.0"
-      },
-      "url": "https://upm.matchingham.net"
+      }
     },
     "com.matchinghamgames.datausageconsentservice.usercentrics": {
       "version": "1.1.2",
@@ -274,7 +273,7 @@
     },
     "com.matchinghamgames.privacypolicy": {
       "version": "5.1.1",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.matchinghamgames.handyman": "5.3.1",
@@ -399,7 +398,7 @@
     },
     "com.matchinghamgames.worldwide": {
       "version": "4.1.0",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.matchinghamgames.handyman": "5.0.0",
@@ -545,7 +544,7 @@
     },
     "com.unity.localization": {
       "version": "1.4.5",
-      "depth": 3,
+      "depth": 2,
       "source": "registry",
       "dependencies": {
         "com.unity.addressables": "1.21.8",

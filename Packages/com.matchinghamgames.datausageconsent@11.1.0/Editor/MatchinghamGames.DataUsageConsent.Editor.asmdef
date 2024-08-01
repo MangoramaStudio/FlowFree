@@ -1,0 +1,21 @@
+{
+    "name": "MatchinghamGames.DataUsageConsent.Editor",
+    "rootNamespace": "MatchinghamGames.DataUsageConsent",
+    "references": [
+        "MatchinghamGames.Handyman.Editor",
+        "MatchinghamGames.DataUsageConsent.Runtime",
+        "MatchinghamGames.Handyman.Runtime",
+        "MatchinghamGames.WorldWide.Localization.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

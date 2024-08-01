@@ -1,0 +1,4 @@
+include: 
+   - project: 'devops-snippets/ci-cd-snippets'
+     ref: main
+     file: '/sdk-automation/sdk-documentation-base-ci.yml'
