@@ -96,18 +96,22 @@ namespace MangoramaStudio.Scripts.Managers
 
         private void LevelStartedNotification()
         {
-            var eventName = $"level{levelData.currentLevelIndex}_start";
-            TrackEventFirebase(eventName);
+            var eventName = "level_start";
+            TrackEventFirebase(eventName,true);
             TrackEventAdjust(eventName);
 
         }
 
+        //todo irfan add
+        
+        // retry 
+        // skip 
         private void LevelFinishedNotification(bool isSuccess)
         {
-            var successEventName = $"level{levelData.currentLevelIndex}_complete";
+            var successEventName = $"level_complete";
             if (isSuccess)
             {
-                TrackEventFirebase(successEventName);
+                TrackEventFirebase(successEventName,true);
                 TrackEventAdjust(successEventName);
             }
         }
