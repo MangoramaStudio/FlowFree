@@ -36,7 +36,7 @@ public partial class SROptions
         OnPropertyChanged(n);
     }
     
-    [Category("Invoke Level")]
+    [Category("Set Level Index")]
     public void InvokeLevel()
     {
         GameManager.Instance.LevelManager.StartGameSR(LevelIndex);

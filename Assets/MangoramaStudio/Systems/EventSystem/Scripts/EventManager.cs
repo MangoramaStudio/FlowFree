@@ -114,16 +114,16 @@ namespace MangoramaStudio.Scripts.Managers
 
         public event Action<string> OnShowInterstitial;
 
-        public event Action<Action, Action, string> OnShowRewarded;
+        public event Action<Action, Action,Action, string> OnShowRewarded;
 
         public void ShowInterstitial(string adTag)
         {
             OnShowInterstitial?.Invoke(adTag);
         }
 
-        public void ShowRewarded(Action onRewardedSuccess, Action onRewardedFailure, string adTag)
+        public void ShowRewarded(Action onRewardedSuccess, Action onRewardedFailure,Action onAdNotReady ,string adTag)
         {
-            OnShowRewarded?.Invoke(onRewardedSuccess, onRewardedFailure, adTag);
+            OnShowRewarded?.Invoke(onRewardedSuccess, onRewardedFailure,onAdNotReady, adTag);
         }
 
         #endregion

@@ -1,3 +1,4 @@
+using MangoramaStudio.Systems.PopupSystem.Scripts;
 using UnityEngine;
 
 namespace MangoramaStudio.Scripts.Managers.Buttons
@@ -12,8 +13,14 @@ namespace MangoramaStudio.Scripts.Managers.Buttons
                 return;
             }
             IsClicked = true;
-            GameManager.Instance.EventManager.ShowRewarded(OnRewardedSuccess,OnRewardedFail,"SkipLevel");
+            GameManager.Instance.EventManager.ShowRewarded(OnRewardedSuccess,OnRewardedFail,OnAdNotReady,"SkipLevel");
             Debug.Log($"Skip Level rewarded show sent");
+        }
+
+        private void OnAdNotReady()
+        {
+            GameManager.Instance.EventManager.OpenPopup(PopupType.AdsNotReady);
+            IsClicked = false;
         }
 
         private void OnRewardedSuccess()

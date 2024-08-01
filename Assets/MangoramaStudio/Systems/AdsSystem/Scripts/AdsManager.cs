@@ -52,11 +52,11 @@ namespace MangoramaStudio.Systems.AdsSystem.Scripts
             Debug.Log($"AdsManager : Interstitial show send");
         }
 
-        private void ShowRewarded(Action onRewardedSuccess,Action onRewardedFailure,string adTag = null)
+        private void ShowRewarded(Action onRewardedSuccess,Action onRewardedFailure,Action onAdNotReady,string adTag = null)
         {
             if (!IsReady())
             {
-                GameManager.Instance.EventManager.OpenPopup(PopupType.AdsNotReady);
+                onAdNotReady?.Invoke();
                 Debug.LogError("Vegas is not ready");
                 return;
             }
