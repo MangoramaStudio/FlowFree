@@ -131,8 +131,7 @@ namespace Mechanics.RoboticFlows
         [Button]
         public void AutoComplete()
         {
-            polyline.points.Clear();
-            lineRendererController.Clear();
+            Clear();
             for (int i = 0; i < correctOrderedCells.Count; i++)
             {
                 DrawCell(correctOrderedCells[i]);
