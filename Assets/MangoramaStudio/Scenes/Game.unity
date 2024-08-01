@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2466144369931700791, guid: a2a0008edb74f4bd4a70b65e0a08bad8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7529989504000157590, guid: a2a0008edb74f4bd4a70b65e0a08bad8, type: 3}
       propertyPath: winMenu
       value: 

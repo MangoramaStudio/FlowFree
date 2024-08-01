@@ -1,5 +1,6 @@
 using System;
 using MangoramaStudio.Scripts.Managers;
+using MangoramaStudio.Systems.PopupSystem.Scripts;
 using MatchinghamGames.VegasModule;
 using UnityEngine;
 
@@ -55,6 +56,7 @@ namespace MangoramaStudio.Systems.AdsSystem.Scripts
         {
             if (!IsReady())
             {
+                GameManager.Instance.EventManager.OpenPopup(PopupType.AdsNotReady);
                 Debug.LogError("Vegas is not ready");
                 return;
             }

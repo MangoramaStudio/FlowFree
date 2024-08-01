@@ -9,7 +9,8 @@ namespace MangoramaStudio.Systems.PopupSystem.Scripts
     {
         Default,
         Tutorial,
-        Settings
+        Settings,
+        AdsNotReady
     }
     public abstract class PopupBase : UIBehaviour
     {
