@@ -40,6 +40,90 @@ Transform:
   - {fileID: 4863737522446593442}
   m_Father: {fileID: 6479090681014385713}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7686945417655170157
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7074031981316287914}
+  - component: {fileID: 8545055843546625511}
+  m_Layer: 0
+  m_Name: ObstacleAll
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7074031981316287914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7686945417655170157}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.48, y: 0.48, z: 0.48}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 6479090681014385713}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!212 &8545055843546625511
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7686945417655170157}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: dffa1e7b582a646059d56894f6e335eb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1001 &10427083011489224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -843,6 +927,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacles
       objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5723187549198407869, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.3
@@ -1199,6 +1287,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacles
       objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5723187549198407869, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.3
@@ -1498,6 +1590,10 @@ PrefabInstance:
     - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_Name
       value: Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
@@ -1957,6 +2053,10 @@ PrefabInstance:
     - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_Name
       value: Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
@@ -2526,6 +2626,10 @@ PrefabInstance:
     - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_Name
       value: Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
@@ -3116,6 +3220,10 @@ PrefabInstance:
     - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_Name
       value: Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
@@ -3997,6 +4105,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacles
       objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5723187549198407869, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.3
@@ -4058,6 +4170,10 @@ PrefabInstance:
     - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_Name
       value: Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
@@ -4253,6 +4369,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacles
       objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
       value: 3
@@ -4318,6 +4438,10 @@ PrefabInstance:
     - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_Name
       value: Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
@@ -5048,6 +5172,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacles
       objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
       value: 1
@@ -5460,6 +5588,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacles
       objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
       value: 3
@@ -5673,6 +5805,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacles
       objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
       value: 2
@@ -5855,6 +5991,10 @@ PrefabInstance:
     - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_Name
       value: Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
@@ -6706,6 +6846,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacles
       objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
       value: 1
@@ -7318,6 +7462,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacles
       objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
       value: 1
@@ -7598,6 +7746,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacles
       objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
       value: 2
@@ -7663,6 +7815,10 @@ PrefabInstance:
     - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_Name
       value: Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
@@ -7730,6 +7886,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacles
       objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
       value: 3
@@ -7795,6 +7955,10 @@ PrefabInstance:
     - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_Name
       value: Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
@@ -7989,6 +8153,10 @@ PrefabInstance:
     - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_Name
       value: Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
@@ -8205,6 +8373,10 @@ PrefabInstance:
     - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_Name
       value: Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
@@ -8563,6 +8735,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacles
       objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5723187549198407869, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.3
@@ -8745,6 +8921,10 @@ PrefabInstance:
     - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_Name
       value: Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5723187549198407869, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9389,6 +9569,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacles
       objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
       value: 1
@@ -9575,6 +9759,10 @@ PrefabInstance:
     - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_Name
       value: Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
@@ -10289,6 +10477,10 @@ PrefabInstance:
     - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_Name
       value: Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
@@ -11041,6 +11233,10 @@ PrefabInstance:
     - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_Name
       value: Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
@@ -13104,6 +13300,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacles
       objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5723187549198407869, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.3
@@ -13543,6 +13743,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacles
       objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
       value: 2
@@ -13608,6 +13812,10 @@ PrefabInstance:
     - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_Name
       value: Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5723187549198407869, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13817,6 +14025,10 @@ PrefabInstance:
     - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_Name
       value: Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
@@ -14253,6 +14465,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacles
       objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5723187549198407869, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.3
@@ -14314,6 +14530,10 @@ PrefabInstance:
     - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_Name
       value: Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5723187549198407869, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14651,6 +14871,10 @@ PrefabInstance:
     - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_Name
       value: Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
@@ -16093,6 +16317,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3204323503182238123, guid: 5a2f378d5be604c5e845c6051d6a0a56, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5460251445438259130}
+    - targetCorrespondingSourceObject: {fileID: 3204323503182238123, guid: 5a2f378d5be604c5e845c6051d6a0a56, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7074031981316287914}
     - targetCorrespondingSourceObject: {fileID: 1820359155441556639, guid: 5a2f378d5be604c5e845c6051d6a0a56, type: 3}
       insertIndex: -1
       addedObject: {fileID: 532114170799653178}
@@ -16360,6 +16587,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacles
       objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5723187549198407869, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.3
@@ -16543,6 +16774,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacles
       objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
       value: 3
@@ -16725,6 +16960,10 @@ PrefabInstance:
     - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_Name
       value: Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
@@ -16912,6 +17151,10 @@ PrefabInstance:
     - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_Name
       value: Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
@@ -17801,6 +18044,10 @@ PrefabInstance:
     - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: m_Name
       value: Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788403711797853536, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4706641646736270483, guid: 30c10041bf9e94db5843c5c55752123f, type: 3}
       propertyPath: directionType
