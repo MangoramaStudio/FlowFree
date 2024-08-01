@@ -43,7 +43,7 @@ public class LineRendererController : MonoBehaviour
         else
         {
             lineRenderer.transform.SetParent(cell.node.transform);
-            lineRenderer.transform.position = new Vector3(0, 0, 0);
+            lineRenderer.transform.position = new Vector3(0, 0.1f, 0);
             lineRenderer.positionCount++;
             lineRenderer.SetPosition(lineRenderer.positionCount-1,new Vector3(newCell.transform.position.x,newCell.transform.position.z,0));      
         }
