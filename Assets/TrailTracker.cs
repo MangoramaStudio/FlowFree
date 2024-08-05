@@ -8,8 +8,17 @@ using Mechanics.RoboticFlows;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
+public enum TrailType
+{
+    Electric,
+    Reflection
+}
+
 public class TrailTracker : MonoBehaviour
 {
+
+
+    [SerializeField] private TrailType trailType;
     [SerializeField] private Node node;
     [SerializeField] private float speed = 0.25f;
     [SerializeField] private TrailRenderer trailRenderer;
@@ -17,12 +26,15 @@ public class TrailTracker : MonoBehaviour
 
     private float _initialTime;
     private Sequence _flowSequence;
+    private Material _instantiatedMaterial;
 
     private void Start()
     {
         _initialTime = trailRenderer.time;
         ToggleEvents(true);
-        
+        var mat = trailRenderer.material;
+        _instantiatedMaterial = Instantiate(mat);
+        trailRenderer.material = _instantiatedMaterial;
     }
 
 
@@ -65,14 +77,16 @@ public class TrailTracker : MonoBehaviour
             trailRenderer.Clear();
             trailRenderer.gameObject.transform.localPosition = new Vector3(0, 1.5f, 0);
             trailRenderer.enabled = false;
+            _instantiatedMaterial.mainTextureOffset = Vector2.zero;
+
         }
     }
 
     private void ResetTrail()
     {
-       
         trailRenderer.gameObject.transform.localPosition = new Vector3(0, 1.5f, 0);
         trailRenderer.Clear();
+        _instantiatedMaterial.mainTextureOffset = Vector2.zero;
         trailRenderer.enabled = true;
     }
     
@@ -113,10 +127,25 @@ public class TrailTracker : MonoBehaviour
             _flowSequence.Append(transform.DOMove(newPos, speed).SetEase(Ease.Linear));
         }
         _flowSequence.Play();
+        _flowSequence.AppendCallback(() =>
+        {
+            if (trailType == TrailType.Reflection)
+            {
+                ModifyForReflection();
+            }
+        });
     }
 
     private void KillSequence()
     {
         _flowSequence?.Kill();   
+    }
+
+    private void ModifyForReflection()
+    {
+        DOVirtual.Float(0f, 1f, .2f, (x) =>
+        {
+            _instantiatedMaterial.mainTextureOffset = new Vector2(x, 0);
+        });
     }
 }
