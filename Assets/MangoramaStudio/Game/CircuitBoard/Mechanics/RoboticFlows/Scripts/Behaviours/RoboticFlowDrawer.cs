@@ -146,7 +146,7 @@ namespace Mechanics.RoboticFlows
                 if (cell.node)
                 {
                     
-                    _eventManager.ResetNoteIndexSound();
+                   // _eventManager.ResetNoteIndexSound();
                     _eventManager.ResetFlow(_selectedDrawer);
                 }
 
@@ -327,7 +327,7 @@ namespace Mechanics.RoboticFlows
                         _selectedDrawer = null;
                         _selectedNode = null;
                         onConnectNode?.Invoke();
-                        _eventManager.ResetNoteIndexSound();
+                       // _eventManager.ResetNoteIndexSound();
                         _eventManager.VibrateFlowComplete();
                         _eventManager.PlayFlowSuccessSound();
                        
@@ -453,6 +453,7 @@ namespace Mechanics.RoboticFlows
             yield return new WaitUntil(() => grid.Cells.All(x => x.isColorAnimCompleted));
             yield return new WaitForSeconds(.75f);
             _eventManager.CompleteAllFlows();
+            _eventManager.ResetNoteIndexSound();
             _eventManager.VibrateLevelComplete();
             _eventManager.PlayLevelSuccessSound();
             RaiseSuccess();
