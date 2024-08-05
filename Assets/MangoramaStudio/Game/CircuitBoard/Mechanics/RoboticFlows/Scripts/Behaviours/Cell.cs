@@ -26,8 +26,12 @@ namespace Mechanics.RoboticFlows
         public Color Color => color;
 
         public Color OccupiedColor => occupiedColor;
+        
+        public bool isColorAnimCompleted;
+
+        private Sprite _occupiedSprite;
         public bool IsBlinking => _blinkSequence?.IsPlaying() ?? false;
-        public bool IsOccupied { get; private set; }
+        [ShowInInspector]public bool IsOccupied { get; private set; }
         [ShowInInspector]public bool HasObstacles => Obstacles.Count > 0;
         public List<Obstacle> Obstacles { get; private set; } = new();
 
@@ -55,6 +59,19 @@ namespace Mechanics.RoboticFlows
             Obstacles.Clear();
             Obstacles = GetComponentsInChildren<Obstacle>().ToList(); 
         }
+        
+        private Sequence _blobSeq;
+        
+        public void SetOccupied(bool occupiedState)
+        {
+            IsOccupied = occupiedState;
+            //spriteRenderer.color = occupiedState ? occupiedColor : Color.white;
+        }
+
+        public void SetOccupiedTileSprite(Sprite sprite)
+        {
+            _occupiedSprite = sprite;
+        }
 
         public void SetOccupiedColor(Color c)
         {
@@ -75,24 +92,28 @@ namespace Mechanics.RoboticFlows
             }
                
         }
-
-        private Sequence _blobSeq;
         
-        public void SetOccupied(bool occupiedState)
+        public void SetDefaultColor()
         {
-            IsOccupied = occupiedState;
-            //spriteRenderer.color = occupiedState ? occupiedColor : Color.white;
+           // spriteRenderer.color = Color.white;
+           // spriteRenderer.DOFade(.6f, 0f);
+
+            spriteRenderer.sprite = tileSprite; 
+            isColorAnimCompleted = false;
         }
 
-        public bool isColorAnimCompleted;
-
+        
         public void SetCompleteColor()
         {
+            spriteRenderer.sprite = _occupiedSprite; 
+            /*
             spriteRenderer.color = occupiedColor;
             spriteRenderer.DOFade(.5f, 0f).OnComplete(()=>
             {
                 isColorAnimCompleted = true;
             });
+            */
+            isColorAnimCompleted = true;
         }
         
         public void PlayCompleteBlob(int id)
@@ -105,13 +126,7 @@ namespace Mechanics.RoboticFlows
             _blobSeq.Append(spriteRenderer.transform.DOScale(.3f, .15f).SetEase(Ease.InOutSine));
         }
         
-        public void SetDefaultColor()
-        {
-            spriteRenderer.color = Color.white;
-            spriteRenderer.DOFade(.6f, 0f);
-            isColorAnimCompleted = false;
-        }
-
+  
 
         public void PlayBlob()
         {

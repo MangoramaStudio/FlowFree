@@ -97,6 +97,7 @@ namespace Mechanics.RoboticFlows
             cell.SetOccupied(true);
             cell.PlayBlob();
             cell.SetOccupiedColor(GetOccupiedColor());
+            cell.SetOccupiedTileSprite(GetOccupiedSprite());
             cell.ShowFillHint(false);
 
             var position = cell.transform.position - transform.position;
@@ -440,6 +441,11 @@ namespace Mechanics.RoboticFlows
             tileSprite = sprite;
         }
 
+        public Sprite GetOccupiedSprite()
+        {
+            return TileSprite;
+        }
+        
         private Color GetOccupiedColor()
         {
             return new Color(color.r, color.g, color.b, occupiedAlpha);
