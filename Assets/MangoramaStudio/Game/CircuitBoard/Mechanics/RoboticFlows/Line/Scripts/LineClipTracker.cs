@@ -35,6 +35,9 @@ namespace MangoramaStudio.Game.Test
         private void Start()
         {
             ToggleEvents(true);
+            var mat = lineRenderer.material;
+            var newMat =Instantiate(mat);
+            lineRenderer.material = newMat;
         }
         
         private void OnDisable()
@@ -102,11 +105,10 @@ namespace MangoramaStudio.Game.Test
                         {
                             positions.Reverse();
                         }
-                        
-                        GetLineRenderer();               
-                        InstantiateCloneLine();
-                   
                     }
+                    
+                    GetLineRenderer();               
+                    InstantiateCloneLine();
                 }
             }
 
@@ -134,9 +136,7 @@ namespace MangoramaStudio.Game.Test
             private void InstantiateCloneLine()
             {
                 ResetClipping();
-                var mat = lineRenderer.material;
-                var newMat =Instantiate(mat);
-                lineRenderer.material = newMat;
+             
                 var p = Proportion();
                 DOVirtual.Float(0f, 1f, speed * positions.Count, (x) =>
                 {
