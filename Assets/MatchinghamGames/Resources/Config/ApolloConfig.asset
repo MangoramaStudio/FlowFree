@@ -29,6 +29,13 @@ MonoBehaviour:
     - sol
     - la
     - si
+    - a3
+    - b3
+    - c4
+    - d4
+    - e4
+    - d#4
+    - b#3
     m_values:
     - <AudioMixerGroup>k__BackingField: {fileID: 24300002, guid: f90c0dadfd5290040b503b1a3b75a21b, type: 2}
       <AudioClips>k__BackingField:
@@ -429,6 +436,314 @@ MonoBehaviour:
     - <AudioMixerGroup>k__BackingField: {fileID: 24300002, guid: f90c0dadfd5290040b503b1a3b75a21b, type: 2}
       <AudioClips>k__BackingField:
       - {fileID: 8300000, guid: fa9a85495a20e4a02851feed027c68f7, type: 3}
+      bypassEffects: 0
+      bypassListenerEffects: 0
+      bypassReverbZones: 0
+      priority: 128
+      volume: 1
+      pitch: 1
+      stereoPan: 0
+      customSpatialBlendCurve: 0
+      spatialBlend: 0
+      spatialBlendCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      customReverbZoneMixCurve: 0
+      reverbZoneMix: 1
+      reverbZoneMixCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      dopplerLevel: 1
+      customSpreadCurve: 0
+      spread: 0
+      spreadCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      volumeRolloff: 0
+      minDistance: 1
+      maxDistance: 500
+      volumeCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - <AudioMixerGroup>k__BackingField: {fileID: 24300002, guid: f90c0dadfd5290040b503b1a3b75a21b, type: 2}
+      <AudioClips>k__BackingField:
+      - {fileID: 8300000, guid: a74d48199b6e640f280e3956782b8731, type: 3}
+      bypassEffects: 0
+      bypassListenerEffects: 0
+      bypassReverbZones: 0
+      priority: 128
+      volume: 1
+      pitch: 1
+      stereoPan: 0
+      customSpatialBlendCurve: 0
+      spatialBlend: 0
+      spatialBlendCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      customReverbZoneMixCurve: 0
+      reverbZoneMix: 1
+      reverbZoneMixCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      dopplerLevel: 1
+      customSpreadCurve: 0
+      spread: 0
+      spreadCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      volumeRolloff: 0
+      minDistance: 1
+      maxDistance: 500
+      volumeCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - <AudioMixerGroup>k__BackingField: {fileID: 24300002, guid: f90c0dadfd5290040b503b1a3b75a21b, type: 2}
+      <AudioClips>k__BackingField:
+      - {fileID: 8300000, guid: a6221b26791694ed99471154c83d929a, type: 3}
+      bypassEffects: 0
+      bypassListenerEffects: 0
+      bypassReverbZones: 0
+      priority: 128
+      volume: 1
+      pitch: 1
+      stereoPan: 0
+      customSpatialBlendCurve: 0
+      spatialBlend: 0
+      spatialBlendCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      customReverbZoneMixCurve: 0
+      reverbZoneMix: 1
+      reverbZoneMixCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      dopplerLevel: 1
+      customSpreadCurve: 0
+      spread: 0
+      spreadCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      volumeRolloff: 0
+      minDistance: 1
+      maxDistance: 500
+      volumeCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - <AudioMixerGroup>k__BackingField: {fileID: 24300002, guid: f90c0dadfd5290040b503b1a3b75a21b, type: 2}
+      <AudioClips>k__BackingField:
+      - {fileID: 8300000, guid: 01273721c2bc24917abdaf91eec98df3, type: 3}
+      bypassEffects: 0
+      bypassListenerEffects: 0
+      bypassReverbZones: 0
+      priority: 128
+      volume: 1
+      pitch: 1
+      stereoPan: 0
+      customSpatialBlendCurve: 0
+      spatialBlend: 0
+      spatialBlendCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      customReverbZoneMixCurve: 0
+      reverbZoneMix: 1
+      reverbZoneMixCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      dopplerLevel: 1
+      customSpreadCurve: 0
+      spread: 0
+      spreadCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      volumeRolloff: 0
+      minDistance: 1
+      maxDistance: 500
+      volumeCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - <AudioMixerGroup>k__BackingField: {fileID: 24300002, guid: f90c0dadfd5290040b503b1a3b75a21b, type: 2}
+      <AudioClips>k__BackingField:
+      - {fileID: 8300000, guid: 08694475641a94ed1bf3f6992ef3f622, type: 3}
+      bypassEffects: 0
+      bypassListenerEffects: 0
+      bypassReverbZones: 0
+      priority: 128
+      volume: 1
+      pitch: 1
+      stereoPan: 0
+      customSpatialBlendCurve: 0
+      spatialBlend: 0
+      spatialBlendCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      customReverbZoneMixCurve: 0
+      reverbZoneMix: 1
+      reverbZoneMixCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      dopplerLevel: 1
+      customSpreadCurve: 0
+      spread: 0
+      spreadCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      volumeRolloff: 0
+      minDistance: 1
+      maxDistance: 500
+      volumeCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - <AudioMixerGroup>k__BackingField: {fileID: 24300002, guid: f90c0dadfd5290040b503b1a3b75a21b, type: 2}
+      <AudioClips>k__BackingField:
+      - {fileID: 8300000, guid: e3f9c5fc1923544fd916a6efd2362b29, type: 3}
+      bypassEffects: 0
+      bypassListenerEffects: 0
+      bypassReverbZones: 0
+      priority: 128
+      volume: 1
+      pitch: 1
+      stereoPan: 0
+      customSpatialBlendCurve: 0
+      spatialBlend: 0
+      spatialBlendCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      customReverbZoneMixCurve: 0
+      reverbZoneMix: 1
+      reverbZoneMixCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      dopplerLevel: 1
+      customSpreadCurve: 0
+      spread: 0
+      spreadCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      volumeRolloff: 0
+      minDistance: 1
+      maxDistance: 500
+      volumeCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - <AudioMixerGroup>k__BackingField: {fileID: 24300002, guid: f90c0dadfd5290040b503b1a3b75a21b, type: 2}
+      <AudioClips>k__BackingField:
+      - {fileID: 8300000, guid: 4b3d7095f99404171841dd14769f7096, type: 3}
+      bypassEffects: 0
+      bypassListenerEffects: 0
+      bypassReverbZones: 0
+      priority: 128
+      volume: 1
+      pitch: 1
+      stereoPan: 0
+      customSpatialBlendCurve: 0
+      spatialBlend: 0
+      spatialBlendCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      customReverbZoneMixCurve: 0
+      reverbZoneMix: 1
+      reverbZoneMixCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      dopplerLevel: 1
+      customSpreadCurve: 0
+      spread: 0
+      spreadCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      volumeRolloff: 0
+      minDistance: 1
+      maxDistance: 500
+      volumeCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - <AudioMixerGroup>k__BackingField: {fileID: 24300002, guid: f90c0dadfd5290040b503b1a3b75a21b, type: 2}
+      <AudioClips>k__BackingField:
+      - {fileID: 8300000, guid: a6221b26791694ed99471154c83d929a, type: 3}
       bypassEffects: 0
       bypassListenerEffects: 0
       bypassReverbZones: 0

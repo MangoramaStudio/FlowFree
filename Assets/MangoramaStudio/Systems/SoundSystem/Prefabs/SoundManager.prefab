@@ -79,12 +79,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   singleMatchSfx: singleMatch
   fullMatchSfx: fullMatch
-  drawSfx: softClick
   musicNotesSfx:
-  - do
-  - re
-  - mi
-  - fa
-  - sol
-  - la
-  - si
+  - a3
+  - b3
+  - c4
+  - d4
+  - e4
+  - c4
+  - e4
+  - d#4
+  - d4
+  - b#3
+  - d4
