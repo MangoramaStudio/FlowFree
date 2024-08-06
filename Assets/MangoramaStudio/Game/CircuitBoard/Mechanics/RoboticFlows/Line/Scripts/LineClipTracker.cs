@@ -26,7 +26,8 @@ namespace MangoramaStudio.Game.Test
         private const string ClippingKeyword = "CLIPPING_ON";
         
         public List<Cell> positions = new();
-      
+
+        private bool _killTrailCalled;
         private float _initialTime;
         private Sequence _flowSequence;
         private LineRenderer _instantiatedLineRenderer;
@@ -59,6 +60,8 @@ namespace MangoramaStudio.Game.Test
                 eventManager.OnClearCell += ClearTrail;
                 eventManager.OnClearDisconnectedCell += ClearTrail;
                 eventManager.OnResetFlow += ClearTrail;
+                eventManager.OnRestartLevel += RestartTrail;
+                eventManager.OnDrawCell += StartDrawCell;
 
             }
             else
@@ -67,16 +70,32 @@ namespace MangoramaStudio.Game.Test
                 eventManager.OnClearCell -= ClearTrail;
                 eventManager.OnClearDisconnectedCell -= ClearTrail;
                 eventManager.OnResetFlow -= ClearTrail;
+                eventManager.OnRestartLevel -= RestartTrail;
+                eventManager.OnDrawCell -= StartDrawCell;
 
             }
         }
-        
+
+        private void StartDrawCell()
+        {
+            _isClear = false;
+        }
+
+        private void RestartTrail()
+        {
+            KillSequence();
+            ResetTrail();
+        }
+
+        private bool _isClear;
+
         private void ClearTrail(FlowDrawer flowDrawer)
             {
                 if (IsMatchedWithDrawer(flowDrawer))
                 {
                     KillSequence();
                     ResetTrail();
+                    _isClear = true;
                 }
             }
         
@@ -91,6 +110,10 @@ namespace MangoramaStudio.Game.Test
             {
 
                 await Task.Delay(TimeSpan.FromSeconds(startDelay));
+                if (_isClear)
+                {
+                    return;
+                }
                 if (IsMatchedWithDrawer(flowDrawer))
                 {
                     ResetTrail();

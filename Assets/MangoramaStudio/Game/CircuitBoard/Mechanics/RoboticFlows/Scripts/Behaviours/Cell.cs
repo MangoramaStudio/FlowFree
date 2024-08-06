@@ -109,6 +109,10 @@ namespace Mechanics.RoboticFlows
         
         public void SetCompleteColor()
         {
+            if (!IsOccupied)
+            {
+                return;
+            }
             spriteRenderer.sprite = _occupiedSprite; 
             /*
             spriteRenderer.color = occupiedColor;
@@ -120,6 +124,7 @@ namespace Mechanics.RoboticFlows
             isColorAnimCompleted = true;
         }
         
+
         public void PlayCompleteBlob(int id)
         {
             _blobSeq.Kill(true);
