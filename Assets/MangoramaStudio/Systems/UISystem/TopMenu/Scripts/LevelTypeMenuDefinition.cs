@@ -10,6 +10,7 @@ namespace Mechanics.RoboticFlows
         public LevelType levelType;
         public Sprite topMenuPipeBg;
         public Sprite topMenuPipeHeaderBg;
+        public Sprite topMenuLevelHeaderBg;
         public Color counterColor;
         public Sprite topHeader;
         public Sprite bottomHeader;

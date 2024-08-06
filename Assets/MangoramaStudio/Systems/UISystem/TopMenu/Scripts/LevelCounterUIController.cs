@@ -5,11 +5,13 @@ using MangoramaStudio.Scripts.Managers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Mechanics.RoboticFlows
 {
     public class LevelCounterUIController : UIBehaviour
     {
+        [SerializeField] private Image headerBg;
         [SerializeField] private TextMeshProUGUI levelCounterTMP;
         [SerializeField] private float intervalAmount=3f;
 
@@ -29,6 +31,14 @@ namespace Mechanics.RoboticFlows
             {
                 _loopSequence?.Kill(true);
             }
+            
+            SetTheme(GameManager.Instance.LevelManager.CurrentLevel.LevelType);
+        }
+        
+        private void SetTheme(LevelType levelType)
+        {
+            var definition = GameManager.Instance.UIManager.GameplayMenu().LevelTypeMenuDefinitions.Find(x => x.levelType == levelType);
+            headerBg.sprite = definition.topMenuLevelHeaderBg;
         }
 
         private void LoopCounter(string id)
