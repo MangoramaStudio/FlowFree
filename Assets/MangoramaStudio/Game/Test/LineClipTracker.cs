@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,7 +11,8 @@ namespace MangoramaStudio.Game.Test
 {
     public class LineClipTracker : MonoBehaviour
     {
-        
+
+        [SerializeField] private float startDelay;
         [SerializeField]private LineRenderer lineRenderer;
         [SerializeField] private Node node;
         [SerializeField] private float speed = 0.25f;
@@ -82,9 +84,10 @@ namespace MangoramaStudio.Game.Test
                 ResetClipping();
             }
             
-            private void GetCellsList(FlowDrawer flowDrawer,Node selectedNode)
+            private async void GetCellsList(FlowDrawer flowDrawer,Node selectedNode)
             {
-                
+
+                await Task.Delay(TimeSpan.FromSeconds(startDelay));
                 if (IsMatchedWithDrawer(flowDrawer))
                 {
                     ResetTrail();
@@ -108,7 +111,7 @@ namespace MangoramaStudio.Game.Test
             }
 
             
-            private  void GetLineRenderer()
+            private void GetLineRenderer()
             {
                 lineRenderer.gameObject.SetActive(true);
                 var original = node.GetComponentInChildren<LineRendererController>().GetLineRenderer();
@@ -143,7 +146,7 @@ namespace MangoramaStudio.Game.Test
             }
 
             private const int MIN_COUNT = 3;
-            private const float DIFF = 0.15f;
+            private const float DIFF = 0.2f;
             private float Proportion()
             {
                 var prop = (MIN_COUNT * DIFF) / positions.Count();
