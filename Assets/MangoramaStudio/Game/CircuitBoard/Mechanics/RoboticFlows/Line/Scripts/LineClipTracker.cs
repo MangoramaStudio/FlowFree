@@ -114,7 +114,13 @@ namespace MangoramaStudio.Game.Test
             private void GetLineRenderer()
             {
                 lineRenderer.gameObject.SetActive(true);
+                var controller = node.GetComponentInChildren<LineRendererController>();
+                if (controller == null)
+                {
+                    return;
+                }
                 var original = node.GetComponentInChildren<LineRendererController>().GetLineRenderer();
+               
                 lineRenderer.positionCount = original.positionCount;
                 var localPosition = original.transform.localPosition;
                 lineRenderer.transform.localPosition = new Vector3(localPosition.x, localPosition.y + 0.1f, localPosition.z); lineRenderer.transform.localRotation = original.transform.localRotation;
