@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playable: {fileID: 1333159374403578157}
+  builder: {fileID: 890151370174163747}
 --- !u!114 &5553801964788344143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269f347a0a8d4a743b2b5b2751b659dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelType: 0
   flowGrid: {fileID: 5803926135255330145}
   container: {fileID: 4874158174549085423}
   pipeCompleteCounter: {fileID: 9094950142044359289}
@@ -125,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a262495fcb842e09a6a7c107df552ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  solvedManually: 0
 --- !u!1001 &1926840096753320828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -190,6 +193,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65c016a8c16404c17be73312f8f474ae, type: 3}
+--- !u!114 &890151370174163747 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1650552974876403807, guid: 65c016a8c16404c17be73312f8f474ae, type: 3}
+  m_PrefabInstance: {fileID: 1926840096753320828}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5140aa8ebf8f483b80f7ef8ee6c3de91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1333159374403578157 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 593867914608159313, guid: 65c016a8c16404c17be73312f8f474ae, type: 3}

@@ -10,8 +10,9 @@ namespace Behaviours
     public class PlayableMechanicContainer : MonoBehaviour
     {
         [SerializeField] private PlayableMechanicBehaviour playable;
-
+        [SerializeField] private RoboticFlowBuilder builder;
         public PlayableMechanicBehaviour Playable => playable;
+        public RoboticFlowBuilder Builder => builder;
 
         private EventManager EventManager => GameManager.Instance.EventManager;
     
