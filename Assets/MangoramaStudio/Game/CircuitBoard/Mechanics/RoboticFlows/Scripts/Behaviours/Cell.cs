@@ -65,6 +65,10 @@ namespace Mechanics.RoboticFlows
         public void SetOccupied(bool occupiedState)
         {
             IsOccupied = occupiedState;
+            if (!IsOccupied)
+            {
+                SetDefaultColor();
+            }
             //spriteRenderer.color = occupiedState ? occupiedColor : Color.white;
         }
 
