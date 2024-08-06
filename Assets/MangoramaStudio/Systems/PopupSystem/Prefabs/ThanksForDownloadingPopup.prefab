@@ -340,8 +340,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ok
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: da2d4db38885b4392a2bf30c86acb903, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: dc5204505e78d45568cfecee22b7c038, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6d23b4f2bbf294e4abba0877f72287fb, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 6fbddb3a673314acd8f1afe247b48274, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -474,8 +474,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Thanks for downloading
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 71301facd436a4040b0d4df186ebb5a9, type: 2}
-  m_sharedMaterial: {fileID: -6219456596973818553, guid: 71301facd436a4040b0d4df186ebb5a9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0e5a10f40b4464c7ebb0f84b25b13c88, type: 2}
+  m_sharedMaterial: {fileID: -6870102421270108190, guid: 0e5a10f40b4464c7ebb0f84b25b13c88, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -575,8 +575,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.191, y: 0}
-  m_SizeDelta: {x: 663.0966, y: 484.7143}
+  m_AnchoredPosition: {x: 0, y: 18}
+  m_SizeDelta: {x: 665.3853, y: 484.7143}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3718999171885237764
 CanvasRenderer:
@@ -608,10 +608,10 @@ MonoBehaviour:
       m_Calls: []
   m_text: "To use \" Ball\n Connect : Flow Puzzle\"\nplease agree to our \n <link=\"privacy\"><color=#E43B68><b>Privacy
     Policy</b></color></link> and <link=\"terms\"><color=#E43B68> <b>Terms of Service</b></color></link>.\nUser
-    privact is\n important to us"
+    privacy is\n important to us"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 71301facd436a4040b0d4df186ebb5a9, type: 2}
-  m_sharedMaterial: {fileID: -6219456596973818553, guid: 71301facd436a4040b0d4df186ebb5a9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 394c1fde5704f48f5b4386fd3b4987a2, type: 2}
+  m_sharedMaterial: {fileID: -2483830946445627642, guid: 394c1fde5704f48f5b4386fd3b4987a2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -635,7 +635,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 46.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -645,9 +645,9 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 4
+  m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 20
+  m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -671,7 +671,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 47.642883, z: 0, w: 0}
+  m_margin: {x: 80.8345, y: 47.642883, z: 105.08484, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

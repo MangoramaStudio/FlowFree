@@ -142,8 +142,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ok
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: da2d4db38885b4392a2bf30c86acb903, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: dc5204505e78d45568cfecee22b7c038, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6d23b4f2bbf294e4abba0877f72287fb, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 6fbddb3a673314acd8f1afe247b48274, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -352,8 +352,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ads not ready!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 71301facd436a4040b0d4df186ebb5a9, type: 2}
-  m_sharedMaterial: {fileID: -6219456596973818553, guid: 71301facd436a4040b0d4df186ebb5a9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 394c1fde5704f48f5b4386fd3b4987a2, type: 2}
+  m_sharedMaterial: {fileID: -2483830946445627642, guid: 394c1fde5704f48f5b4386fd3b4987a2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -383,7 +383,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 65
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
@@ -485,7 +485,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 516f97ed89b21443c81edc034f5ed639, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c58c00131fb0947c38648d38c634afbf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -529,11 +529,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2380728274335356228, guid: 89bbb584350204d39b15e27e6f7e22d1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 344
+      value: 372
       objectReference: {fileID: 0}
     - target: {fileID: 2380728274335356228, guid: 89bbb584350204d39b15e27e6f7e22d1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 200
+      value: 212
       objectReference: {fileID: 0}
     - target: {fileID: 2380728274335356228, guid: 89bbb584350204d39b15e27e6f7e22d1, type: 3}
       propertyPath: m_LocalPosition.x
