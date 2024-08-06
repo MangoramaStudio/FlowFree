@@ -12,20 +12,28 @@ namespace Mechanics.RoboticFlows
     public class LevelCounterUIController : UIBehaviour
     {
         [SerializeField] private Image headerBg;
-        [SerializeField] private TextMeshProUGUI levelCounterTMP;
+        [SerializeField] private TextMeshProUGUI levelCounterTMP,definitionTMP,sizeTMP;
+        [SerializeField] private GameObject ballDefinitionObject,ballImageObject;
         [SerializeField] private float intervalAmount=3f;
 
         private Sequence _loopSequence;
         public void Initialize()
         {
+            definitionTMP.transform.localScale = Vector3.zero;
+            sizeTMP.transform.localScale = Vector3.one;
+            ballImageObject.transform.localScale = Vector3.one;
             levelCounterTMP.transform.localScale = Vector3.one;
             _loopSequence?.Kill(true);
             var data = GameManager.Instance.DataManager.GetData<LevelData>();
             levelCounterTMP.SetText($"Level {data.currentLevelIndex}");
 
-            if (GameManager.Instance.LevelManager.CurrentLevel.LevelType is LevelType.Hard or LevelType.SuperHard)
+            if (GameManager.Instance.LevelManager.CurrentLevel.LevelType is LevelType.Hard)
             {
                 LoopCounter("Hard");
+            }
+            else if (GameManager.Instance.LevelManager.CurrentLevel.LevelType is LevelType.SuperHard)
+            {
+                LoopCounter("Super Hard");
             }
             else
             {
@@ -39,6 +47,8 @@ namespace Mechanics.RoboticFlows
         {
             var definition = GameManager.Instance.UIManager.GameplayMenu().LevelTypeMenuDefinitions.Find(x => x.levelType == levelType);
             headerBg.sprite = definition.topMenuLevelHeaderBg;
+            definitionTMP.color = definition.counterColor;
+            sizeTMP.color = definition.counterColor;
         }
 
         private void LoopCounter(string id)
@@ -46,17 +56,22 @@ namespace Mechanics.RoboticFlows
             var data = GameManager.Instance.DataManager.GetData<LevelData>();
             _loopSequence = DOTween.Sequence();
             _loopSequence.AppendInterval(intervalAmount);
-            _loopSequence.Append(levelCounterTMP.transform.DOScale(0f, .5f).SetEase(Ease.InOutSine).OnComplete(() =>
+            _loopSequence.Append(ballDefinitionObject.transform.DOScale(0f, .5f).SetEase(Ease.InOutSine).OnComplete(() =>
             {
-                levelCounterTMP.SetText(id);
+                definitionTMP.transform.localScale = Vector3.one;
+                sizeTMP.transform.localScale = Vector3.zero;
+                ballImageObject.transform.localScale = Vector3.zero;
+                definitionTMP.SetText(id);
             }));
-            _loopSequence.Append(levelCounterTMP.transform.DOScale(1f, .5f).SetEase(Ease.InOutSine));
+            _loopSequence.Append(ballDefinitionObject.transform.DOScale(1f, .5f).SetEase(Ease.InOutSine));
             _loopSequence.AppendInterval(intervalAmount);
-            _loopSequence.Append(levelCounterTMP.transform.DOScale(0f, .5f).SetEase(Ease.InOutSine).OnComplete(() =>
+            _loopSequence.Append(ballDefinitionObject.transform.DOScale(0f, .5f).SetEase(Ease.InOutSine).OnComplete(() =>
             {
-                levelCounterTMP.SetText($"Level {data.currentLevelIndex + 1}");
+                definitionTMP.transform.localScale = Vector3.zero;
+                sizeTMP.transform.localScale = Vector3.one;
+                ballImageObject.transform.localScale = Vector3.one;
             }));
-            _loopSequence.Append(levelCounterTMP.transform.DOScale(1f, .5f).SetEase(Ease.InOutSine));
+            _loopSequence.Append(ballDefinitionObject.transform.DOScale(1f, .5f).SetEase(Ease.InOutSine));
             _loopSequence.SetLoops(-1, LoopType.Restart);
         }
         
