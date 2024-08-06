@@ -95,7 +95,7 @@ namespace Mechanics.RoboticFlows
                 Debug.LogError("PipeCounterTMP is null");
                 return;
             }
-            pipeCounterTMP.SetText($"%{amount}");
+            pipeCounterTMP.SetText($"{amount}%");
         }
 
         private void Restart()
