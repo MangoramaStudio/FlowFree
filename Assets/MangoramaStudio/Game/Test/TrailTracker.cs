@@ -1,5 +1,4 @@
-using System;
-using System.Collections;
+
 using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
@@ -16,8 +15,6 @@ public enum TrailType
 
 public class TrailTracker : MonoBehaviour
 {
-
-
     [SerializeField] private TrailType trailType;
     [SerializeField] private Node node;
     [SerializeField] private float speed = 0.25f;

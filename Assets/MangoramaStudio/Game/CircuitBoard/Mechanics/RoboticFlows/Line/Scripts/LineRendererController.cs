@@ -10,6 +10,8 @@ public class LineRendererController : MonoBehaviour
     [SerializeField] private FlowDrawer flowDrawer;
     [SerializeField] private LineRenderer lineRenderer;
 
+    public LineRenderer GetLineRenderer() => lineRenderer;
+    
     public bool hasInNode;
 
     public void Start()

@@ -34,7 +34,7 @@ namespace MangoramaStudio.Systems.VibrationSystem
 
         private void VibrateDrawLine()
         {
-            TryVibrate();
+            TryVibrate(VibrationType.Medium);
         }
 
         private void VibrateLineComplete()
