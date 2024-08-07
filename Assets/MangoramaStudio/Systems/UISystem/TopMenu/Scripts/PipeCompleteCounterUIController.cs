@@ -12,8 +12,7 @@ namespace Mechanics.RoboticFlows
 {
     public class PipeCompleteCounterUIController : UIBehaviour
     {
-        [SerializeField] private LayoutGroup textLayoutGroup;
-        [SerializeField] private TextMeshProUGUI pipeCounterTMP,pipeCounterHeaderTMP;
+        [SerializeField] private TextMeshProUGUI pipeCounterTMP,pipeCounterHeaderTMP,proportionTMP;
         [SerializeField] private Image bg, headerBg;
         private PipeCompleteCounter _pipeCompleteCounter;
         private EventManager _eventManager;
@@ -27,16 +26,8 @@ namespace Mechanics.RoboticFlows
            GatherPipeCompleteData(false);
            GatherPipeCompleteData(true);
            SetTheme(GameManager.Instance.LevelManager.CurrentLevel.LevelType);
-          // UseMarkLayoutForRebuild();
-
         }
         
-        private async void UseMarkLayoutForRebuild()
-        {
-            await Task.Yield();
-            LayoutRebuilder.MarkLayoutForRebuild(textLayoutGroup.GetComponent<RectTransform>());
-            Canvas.ForceUpdateCanvases();
-        }
 
         protected override void OnDestroy()
         {
@@ -51,6 +42,7 @@ namespace Mechanics.RoboticFlows
             headerBg.sprite = definition.topMenuPipeHeaderBg;
             pipeCounterTMP.color = definition.counterColor;
             pipeCounterHeaderTMP.fontSharedMaterial = definition.headerTMPMaterial;
+            proportionTMP.color = definition.counterColor;
 
         }
 
@@ -107,7 +99,6 @@ namespace Mechanics.RoboticFlows
                 return;
             }
             pipeCounterTMP.SetText($"{amount}");
-            //UseMarkLayoutForRebuild();
         }
 
         private void Restart()

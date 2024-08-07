@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DG.Tweening;
 using MangoramaStudio.Scripts.Behaviours;
 using MangoramaStudio.Scripts.Managers;
 using Mechanics.RoboticFlows.Obstacles;
@@ -39,6 +40,13 @@ namespace Mechanics.RoboticFlows
         public Color GetColor() => color;
 
         private RoboticFlowDrawer _roboticFlowDrawer;
+
+        [Button]
+        public void Test()
+        {
+            Sequence sequence = DOTween.Sequence();
+            sequence.Append(tip.transform.DOScale(.35f,.2f).From(.2f).SetLoops(5,LoopType.Yoyo).SetEase(Ease.InOutSine));
+        }
         
         public void Initialize(RoboticFlowDrawer roboticFlowDrawer)
         {

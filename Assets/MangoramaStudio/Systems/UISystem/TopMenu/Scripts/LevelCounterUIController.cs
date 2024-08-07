@@ -19,12 +19,13 @@ namespace Mechanics.RoboticFlows
         private Sequence _loopSequence;
         public void Initialize()
         {
+            _loopSequence?.Kill(true);
+            DOTween.Kill(_loopSequence);
             definitionTMP.transform.localScale = Vector3.zero;
             sizeTMP.transform.localScale = Vector3.one;
             ballImageObject.transform.localScale = Vector3.one;
             levelCounterTMP.transform.localScale = Vector3.one;
-            _loopSequence?.Kill(true);
-
+            
             var getSize = GameManager.Instance.LevelManager.CurrentLevel.Container.Builder.GetSize();
             var sizeText = $"{getSize.x}X{getSize.y}";
             sizeTMP.SetText(sizeText);
@@ -53,6 +54,7 @@ namespace Mechanics.RoboticFlows
             headerBg.sprite = definition.topMenuLevelHeaderBg;
             definitionTMP.color = definition.counterColor;
             sizeTMP.color = definition.counterColor;
+         
         }
 
         private void LoopCounter(string id)
