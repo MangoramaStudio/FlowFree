@@ -16,6 +16,8 @@ namespace Mechanics.RoboticFlows
         
         public int Id => id;
 
+     
+
         public Sprite BallSprite => ballSprite;
         public Color Color => spriteRenderer.color;
 
@@ -55,7 +57,7 @@ namespace Mechanics.RoboticFlows
             targetTransform.DOKill();
             targetTransform.localScale = surfaceSize * Vector3.one;
             
-            var tween = targetTransform.DOScale(.3f,.05f).SetEase(Ease.OutSine);
+            var tween = targetTransform.DOScale(.35f,.05f).SetEase(Ease.OutSine);
             return tween;
         }
         
@@ -66,7 +68,7 @@ namespace Mechanics.RoboticFlows
             targetTransform.DOKill();
             targetTransform.localScale = surfaceSize * Vector3.one;
             
-            var tween = targetTransform.DOScale(.25f,.1f).SetEase(Ease.InOutSine);
+            var tween = targetTransform.DOScale(surfaceSize,.1f).SetEase(Ease.InOutSine);
             return tween;
         }
 
