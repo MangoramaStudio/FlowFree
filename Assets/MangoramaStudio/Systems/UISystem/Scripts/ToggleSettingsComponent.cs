@@ -3,6 +3,7 @@ using MangoramaStudio.Scripts.Data;
 using MangoramaStudio.Scripts.Managers.Buttons;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace MangoramaStudio.Scripts.Managers
@@ -16,11 +17,12 @@ namespace MangoramaStudio.Scripts.Managers
     public class ToggleSettingsComponent : BaseButton
     {
         [SerializeField] private SettingsType settingsType;
-        [SerializeField] private Image toggle;
+        [SerializeField] private Image toggle,onOffBackground;
         [SerializeField] private RectTransform on;
         [SerializeField] private RectTransform off;
-        [SerializeField] private GameObject onColor, offColor;
-        
+        [FormerlySerializedAs("onColor")] [SerializeField] private GameObject onObject;
+        [FormerlySerializedAs("offColor")] [SerializeField] private GameObject offObject;
+        [SerializeField] private Sprite onBackground,offBackground;
         
         private bool _isToggleOn;
         private bool _isToggled;
@@ -53,16 +55,18 @@ namespace MangoramaStudio.Scripts.Managers
             {
                 toggle.transform.SetParent(on.transform);
                 sequence.Append(toggle.GetComponent<RectTransform>().DOAnchorPosX(0f, 0f).SetEase(Ease.InOutSine));
-                onColor.gameObject.SetActive(true);
-                offColor.gameObject.SetActive(false);
-      
+                onObject.gameObject.SetActive(true);
+                offObject.gameObject.SetActive(false);
+                onOffBackground.sprite = onBackground;
+
             }
             else
             {
                 toggle.transform.SetParent(off.transform);
                 sequence.Append(toggle.GetComponent<RectTransform>().DOAnchorPosX(0f, 0f).SetEase(Ease.InOutSine));
-                onColor.gameObject.SetActive(false);
-                offColor.gameObject.SetActive(true);
+                onObject.gameObject.SetActive(false);
+                offObject.gameObject.SetActive(true);
+                onOffBackground.sprite = offBackground;
               
             }
          
@@ -84,16 +88,18 @@ namespace MangoramaStudio.Scripts.Managers
                
                 toggle.transform.SetParent(off.transform);
                 sequence.Append(toggle.GetComponent<RectTransform>().DOAnchorPosX(0f, duration).SetEase(Ease.InOutSine));
-               onColor.gameObject.SetActive(false);
-               offColor.gameObject.SetActive(true);
+               onObject.gameObject.SetActive(false);
+               offObject.gameObject.SetActive(true);
+               onOffBackground.sprite = offBackground;
                 _isToggleOn = false;
             }
             else
             {
                 toggle.transform.SetParent(on.transform);
                 sequence.Append(toggle.GetComponent<RectTransform>().DOAnchorPosX(0f, duration).SetEase(Ease.InOutSine));
-               onColor.gameObject.SetActive(true);
-               offColor.gameObject.SetActive(false);
+               onObject.gameObject.SetActive(true);
+               offObject.gameObject.SetActive(false);
+               onOffBackground.sprite = onBackground;
                 _isToggleOn = true;
             }
 
