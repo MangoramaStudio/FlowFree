@@ -71,7 +71,6 @@ namespace Mechanics.RoboticFlows
         public void Clear()
         {
             
-            Debug.LogError("Clear");
             foreach (var cell in _drawnCells)
             {
                 cell.SetOccupied(false,this);

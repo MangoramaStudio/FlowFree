@@ -139,7 +139,7 @@ namespace Mechanics.RoboticFlows
                     if (occupiedNode!=null && occupiedNode.IsOccupied)
                     {
                         _selectedDrawer = occupiedNode.GetOccupiedFlowDrawer();
-                        Debug.LogError(_selectedDrawer);
+                        
                     }
                 }
                 
@@ -158,6 +158,12 @@ namespace Mechanics.RoboticFlows
                 {
                    // _eventManager.ResetNoteIndexSound();
                     _eventManager.ResetFlow(_selectedDrawer);
+
+                   var matchedDrawer = drawers.Find(x => x.Id == cell.node.Id);
+                   if (matchedDrawer.DrawnCells.Count>0)
+                   {
+                       matchedDrawer.Clear();
+                   }
                 }
 
                 if (!_selectedDrawer)
@@ -324,6 +330,7 @@ namespace Mechanics.RoboticFlows
                         {
                             selectedDrawerDrawnCell.SetDefaultColor();
                         }
+                        
                         drawer.Clear();
                         Remove(drawer);
                     }
