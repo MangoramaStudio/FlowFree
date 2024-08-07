@@ -8,6 +8,7 @@ namespace MangoramaStudio.Scripts.SDK
     public class LoadingScreenHandler : MonoBehaviour
     {
         [SerializeField] private Slider loadingBar;
+        [SerializeField] private Image fillImage;
         private Tween _sliderTween;
         private void Start()
         { 
@@ -26,7 +27,8 @@ namespace MangoramaStudio.Scripts.SDK
             }
             
             _sliderTween?.Kill();
-            _sliderTween = loadingBar.DOValue(value, .2f).SetEase(Ease.Linear);
+            _sliderTween = fillImage.DOFillAmount(value,.2f).SetEase(Ease.Linear);
+           //_sliderTween = loadingBar.DOValue(value, .2f).SetEase(Ease.Linear);
         }
 
         private void ToggleEvents(bool isToggled)

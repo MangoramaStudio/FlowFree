@@ -338,8 +338,28 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1338793163}
-    - target: {fileID: 8041963026542969985, guid: d18950f741c6a472a9375dc5afa58557, type: 3}
+    - target: {fileID: 3086747454158579967, guid: d18950f741c6a472a9375dc5afa58557, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3086747454158579967, guid: d18950f741c6a472a9375dc5afa58557, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3086747454158579967, guid: d18950f741c6a472a9375dc5afa58557, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3638543724827472006, guid: d18950f741c6a472a9375dc5afa58557, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3638543724827472006, guid: d18950f741c6a472a9375dc5afa58557, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3638543724827472006, guid: d18950f741c6a472a9375dc5afa58557, type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
