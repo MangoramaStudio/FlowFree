@@ -62,6 +62,7 @@ namespace MangoramaStudio.Game.Test
                 eventManager.OnResetFlow += ClearTrail;
                 eventManager.OnRestartLevel += RestartTrail;
                 eventManager.OnDrawCell += StartDrawCell;
+                eventManager.OnSelectOccupiedCell += ClearTrail;
 
             }
             else
@@ -72,6 +73,7 @@ namespace MangoramaStudio.Game.Test
                 eventManager.OnResetFlow -= ClearTrail;
                 eventManager.OnRestartLevel -= RestartTrail;
                 eventManager.OnDrawCell -= StartDrawCell;
+                eventManager.OnSelectOccupiedCell -= ClearTrail;
 
             }
         }

@@ -140,6 +140,7 @@ namespace Mechanics.RoboticFlows
                     if (occupiedNode!=null && occupiedNode.IsOccupied)
                     {
                         _selectedDrawer = occupiedNode.GetOccupiedFlowDrawer();
+                        _eventManager.SelectOccupiedCell(_selectedDrawer);
                     }
                 }
                 
