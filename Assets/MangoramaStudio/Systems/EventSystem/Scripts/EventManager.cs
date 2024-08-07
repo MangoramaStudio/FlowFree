@@ -79,7 +79,7 @@ namespace MangoramaStudio.Scripts.Managers
 
         public void ClearDisconnectedCell(FlowDrawer flowDrawer)
         {
-            OnClearDisconnectedCell?.Invoke(flowDrawer);
+            //OnClearDisconnectedCell?.Invoke(flowDrawer);
         }
 
         public void CompleteFlow(FlowDrawer flowDrawer,Node selectedNode)

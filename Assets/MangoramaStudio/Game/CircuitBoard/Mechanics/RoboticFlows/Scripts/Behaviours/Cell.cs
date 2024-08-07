@@ -33,8 +33,12 @@ namespace Mechanics.RoboticFlows
         public bool IsBlinking => _blinkSequence?.IsPlaying() ?? false;
         [ShowInInspector]public bool IsOccupied { get; private set; }
         [ShowInInspector]public bool HasObstacles => Obstacles.Count > 0;
+
+        private FlowDrawer _occupiedFlowDrawer;
         public List<Obstacle> Obstacles { get; private set; } = new();
 
+        public FlowDrawer GetOccupiedFlowDrawer() => _occupiedFlowDrawer;
+        
         public void SetTileSprite(Sprite sprite)
         {
             tileSprite = sprite;
@@ -64,12 +68,17 @@ namespace Mechanics.RoboticFlows
         
         private Sequence _blobSeq;
         
-        public void SetOccupied(bool occupiedState)
+        public void SetOccupied(bool occupiedState,FlowDrawer flowDrawer)
         {
             IsOccupied = occupiedState;
             if (!IsOccupied)
             {
                 SetDefaultColor();
+                _occupiedFlowDrawer = null;
+            }
+            else
+            {
+                _occupiedFlowDrawer = flowDrawer;
             }
             //spriteRenderer.color = occupiedState ? occupiedColor : Color.white;
         }
@@ -84,6 +93,7 @@ namespace Mechanics.RoboticFlows
             occupiedColor = c;
             if (IsOccupied)
             {
+              
                 //spriteRenderer.color = c;  
             }
         }

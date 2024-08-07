@@ -131,21 +131,31 @@ namespace Mechanics.RoboticFlows
         
         public void SurfacePressed(Vector2 screenPosition)
         {
-
-            
-            
             if (CellRaycast(screenPosition, out var cell))
             {
-                if (!_selectedDrawer && cell.node)
+                if (cell.IsOccupied)
                 {
-                    SelectNode(cell.node);
-                    ScaleUpNodes(cell.node.Id);
-                    
+                    var occupiedNode = cell.GetOccupiedFlowDrawer().DrawnCells.FirstOrDefault(x => x.node);
+                    if (occupiedNode!=null && occupiedNode.IsOccupied)
+                    {
+                        _selectedDrawer = occupiedNode.GetOccupiedFlowDrawer();
+                        Debug.LogError(_selectedDrawer);
+                    }
                 }
+                
+                
+                if (!_selectedDrawer)
+                {
+                    if (cell.node)
+                    {
+                        SelectNode(cell.node);
+                        ScaleUpNodes(cell.node.Id);     
+                    }
+                }
+                
 
                 if (cell.node)
                 {
-                    
                    // _eventManager.ResetNoteIndexSound();
                     _eventManager.ResetFlow(_selectedDrawer);
                 }
@@ -157,12 +167,7 @@ namespace Mechanics.RoboticFlows
                 
                 
                 hint.StopHighlight();
-
-                foreach (var selectedDrawerDrawnCell in _selectedDrawer.DrawnCells)
-                {
-                    selectedDrawerDrawnCell.SetDefaultColor();
-                }
-
+                
                 
                 if (_selectedDrawer.DrawnCells.Contains(cell))
                 {
@@ -172,7 +177,7 @@ namespace Mechanics.RoboticFlows
                 {
                     if (_selectedDrawer.DrawnCells.Count == 0)
                     {
-                        _selectedDrawer.Clear();
+                       // _selectedDrawer.Clear();
                         Remove(_selectedDrawer);
                         _selectedDrawer.DrawCell(cell);
                     }
@@ -182,11 +187,13 @@ namespace Mechanics.RoboticFlows
                     }
                     else
                     {
+                        _selectedDrawer = null;
+                        Remove(_selectedDrawer);
+                        /*
                         _eventManager.ClearDisconnectedCell(_selectedDrawer);
                         _selectedDrawer.Clear();
-                        Remove(_selectedDrawer);
-                        _selectedDrawer = null;
                         onClearDisconnected?.Invoke();
+                        */
                     }
                 }
                 
@@ -260,13 +267,40 @@ namespace Mechanics.RoboticFlows
         {
             if (CellRaycast(screenPosition, out var cell))
             {
-                if (!_selectedDrawer || (_selectedDrawer.DrawnCells.Count != 0 && !_selectedDrawer.DrawnCells.Peek().IsNeighbor(cell)))
+                
+                if (cell.IsOccupied)
+                {
+                    if (cell.GetOccupiedFlowDrawer() == _selectedDrawer)
+                    {
+                        var occupiedNode = cell.GetOccupiedFlowDrawer().DrawnCells.FirstOrDefault(x => x.node);
+                        if (occupiedNode!=null && occupiedNode.IsOccupied)
+                        {
+                            SelectNode(occupiedNode.node);
+                            _selectedDrawer = cell.GetOccupiedFlowDrawer();
+                        }     
+                    }
+                    else
+                    {
+                        cell.GetOccupiedFlowDrawer().ClearToCell(cell);
+                    }
+                    
+                   
+                }
+                
+                if (!_selectedDrawer || (_selectedDrawer.DrawnCells.Count != 0 &&
+                                         !_selectedDrawer.DrawnCells.Peek().IsNeighbor(cell)))
+                {
                     return;
+                }
+                    
                 
                 if (ReachObstacles(cell))
                 {
                     return;
                 }
+                
+             
+                
                 
                 if (_selectedDrawer.DrawnCells.Contains(cell))
                 {
@@ -280,6 +314,7 @@ namespace Mechanics.RoboticFlows
                 }
                 else if (!_selectedDrawer.FlowComplete)
                 {
+                    
                     if (cell.IsOccupied)
                     {
                         var drawer = drawers.First(d => d.DrawnCells.Contains(cell));
@@ -292,6 +327,7 @@ namespace Mechanics.RoboticFlows
                         drawer.Clear();
                         Remove(drawer);
                     }
+                    
 
                     _eventManager.PlayNoteSound();
                     _selectedDrawer.DrawCell(cell);
@@ -366,8 +402,8 @@ namespace Mechanics.RoboticFlows
             {
                 if (CellRaycast(screenPosition, out var cell) && cell.node && cell.node.Id == lastNode.Id)
                 {
-                    _selectedDrawer.Clear();
-                    Remove(_selectedDrawer);
+                   // _selectedDrawer.Clear();
+                   // Remove(_selectedDrawer);
                     foreach (var selectedDrawerDrawnCell in _selectedDrawer.DrawnCells)
                     {
                         selectedDrawerDrawnCell.SetDefaultColor();
@@ -375,6 +411,7 @@ namespace Mechanics.RoboticFlows
 
                     _selectedDrawer = null;
                     _selectedNode = null;
+                     Remove(_selectedDrawer);
                 }
                 else
                 {
@@ -382,7 +419,8 @@ namespace Mechanics.RoboticFlows
                     for (int i = 0; i < reverse.Count; i++)
                     {
                         reverse.ElementAt(i).PlayCompleteBlob(i);   
-                    }  
+                    }
+                    
                 }
             }
             
@@ -401,20 +439,27 @@ namespace Mechanics.RoboticFlows
         {
             var newDrawer = drawers.First(d => d.Id == node.Id);
 
+            /*
             if (_selectedDrawer && _selectedDrawer != newDrawer)
             {
-                _selectedDrawer.Clear();
-                Remove(_selectedDrawer);
+                if (_selectedDrawer.DrawnCells.Count<=0)
+                {
+                    _selectedDrawer.Clear();
+                    Remove(_selectedDrawer);      
+                }
             }
+            */
               
             
             _selectedDrawer = newDrawer;
 
+            /*
             if (_selectedNode && _selectedNode != node)
             {
                 _selectedDrawer.Clear();
                 Remove(_selectedDrawer);
             }
+            */
              
             
             _selectedNode = node;

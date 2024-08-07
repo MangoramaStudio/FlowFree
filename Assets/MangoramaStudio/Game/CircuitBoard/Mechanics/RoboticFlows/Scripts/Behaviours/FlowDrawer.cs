@@ -70,9 +70,11 @@ namespace Mechanics.RoboticFlows
 
         public void Clear()
         {
+            
+            Debug.LogError("Clear");
             foreach (var cell in _drawnCells)
             {
-                cell.SetOccupied(false);
+                cell.SetOccupied(false,this);
             }
             
             _drawnCells.Clear();
@@ -107,7 +109,7 @@ namespace Mechanics.RoboticFlows
             
             _drawnCells.Push(cell);
             
-            cell.SetOccupied(true);
+            cell.SetOccupied(true,this);
             cell.PlayBlob();
             cell.SetOccupiedColor(GetOccupiedColor());
             cell.SetOccupiedTileSprite(GetOccupiedSprite());
@@ -420,7 +422,7 @@ namespace Mechanics.RoboticFlows
             while (_drawnCells.Count > 0 && _drawnCells.Peek() != cell)
             {
                 var popped = _drawnCells.Pop();
-                popped.SetOccupied(false);
+                popped.SetOccupied(false,this);
                 polyline.points.RemoveAt(polyline.Count - 1);
                 lineRendererController.RemoveLine();
                 polyline.meshOutOfDate = true;
