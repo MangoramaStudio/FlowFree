@@ -184,7 +184,7 @@ namespace Mechanics.RoboticFlows
             }
 
             spriteRenderer.transform.DOScale(surfaceSize, duration).SetEase(Ease.OutBack).SetDelay(delay);
-            spriteRenderer.DOFade(IsOccupied ? occupiedColor.a : color.a, duration)
+            spriteRenderer.DOFade(1f, duration)
                 .SetEase(Ease.OutBack)
                 .SetDelay(delay)
                 .OnComplete(() => onComplete?.Invoke());
