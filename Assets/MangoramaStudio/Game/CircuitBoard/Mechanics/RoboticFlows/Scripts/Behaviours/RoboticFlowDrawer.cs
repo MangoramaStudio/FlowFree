@@ -347,6 +347,8 @@ namespace Mechanics.RoboticFlows
             if (!_selectedDrawer)
                 return;
 
+            _selectedDrawer.BoingEffect();
+            
             ScaleDownNodes(_selectedDrawer.Id);
             if (_selectedDrawer.DrawnCells.Count <= 1)
             {

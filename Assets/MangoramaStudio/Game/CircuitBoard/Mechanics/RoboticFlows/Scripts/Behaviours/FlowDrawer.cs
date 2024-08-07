@@ -41,11 +41,16 @@ namespace Mechanics.RoboticFlows
 
         private RoboticFlowDrawer _roboticFlowDrawer;
 
+        private Sequence _boingSequence;
+        
         [Button]
-        public void Test()
+        public void BoingEffect()
         {
-            Sequence sequence = DOTween.Sequence();
-            sequence.Append(tip.transform.DOScale(.35f,.2f).From(.2f).SetLoops(5,LoopType.Yoyo).SetEase(Ease.InOutSine));
+            tip.transform.localScale = Vector3.one * 0.3f;
+            _boingSequence?.Kill();
+            DOTween.Kill(_boingSequence);
+            _boingSequence = DOTween.Sequence();
+            _boingSequence.Append(tip.transform.DOScale(.33f,.25f).SetLoops(4,LoopType.Yoyo).SetEase(Ease.InOutSine));
         }
         
         public void Initialize(RoboticFlowDrawer roboticFlowDrawer)
