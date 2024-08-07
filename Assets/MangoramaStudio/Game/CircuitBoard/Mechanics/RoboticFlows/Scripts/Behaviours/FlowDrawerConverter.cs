@@ -16,6 +16,17 @@ namespace Mechanics.RoboticFlows
         
 #if UNITY_EDITOR
 
+        public void ConvertToCells(bool isStroke6)
+        {
+            _cells = GetComponentsInChildren<Cell>().ToList();
+            
+            foreach (var cell in _cells)
+            {
+                cell.GetComponent<CellGridColorToSpriteConverter>().ChangeCells(isStroke6);
+            }
+        }
+        
+        
         [Button]
         public void Convert()
         {

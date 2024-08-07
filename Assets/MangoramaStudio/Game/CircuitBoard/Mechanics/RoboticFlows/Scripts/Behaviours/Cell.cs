@@ -38,7 +38,9 @@ namespace Mechanics.RoboticFlows
         public void SetTileSprite(Sprite sprite)
         {
             tileSprite = sprite;
+            spriteRenderer.sprite = TileSprite;
         }
+        
         
         public void SetSpriteRenderer()
         {

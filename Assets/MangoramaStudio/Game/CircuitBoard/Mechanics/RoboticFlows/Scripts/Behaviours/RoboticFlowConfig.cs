@@ -21,6 +21,8 @@ namespace Mechanics.RoboticFlows
         public Color color;
         public Sprite tile;
         public Sprite ball;
+        public Sprite stroke6Tile;
+        public Sprite stroke9Tile;
     }
 
     [Serializable]
@@ -28,6 +30,8 @@ namespace Mechanics.RoboticFlows
     {
         public Color color;
         public Sprite tile;
+        public Sprite stroke6Tile;
+        public Sprite stroke9Tile;
 
     }
 }

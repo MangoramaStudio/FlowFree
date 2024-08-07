@@ -83,6 +83,7 @@ namespace Mechanics.RoboticFlows
     public class LevelSizeCategoryDefinition
     {
         [BoxGroup]public float cameraOrthoSize;
+        public bool isStroke6;
         public Vector2Int size;
         public List<LevelBehaviour> levels = new();
 #if UNITY_EDITOR
@@ -106,6 +107,17 @@ namespace Mechanics.RoboticFlows
             for (int i = 0; i < levels.Count; i++)
             {
                 levels[i].GetComponent<FlowDrawerConverter>().AddCorrectOrderCells(size,levels[i]);
+                EditorUtility.SetDirty(levels[i].gameObject);
+                PrefabUtility.SavePrefabAsset(levels[i].gameObject);
+            }
+        }
+        
+        [Button(ButtonSizes.Medium),GUIColor(0.6f,0.6f,1f)]
+        public void ChangeTileAccordingToStroke()
+        {
+            for (int i = 0; i < levels.Count; i++)
+            {
+                levels[i].GetComponent<FlowDrawerConverter>().ConvertToCells(isStroke6);
                 EditorUtility.SetDirty(levels[i].gameObject);
                 PrefabUtility.SavePrefabAsset(levels[i].gameObject);
             }
