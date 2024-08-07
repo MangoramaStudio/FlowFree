@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MangoramaStudio.Scripts.Behaviours;
-using MatchinghamGames.VibrationModule;
+using MangoramaStudio.Scripts.Managers;
 using Mechanics.RoboticFlows.Obstacles;
 using Shapes;
 using Sirenix.OdinInspector;
@@ -107,7 +107,8 @@ namespace Mechanics.RoboticFlows
 
             if (cell.node)
             {
-                Vibrator.Vibrate(VibrationType.Rigid);
+                GameManager.Instance.EventManager.VibrateDrawCellNode();
+               
                 if (lineRendererController != null)
                 {
                     lineRendererController.GoToNode(cell);
@@ -117,7 +118,6 @@ namespace Mechanics.RoboticFlows
             {
             
                 lineRendererController.SetNewPosition(position);
-                Vibrator.Vibrate(VibrationType.Light);
             }
 
             if (polyline.Count > 1)
@@ -426,12 +426,11 @@ namespace Mechanics.RoboticFlows
 
                 if (top.node)
                 {
-                    Vibrator.Vibrate(VibrationType.Rigid);
+                    GameManager.Instance.EventManager.VibrateDrawCellNode();
                 }
                 else
                 {
                     top.PlayBlob();
-                    Vibrator.Vibrate(VibrationType.Light);
                 }
             }
         }

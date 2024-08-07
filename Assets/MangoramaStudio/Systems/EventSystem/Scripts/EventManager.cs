@@ -213,8 +213,8 @@ namespace MangoramaStudio.Scripts.Managers
 
         public event Action OnVibrateFlowComplete;
         public event Action OnVibrateLevelComplete;
-
         public event Action OnVibrateDrawCell;
+        public event Action OnVibrateDrawCellNode;
 
         public void VibrateFlowComplete()
         {
@@ -229,6 +229,11 @@ namespace MangoramaStudio.Scripts.Managers
         public void VibrateDrawCell()
         {
             OnVibrateDrawCell?.Invoke();
+        }
+        
+        public void VibrateDrawCellNode()
+        {
+            OnVibrateDrawCellNode?.Invoke();
         }
 
         #endregion

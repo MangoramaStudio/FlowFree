@@ -23,13 +23,21 @@ namespace MangoramaStudio.Systems.VibrationSystem
                 eventManager.OnVibrateDrawCell += VibrateDrawLine;
                 eventManager.OnVibrateFlowComplete += VibrateLineComplete;
                 eventManager.OnVibrateLevelComplete += VibrateLevelComplete;
+                eventManager.OnVibrateDrawCellNode += VibrateDrawCellNode;
             }
             else
             {
                 eventManager.OnVibrateDrawCell -= VibrateDrawLine;
                 eventManager.OnVibrateFlowComplete -= VibrateLineComplete;
                 eventManager.OnVibrateLevelComplete -= VibrateLevelComplete;
+                eventManager.OnVibrateDrawCellNode -= VibrateDrawCellNode;
+
             }
+        }
+
+        private void VibrateDrawCellNode()
+        {
+            TryVibrate(VibrationType.Rigid);
         }
 
         private void VibrateDrawLine()
