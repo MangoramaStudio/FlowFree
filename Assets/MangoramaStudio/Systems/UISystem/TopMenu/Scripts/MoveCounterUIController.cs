@@ -42,10 +42,8 @@ namespace Mechanics.RoboticFlows
             headerBg.sprite = definition.topMenuPipeHeaderBg;
             moveCounterTMP.color = definition.counterColor;
             moveCounterHeaderTMP.fontSharedMaterial = definition.headerTMPMaterial;
-            
         }
-
-
+        
         private void SetMoveCounter()
         {
             if (GameManager.Instance.LevelManager.CurrentLevel == null)
@@ -55,8 +53,6 @@ namespace Mechanics.RoboticFlows
             }
             _moveCounter = GameManager.Instance.LevelManager.CurrentLevel.MoveCounter;
         }
-
-       
         
         private void GatherMoveCounterData(bool isToggled)
         {
@@ -90,8 +86,7 @@ namespace Mechanics.RoboticFlows
             _moveCounter.Restart();
             UpdateMoveCounterTMP(0);
         }
-
-
+        
         private void UpdateMoveCounterTMP(int amount)
         {
             if (moveCounterTMP == null)
@@ -102,6 +97,4 @@ namespace Mechanics.RoboticFlows
             moveCounterTMP.SetText($"{amount}");
         }
     }
-    
-    
 }

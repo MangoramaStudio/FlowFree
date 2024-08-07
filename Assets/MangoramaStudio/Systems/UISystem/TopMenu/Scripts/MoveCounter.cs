@@ -13,6 +13,8 @@ namespace Mechanics.RoboticFlows
         
         private int _moveCount;
         public Action<int> onMoveCountUpdate;
+
+        private FlowDrawer _lastDrawer;
         
         private void Start()
         {
@@ -33,15 +35,34 @@ namespace Mechanics.RoboticFlows
         {
             if (isToggled)
             {
-                flowDrawer.onConnectNode += ConnectNode;  
+                GameManager.Instance.EventManager.OnReleaseDrawing+=CheckDrawing;
+                GameManager.Instance.EventManager.OnResetFlow += CheckDrawing;
+                GameManager.Instance.EventManager.OnConnectFlow += CheckDrawing;
+                //flowDrawer.onConnectNode += ConnectNode;  
             }
             else
             {
-                flowDrawer.onDraw -= ConnectNode;
+                GameManager.Instance.EventManager.OnReleaseDrawing-=CheckDrawing;
+                GameManager.Instance.EventManager.OnResetFlow -= CheckDrawing;
+                GameManager.Instance.EventManager.OnConnectFlow -= CheckDrawing;
+                //flowDrawer.onConnectNode -= ConnectNode;  
             }
         }
 
-        
+        private void CheckDrawing(FlowDrawer drawer)
+        {
+            if (_lastDrawer == null)
+            {
+                _lastDrawer = drawer;
+                ConnectNode();
+                return;
+            }
+
+            if (_lastDrawer == drawer) return;
+            ConnectNode();
+            _lastDrawer = drawer;
+        }
+
         public void Restart()
         {
             _moveCount = 0;

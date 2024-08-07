@@ -33,6 +33,7 @@ namespace Mechanics.RoboticFlows
         public Action onClearDisconnected;
 
 
+
         private EventManager _eventManager;
 
         public IReadOnlyList<FlowDrawer> Drawers => drawers;
@@ -139,7 +140,6 @@ namespace Mechanics.RoboticFlows
                     if (occupiedNode!=null && occupiedNode.IsOccupied)
                     {
                         _selectedDrawer = occupiedNode.GetOccupiedFlowDrawer();
-                        
                     }
                 }
                 
@@ -157,12 +157,13 @@ namespace Mechanics.RoboticFlows
                 if (cell.node)
                 {
                    // _eventManager.ResetNoteIndexSound();
-                    _eventManager.ResetFlow(_selectedDrawer);
+               
 
                    var matchedDrawer = drawers.Find(x => x.Id == cell.node.Id);
                    if (matchedDrawer.DrawnCells.Count>0)
                    {
                        matchedDrawer.Clear();
+                       _eventManager.ResetFlow(_selectedDrawer);
                    }
                 }
 
@@ -173,7 +174,7 @@ namespace Mechanics.RoboticFlows
                 
                 
                 hint.StopHighlight();
-                
+
                 
                 if (_selectedDrawer.DrawnCells.Contains(cell))
                 {
@@ -365,7 +366,7 @@ namespace Mechanics.RoboticFlows
                         }
                         
                   
-                      
+                        _eventManager.ConnectFlow(_selectedDrawer);    
                         _eventManager.CompleteFlow(_selectedDrawer,_selectedNode);
                         _selectedDrawer = null;
                         _selectedNode = null;
@@ -390,6 +391,7 @@ namespace Mechanics.RoboticFlows
             if (!_selectedDrawer)
                 return;
 
+            _eventManager.ReleaseDrawing(_selectedDrawer);
             _selectedDrawer.BoingEffect();
             
             ScaleDownNodes(_selectedDrawer.Id);
@@ -430,9 +432,7 @@ namespace Mechanics.RoboticFlows
                     
                 }
             }
-            
-         
-        
+
             
             onRelease?.Invoke();
         }

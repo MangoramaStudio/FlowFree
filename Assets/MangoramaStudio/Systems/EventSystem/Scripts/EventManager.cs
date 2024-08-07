@@ -42,6 +42,8 @@ namespace MangoramaStudio.Scripts.Managers
         public event Action OnRaiseWarning;
         public event Action OnRaiseHint;
         public event Action OnDrawCell;
+
+        public event Action<FlowDrawer> OnReleaseDrawing; 
         public event Action<FlowDrawer,Node> OnCompleteFlow;
         public event Action OnCompleteAllFlows;
         public event Action OnRestartLevel;
@@ -49,8 +51,13 @@ namespace MangoramaStudio.Scripts.Managers
         public event Action OnAutoComplete;
         public event Action<FlowDrawer> OnClearCell;
         public event Action<FlowDrawer> OnClearDisconnectedCell;
-
         public event Action<FlowDrawer> OnResetFlow;
+        public event Action<FlowDrawer> OnConnectFlow; 
+
+        public void ReleaseDrawing(FlowDrawer flowDrawer)
+        {
+            OnReleaseDrawing?.Invoke(flowDrawer);
+        }
         
         public void RaiseWarning()
         {
@@ -65,6 +72,11 @@ namespace MangoramaStudio.Scripts.Managers
         public void DrawCell()
         {
             OnDrawCell?.Invoke();
+        }
+
+        public void ConnectFlow(FlowDrawer flowDrawer)
+        {
+            OnConnectFlow?.Invoke(flowDrawer);
         }
 
         public void ResetFlow(FlowDrawer flowDrawer)
