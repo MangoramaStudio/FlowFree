@@ -55,7 +55,7 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
 
         private void TutorialPlaying(string text)
         {
-            tutorialTMP.SetText(text);         
+            tutorialTMP.SetText(text.ToUpper());         
         }
 
         private void RaiseWarning()
