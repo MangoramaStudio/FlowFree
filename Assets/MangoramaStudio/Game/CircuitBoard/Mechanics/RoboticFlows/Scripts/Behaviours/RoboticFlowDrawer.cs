@@ -343,7 +343,7 @@ namespace Mechanics.RoboticFlows
                     _selectedDrawer.DrawCell(cell);
                     _eventManager.IncrementNoteIndexSound();
                     _eventManager.VibrateDrawCell();
-                    _eventManager.DrawCell();
+                    _eventManager.DrawCell(_selectedDrawer);
 
                     if (_selectedDrawer.FlowComplete)
                     {

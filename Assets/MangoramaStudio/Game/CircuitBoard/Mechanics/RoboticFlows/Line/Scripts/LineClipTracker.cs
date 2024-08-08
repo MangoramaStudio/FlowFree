@@ -78,7 +78,7 @@ namespace MangoramaStudio.Game.Test
             }
         }
 
-        private void StartDrawCell()
+        private void StartDrawCell(FlowDrawer drawer)
         {
             _isClear = false;
         }

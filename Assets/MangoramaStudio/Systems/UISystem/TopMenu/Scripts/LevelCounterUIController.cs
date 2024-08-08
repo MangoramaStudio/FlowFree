@@ -27,7 +27,7 @@ namespace Mechanics.RoboticFlows
             levelCounterTMP.transform.localScale = Vector3.one;
             
             var getSize = GameManager.Instance.LevelManager.CurrentLevel.Container.Builder.GetSize();
-            var sizeText = $"{getSize.x}X{getSize.y}";
+            var sizeText = $"{getSize.x}x{getSize.y}";
             sizeTMP.SetText(sizeText);
             var data = GameManager.Instance.DataManager.GetData<LevelData>();
             levelCounterTMP.SetText($"Level {data.currentLevelIndex}");

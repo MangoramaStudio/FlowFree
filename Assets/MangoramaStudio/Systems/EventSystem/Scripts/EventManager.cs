@@ -41,7 +41,7 @@ namespace MangoramaStudio.Scripts.Managers
 
         public event Action OnRaiseWarning;
         public event Action OnRaiseHint;
-        public event Action OnDrawCell;
+        public event Action<FlowDrawer> OnDrawCell;
         public event Action<FlowDrawer> OnSelectOccupiedCell; 
         public event Action<FlowDrawer> OnReleaseDrawing; 
         public event Action<FlowDrawer,Node> OnCompleteFlow;
@@ -69,9 +69,9 @@ namespace MangoramaStudio.Scripts.Managers
             OnRaiseHint?.Invoke();
         }
 
-        public void DrawCell()
+        public void DrawCell(FlowDrawer drawer)
         {
-            OnDrawCell?.Invoke();
+            OnDrawCell?.Invoke(drawer);
         }
 
         public void SelectOccupiedCell(FlowDrawer drawer)
