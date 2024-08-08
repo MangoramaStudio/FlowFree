@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using MangoramaStudio.Scripts.Managers;
+using MangoramaStudio.Systems.PopupSystem.Scripts;
 using Mechanics.RoboticFlows;
 using TMPro;
 using UnityEngine;
@@ -47,12 +48,15 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
 
         private void RaiseWarning()
         {
+            /*
             if (warningObject == null)
             {
                 Debug.LogError("WarningObject is null");
                 return;
             }
             Instantiate(warningObject, transform);
+            */
+            GameManager.Instance.EventManager.OpenPopup(PopupType.CoverAllTiles);
         }
     }
 }
