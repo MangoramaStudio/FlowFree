@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using MangoramaStudio.Game.Scripts.Behaviours;
 using MangoramaStudio.Scripts.Managers;
 using MangoramaStudio.Systems.TutorialSystem.Scripts;
@@ -594,9 +595,24 @@ namespace Mechanics.RoboticFlows
         protected override void AutoComplete()
         {
             base.AutoComplete();
-            drawers.ForEach(x=>x.AutoComplete());
-            CheckAndComplete();         
-            
+            StartCoroutine(CRAutoComplete());
+
+        }
+
+        private IEnumerator CRAutoComplete()
+        {
+            for (int i = 0; i < drawers.Count; i++)
+            {
+                drawers[i].Clear();
+            }
+            yield return null;
+            for (int i = 0; i < drawers.Count; i++)
+            {
+                drawers[i].AutoComplete();
+            }
+
+            yield return null;
+            CheckAndComplete();    
         }
     }
 }

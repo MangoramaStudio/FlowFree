@@ -74,6 +74,7 @@ namespace Mechanics.RoboticFlows
             foreach (var cell in _drawnCells)
             {
                 cell.SetOccupied(false,this);
+                cell.isColorAnimCompleted = false;
             }
             
             _drawnCells.Clear();
