@@ -13,14 +13,14 @@ namespace MangoramaStudio.Systems.LevelSystem.Scripts
             levelOrderConfig.InitializeConfig();
         }
 
-        public List<string> GetCurrentLevelOrder()
+        public List<int> GetCurrentLevelOrder()
         {
-            return levelOrderConfig.LevelOrder;
+            return levelOrderConfig.DisplayLevelDataList;
         }
         
-        public List<string> GetCurrentLoopLevelOrder()
+        public List<int> GetCurrentLoopLevelOrder()
         {
-            return levelOrderConfig.LoopLevelOrder;
+            return levelOrderConfig.DisplayLoopLevelDataList;
         }
        
     }

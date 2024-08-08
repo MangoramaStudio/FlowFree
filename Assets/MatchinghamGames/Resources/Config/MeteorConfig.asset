@@ -62,6 +62,8 @@ MonoBehaviour:
     - iosRewardedVideoForceSwitchInterval
     - IsInternetRequiredForCharlie
     - IsVegasInitializationEssential
+    - levelOrder
+    - loopLevelOrder
     - openDebugMenuOnTestDevices
     - openMediationDebuggerOnTestDevices
     - rewardedVideoInterstitialCap
@@ -75,6 +77,8 @@ MonoBehaviour:
     - AdmostRemoteConfigService
     - AdmostRemoteConfigService
     - FirebaseRemoteConfigService
+    - AdmostRemoteConfigService
+    - AdmostRemoteConfigService
     - AdmostRemoteConfigService
     - AdmostRemoteConfigService
     - AdmostRemoteConfigService

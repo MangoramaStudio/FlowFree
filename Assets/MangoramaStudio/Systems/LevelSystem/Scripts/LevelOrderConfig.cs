@@ -12,23 +12,44 @@ namespace MangoramaStudio.Systems.LevelSystem.Scripts
 
         public void InitializeConfig()
         {
-            ParseJsonToLevelData(levelOrder);
+            //ParseJsonToLevelData(levelOrder);
         }
         
-        [SerializeField] private List<string> levelOrderList = new();
-        
-        [SerializeField] private List<string> loopLevelOrderList = new();
-        
-        //[RemoteSetting("levelOrder")]
+        [RemoteSetting("levelOrder")]
         [SerializeField] private string levelOrder;
-
+        [RemoteSetting("loopLevelOrder")]
         [SerializeField] private string loopLevelOrder;
 
-        public List<string> LevelOrder => JsonConvert.DeserializeObject<List<string>>(levelOrder);
+        public string LevelOrder => levelOrder;
+        public string LoopLevelOrder => loopLevelOrder;
         
-        public List<string> LoopLevelOrder => JsonConvert.DeserializeObject<List<string>>(loopLevelOrder);
+        public List<int> DisplayLevelDataList => Convert(LevelOrder);
+        
+        public List<int> DisplayLoopLevelDataList => Convert(LoopLevelOrder);
 
         
+        private List<int> Convert(string order)
+        {
+            List<int> list= new();
+            var numberArray = order.Split(',');
+            foreach (var number in numberArray)
+            {
+                if (int.TryParse(number, out var parsedNumber))
+                {
+                    list.Add(parsedNumber);
+                }
+                else
+                {
+                    Debug.LogError("Failed to parse number: " + number);
+                }
+            }
+
+            return list;
+        }
+
+        
+        
+        /*
         [InfoBox("This fills the string with the level data struct you will set", InfoMessageType.Warning)]
         [Button(ButtonSizes.Large),GUIColor(0,1,1)]
         private void ConvertLevelDataToJson()
@@ -60,6 +81,7 @@ namespace MangoramaStudio.Systems.LevelSystem.Scripts
             loopLevelOrderList.Clear();
             loopLevelOrderList = JsonConvert.DeserializeObject<List<string>>(loopLevelOrder);
         }
+        */
         
     }
 }
