@@ -527,6 +527,8 @@ namespace Mechanics.RoboticFlows
             {
                 foreach (var cell in grid.Cells)
                 {
+                    cell.GetComponent<BoxCollider>().enabled = false;
+                    _eventManager.CompletePreLevel();
                     if (cell.node)
                         cell.node.Bounce();
                 }

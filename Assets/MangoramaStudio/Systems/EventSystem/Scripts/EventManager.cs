@@ -38,7 +38,6 @@ namespace MangoramaStudio.Scripts.Managers
         #endregion
 
         #region Flow Drawer Events
-
         public event Action OnRaiseWarning;
         public event Action OnRaiseHint;
         public event Action<FlowDrawer> OnDrawCell;
@@ -52,8 +51,15 @@ namespace MangoramaStudio.Scripts.Managers
         public event Action<FlowDrawer> OnClearCell;
         public event Action<FlowDrawer> OnClearDisconnectedCell;
         public event Action<FlowDrawer> OnResetFlow;
-        public event Action<FlowDrawer> OnConnectFlow; 
+        public event Action<FlowDrawer> OnConnectFlow;
 
+        public event Action OnLevelPreCompleted;
+
+        public void CompletePreLevel()
+        {
+            OnLevelPreCompleted?.Invoke();
+        }
+        
         public void ReleaseDrawing(FlowDrawer flowDrawer)
         {
             OnReleaseDrawing?.Invoke(flowDrawer);

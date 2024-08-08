@@ -11,7 +11,7 @@ namespace MangoramaStudio.Systems.PopupSystem.Scripts
         Tutorial,
         Settings,
         AdsNotReady,
-        CoverAllTiles
+        CoverAllTiles,
     }
     public abstract class PopupBase : UIBehaviour
     {

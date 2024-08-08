@@ -42,6 +42,16 @@ namespace MangoramaStudio.Scripts.Managers.Buttons
             GameManager.Instance.VibrationManager.VibrateButton(vibrationType);
         }
 
+        public void EnableButton()
+        {
+            Button.enabled = true;
+        }
+
+        public void DisableButton()
+        {
+            Button.enabled = false;
+        }
+
         protected virtual void ToggleEvents(bool isToggled)
         {
             if (isToggled)

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using MangoramaStudio.Scripts.Managers;
+using MangoramaStudio.Scripts.Managers.Buttons;
 using MangoramaStudio.Systems.PopupSystem.Scripts;
 using Mechanics.RoboticFlows;
 using TMPro;
@@ -11,6 +12,7 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
 {
     public class GameplayMenu : BaseMenu
     {
+        [SerializeField] private List<BaseButton> baseButtons = new();
         [SerializeField] private TextMeshProUGUI tutorialTMP;
         [SerializeField] private GameObject warningObject;
         [SerializeField] private PipeCompleteCounterUIController pipeCompleteCounterUIController;
@@ -34,7 +36,7 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
             bottomBg.sprite = definition.bottomHeader;
             
             tutorialTMP.gameObject.SetActive(GameManager.Instance.LevelManager.CurrentLevel.IsTutorial);
-            
+            EnableButtons();
             
         }
         
@@ -46,14 +48,26 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
                 GameManager.Instance.EventManager.OnRaiseWarning+=RaiseWarning;
                 GameManager.Instance.EventManager.OnTutorialPlaying+=TutorialPlaying;
                 GameManager.Instance.EventManager.OnTutorialCompleted+=TutorialCompleted;
+                GameManager.Instance.EventManager.OnLevelPreCompleted += DisableButtons;
             }
             else
             {
                 GameManager.Instance.EventManager.OnRaiseWarning-=RaiseWarning;
                 GameManager.Instance.EventManager.OnTutorialPlaying-=TutorialPlaying;
                 GameManager.Instance.EventManager.OnTutorialCompleted-=TutorialCompleted;
+                GameManager.Instance.EventManager.OnLevelPreCompleted -= DisableButtons;
 
             }
+        }
+
+        private void DisableButtons()
+        {
+            baseButtons.ForEach(x=>x.DisableButton());
+        }
+        
+        private void EnableButtons()
+        {
+            baseButtons.ForEach(x=>x.EnableButton());
         }
 
         private void TutorialCompleted()
