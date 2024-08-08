@@ -118,14 +118,17 @@ MonoBehaviour:
     isCompleted: 0
     mask: {fileID: 1162373656310559240}
     definition: 'Connect the <color=#4881FD><b>Blue</b></color> balls '
+    reverseDirection: 0
   - flowDrawer: {fileID: 2066960499982589144}
     isCompleted: 0
     mask: {fileID: 5861222840635967275}
     definition: 'Connect the <color=#CE1821><b>Red</b></color> balls '
+    reverseDirection: 1
   - flowDrawer: {fileID: 3061399482850286330}
     isCompleted: 0
     mask: {fileID: 8196566532256409390}
     definition: Complete the Flow Puzzle
+    reverseDirection: 0
 --- !u!1 &1005223466569352132
 GameObject:
   m_ObjectHideFlags: 0

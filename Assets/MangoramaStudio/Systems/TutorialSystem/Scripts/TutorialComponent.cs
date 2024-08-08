@@ -35,23 +35,30 @@ namespace MangoramaStudio.Systems.TutorialSystem.Scripts
 
         private void StartHand()
         {
-            tutorialHand.transform.SetParent(GetCurrentTutorialDefinition.flowDrawer.GetCorrectOrderedCells().First().transform);
+
+            var orderedCellsList = GetCurrentTutorialDefinition.flowDrawer.GetCorrectOrderedCells();
+            if (CurrentTutorialDefinition().reverseDirection)
+            {
+                orderedCellsList.Reverse();
+            }
+            
+            tutorialHand.transform.SetParent(orderedCellsList.First().transform);
             tutorialHand.transform.localPosition = Vector3.zero;
 
             _tutorialSequence?.Kill(true);
             _tutorialSequence = DOTween.Sequence();
             _tutorialSequence.Append(tutorialHand.GetComponentInChildren<SpriteRenderer>().DOFade(1f, .3f).From(0f));
-            var list = GetCurrentTutorialDefinition.flowDrawer.GetCorrectOrderedCells();
+           
 
-            for (var index = 0; index < list.Count; index++)
+            for (var index = 0; index < orderedCellsList.Count; index++)
             {
-                var pos = list[index];
+                var pos = orderedCellsList[index];
                 var newPos = new Vector3(pos.transform.position.x, 1f, pos.transform.position.z);
                 var index1 = index;
 
                 _tutorialSequence.Append(tutorialHand.transform.DOMove(newPos, .35f).SetEase(Ease.Linear));
         
-                if (index == list.Count - 1)
+                if (index == orderedCellsList.Count - 1)
                 {
                     _tutorialSequence.Append(tutorialHand.GetComponentInChildren<SpriteRenderer>().DOFade(0, 0.5f));
                     _tutorialSequence.AppendInterval(.5f);
@@ -109,5 +116,6 @@ namespace MangoramaStudio.Systems.TutorialSystem.Scripts
         public bool isCompleted;
         public GameObject mask;
         public string definition;
+        public bool reverseDirection;
     }
 }
