@@ -350,6 +350,10 @@ namespace Mechanics.RoboticFlows
 
                         if (HasTutorialComponent())
                         {
+                            if (tutorialComponent.IsCompleted)
+                            {
+                                return;
+                            }
                             var def = tutorialComponent.GetCurrentTutorialDefinition;
                             if (def.flowDrawer == _selectedDrawer)
                             {

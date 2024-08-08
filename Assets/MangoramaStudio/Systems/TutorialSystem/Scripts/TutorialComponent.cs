@@ -15,9 +15,11 @@ namespace MangoramaStudio.Systems.TutorialSystem.Scripts
         [SerializeField] private GameObject tutorialHand;
         [SerializeField] private List<TutorialDefinition> tutorialDefinitions = new();
         public List<TutorialDefinition> TutorialDefinitions => tutorialDefinitions;
-        public TutorialDefinition GetCurrentTutorialDefinition => TutorialDefinitions.ElementAt(CurrentTutorialIndex);
+        public TutorialDefinition GetCurrentTutorialDefinition => AllCompleted() ? null : TutorialDefinitions.ElementAt(CurrentTutorialIndex);
 
         private Sequence _tutorialSequence;
+        
+        public bool IsCompleted { get; private set; }
 
         private void Start()
         {
@@ -80,6 +82,9 @@ namespace MangoramaStudio.Systems.TutorialSystem.Scripts
             {
                 Debug.LogError("all completed");
                 tutorialHand.gameObject.SetActive(false);
+                cells.ForEach(x => x.GetComponent<BoxCollider>().enabled = true);
+                GameManager.Instance.EventManager.CompleteTutorial();
+                IsCompleted = true;
                 return;
             }
             cells.ForEach(x => x.GetComponent<BoxCollider>().enabled = false);

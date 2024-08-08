@@ -258,10 +258,17 @@ namespace MangoramaStudio.Scripts.Managers
         #region Tutorial Events
 
         public event Action<string> OnTutorialPlaying;
+        
+        public event Action OnTutorialCompleted;
 
         public void PlayTutorial(string text)
         {
             OnTutorialPlaying?.Invoke(text);
+        }
+
+        public void CompleteTutorial()
+        {
+            OnTutorialCompleted?.Invoke();
         }
         
         #endregion

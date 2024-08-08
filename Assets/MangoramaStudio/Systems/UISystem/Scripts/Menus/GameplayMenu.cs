@@ -45,12 +45,21 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
             {
                 GameManager.Instance.EventManager.OnRaiseWarning+=RaiseWarning;
                 GameManager.Instance.EventManager.OnTutorialPlaying+=TutorialPlaying;
+                GameManager.Instance.EventManager.OnTutorialCompleted+=TutorialCompleted;
             }
             else
             {
                 GameManager.Instance.EventManager.OnRaiseWarning-=RaiseWarning;
                 GameManager.Instance.EventManager.OnTutorialPlaying-=TutorialPlaying;
+                GameManager.Instance.EventManager.OnTutorialCompleted-=TutorialCompleted;
+
             }
+        }
+
+        private void TutorialCompleted()
+        {
+            tutorialTMP.gameObject.SetActive(false);
+
         }
 
         private void TutorialPlaying(string text)
