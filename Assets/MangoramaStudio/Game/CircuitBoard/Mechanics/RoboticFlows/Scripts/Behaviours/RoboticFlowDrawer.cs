@@ -354,17 +354,20 @@ namespace Mechanics.RoboticFlows
 
                         if (HasTutorialComponent())
                         {
-                            if (tutorialComponent.IsCompleted)
-                            {
-                                return;
-                            }
+                            
                             var def = tutorialComponent.GetCurrentTutorialDefinition;
-                            if (def.flowDrawer == _selectedDrawer)
+
+                            if (def !=null)
                             {
-                                def.isCompleted = true;
-                                tutorialComponent.TryIncrementTutorialIndex();
-                                tutorialComponent.SetPlayableCells(grid.Cells.ToList());
+                                if (def.flowDrawer == _selectedDrawer)
+                                {
+                                    def.isCompleted = true;
+                                    tutorialComponent.TryIncrementTutorialIndex();
+                                    tutorialComponent.SetPlayableCells(grid.Cells.ToList());
+                                }     
                             }
+                            
+                           
                         }
                         BounceFlow(cell.node.Id);
                         Add();
