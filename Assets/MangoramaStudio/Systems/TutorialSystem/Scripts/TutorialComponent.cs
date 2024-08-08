@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
+using MangoramaStudio.Scripts.Managers;
 using Mechanics.RoboticFlows;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -17,6 +18,20 @@ namespace MangoramaStudio.Systems.TutorialSystem.Scripts
         public TutorialDefinition GetCurrentTutorialDefinition => TutorialDefinitions.ElementAt(CurrentTutorialIndex);
 
         private Sequence _tutorialSequence;
+
+        private void Start()
+        {
+            CurrentTutorialIndex = 0;
+            tutorialDefinitions.ForEach(x=>x.mask.gameObject.SetActive(false));
+            tutorialDefinitions.ElementAt(CurrentTutorialIndex).mask.gameObject.SetActive(true);
+            
+            GameManager.Instance.EventManager.PlayTutorial(CurrentTutorialDefinition().definition);
+        }
+
+        private TutorialDefinition CurrentTutorialDefinition()
+        {
+            return tutorialDefinitions.ElementAt(CurrentTutorialIndex);
+        }
 
         private void StartHand()
         {
@@ -73,10 +88,15 @@ namespace MangoramaStudio.Systems.TutorialSystem.Scripts
         public void TryIncrementTutorialIndex()
         {
             CurrentTutorialIndex++;
-            if (CurrentTutorialIndex > TutorialDefinitions.Count)
+            tutorialDefinitions.ForEach(x=>x.mask.gameObject.SetActive(false));
+            if (CurrentTutorialIndex >= TutorialDefinitions.Count)
             {
                 CurrentTutorialIndex = TutorialDefinitions.Count;
+                return;
             }
+            tutorialDefinitions.ElementAt(CurrentTutorialIndex).mask.gameObject.SetActive(true);
+            GameManager.Instance.EventManager.PlayTutorial(CurrentTutorialDefinition().definition);
+            
         }
         
         public int CurrentTutorialIndex { get; set; }
@@ -87,5 +107,7 @@ namespace MangoramaStudio.Systems.TutorialSystem.Scripts
     {
         public FlowDrawer flowDrawer;
         public bool isCompleted;
+        public GameObject mask;
+        public string definition;
     }
 }

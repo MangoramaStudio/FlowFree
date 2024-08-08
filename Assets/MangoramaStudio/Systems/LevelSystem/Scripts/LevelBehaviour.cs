@@ -20,6 +20,7 @@ namespace MangoramaStudio.Scripts.Behaviours
     public class LevelBehaviour : MonoBehaviour
     {
 
+        [SerializeField] private bool isTutorial;
         [SerializeField] private LevelType levelType;
         [SerializeField] private FlowGrid flowGrid;
         [SerializeField] private PlayableMechanicContainer container;
@@ -29,6 +30,8 @@ namespace MangoramaStudio.Scripts.Behaviours
         public PipeCompleteCounter PipeCompleteCounter => pipeCompleteCounter;
         public MoveCounter MoveCounter => moveCounter;
 
+        public bool IsTutorial => isTutorial;
+        
         public LevelType LevelType => levelType;
         public bool HasObstacles => flowGrid.HasObstacles;
         

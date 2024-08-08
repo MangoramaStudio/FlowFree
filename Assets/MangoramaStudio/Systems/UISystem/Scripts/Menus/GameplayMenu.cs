@@ -11,6 +11,7 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
 {
     public class GameplayMenu : BaseMenu
     {
+        [SerializeField] private TextMeshProUGUI tutorialTMP;
         [SerializeField] private GameObject warningObject;
         [SerializeField] private PipeCompleteCounterUIController pipeCompleteCounterUIController;
         [SerializeField] private MoveCounterUIController moveCounterUIController;
@@ -31,19 +32,30 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
                 x.levelType == GameManager.Instance.LevelManager.CurrentLevel.LevelType);
             topBg.sprite = definition.topHeader;
             bottomBg.sprite = definition.bottomHeader;
+            
+            tutorialTMP.gameObject.SetActive(GameManager.Instance.LevelManager.CurrentLevel.IsTutorial);
+            
+            
         }
-
+        
         protected override void ToggleEvents(bool isToggled)
         {
             base.ToggleEvents(isToggled);
             if (isToggled)
             {
                 GameManager.Instance.EventManager.OnRaiseWarning+=RaiseWarning;
+                GameManager.Instance.EventManager.OnTutorialPlaying+=TutorialPlaying;
             }
             else
             {
                 GameManager.Instance.EventManager.OnRaiseWarning-=RaiseWarning;
+                GameManager.Instance.EventManager.OnTutorialPlaying-=TutorialPlaying;
             }
+        }
+
+        private void TutorialPlaying(string text)
+        {
+            tutorialTMP.SetText(text);         
         }
 
         private void RaiseWarning()
