@@ -56,9 +56,8 @@ namespace Mechanics.RoboticFlows
             var targetTransform = spriteRenderer.transform;
             
             targetTransform.DOKill();
-            targetTransform.localScale = surfaceSize * Vector3.one;
-            
-            var tween = targetTransform.DOScale(.35f,.05f).SetEase(Ease.OutSine);
+            //targetTransform.localScale = surfaceSize * Vector3.one;
+            var tween = targetTransform.DOPunchScale(0.05f * Vector3.one, 0.5f, 1).SetEase(Ease.OutSine).SetLoops(-1,LoopType.Yoyo);
             return tween;
         }
         

@@ -142,6 +142,8 @@ namespace Mechanics.RoboticFlows
                     {
                         _selectedDrawer = occupiedNode.GetOccupiedFlowDrawer();
                         _eventManager.SelectOccupiedCell(_selectedDrawer);
+                        
+                        ScaleUpNodes(occupiedNode.node.Id);     
                     }
                 }
                 
