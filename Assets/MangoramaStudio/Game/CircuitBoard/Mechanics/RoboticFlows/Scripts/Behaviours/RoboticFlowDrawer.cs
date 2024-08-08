@@ -292,15 +292,19 @@ namespace Mechanics.RoboticFlows
                     }
                     else
                     {
-                        cell.GetOccupiedFlowDrawer().ClearToCell(cell);
+                        if (cell.node==null)
+                        {
+                            cell.GetOccupiedFlowDrawer().ClearToCell(cell);     
+                        }
+                       
                     }
                     
                    
                 }
                 
-                if (!_selectedDrawer || (_selectedDrawer.DrawnCells.Count != 0 &&
-                                         !_selectedDrawer.DrawnCells.Peek().IsNeighbor(cell)))
+                if (!_selectedDrawer || (_selectedDrawer.DrawnCells.Count != 0 && !_selectedDrawer.DrawnCells.Peek().IsNeighbor(cell)))
                 {
+                   
                     return;
                 }
                     
@@ -310,12 +314,10 @@ namespace Mechanics.RoboticFlows
                     return;
                 }
                 
-             
-                
                 
                 if (_selectedDrawer.DrawnCells.Contains(cell))
                 {
-              
+                    
                     _eventManager.DecrementNoteIndexSound(_selectedDrawer.DrawnCells.Count-1);
                     _eventManager.PlayNoteSound();
                     _selectedDrawer.ClearToCell(cell);
