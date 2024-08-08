@@ -13,6 +13,8 @@ namespace Mechanics.RoboticFlows
 
         private Hint _highlighting;
 
+        public List<Hint> GetHints() => hints;
+
         public void SetHints(IEnumerable<Hint> hintList)
         {
             hints = hintList.ToList();
@@ -40,10 +42,11 @@ namespace Mechanics.RoboticFlows
 
             foreach (var cell in hint.cells)
             {
-                if (!cell.IsBlinking)
+                if (!cell.IsHintPlaying)
                 {
-                    cell.SetOccupiedColor(hint.color);
-                    cell.Blink(hint.color);
+                    cell.StartHint(_highlighting);
+                    //cell.SetOccupiedColor(hint.color);
+                    //cell.Blink(hint.color);
                 }
             }
         }
@@ -55,8 +58,11 @@ namespace Mechanics.RoboticFlows
             
             foreach (var cell in _highlighting.cells)
             {
-                if (cell.IsBlinking)
-                    cell.StopBlink();
+                if (cell.IsHintPlaying)
+                {
+                    cell.StopHint();
+                }
+                   
             }
 
             _highlighting = null;
@@ -69,6 +75,7 @@ namespace Mechanics.RoboticFlows
             public int id;
             [FormerlySerializedAs("hintColor")] public Color color;
             public List<Cell> cells;
+            public Sprite tile;
         }
     }
 }

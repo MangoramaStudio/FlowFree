@@ -30,7 +30,8 @@ namespace Mechanics.RoboticFlows
         public bool isColorAnimCompleted;
 
         private Sprite _occupiedSprite;
-        public bool IsBlinking => _blinkSequence?.IsPlaying() ?? false;
+       // public bool IsBlinking => _blinkSequence?.IsPlaying() ?? false;
+        public bool IsHintPlaying => _hintSequence?.IsPlaying() ?? false;
         [ShowInInspector]public bool IsOccupied { get; private set; }
         [ShowInInspector]public bool HasObstacles => Obstacles.Count > 0;
 
@@ -220,6 +221,13 @@ namespace Mechanics.RoboticFlows
             spriteRenderer.color = Color.white;
         }
 
+        public void StopHint()
+        {
+            _hintSequence?.Kill();
+            spriteRenderer.DOKill();
+            spriteRenderer.DOFade(1f, 0f);
+        }
+
         /// <summary>
         /// Find direction to target cell in order to handle obstacles and other features
         /// </summary>
@@ -267,5 +275,22 @@ namespace Mechanics.RoboticFlows
                 });
             }
         }
+
+        private Sequence _hintSequence;
+        
+        public void StartHint(RoboticFlowHint.Hint hint)
+        {
+            if (IsOccupied)
+            {
+                return;
+            }
+
+            _hintSequence?.Kill(true);
+            spriteRenderer.sprite = hint.tile;
+            _hintSequence = DOTween.Sequence();
+            _hintSequence.Append(spriteRenderer.DOFade(.6f, 1f).SetEase(Ease.Linear));
+            _hintSequence.SetLoops(-1, LoopType.Restart);
+        }
+        
     }
 }

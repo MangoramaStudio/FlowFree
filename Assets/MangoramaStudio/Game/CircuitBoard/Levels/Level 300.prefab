@@ -12817,6 +12817,38 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1316962698503553777, guid: 5a2f378d5be604c5e845c6051d6a0a56, type: 3}
+      propertyPath: hints.Array.data[0].tile
+      value: 
+      objectReference: {fileID: 21300000, guid: 6eabf0b0aa15140c281f0416f7275f75, type: 3}
+    - target: {fileID: 1316962698503553777, guid: 5a2f378d5be604c5e845c6051d6a0a56, type: 3}
+      propertyPath: hints.Array.data[1].tile
+      value: 
+      objectReference: {fileID: 21300000, guid: b2d545521d42a4655bc133e2ee0d9352, type: 3}
+    - target: {fileID: 1316962698503553777, guid: 5a2f378d5be604c5e845c6051d6a0a56, type: 3}
+      propertyPath: hints.Array.data[2].tile
+      value: 
+      objectReference: {fileID: 21300000, guid: 3cfae85f68cc94e548bf21bed4b9aca8, type: 3}
+    - target: {fileID: 1316962698503553777, guid: 5a2f378d5be604c5e845c6051d6a0a56, type: 3}
+      propertyPath: hints.Array.data[3].tile
+      value: 
+      objectReference: {fileID: 21300000, guid: 4ec7b0628fa83447395e20a9065fc135, type: 3}
+    - target: {fileID: 1316962698503553777, guid: 5a2f378d5be604c5e845c6051d6a0a56, type: 3}
+      propertyPath: hints.Array.data[4].tile
+      value: 
+      objectReference: {fileID: 21300000, guid: 8be9c0a6611674f17a4c28c942b5983c, type: 3}
+    - target: {fileID: 1316962698503553777, guid: 5a2f378d5be604c5e845c6051d6a0a56, type: 3}
+      propertyPath: hints.Array.data[5].tile
+      value: 
+      objectReference: {fileID: 21300000, guid: 08bf2322507134daa8e1d9b814b58406, type: 3}
+    - target: {fileID: 1316962698503553777, guid: 5a2f378d5be604c5e845c6051d6a0a56, type: 3}
+      propertyPath: hints.Array.data[6].tile
+      value: 
+      objectReference: {fileID: 21300000, guid: 2f2a208ae2755472d9f46566525f7d5a, type: 3}
+    - target: {fileID: 1316962698503553777, guid: 5a2f378d5be604c5e845c6051d6a0a56, type: 3}
+      propertyPath: hints.Array.data[7].tile
+      value: 
+      objectReference: {fileID: 21300000, guid: 8d779b8ac6cc747ddadaa3c4597326be, type: 3}
+    - target: {fileID: 1316962698503553777, guid: 5a2f378d5be604c5e845c6051d6a0a56, type: 3}
       propertyPath: hints.Array.data[0].color.a
       value: 0.2
       objectReference: {fileID: 0}

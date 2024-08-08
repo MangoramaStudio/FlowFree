@@ -1214,6 +1214,30 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1316962698503553777, guid: 5a2f378d5be604c5e845c6051d6a0a56, type: 3}
+      propertyPath: hints.Array.data[0].tile
+      value: 
+      objectReference: {fileID: 21300000, guid: 8eccb30aee33d43a4a325185a9aee34e, type: 3}
+    - target: {fileID: 1316962698503553777, guid: 5a2f378d5be604c5e845c6051d6a0a56, type: 3}
+      propertyPath: hints.Array.data[1].tile
+      value: 
+      objectReference: {fileID: 21300000, guid: 2a8dd1786c2b340b8bdf182edc8e3de3, type: 3}
+    - target: {fileID: 1316962698503553777, guid: 5a2f378d5be604c5e845c6051d6a0a56, type: 3}
+      propertyPath: hints.Array.data[2].tile
+      value: 
+      objectReference: {fileID: 21300000, guid: 12f2ad7fe0cce48d7aee8acddffd0c05, type: 3}
+    - target: {fileID: 1316962698503553777, guid: 5a2f378d5be604c5e845c6051d6a0a56, type: 3}
+      propertyPath: hints.Array.data[3].tile
+      value: 
+      objectReference: {fileID: 21300000, guid: fa80533d964ee48428810a68f03493e4, type: 3}
+    - target: {fileID: 1316962698503553777, guid: 5a2f378d5be604c5e845c6051d6a0a56, type: 3}
+      propertyPath: hints.Array.data[4].tile
+      value: 
+      objectReference: {fileID: 21300000, guid: 2d5c0e45e59f04c039c4f33b6222e946, type: 3}
+    - target: {fileID: 1316962698503553777, guid: 5a2f378d5be604c5e845c6051d6a0a56, type: 3}
+      propertyPath: hints.Array.data[5].tile
+      value: 
+      objectReference: {fileID: 21300000, guid: e9bd8f81b8b074cc69c620f2fd407394, type: 3}
+    - target: {fileID: 1316962698503553777, guid: 5a2f378d5be604c5e845c6051d6a0a56, type: 3}
       propertyPath: hints.Array.data[0].color.a
       value: 0.2
       objectReference: {fileID: 0}

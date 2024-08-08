@@ -9,6 +9,7 @@ namespace Mechanics.RoboticFlows
     public class FlowDrawerConverter : MonoBehaviour
     {
 
+        public RoboticFlowConfig config;
         public bool solvedManually;
         private List<FlowDrawer> _flowDrawers = new();
         private List<Cell> _cells = new List<Cell>();
@@ -62,6 +63,23 @@ namespace Mechanics.RoboticFlows
             }
         }
         
+           [Button]
+        public void AddTilesToHint(bool isStroke6)
+        {
+            _hint = GetComponentInChildren<RoboticFlowHint>();
+            var list = _hint.GetHints();
+            for (int i = 0; i < list.Count; i++)
+            {
+                var element = list[i];
+                var matchedId = config.flowTileDefinitions.ElementAt(element.id);
+                element.tile = isStroke6 ? matchedId.stroke6Tile : matchedId.stroke9Tile;
+            }
+        }
+        
+        
+        
 #endif
+        
+     
     }
 }

@@ -122,6 +122,18 @@ namespace Mechanics.RoboticFlows
                 PrefabUtility.SavePrefabAsset(levels[i].gameObject);
             }
         }
+        
+          
+        [Button(ButtonSizes.Gigantic),GUIColor(0.6f,0.6f,1f)]
+        public void ChangeHintTiles()
+        {
+            for (int i = 0; i < levels.Count; i++)
+            {
+                levels[i].GetComponent<FlowDrawerConverter>().AddTilesToHint(isStroke6);
+                EditorUtility.SetDirty(levels[i].gameObject);
+                PrefabUtility.SavePrefabAsset(levels[i].gameObject);
+            }
+        }
 #endif
     }
 
