@@ -51,7 +51,10 @@ namespace MangoramaStudio.Scripts.Managers.Buttons
 
         private void ContinueNextLevel(AdDTO adTo)
         {
-            ContinueNextLevel();
+            if (IsClicked)
+            {
+                ContinueNextLevel();       
+            }
         }
 
         private void ContinueNextLevel()

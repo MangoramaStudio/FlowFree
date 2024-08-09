@@ -37,13 +37,16 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Buttons
         
         private void RetryLevel()
         {
-            GameManager.Instance.LevelManager.RetryCurrentLevel();
+            GameManager.Instance.EventManager.RestartLevel();
             IsClicked = false;
         }
 
         private void Retry(AdDTO adDto)
         {
-            RetryLevel();
+            if (IsClicked)
+            {
+                RetryLevel();    
+            }
         }
 
         protected override void ToggleEvents(bool isToggled)
