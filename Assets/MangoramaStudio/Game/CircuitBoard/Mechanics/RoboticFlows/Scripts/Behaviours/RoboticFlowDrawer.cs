@@ -52,12 +52,7 @@ namespace Mechanics.RoboticFlows
             {
                 drawer.Initialize(this);
             }
-
-            if (HasTutorialComponent())
-            {
-                tutorialComponent.SetPlayableCells(grid.Cells.ToList());
-            }
-
+            
         }
 
         [Button]
@@ -68,6 +63,11 @@ namespace Mechanics.RoboticFlows
             foreach (var drawer in drawers)
             {
                 drawer.Prepare();
+            }
+            
+            if (HasTutorialComponent())
+            {
+                tutorialComponent.SetPlayableCells(grid.Cells.ToList());
             }
         }
 

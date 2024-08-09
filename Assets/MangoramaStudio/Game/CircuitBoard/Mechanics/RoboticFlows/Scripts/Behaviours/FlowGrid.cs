@@ -40,7 +40,7 @@ namespace Mechanics.RoboticFlows
 
                 if (index == descendingOrder.Count - 1)
                 {
-                    cell.AnimateIn(0.25f, (highest - cell.y) * 0.125f, () =>
+                    cell.AnimateIn(0.25f, (highest - cell.y) * 0.125f ,() =>
                     {
                         Ready = true;
                     });
