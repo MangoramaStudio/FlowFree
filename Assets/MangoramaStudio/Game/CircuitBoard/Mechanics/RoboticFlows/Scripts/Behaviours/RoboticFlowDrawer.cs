@@ -517,6 +517,8 @@ namespace Mechanics.RoboticFlows
             _eventManager.PlayLevelSuccessSound();
             //RaiseSuccess();
             _eventManager.OpenWinMenu();
+            _selectedDrawer = null;
+            _selectedNode = null;
         }
 
         private void CheckAndComplete()
