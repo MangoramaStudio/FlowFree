@@ -198,21 +198,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialHand: {fileID: 8332736343981979699}
   tutorialDefinitions:
-  - flowDrawer: {fileID: 0}
+  - tutorialLayout: {fileID: 7604118735411760411, guid: 7330258434c9248acb86d34d911d7939, type: 3}
+    flowDrawer: {fileID: 0}
     isCompleted: 0
     mask: {fileID: 708910896837736930}
-    definition: 'Connect the <color=#4881FD><b>Blue</b></color> balls '
     reverseDirection: 0
-  - flowDrawer: {fileID: 0}
+  - tutorialLayout: {fileID: 7604118735411760411, guid: 79ed29a49c7784ab6959ceaf19dc9285, type: 3}
+    flowDrawer: {fileID: 0}
     isCompleted: 0
     mask: {fileID: 2588057096399638642}
-    definition: 'Connect the <color=#CE1821><b>Red</b></color> balls '
     reverseDirection: 1
-  - flowDrawer: {fileID: 0}
+  - tutorialLayout: {fileID: 7604118735411760411, guid: 84be5d5a1a38a460387d9080e020528d, type: 3}
+    flowDrawer: {fileID: 0}
     isCompleted: 0
     mask: {fileID: 4562686207893647416}
-    definition: Complete the Flow Puzzle
     reverseDirection: 0
+  id: 0
 --- !u!1 &8332736343981979699
 GameObject:
   m_ObjectHideFlags: 0

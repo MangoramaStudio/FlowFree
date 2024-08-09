@@ -14,9 +14,12 @@ namespace MangoramaStudio.Systems.TutorialSystem.Scripts
     {
         [SerializeField] private GameObject tutorialHand;
         [SerializeField] private List<TutorialDefinition> tutorialDefinitions = new();
+        [SerializeField] private int id;
         public List<TutorialDefinition> TutorialDefinitions => tutorialDefinitions;
         public TutorialDefinition GetCurrentTutorialDefinition => AllCompleted() ? null : TutorialDefinitions.ElementAt(CurrentTutorialIndex);
 
+        public int Id => id;
+        
         private Sequence _tutorialSequence;
         
         public bool IsCompleted { get; private set; }
@@ -27,7 +30,7 @@ namespace MangoramaStudio.Systems.TutorialSystem.Scripts
             tutorialDefinitions.ForEach(x=>x.mask.gameObject.SetActive(false));
             tutorialDefinitions.ElementAt(CurrentTutorialIndex).mask.gameObject.SetActive(true);
             
-            GameManager.Instance.EventManager.PlayTutorial(CurrentTutorialDefinition().definition);
+            GameManager.Instance.EventManager.PlayTutorial(Id,CurrentTutorialIndex);
         }
 
         private TutorialDefinition CurrentTutorialDefinition()
@@ -107,7 +110,7 @@ namespace MangoramaStudio.Systems.TutorialSystem.Scripts
                 return;
             }
             tutorialDefinitions.ElementAt(CurrentTutorialIndex).mask.gameObject.SetActive(true);
-            GameManager.Instance.EventManager.PlayTutorial(CurrentTutorialDefinition().definition);
+            GameManager.Instance.EventManager.PlayTutorial(Id,CurrentTutorialIndex);
             
         }
         
@@ -117,10 +120,10 @@ namespace MangoramaStudio.Systems.TutorialSystem.Scripts
     [Serializable]
     public class TutorialDefinition
     {
+    
         public FlowDrawer flowDrawer;
         public bool isCompleted;
         public GameObject mask;
-        public string definition;
         public bool reverseDirection;
     }
 }

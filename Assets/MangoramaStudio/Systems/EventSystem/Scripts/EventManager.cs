@@ -270,13 +270,13 @@ namespace MangoramaStudio.Scripts.Managers
 
         #region Tutorial Events
 
-        public event Action<string> OnTutorialPlaying;
+        public event Action<int,int> OnTutorialPlaying;
         
         public event Action OnTutorialCompleted;
 
-        public void PlayTutorial(string text)
+        public void PlayTutorial(int id,int index)
         {
-            OnTutorialPlaying?.Invoke(text);
+            OnTutorialPlaying?.Invoke(id,index);
         }
 
         public void CompleteTutorial()

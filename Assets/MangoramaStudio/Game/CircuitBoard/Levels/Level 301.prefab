@@ -14095,6 +14095,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 5d240998dd6bf4c99a1730b512cf68ba, type: 3}
     - target: {fileID: 6646591549379256328, guid: 5551cc3fe72714eb191380cccb36b48c, type: 3}
+      propertyPath: id
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6646591549379256328, guid: 5551cc3fe72714eb191380cccb36b48c, type: 3}
       propertyPath: tutorialDefinitions.Array.size
       value: 1
       objectReference: {fileID: 0}

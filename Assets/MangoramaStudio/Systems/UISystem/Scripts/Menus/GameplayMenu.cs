@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using MangoramaStudio.Scripts.Managers;
 using MangoramaStudio.Scripts.Managers.Buttons;
@@ -10,8 +12,16 @@ using UnityEngine.UI;
 
 namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
 {
+    [Serializable]
+    public class TutorialObjectData
+    {
+        public int id;
+        public List<GameObject> go = new();
+    }
+    
     public class GameplayMenu : BaseMenu
     {
+        [SerializeField] private List<TutorialObjectData> tutorialObjectData = new();
         [SerializeField] private List<BaseButton> baseButtons = new();
         [SerializeField] private TextMeshProUGUI tutorialTMP;
         [SerializeField] private GameObject warningObject;
@@ -76,9 +86,14 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Menus
 
         }
 
-        private void TutorialPlaying(string text)
+        private void TutorialPlaying(int id, int index)
         {
-            tutorialTMP.SetText(text.ToUpper());         
+            foreach (var t in tutorialObjectData)
+            {
+                t.go.ForEach(x=>x.gameObject.SetActive(false));
+            }
+            var data =tutorialObjectData.ElementAt(id);
+            data.go.ElementAt(index).gameObject.SetActive(true);
         }
 
         private void RaiseWarning()
