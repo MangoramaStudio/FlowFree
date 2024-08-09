@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using MangoramaStudio.Game.CircuitBoard.Mechanics.RoboticFlows.Line.Scripts;
+using MangoramaStudio.Scripts.Managers;
 using Mechanics.RoboticFlows;
 using UnityEngine;
 
@@ -21,7 +22,30 @@ public class LineRendererController : MonoBehaviour
         var definition = lineRendererConfig.LineDefinitions.Find(x => x.id == id);
         mat.mainTexture = definition.texture;
         lineRenderer.material = mat;
+        ToggleEvents(true);
+    }
 
+    private void OnDestroy()
+    {
+        ToggleEvents(false); 
+    }
+
+    private void OnDisable()
+    {
+        ToggleEvents(false);
+    }
+
+    private void ToggleEvents(bool isToggled)
+    {
+        if (isToggled)
+        {
+            
+            GameManager.Instance.EventManager.OnRestartLevel += Clear;
+        }
+        else
+        {
+            GameManager.Instance.EventManager.OnRestartLevel -= Clear;
+        }
     }
 
     public void Clear()
