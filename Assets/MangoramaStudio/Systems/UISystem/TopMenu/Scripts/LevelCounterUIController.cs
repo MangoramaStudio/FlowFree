@@ -43,6 +43,8 @@ namespace Mechanics.RoboticFlows
             else
             {
                 _loopSequence?.Kill(true);
+                sizeTMP.transform.localScale = Vector3.one;
+                ballImageObject.transform.localScale = Vector3.one;
             }
             
             SetTheme(GameManager.Instance.LevelManager.CurrentLevel.LevelType);
