@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using MangoramaStudio.Scripts.Behaviours;
 using Sirenix.OdinInspector;
-using UnityEditor.Localization.Plugins.XLIFF.V12;
 using UnityEngine;
 
 namespace Mechanics.RoboticFlows

@@ -87,6 +87,7 @@ namespace Mechanics.RoboticFlows
         public Vector2Int size;
         public List<LevelBehaviour> levels = new();
 
+#if UNITY_EDITOR
 
         [Button(ButtonSizes.Gigantic),GUIColor(0,1,0)]
         public void UpdateTiles()
@@ -100,7 +101,6 @@ namespace Mechanics.RoboticFlows
         }
         
         
-#if UNITY_EDITOR
         [Button(ButtonSizes.Medium),GUIColor(0,1,0)]
         public void SetCameraOrthoSize()
         {

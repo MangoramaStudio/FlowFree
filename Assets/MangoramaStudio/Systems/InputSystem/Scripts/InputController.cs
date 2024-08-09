@@ -25,9 +25,6 @@ namespace MangoramaStudio.Scripts.Controllers
             base.Initialize();
         }
 
-        private void OnDestroy()
-        {
-        }
 
         #endregion
 
