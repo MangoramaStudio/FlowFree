@@ -32,14 +32,14 @@ namespace Behaviours
             if (isToggled)
             {
 
-                Playable.Success += GameManager.Instance.EventManager.OpenWinMenu;
+               // Playable.Success += GameManager.Instance.EventManager.OpenWinMenu;
                 Playable.Warn += GameManager.Instance.EventManager.RaiseWarning;
                 EventManager.OnRaiseHint += ShowHint;
                 EventManager.OnRestartLevel += Restart;
             }
             else
             {
-                Playable.Success -= GameManager.Instance.EventManager.OpenWinMenu;
+               // Playable.Success -= GameManager.Instance.EventManager.OpenWinMenu;
                 Playable.Warn -= GameManager.Instance.EventManager.RaiseWarning;
                 EventManager.OnRaiseHint -= ShowHint; 
                 EventManager.OnRestartLevel -= Restart;

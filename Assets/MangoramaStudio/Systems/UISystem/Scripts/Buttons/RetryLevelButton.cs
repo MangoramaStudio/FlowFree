@@ -9,7 +9,7 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Buttons
 {
     public class RetryLevelButton : BaseButton
     {
-        protected override async void Click()
+        protected override void Click()
         {
             base.Click();
             if (IsClicked)
@@ -37,7 +37,7 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Buttons
         
         private void RetryLevel()
         {
-            GameManager.Instance.EventManager.RestartLevel();
+            GameManager.Instance.LevelManager.RetryCurrentLevel();
             IsClicked = false;
         }
 

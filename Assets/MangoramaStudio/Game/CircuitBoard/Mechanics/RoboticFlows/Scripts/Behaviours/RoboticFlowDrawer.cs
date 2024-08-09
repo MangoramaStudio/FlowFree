@@ -515,7 +515,8 @@ namespace Mechanics.RoboticFlows
             _eventManager.ResetNoteIndexSound();
             _eventManager.VibrateLevelComplete();
             _eventManager.PlayLevelSuccessSound();
-            RaiseSuccess();
+            //RaiseSuccess();
+            _eventManager.OpenWinMenu();
         }
 
         private void CheckAndComplete()
