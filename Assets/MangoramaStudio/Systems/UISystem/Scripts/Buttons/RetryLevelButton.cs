@@ -37,7 +37,7 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Buttons
         
         private void RetryLevel()
         {
-            GameManager.Instance.LevelManager.RetryCurrentLevel();  
+            GameManager.Instance.EventManager.RestartLevel();
             IsClicked = false;
         }
 

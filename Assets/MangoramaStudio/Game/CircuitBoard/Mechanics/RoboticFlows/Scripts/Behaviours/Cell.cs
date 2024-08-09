@@ -30,7 +30,6 @@ namespace Mechanics.RoboticFlows
         public bool isColorAnimCompleted;
 
         private Sprite _occupiedSprite;
-       // public bool IsBlinking => _blinkSequence?.IsPlaying() ?? false;
         public bool IsHintPlaying => _hintSequence?.IsPlaying() ?? false;
         [ShowInInspector]public bool IsOccupied { get; private set; }
         [ShowInInspector]public bool HasObstacles => Obstacles.Count > 0;
@@ -112,9 +111,6 @@ namespace Mechanics.RoboticFlows
         
         public void SetDefaultColor()
         {
-           // spriteRenderer.color = Color.white;
-           // spriteRenderer.DOFade(.6f, 0f);
-
             spriteRenderer.sprite = tileSprite; 
             isColorAnimCompleted = false;
         }
@@ -127,13 +123,6 @@ namespace Mechanics.RoboticFlows
                 return;
             }
             spriteRenderer.sprite = _occupiedSprite; 
-            /*
-            spriteRenderer.color = occupiedColor;
-            spriteRenderer.DOFade(.5f, 0f).OnComplete(()=>
-            {
-                isColorAnimCompleted = true;
-            });
-            */
             isColorAnimCompleted = true;
         }
         

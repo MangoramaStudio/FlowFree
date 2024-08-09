@@ -179,6 +179,7 @@ namespace Mechanics.RoboticFlows
                 
                 hint.StopHighlight();
 
+             
                 
                 if (_selectedDrawer.DrawnCells.Contains(cell))
                 {
@@ -333,10 +334,7 @@ namespace Mechanics.RoboticFlows
                         var drawer = drawers.First(d => d.DrawnCells.Contains(cell));
                         if (cell.node)
                             return;
-                        foreach (var selectedDrawerDrawnCell in drawer.DrawnCells)
-                        {
-                            selectedDrawerDrawnCell.SetDefaultColor();
-                        }
+                  
                         
                         drawer.Clear();
                         Remove(drawer);
@@ -378,17 +376,14 @@ namespace Mechanics.RoboticFlows
                             reverse.ElementAt(i).PlayCompleteBlob(i);   
                         }
                         
-                  
                         _eventManager.ConnectFlow(_selectedDrawer);    
                         _eventManager.CompleteFlow(_selectedDrawer,_selectedNode);
-                        _selectedDrawer = null;
-                        _selectedNode = null;
                         onConnectNode?.Invoke();
                        // _eventManager.ResetNoteIndexSound();
                         _eventManager.VibrateFlowComplete();
                         _eventManager.PlayFlowSuccessSound();
-                       
-                        
+                        // _selectedDrawer = null;
+                        // _selectedNode = null;
                     }
                     
                     CheckAndComplete();
@@ -414,6 +409,7 @@ namespace Mechanics.RoboticFlows
                 Remove(_selectedDrawer);
                 foreach (var selectedDrawerDrawnCell in _selectedDrawer.DrawnCells)
                 {
+                    Debug.LogError("2");
                     selectedDrawerDrawnCell.SetDefaultColor();
                 }
 
@@ -426,11 +422,7 @@ namespace Mechanics.RoboticFlows
                 {
                    // _selectedDrawer.Clear();
                    // Remove(_selectedDrawer);
-                    foreach (var selectedDrawerDrawnCell in _selectedDrawer.DrawnCells)
-                    {
-                        selectedDrawerDrawnCell.SetDefaultColor();
-                    }
-
+          
                     _selectedDrawer = null;
                     _selectedNode = null;
                      Remove(_selectedDrawer);

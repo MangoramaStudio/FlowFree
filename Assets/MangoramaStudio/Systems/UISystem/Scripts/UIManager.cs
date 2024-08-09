@@ -38,11 +38,13 @@ namespace MangoramaStudio.Scripts.Managers
             {
                 GameManager.EventManager.OnLevelStarted += StartLevel;
                 GameManager.EventManager.OnLevelFinished += CompleteLevel;
+                GameManager.EventManager.OnRestartLevel += StartLevel;
             }
             else
             {
                 GameManager.EventManager.OnLevelStarted -= StartLevel;
                 GameManager.EventManager.OnLevelFinished -= CompleteLevel;
+                GameManager.EventManager.OnRestartLevel -= StartLevel;
             }
         }
 

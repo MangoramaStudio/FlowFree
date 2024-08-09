@@ -29,7 +29,7 @@ namespace MangoramaStudio.Game.Test
 
         private bool _killTrailCalled;
         private float _initialTime;
-        private Sequence _flowSequence;
+        private Tween _flowTween;
         private LineRenderer _instantiatedLineRenderer;
 
         
@@ -163,7 +163,8 @@ namespace MangoramaStudio.Game.Test
                 ResetClipping();
              
                 var p = Proportion();
-                DOVirtual.Float(0f, 1f, speed * positions.Count, (x) =>
+                _flowTween?.Kill();
+                _flowTween = DOVirtual.Float(0f, 1f, speed * positions.Count, (x) =>
                 {
                     lineRenderer.material.SetFloat(ClipLeft,x);
                     lineRenderer.material.SetFloat(ClipRight,(1f-p) -x);
@@ -192,7 +193,8 @@ namespace MangoramaStudio.Game.Test
         
             private void KillSequence()
             {
-                _flowSequence?.Kill();   
+                _flowTween?.Kill();
+                DOTween.Kill(_flowTween);
             }
 
           
