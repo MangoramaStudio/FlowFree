@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using MangoramaStudio.Scripts.Behaviours;
 using Sirenix.OdinInspector;
+using UnityEditor.Localization.Plugins.XLIFF.V12;
 using UnityEngine;
 
 namespace Mechanics.RoboticFlows
@@ -28,21 +29,21 @@ namespace Mechanics.RoboticFlows
         }
         
         
+        
         [Button]
-        public void Test(bool isStroke6)
+        public void FindAndSetOrangeBalls(bool isStroke6)
         {
             
             _flowDrawers = GetComponentsInChildren<FlowDrawer>().ToList();
             _cells = GetComponentsInChildren<Cell>().ToList();
-            foreach (var drawer in _flowDrawers)
+            for (int i = 0; i < _flowDrawers.Count; i++)
             {
-                drawer.GetComponent<FlowDrawerColorToSpriteConverter>().DetectWhiteBalls();
+                var drawer = _flowDrawers[i];
+                drawer.SetTileSprite(drawer.GetComponent<FlowDrawerColorToSpriteConverter>().Detect(isStroke6,drawer.Id));
+              
             }
-
-            foreach (var cell in _cells)
-            {
-               cell.GetComponent<CellGridColorToSpriteConverter>().ChangeCells(isStroke6);
-            }
+            ConvertToCells(isStroke6);
+            
         }
         
         

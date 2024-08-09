@@ -86,6 +86,20 @@ namespace Mechanics.RoboticFlows
         public bool isStroke6;
         public Vector2Int size;
         public List<LevelBehaviour> levels = new();
+
+
+        [Button(ButtonSizes.Gigantic),GUIColor(0,1,0)]
+        public void UpdateTiles()
+        {
+            for (int i = 0; i < levels.Count; i++)
+            {
+                levels[i].GetComponent<FlowDrawerConverter>().FindAndSetOrangeBalls(isStroke6);
+                EditorUtility.SetDirty(levels[i].gameObject);
+                PrefabUtility.SavePrefabAsset(levels[i].gameObject);
+            }
+        }
+        
+        
 #if UNITY_EDITOR
         [Button(ButtonSizes.Medium),GUIColor(0,1,0)]
         public void SetCameraOrthoSize()
@@ -135,17 +149,6 @@ namespace Mechanics.RoboticFlows
             }
         }
         
-             
-        [Button(ButtonSizes.Gigantic),GUIColor(0.6f,0.6f,1f)]
-        public void DetectWhitesAndFix()
-        {
-            for (int i = 0; i < levels.Count; i++)
-            {
-                levels[i].GetComponent<FlowDrawerConverter>().Test(isStroke6);
-                EditorUtility.SetDirty(levels[i].gameObject);
-                PrefabUtility.SavePrefabAsset(levels[i].gameObject);
-            }
-        }
 #endif
     }
 
