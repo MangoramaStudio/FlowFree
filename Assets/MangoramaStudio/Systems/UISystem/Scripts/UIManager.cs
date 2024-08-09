@@ -37,13 +37,13 @@ namespace MangoramaStudio.Scripts.Managers
             if (isToggled)
             {
                 GameManager.EventManager.OnLevelStarted += StartLevel;
-                GameManager.EventManager.OnLevelFinished += CompleteLevel;
+                GameManager.EventManager.OnOpenWinMenu += CompleteLevel;
                 GameManager.EventManager.OnRestartLevel += StartLevel;
             }
             else
             {
                 GameManager.EventManager.OnLevelStarted -= StartLevel;
-                GameManager.EventManager.OnLevelFinished -= CompleteLevel;
+                GameManager.EventManager.OnOpenWinMenu -= CompleteLevel;
                 GameManager.EventManager.OnRestartLevel -= StartLevel;
             }
         }
@@ -53,7 +53,7 @@ namespace MangoramaStudio.Scripts.Managers
             ChangeMenu(MenuType.Gameplay);
         }
 
-        private void CompleteLevel(bool isSuccess)
+        private void CompleteLevel()
         {
             ChangeMenu(MenuType.Win);
         }

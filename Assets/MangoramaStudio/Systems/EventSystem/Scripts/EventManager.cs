@@ -14,6 +14,8 @@ namespace MangoramaStudio.Scripts.Managers
         public event Action OnStartGame;
         public event Action<bool> OnLevelFinished;
         public event Action OnLevelStarted;
+
+        public event Action OnOpenWinMenu; 
         
         public void StartGame()
         {
@@ -33,6 +35,11 @@ namespace MangoramaStudio.Scripts.Managers
         public void LevelCompleted()
         {
             OnLevelFinished?.Invoke(true);
+        }
+
+        public void OpenWinMenu()
+        {
+            OnOpenWinMenu?.Invoke();
         }
         
         #endregion

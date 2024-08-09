@@ -175,7 +175,7 @@ namespace Mechanics.RoboticFlows
             spriteRenderer.transform.DOKill();
             SetDefaultColor();
             spriteRenderer.transform.localScale = Vector3.zero;
-
+            GetComponent<BoxCollider>().enabled = true;
             var c = spriteRenderer.color;
             c.a = 0;
             spriteRenderer.color = c;
