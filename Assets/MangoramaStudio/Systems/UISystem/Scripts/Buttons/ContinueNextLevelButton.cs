@@ -8,8 +8,7 @@ namespace MangoramaStudio.Scripts.Managers.Buttons
     public class ContinueNextLevelButton : BaseButton
     {
         
-     
-        protected override async void Click()
+        protected override void Click()
         {
             base.Click();
             if (IsClicked)
@@ -18,19 +17,21 @@ namespace MangoramaStudio.Scripts.Managers.Buttons
             }
             
             IsClicked = true;
-            try
+           
+
+            if (!Vegas.Interstitial.Enabled)
             {
-                GameManager.Instance.EventManager.ShowInterstitial("LevelComplete");
-                await Task.Delay(TimeSpan.FromSeconds(.5f), destroyCancellationToken);
+                ContinueNextLevel();
+                return;
             }
-            catch (Exception e)
+                
+            if (Vegas.Interstitial.IsCapped)
             {
-                Debug.LogError(e);
+                ContinueNextLevel();
+                return;
             }
-            finally
-            {
-                GameManager.Instance.LevelManager.ContinueToNextLevel();  
-            }
+                
+            GameManager.Instance.EventManager.ShowInterstitial("LevelComplete");
             
         }
 
@@ -39,12 +40,24 @@ namespace MangoramaStudio.Scripts.Managers.Buttons
             base.ToggleEvents(isToggled);
             if (isToggled)
             {
+                Vegas.Service.Interstitial.Shown += ContinueNextLevel;
             }
             else
             {
+                Vegas.Service.Interstitial.Shown -= ContinueNextLevel;
                 IsClicked = false;
             }
         }
-        
+
+        private void ContinueNextLevel(AdDTO adTo)
+        {
+            ContinueNextLevel();
+        }
+
+        private void ContinueNextLevel()
+        {
+            GameManager.Instance.LevelManager.ContinueToNextLevel(); 
+            IsClicked = false;
+        }
     }
 }

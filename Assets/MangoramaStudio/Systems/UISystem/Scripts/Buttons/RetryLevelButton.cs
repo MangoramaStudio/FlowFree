@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using MangoramaStudio.Scripts.Managers;
 using MangoramaStudio.Scripts.Managers.Buttons;
+using MatchinghamGames.VegasModule;
 using UnityEngine;
 
 namespace MangoramaStudio.Systems.UISystem.Scripts.Buttons
@@ -17,20 +18,32 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Buttons
             }
             
             IsClicked = true;
-            try
+            if (!Vegas.Interstitial.Enabled)
             {
-                GameManager.Instance.EventManager.ShowInterstitial("LevelRetry");
-                await Task.Delay(TimeSpan.FromSeconds(.5f), destroyCancellationToken);
+                RetryLevel();
+                return;
             }
-            catch (Exception e)
+                
+            if (Vegas.Interstitial.IsCapped)
             {
-                Debug.LogError(e);
+                RetryLevel();
+                return;
             }
-            finally
-            {
-                GameManager.Instance.LevelManager.RetryCurrentLevel();  
-            }
+                
+            GameManager.Instance.EventManager.ShowInterstitial("LevelRetry");
+
             
+        }
+        
+        private void RetryLevel()
+        {
+            GameManager.Instance.LevelManager.RetryCurrentLevel();  
+            IsClicked = false;
+        }
+
+        private void Retry(AdDTO adDto)
+        {
+            RetryLevel();
         }
 
         protected override void ToggleEvents(bool isToggled)
@@ -38,9 +51,11 @@ namespace MangoramaStudio.Systems.UISystem.Scripts.Buttons
             base.ToggleEvents(isToggled);
             if (isToggled)
             {
+                Vegas.Service.Interstitial.Shown += Retry;
             }
             else
             {
+                Vegas.Service.Interstitial.Shown -= Retry;
                 IsClicked = false;
             }
         }
