@@ -1,4 +1,5 @@
 using System;
+using MangoramaStudio.Scripts.Behaviours;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -20,6 +21,18 @@ namespace Mechanics.RoboticFlows
             var tile =findSprite.tile;
             FlowDrawer.SetTileSprite(tile);   
         }
+        
+        [Button]
+        public void DetectWhiteBalls()
+        {
+            var findSprite = config.flowTileDefinitions.Find(x => IsEqualTo(Color.white,FlowDrawer.GetColor()));
+            var tile =findSprite.tile;
+            if (tile!=null)
+            {
+                Debug.LogError(transform.root.name);
+            }
+        }
+
         
         public  bool IsEqualTo(Color me, Color other)
         {

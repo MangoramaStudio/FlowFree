@@ -36,7 +36,7 @@ namespace Mechanics.RoboticFlows
             else if (node!=null)
             {
                 var definition = config.flowTileDefinitions.ElementAt(node.Id);
-                //node.SetBallSprite(definition.ball);
+                node.SetBallSprite(definition.ball);
                 if (isStroke6)
                 {
                     Cell.SetTileSprite(definition.stroke6Tile);
@@ -46,12 +46,9 @@ namespace Mechanics.RoboticFlows
                     Cell.SetTileSprite(definition.stroke9Tile);
                 }
             }
-
-            
         }
         
         
-
         [Button]
         public void Convert()
         {

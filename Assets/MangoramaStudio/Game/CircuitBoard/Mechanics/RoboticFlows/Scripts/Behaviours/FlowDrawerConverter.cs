@@ -29,6 +29,24 @@ namespace Mechanics.RoboticFlows
         
         
         [Button]
+        public void Test(bool isStroke6)
+        {
+            
+            _flowDrawers = GetComponentsInChildren<FlowDrawer>().ToList();
+            _cells = GetComponentsInChildren<Cell>().ToList();
+            foreach (var drawer in _flowDrawers)
+            {
+                drawer.GetComponent<FlowDrawerColorToSpriteConverter>().DetectWhiteBalls();
+            }
+
+            foreach (var cell in _cells)
+            {
+               cell.GetComponent<CellGridColorToSpriteConverter>().ChangeCells(isStroke6);
+            }
+        }
+        
+        
+        [Button]
         public void Convert()
         {
             
